@@ -13,7 +13,6 @@ Numpy API
    :caption: Table of Contents
 
    api.main.rst
-   api.doc.rst
    api.random.rst
    api.linalg.rst
    api.fft.rst
@@ -22,6 +21,7 @@ Numpy API
    api.f2py.rst
    api.distutils.rst
    api.lib.rst
+   reference/index
    glossary.rst
 
 

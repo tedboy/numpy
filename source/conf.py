@@ -135,7 +135,9 @@ language = None
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = [
-'api.main.rst',
+# 'reference/generated*',
+# 'reference/*.rst',
+# 'api.main.rst',
 'api.doc.rst',
 'api.random.rst',
 'api.linalg.rst',
@@ -145,7 +147,7 @@ exclude_patterns = [
 'api.f2py.rst',
 'api.distutils.rst',
 'api.lib.rst',
-'glossary.rst',
+# 'glossary.rst',
 # 'api.f2py.rst',
 # 'demo_autoclass.rst',
 # 'demo_automodule.rst',
