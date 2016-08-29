@@ -1,10 +1,10 @@
 .. toctree::
     :maxdepth: 1
 
-    generated/numpy
+    generated/numpy.doc
 
 .. autosummary::
    :toctree:generated/
-   :template:module_custom_nohead.rst
+   :template:module_custom.rst
 
-    numpy
+    numpy.doc
