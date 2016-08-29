@@ -1,0 +1,6 @@
+numpy.int8.setflags
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.setflags

@@ -1,0 +1,6 @@
+numpy.byte.sum
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.sum

@@ -1,0 +1,6 @@
+numpy.longcomplex.shape
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.shape

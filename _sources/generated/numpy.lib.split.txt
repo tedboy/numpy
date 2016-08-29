@@ -1,0 +1,6 @@
+numpy.lib.split
+===============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: split

@@ -1,0 +1,6 @@
+numpy.clongdouble.tofile
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.tofile

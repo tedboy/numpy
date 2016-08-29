@@ -1,0 +1,6 @@
+numpy.ushort.strides
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ushort.strides

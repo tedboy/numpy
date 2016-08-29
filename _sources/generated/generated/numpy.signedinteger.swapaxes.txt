@@ -1,0 +1,6 @@
+numpy.signedinteger.swapaxes
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.swapaxes

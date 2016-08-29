@@ -1,0 +1,6 @@
+numpy.byte.itemset
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.itemset

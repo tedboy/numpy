@@ -1,0 +1,6 @@
+numpy.polynomial.Polynomial.basis
+=================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Polynomial.basis

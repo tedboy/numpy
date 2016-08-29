@@ -1,0 +1,6 @@
+numpy.cdouble.squeeze
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.squeeze

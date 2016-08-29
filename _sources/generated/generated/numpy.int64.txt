@@ -1,0 +1,95 @@
+numpy.int64
+===========
+.. currentmodule:: numpy
+.. autoclass:: int64
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~int64.all
+   ~int64.any
+   ~int64.argmax
+   ~int64.argmin
+   ~int64.argsort
+   ~int64.astype
+   ~int64.bit_length
+   ~int64.byteswap
+   ~int64.choose
+   ~int64.clip
+   ~int64.compress
+   ~int64.conj
+   ~int64.conjugate
+   ~int64.copy
+   ~int64.cumprod
+   ~int64.cumsum
+   ~int64.diagonal
+   ~int64.dump
+   ~int64.dumps
+   ~int64.fill
+   ~int64.flatten
+   ~int64.getfield
+   ~int64.item
+   ~int64.itemset
+   ~int64.max
+   ~int64.mean
+   ~int64.min
+   ~int64.newbyteorder
+   ~int64.nonzero
+   ~int64.prod
+   ~int64.ptp
+   ~int64.put
+   ~int64.ravel
+   ~int64.repeat
+   ~int64.reshape
+   ~int64.resize
+   ~int64.round
+   ~int64.searchsorted
+   ~int64.setfield
+   ~int64.setflags
+   ~int64.sort
+   ~int64.squeeze
+   ~int64.std
+   ~int64.sum
+   ~int64.swapaxes
+   ~int64.take
+   ~int64.tobytes
+   ~int64.tofile
+   ~int64.tolist
+   ~int64.tostring
+   ~int64.trace
+   ~int64.transpose
+   ~int64.var
+   ~int64.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~int64.T
+   ~int64.base
+   ~int64.data
+   ~int64.denominator
+   ~int64.dtype
+   ~int64.flags
+   ~int64.flat
+   ~int64.imag
+   ~int64.itemsize
+   ~int64.nbytes
+   ~int64.ndim
+   ~int64.numerator
+   ~int64.real
+   ~int64.shape
+   ~int64.size
+   ~int64.strides
+

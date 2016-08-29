@@ -1,0 +1,6 @@
+numpy.uint32.take
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint32.take

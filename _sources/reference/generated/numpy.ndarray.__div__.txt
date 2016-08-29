@@ -1,0 +1,6 @@
+numpy.ndarray.__div__
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ndarray.__div__

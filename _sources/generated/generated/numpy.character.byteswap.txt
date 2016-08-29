@@ -1,0 +1,6 @@
+numpy.character.byteswap
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.byteswap

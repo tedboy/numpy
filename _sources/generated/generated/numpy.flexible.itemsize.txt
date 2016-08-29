@@ -1,0 +1,6 @@
+numpy.flexible.itemsize
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.itemsize

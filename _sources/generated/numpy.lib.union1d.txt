@@ -1,0 +1,6 @@
+numpy.lib.union1d
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: union1d

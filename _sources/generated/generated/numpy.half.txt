@@ -1,0 +1,92 @@
+numpy.half
+==========
+.. currentmodule:: numpy
+.. autoclass:: half
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~half.all
+   ~half.any
+   ~half.argmax
+   ~half.argmin
+   ~half.argsort
+   ~half.astype
+   ~half.byteswap
+   ~half.choose
+   ~half.clip
+   ~half.compress
+   ~half.conj
+   ~half.conjugate
+   ~half.copy
+   ~half.cumprod
+   ~half.cumsum
+   ~half.diagonal
+   ~half.dump
+   ~half.dumps
+   ~half.fill
+   ~half.flatten
+   ~half.getfield
+   ~half.item
+   ~half.itemset
+   ~half.max
+   ~half.mean
+   ~half.min
+   ~half.newbyteorder
+   ~half.nonzero
+   ~half.prod
+   ~half.ptp
+   ~half.put
+   ~half.ravel
+   ~half.repeat
+   ~half.reshape
+   ~half.resize
+   ~half.round
+   ~half.searchsorted
+   ~half.setfield
+   ~half.setflags
+   ~half.sort
+   ~half.squeeze
+   ~half.std
+   ~half.sum
+   ~half.swapaxes
+   ~half.take
+   ~half.tobytes
+   ~half.tofile
+   ~half.tolist
+   ~half.tostring
+   ~half.trace
+   ~half.transpose
+   ~half.var
+   ~half.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~half.T
+   ~half.base
+   ~half.data
+   ~half.dtype
+   ~half.flags
+   ~half.flat
+   ~half.imag
+   ~half.itemsize
+   ~half.nbytes
+   ~half.ndim
+   ~half.real
+   ~half.shape
+   ~half.size
+   ~half.strides
+

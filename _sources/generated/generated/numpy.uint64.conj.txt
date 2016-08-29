@@ -1,0 +1,6 @@
+numpy.uint64.conj
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint64.conj

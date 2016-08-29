@@ -1,0 +1,6 @@
+numpy.unsignedinteger.view
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.view

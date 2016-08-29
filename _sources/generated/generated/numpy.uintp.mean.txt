@@ -1,0 +1,6 @@
+numpy.uintp.mean
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.mean

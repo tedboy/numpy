@@ -1,0 +1,6 @@
+numpy.longlong.prod
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.prod

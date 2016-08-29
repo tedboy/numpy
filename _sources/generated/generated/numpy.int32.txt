@@ -1,0 +1,94 @@
+numpy.int32
+===========
+.. currentmodule:: numpy
+.. autoclass:: int32
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~int32.all
+   ~int32.any
+   ~int32.argmax
+   ~int32.argmin
+   ~int32.argsort
+   ~int32.astype
+   ~int32.byteswap
+   ~int32.choose
+   ~int32.clip
+   ~int32.compress
+   ~int32.conj
+   ~int32.conjugate
+   ~int32.copy
+   ~int32.cumprod
+   ~int32.cumsum
+   ~int32.diagonal
+   ~int32.dump
+   ~int32.dumps
+   ~int32.fill
+   ~int32.flatten
+   ~int32.getfield
+   ~int32.item
+   ~int32.itemset
+   ~int32.max
+   ~int32.mean
+   ~int32.min
+   ~int32.newbyteorder
+   ~int32.nonzero
+   ~int32.prod
+   ~int32.ptp
+   ~int32.put
+   ~int32.ravel
+   ~int32.repeat
+   ~int32.reshape
+   ~int32.resize
+   ~int32.round
+   ~int32.searchsorted
+   ~int32.setfield
+   ~int32.setflags
+   ~int32.sort
+   ~int32.squeeze
+   ~int32.std
+   ~int32.sum
+   ~int32.swapaxes
+   ~int32.take
+   ~int32.tobytes
+   ~int32.tofile
+   ~int32.tolist
+   ~int32.tostring
+   ~int32.trace
+   ~int32.transpose
+   ~int32.var
+   ~int32.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~int32.T
+   ~int32.base
+   ~int32.data
+   ~int32.denominator
+   ~int32.dtype
+   ~int32.flags
+   ~int32.flat
+   ~int32.imag
+   ~int32.itemsize
+   ~int32.nbytes
+   ~int32.ndim
+   ~int32.numerator
+   ~int32.real
+   ~int32.shape
+   ~int32.size
+   ~int32.strides
+

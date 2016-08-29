@@ -1,0 +1,6 @@
+numpy.unsignedinteger.copy
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.copy

@@ -1,0 +1,6 @@
+numpy.short.dumps
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.dumps

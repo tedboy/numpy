@@ -1,0 +1,6 @@
+numpy.double.base
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.base

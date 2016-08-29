@@ -1,0 +1,6 @@
+numpy.longcomplex.getfield
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.getfield

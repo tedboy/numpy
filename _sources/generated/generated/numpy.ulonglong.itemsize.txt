@@ -1,0 +1,6 @@
+numpy.ulonglong.itemsize
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.itemsize

@@ -1,0 +1,6 @@
+numpy.str_.reshape
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.reshape

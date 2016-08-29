@@ -1,0 +1,92 @@
+numpy.object0
+=============
+.. currentmodule:: numpy
+.. autoclass:: object0
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~object0.all
+   ~object0.any
+   ~object0.argmax
+   ~object0.argmin
+   ~object0.argsort
+   ~object0.astype
+   ~object0.byteswap
+   ~object0.choose
+   ~object0.clip
+   ~object0.compress
+   ~object0.conj
+   ~object0.conjugate
+   ~object0.copy
+   ~object0.cumprod
+   ~object0.cumsum
+   ~object0.diagonal
+   ~object0.dump
+   ~object0.dumps
+   ~object0.fill
+   ~object0.flatten
+   ~object0.getfield
+   ~object0.item
+   ~object0.itemset
+   ~object0.max
+   ~object0.mean
+   ~object0.min
+   ~object0.newbyteorder
+   ~object0.nonzero
+   ~object0.prod
+   ~object0.ptp
+   ~object0.put
+   ~object0.ravel
+   ~object0.repeat
+   ~object0.reshape
+   ~object0.resize
+   ~object0.round
+   ~object0.searchsorted
+   ~object0.setfield
+   ~object0.setflags
+   ~object0.sort
+   ~object0.squeeze
+   ~object0.std
+   ~object0.sum
+   ~object0.swapaxes
+   ~object0.take
+   ~object0.tobytes
+   ~object0.tofile
+   ~object0.tolist
+   ~object0.tostring
+   ~object0.trace
+   ~object0.transpose
+   ~object0.var
+   ~object0.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~object0.T
+   ~object0.base
+   ~object0.data
+   ~object0.dtype
+   ~object0.flags
+   ~object0.flat
+   ~object0.imag
+   ~object0.itemsize
+   ~object0.nbytes
+   ~object0.ndim
+   ~object0.real
+   ~object0.shape
+   ~object0.size
+   ~object0.strides
+

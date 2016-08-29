@@ -1,0 +1,6 @@
+numpy.inexact.swapaxes
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.swapaxes

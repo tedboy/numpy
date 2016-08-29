@@ -1,0 +1,6 @@
+numpy.half.std
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.std

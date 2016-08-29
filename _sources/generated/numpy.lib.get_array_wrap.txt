@@ -1,0 +1,6 @@
+numpy.lib.get_array_wrap
+========================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: get_array_wrap

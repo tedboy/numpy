@@ -1,0 +1,6 @@
+numpy.uint.dump
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: uint.dump

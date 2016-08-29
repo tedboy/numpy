@@ -1,0 +1,6 @@
+numpy.half.ravel
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.ravel

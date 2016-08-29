@@ -1,0 +1,31 @@
+numpy.bool
+==========
+.. currentmodule:: numpy
+.. autoclass:: bool
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~bool.bit_length
+   ~bool.conjugate
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~bool.denominator
+   ~bool.imag
+   ~bool.numerator
+   ~bool.real
+

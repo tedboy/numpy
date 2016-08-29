@@ -1,0 +1,6 @@
+numpy.clongfloat.ptp
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.ptp

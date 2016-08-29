@@ -1,0 +1,6 @@
+numpy.bytes_.imag
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bytes_.imag

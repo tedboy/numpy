@@ -1,0 +1,6 @@
+numpy.distutils.Tester.test
+===========================
+
+.. currentmodule:: numpy.distutils
+
+.. automethod:: Tester.test

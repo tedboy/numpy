@@ -1,0 +1,6 @@
+numpy.datetime64.nonzero
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.nonzero

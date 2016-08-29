@@ -1,0 +1,6 @@
+numpy.character.conjugate
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.conjugate

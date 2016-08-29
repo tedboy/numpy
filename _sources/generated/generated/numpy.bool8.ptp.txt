@@ -1,0 +1,6 @@
+numpy.bool8.ptp
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.ptp

@@ -1,0 +1,6 @@
+numpy.void.real
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void.real

@@ -1,0 +1,6 @@
+numpy.polynomial.Polynomial.maxpower
+====================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Polynomial.maxpower

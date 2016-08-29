@@ -1,0 +1,6 @@
+numpy.csingle.put
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.put

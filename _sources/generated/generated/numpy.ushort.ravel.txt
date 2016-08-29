@@ -1,0 +1,6 @@
+numpy.ushort.ravel
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.ravel

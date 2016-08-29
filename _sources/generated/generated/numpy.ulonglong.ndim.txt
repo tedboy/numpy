@@ -1,0 +1,6 @@
+numpy.ulonglong.ndim
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.ndim

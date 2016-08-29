@@ -1,0 +1,6 @@
+numpy.void.repeat
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.repeat

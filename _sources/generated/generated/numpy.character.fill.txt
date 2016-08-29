@@ -1,0 +1,6 @@
+numpy.character.fill
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.fill

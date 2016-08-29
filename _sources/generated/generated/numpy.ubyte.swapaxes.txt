@@ -1,0 +1,6 @@
+numpy.ubyte.swapaxes
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.swapaxes

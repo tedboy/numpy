@@ -1,0 +1,6 @@
+numpy.character.astype
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.astype

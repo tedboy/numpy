@@ -1,0 +1,6 @@
+numpy.inexact.ravel
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.ravel

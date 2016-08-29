@@ -1,0 +1,6 @@
+numpy.longdouble.take
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.take

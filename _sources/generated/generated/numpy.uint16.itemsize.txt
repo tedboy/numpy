@@ -1,0 +1,6 @@
+numpy.uint16.itemsize
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint16.itemsize

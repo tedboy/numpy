@@ -1,0 +1,6 @@
+numpy.ulonglong.argmax
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.argmax

@@ -1,0 +1,6 @@
+numpy.clongfloat.real
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongfloat.real

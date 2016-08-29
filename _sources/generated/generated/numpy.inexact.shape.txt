@@ -1,0 +1,6 @@
+numpy.inexact.shape
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: inexact.shape

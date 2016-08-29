@@ -1,0 +1,6 @@
+numpy.bool.imag
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool.imag

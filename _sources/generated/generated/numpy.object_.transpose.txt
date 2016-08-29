@@ -1,0 +1,6 @@
+numpy.object_.transpose
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: object_.transpose

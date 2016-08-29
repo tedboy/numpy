@@ -1,0 +1,6 @@
+numpy.polynomial.Laguerre.nickname
+==================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Laguerre.nickname

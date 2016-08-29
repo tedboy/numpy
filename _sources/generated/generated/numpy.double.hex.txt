@@ -1,0 +1,6 @@
+numpy.double.hex
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.hex

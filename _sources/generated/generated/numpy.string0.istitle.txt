@@ -1,0 +1,6 @@
+numpy.string0.istitle
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.istitle

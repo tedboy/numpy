@@ -1,0 +1,6 @@
+numpy.str_.shape
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: str_.shape

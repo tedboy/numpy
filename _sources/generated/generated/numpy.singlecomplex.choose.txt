@@ -1,0 +1,6 @@
+numpy.singlecomplex.choose
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.choose

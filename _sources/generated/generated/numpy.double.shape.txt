@@ -1,0 +1,6 @@
+numpy.double.shape
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.shape

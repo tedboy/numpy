@@ -1,0 +1,6 @@
+numpy.unsignedinteger.choose
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.choose

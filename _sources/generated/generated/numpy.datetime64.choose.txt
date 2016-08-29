@@ -1,0 +1,6 @@
+numpy.datetime64.choose
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.choose

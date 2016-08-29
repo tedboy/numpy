@@ -1,0 +1,6 @@
+numpy.lib.byte_bounds
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: byte_bounds

@@ -1,0 +1,6 @@
+numpy.complex_.ptp
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.ptp

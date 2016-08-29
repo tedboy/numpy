@@ -1,0 +1,6 @@
+numpy.string_.min
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.min

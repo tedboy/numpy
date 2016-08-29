@@ -1,0 +1,6 @@
+numpy.cfloat.data
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cfloat.data

@@ -1,0 +1,6 @@
+numpy.singlecomplex.tostring
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.tostring

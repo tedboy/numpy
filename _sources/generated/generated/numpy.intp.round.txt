@@ -1,0 +1,6 @@
+numpy.intp.round
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: intp.round

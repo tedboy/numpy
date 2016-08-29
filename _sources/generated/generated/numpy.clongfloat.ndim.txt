@@ -1,0 +1,6 @@
+numpy.clongfloat.ndim
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongfloat.ndim

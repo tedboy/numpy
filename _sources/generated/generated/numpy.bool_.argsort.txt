@@ -1,0 +1,6 @@
+numpy.bool_.argsort
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.argsort

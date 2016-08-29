@@ -1,0 +1,6 @@
+numpy.intc.all
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.all

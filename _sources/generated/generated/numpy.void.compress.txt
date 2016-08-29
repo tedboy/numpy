@@ -1,0 +1,6 @@
+numpy.void.compress
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.compress

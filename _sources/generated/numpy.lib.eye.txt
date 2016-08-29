@@ -1,0 +1,6 @@
+numpy.lib.eye
+=============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: eye

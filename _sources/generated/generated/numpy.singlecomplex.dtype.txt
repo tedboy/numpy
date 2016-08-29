@@ -1,0 +1,6 @@
+numpy.singlecomplex.dtype
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.dtype

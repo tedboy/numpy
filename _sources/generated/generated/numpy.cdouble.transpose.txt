@@ -1,0 +1,6 @@
+numpy.cdouble.transpose
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.transpose

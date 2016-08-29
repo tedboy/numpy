@@ -1,0 +1,6 @@
+numpy.int0.diagonal
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: int0.diagonal

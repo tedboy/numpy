@@ -1,0 +1,6 @@
+numpy.bytes_.upper
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.upper

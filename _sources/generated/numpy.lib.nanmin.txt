@@ -1,0 +1,6 @@
+numpy.lib.nanmin
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nanmin

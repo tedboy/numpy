@@ -1,0 +1,6 @@
+numpy.lib.corrcoef
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: corrcoef

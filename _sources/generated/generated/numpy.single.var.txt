@@ -1,0 +1,6 @@
+numpy.single.var
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.var

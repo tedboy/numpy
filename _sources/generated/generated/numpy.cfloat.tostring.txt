@@ -1,0 +1,6 @@
+numpy.cfloat.tostring
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cfloat.tostring

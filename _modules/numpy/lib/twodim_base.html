@@ -1,0 +1,1228 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>numpy.lib.twodim_base &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../../index.html"/>
+        <link rel="up" title="numpy" href="../../numpy.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../numpy.html">numpy</a> &raquo;</li>
+        
+      <li>numpy.lib.twodim_base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for numpy.lib.twodim_base</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot; Basic functions for manipulating 2d arrays</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">from</span> <span class="nn">numpy.core.numeric</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">asanyarray</span><span class="p">,</span> <span class="n">arange</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">greater_equal</span><span class="p">,</span> <span class="n">multiply</span><span class="p">,</span> <span class="n">ones</span><span class="p">,</span> <span class="n">asarray</span><span class="p">,</span>
+    <span class="n">where</span><span class="p">,</span> <span class="n">int8</span><span class="p">,</span> <span class="n">int16</span><span class="p">,</span> <span class="n">int32</span><span class="p">,</span> <span class="n">int64</span><span class="p">,</span> <span class="n">empty</span><span class="p">,</span> <span class="n">promote_types</span><span class="p">,</span> <span class="n">diagonal</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">numpy.core</span> <span class="kn">import</span> <span class="n">iinfo</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;diag&#39;</span><span class="p">,</span> <span class="s1">&#39;diagflat&#39;</span><span class="p">,</span> <span class="s1">&#39;eye&#39;</span><span class="p">,</span> <span class="s1">&#39;fliplr&#39;</span><span class="p">,</span> <span class="s1">&#39;flipud&#39;</span><span class="p">,</span> <span class="s1">&#39;rot90&#39;</span><span class="p">,</span> <span class="s1">&#39;tri&#39;</span><span class="p">,</span> <span class="s1">&#39;triu&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tril&#39;</span><span class="p">,</span> <span class="s1">&#39;vander&#39;</span><span class="p">,</span> <span class="s1">&#39;histogram2d&#39;</span><span class="p">,</span> <span class="s1">&#39;mask_indices&#39;</span><span class="p">,</span> <span class="s1">&#39;tril_indices&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tril_indices_from&#39;</span><span class="p">,</span> <span class="s1">&#39;triu_indices&#39;</span><span class="p">,</span> <span class="s1">&#39;triu_indices_from&#39;</span><span class="p">,</span> <span class="p">]</span>
+
+
+<span class="n">i1</span> <span class="o">=</span> <span class="n">iinfo</span><span class="p">(</span><span class="n">int8</span><span class="p">)</span>
+<span class="n">i2</span> <span class="o">=</span> <span class="n">iinfo</span><span class="p">(</span><span class="n">int16</span><span class="p">)</span>
+<span class="n">i4</span> <span class="o">=</span> <span class="n">iinfo</span><span class="p">(</span><span class="n">int32</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_min_int</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; get small int that fits the range &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">high</span> <span class="o">&lt;=</span> <span class="n">i1</span><span class="o">.</span><span class="n">max</span> <span class="ow">and</span> <span class="n">low</span> <span class="o">&gt;=</span> <span class="n">i1</span><span class="o">.</span><span class="n">min</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">int8</span>
+    <span class="k">if</span> <span class="n">high</span> <span class="o">&lt;=</span> <span class="n">i2</span><span class="o">.</span><span class="n">max</span> <span class="ow">and</span> <span class="n">low</span> <span class="o">&gt;=</span> <span class="n">i2</span><span class="o">.</span><span class="n">min</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">int16</span>
+    <span class="k">if</span> <span class="n">high</span> <span class="o">&lt;=</span> <span class="n">i4</span><span class="o">.</span><span class="n">max</span> <span class="ow">and</span> <span class="n">low</span> <span class="o">&gt;=</span> <span class="n">i4</span><span class="o">.</span><span class="n">min</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">int32</span>
+    <span class="k">return</span> <span class="n">int64</span>
+
+
+<div class="viewcode-block" id="fliplr"><a class="viewcode-back" href="../../../reference/generated/numpy.fliplr.html#numpy.fliplr">[docs]</a><span class="k">def</span> <span class="nf">fliplr</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Flip array in the left/right direction.</span>
+
+<span class="sd">    Flip the entries in each row in the left/right direction.</span>
+<span class="sd">    Columns are preserved, but appear in a different order than before.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    m : array_like</span>
+<span class="sd">        Input array, must be at least 2-D.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    f : ndarray</span>
+<span class="sd">        A view of `m` with the columns reversed.  Since a view</span>
+<span class="sd">        is returned, this operation is :math:`\\mathcal O(1)`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    flipud : Flip array in the up/down direction.</span>
+<span class="sd">    rot90 : Rotate array counterclockwise.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Equivalent to A[:,::-1]. Requires the array to be at least 2-D.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; A = np.diag([1.,2.,3.])</span>
+<span class="sd">    &gt;&gt;&gt; A</span>
+<span class="sd">    array([[ 1.,  0.,  0.],</span>
+<span class="sd">           [ 0.,  2.,  0.],</span>
+<span class="sd">           [ 0.,  0.,  3.]])</span>
+<span class="sd">    &gt;&gt;&gt; np.fliplr(A)</span>
+<span class="sd">    array([[ 0.,  0.,  1.],</span>
+<span class="sd">           [ 0.,  2.,  0.],</span>
+<span class="sd">           [ 3.,  0.,  0.]])</span>
+
+<span class="sd">    &gt;&gt;&gt; A = np.random.randn(2,3,5)</span>
+<span class="sd">    &gt;&gt;&gt; np.all(np.fliplr(A)==A[:,::-1,...])</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input must be &gt;= 2-d.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">m</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="flipud"><a class="viewcode-back" href="../../../reference/generated/numpy.flipud.html#numpy.flipud">[docs]</a><span class="k">def</span> <span class="nf">flipud</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Flip array in the up/down direction.</span>
+
+<span class="sd">    Flip the entries in each column in the up/down direction.</span>
+<span class="sd">    Rows are preserved, but appear in a different order than before.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    m : array_like</span>
+<span class="sd">        Input array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : array_like</span>
+<span class="sd">        A view of `m` with the rows reversed.  Since a view is</span>
+<span class="sd">        returned, this operation is :math:`\\mathcal O(1)`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    fliplr : Flip array in the left/right direction.</span>
+<span class="sd">    rot90 : Rotate array counterclockwise.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Equivalent to ``A[::-1,...]``.</span>
+<span class="sd">    Does not require the array to be two-dimensional.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; A = np.diag([1.0, 2, 3])</span>
+<span class="sd">    &gt;&gt;&gt; A</span>
+<span class="sd">    array([[ 1.,  0.,  0.],</span>
+<span class="sd">           [ 0.,  2.,  0.],</span>
+<span class="sd">           [ 0.,  0.,  3.]])</span>
+<span class="sd">    &gt;&gt;&gt; np.flipud(A)</span>
+<span class="sd">    array([[ 0.,  0.,  3.],</span>
+<span class="sd">           [ 0.,  2.,  0.],</span>
+<span class="sd">           [ 1.,  0.,  0.]])</span>
+
+<span class="sd">    &gt;&gt;&gt; A = np.random.randn(2,3,5)</span>
+<span class="sd">    &gt;&gt;&gt; np.all(np.flipud(A)==A[::-1,...])</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; np.flipud([1,2])</span>
+<span class="sd">    array([2, 1])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input must be &gt;= 1-d.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">m</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="rot90"><a class="viewcode-back" href="../../../reference/generated/numpy.rot90.html#numpy.rot90">[docs]</a><span class="k">def</span> <span class="nf">rot90</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rotate an array by 90 degrees in the counter-clockwise direction.</span>
+
+<span class="sd">    The first two dimensions are rotated; therefore, the array must be at</span>
+<span class="sd">    least 2-D.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    m : array_like</span>
+<span class="sd">        Array of two or more dimensions.</span>
+<span class="sd">    k : integer</span>
+<span class="sd">        Number of times the array is rotated by 90 degrees.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    y : ndarray</span>
+<span class="sd">        Rotated array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    fliplr : Flip an array horizontally.</span>
+<span class="sd">    flipud : Flip an array vertically.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; m = np.array([[1,2],[3,4]], int)</span>
+<span class="sd">    &gt;&gt;&gt; m</span>
+<span class="sd">    array([[1, 2],</span>
+<span class="sd">           [3, 4]])</span>
+<span class="sd">    &gt;&gt;&gt; np.rot90(m)</span>
+<span class="sd">    array([[2, 4],</span>
+<span class="sd">           [1, 3]])</span>
+<span class="sd">    &gt;&gt;&gt; np.rot90(m, 2)</span>
+<span class="sd">    array([[4, 3],</span>
+<span class="sd">           [2, 1]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input must &gt;= 2-d.&quot;</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">%</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">m</span>
+    <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fliplr</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fliplr</span><span class="p">(</span><span class="n">flipud</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># k == 3</span>
+        <span class="k">return</span> <span class="n">fliplr</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="eye"><a class="viewcode-back" href="../../../reference/generated/numpy.eye.html#numpy.eye">[docs]</a><span class="k">def</span> <span class="nf">eye</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a 2-D array with ones on the diagonal and zeros elsewhere.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    N : int</span>
+<span class="sd">      Number of rows in the output.</span>
+<span class="sd">    M : int, optional</span>
+<span class="sd">      Number of columns in the output. If None, defaults to `N`.</span>
+<span class="sd">    k : int, optional</span>
+<span class="sd">      Index of the diagonal: 0 (the default) refers to the main diagonal,</span>
+<span class="sd">      a positive value refers to an upper diagonal, and a negative value</span>
+<span class="sd">      to a lower diagonal.</span>
+<span class="sd">    dtype : data-type, optional</span>
+<span class="sd">      Data-type of the returned array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    I : ndarray of shape (N,M)</span>
+<span class="sd">      An array where all elements are equal to zero, except for the `k`-th</span>
+<span class="sd">      diagonal, whose values are equal to one.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    identity : (almost) equivalent function</span>
+<span class="sd">    diag : diagonal 2-D array from a 1-D array specified by the user.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.eye(2, dtype=int)</span>
+<span class="sd">    array([[1, 0],</span>
+<span class="sd">           [0, 1]])</span>
+<span class="sd">    &gt;&gt;&gt; np.eye(3, k=1)</span>
+<span class="sd">    array([[ 0.,  1.,  0.],</span>
+<span class="sd">           [ 0.,  0.,  1.],</span>
+<span class="sd">           [ 0.,  0.,  0.]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">M</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="n">N</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="n">M</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">m</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">k</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">M</span>
+    <span class="n">m</span><span class="p">[:</span><span class="n">M</span><span class="o">-</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">i</span><span class="p">::</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">m</span></div>
+
+
+<div class="viewcode-block" id="diag"><a class="viewcode-back" href="../../../reference/generated/numpy.diag.html#numpy.diag">[docs]</a><span class="k">def</span> <span class="nf">diag</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract a diagonal or construct a diagonal array.</span>
+
+<span class="sd">    See the more detailed documentation for ``numpy.diagonal`` if you use this</span>
+<span class="sd">    function to extract a diagonal and wish to write to the resulting array;</span>
+<span class="sd">    whether it returns a copy or a view depends on what version of numpy you</span>
+<span class="sd">    are using.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    v : array_like</span>
+<span class="sd">        If `v` is a 2-D array, return a copy of its `k`-th diagonal.</span>
+<span class="sd">        If `v` is a 1-D array, return a 2-D array with `v` on the `k`-th</span>
+<span class="sd">        diagonal.</span>
+<span class="sd">    k : int, optional</span>
+<span class="sd">        Diagonal in question. The default is 0. Use `k&gt;0` for diagonals</span>
+<span class="sd">        above the main diagonal, and `k&lt;0` for diagonals below the main</span>
+<span class="sd">        diagonal.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        The extracted diagonal or constructed diagonal array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    diagonal : Return specified diagonals.</span>
+<span class="sd">    diagflat : Create a 2-D array with the flattened input as a diagonal.</span>
+<span class="sd">    trace : Sum along diagonals.</span>
+<span class="sd">    triu : Upper triangle of an array.</span>
+<span class="sd">    tril : Lower triangle of an array.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x = np.arange(9).reshape((3,3))</span>
+<span class="sd">    &gt;&gt;&gt; x</span>
+<span class="sd">    array([[0, 1, 2],</span>
+<span class="sd">           [3, 4, 5],</span>
+<span class="sd">           [6, 7, 8]])</span>
+
+<span class="sd">    &gt;&gt;&gt; np.diag(x)</span>
+<span class="sd">    array([0, 4, 8])</span>
+<span class="sd">    &gt;&gt;&gt; np.diag(x, k=1)</span>
+<span class="sd">    array([1, 5])</span>
+<span class="sd">    &gt;&gt;&gt; np.diag(x, k=-1)</span>
+<span class="sd">    array([3, 7])</span>
+
+<span class="sd">    &gt;&gt;&gt; np.diag(np.diag(x))</span>
+<span class="sd">    array([[0, 0, 0],</span>
+<span class="sd">           [0, 4, 0],</span>
+<span class="sd">           [0, 0, 8]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">v</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">k</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span>
+        <span class="n">res</span><span class="p">[:</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">i</span><span class="p">::</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">return</span> <span class="n">res</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">diagonal</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input must be 1- or 2-d.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="diagflat"><a class="viewcode-back" href="../../../reference/generated/numpy.diagflat.html#numpy.diagflat">[docs]</a><span class="k">def</span> <span class="nf">diagflat</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a two-dimensional array with the flattened input as a diagonal.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    v : array_like</span>
+<span class="sd">        Input data, which is flattened and set as the `k`-th</span>
+<span class="sd">        diagonal of the output.</span>
+<span class="sd">    k : int, optional</span>
+<span class="sd">        Diagonal to set; 0, the default, corresponds to the &quot;main&quot; diagonal,</span>
+<span class="sd">        a positive (negative) `k` giving the number of the diagonal above</span>
+<span class="sd">        (below) the main.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        The 2-D output array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    diag : MATLAB work-alike for 1-D and 2-D arrays.</span>
+<span class="sd">    diagonal : Return specified diagonals.</span>
+<span class="sd">    trace : Sum along diagonals.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.diagflat([[1,2], [3,4]])</span>
+<span class="sd">    array([[1, 0, 0, 0],</span>
+<span class="sd">           [0, 2, 0, 0],</span>
+<span class="sd">           [0, 0, 3, 0],</span>
+<span class="sd">           [0, 0, 0, 4]])</span>
+
+<span class="sd">    &gt;&gt;&gt; np.diagflat([1,2], 1)</span>
+<span class="sd">    array([[0, 1, 0],</span>
+<span class="sd">           [0, 0, 2],</span>
+<span class="sd">           [0, 0, 0]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">wrap</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">__array_wrap__</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="n">wrap</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">v</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">fi</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">fi</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">n</span>
+    <span class="n">res</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">fi</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">wrap</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="tri"><a class="viewcode-back" href="../../../reference/generated/numpy.tri.html#numpy.tri">[docs]</a><span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    An array with ones at and below the given diagonal and zeros elsewhere.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    N : int</span>
+<span class="sd">        Number of rows in the array.</span>
+<span class="sd">    M : int, optional</span>
+<span class="sd">        Number of columns in the array.</span>
+<span class="sd">        By default, `M` is taken equal to `N`.</span>
+<span class="sd">    k : int, optional</span>
+<span class="sd">        The sub-diagonal at and below which the array is filled.</span>
+<span class="sd">        `k` = 0 is the main diagonal, while `k` &lt; 0 is below it,</span>
+<span class="sd">        and `k` &gt; 0 is above.  The default is 0.</span>
+<span class="sd">    dtype : dtype, optional</span>
+<span class="sd">        Data type of the returned array.  The default is float.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tri : ndarray of shape (N, M)</span>
+<span class="sd">        Array with its lower triangle filled with ones and zero elsewhere;</span>
+<span class="sd">        in other words ``T[i,j] == 1`` for ``i &lt;= j + k``, 0 otherwise.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.tri(3, 5, 2, dtype=int)</span>
+<span class="sd">    array([[1, 1, 1, 0, 0],</span>
+<span class="sd">           [1, 1, 1, 1, 0],</span>
+<span class="sd">           [1, 1, 1, 1, 1]])</span>
+
+<span class="sd">    &gt;&gt;&gt; np.tri(3, 5, -1)</span>
+<span class="sd">    array([[ 0.,  0.,  0.,  0.,  0.],</span>
+<span class="sd">           [ 1.,  0.,  0.,  0.,  0.],</span>
+<span class="sd">           [ 1.,  1.,  0.,  0.,  0.]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">M</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="n">N</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="n">greater_equal</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">_min_int</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)),</span>
+                            <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">,</span> <span class="n">M</span><span class="o">-</span><span class="n">k</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">_min_int</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">,</span> <span class="n">M</span> <span class="o">-</span> <span class="n">k</span><span class="p">)))</span>
+
+    <span class="c1"># Avoid making a copy if the requested type is already bool</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">m</span></div>
+
+
+<div class="viewcode-block" id="tril"><a class="viewcode-back" href="../../../reference/generated/numpy.tril.html#numpy.tril">[docs]</a><span class="k">def</span> <span class="nf">tril</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Lower triangle of an array.</span>
+
+<span class="sd">    Return a copy of an array with elements above the `k`-th diagonal zeroed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    m : array_like, shape (M, N)</span>
+<span class="sd">        Input array.</span>
+<span class="sd">    k : int, optional</span>
+<span class="sd">        Diagonal above which to zero elements.  `k = 0` (the default) is the</span>
+<span class="sd">        main diagonal, `k &lt; 0` is below it and `k &gt; 0` is above.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tril : ndarray, shape (M, N)</span>
+<span class="sd">        Lower triangle of `m`, of same shape and data-type as `m`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    triu : same thing, only for the upper triangle</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.tril([[1,2,3],[4,5,6],[7,8,9],[10,11,12]], -1)</span>
+<span class="sd">    array([[ 0,  0,  0],</span>
+<span class="sd">           [ 4,  0,  0],</span>
+<span class="sd">           [ 7,  8,  0],</span>
+<span class="sd">           [10, 11, 12]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">tri</span><span class="p">(</span><span class="o">*</span><span class="n">m</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">where</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="triu"><a class="viewcode-back" href="../../../reference/generated/numpy.triu.html#numpy.triu">[docs]</a><span class="k">def</span> <span class="nf">triu</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Upper triangle of an array.</span>
+
+<span class="sd">    Return a copy of a matrix with the elements below the `k`-th diagonal</span>
+<span class="sd">    zeroed.</span>
+
+<span class="sd">    Please refer to the documentation for `tril` for further details.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    tril : lower triangle of an array</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.triu([[1,2,3],[4,5,6],[7,8,9],[10,11,12]], -1)</span>
+<span class="sd">    array([[ 1,  2,  3],</span>
+<span class="sd">           [ 4,  5,  6],</span>
+<span class="sd">           [ 0,  8,  9],</span>
+<span class="sd">           [ 0,  0, 12]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">tri</span><span class="p">(</span><span class="o">*</span><span class="n">m</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">where</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span> <span class="n">m</span><span class="p">)</span></div>
+
+
+<span class="c1"># Originally borrowed from John Hunter and matplotlib</span>
+<div class="viewcode-block" id="vander"><a class="viewcode-back" href="../../../reference/generated/numpy.vander.html#numpy.vander">[docs]</a><span class="k">def</span> <span class="nf">vander</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">increasing</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a Vandermonde matrix.</span>
+
+<span class="sd">    The columns of the output matrix are powers of the input vector. The</span>
+<span class="sd">    order of the powers is determined by the `increasing` boolean argument.</span>
+<span class="sd">    Specifically, when `increasing` is False, the `i`-th output column is</span>
+<span class="sd">    the input vector raised element-wise to the power of ``N - i - 1``. Such</span>
+<span class="sd">    a matrix with a geometric progression in each row is named for Alexandre-</span>
+<span class="sd">    Theophile Vandermonde.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        1-D input array.</span>
+<span class="sd">    N : int, optional</span>
+<span class="sd">        Number of columns in the output.  If `N` is not specified, a square</span>
+<span class="sd">        array is returned (``N = len(x)``).</span>
+<span class="sd">    increasing : bool, optional</span>
+<span class="sd">        Order of the powers of the columns.  If True, the powers increase</span>
+<span class="sd">        from left to right, if False (the default) they are reversed.</span>
+
+<span class="sd">        .. versionadded:: 1.9.0</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        Vandermonde matrix.  If `increasing` is False, the first column is</span>
+<span class="sd">        ``x^(N-1)``, the second ``x^(N-2)`` and so forth. If `increasing` is</span>
+<span class="sd">        True, the columns are ``x^0, x^1, ..., x^(N-1)``.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    polynomial.polynomial.polyvander</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x = np.array([1, 2, 3, 5])</span>
+<span class="sd">    &gt;&gt;&gt; N = 3</span>
+<span class="sd">    &gt;&gt;&gt; np.vander(x, N)</span>
+<span class="sd">    array([[ 1,  1,  1],</span>
+<span class="sd">           [ 4,  2,  1],</span>
+<span class="sd">           [ 9,  3,  1],</span>
+<span class="sd">           [25,  5,  1]])</span>
+
+<span class="sd">    &gt;&gt;&gt; np.column_stack([x**(N-1-i) for i in range(N)])</span>
+<span class="sd">    array([[ 1,  1,  1],</span>
+<span class="sd">           [ 4,  2,  1],</span>
+<span class="sd">           [ 9,  3,  1],</span>
+<span class="sd">           [25,  5,  1]])</span>
+
+<span class="sd">    &gt;&gt;&gt; x = np.array([1, 2, 3, 5])</span>
+<span class="sd">    &gt;&gt;&gt; np.vander(x)</span>
+<span class="sd">    array([[  1,   1,   1,   1],</span>
+<span class="sd">           [  8,   4,   2,   1],</span>
+<span class="sd">           [ 27,   9,   3,   1],</span>
+<span class="sd">           [125,  25,   5,   1]])</span>
+<span class="sd">    &gt;&gt;&gt; np.vander(x, increasing=True)</span>
+<span class="sd">    array([[  1,   1,   1,   1],</span>
+<span class="sd">           [  1,   2,   4,   8],</span>
+<span class="sd">           [  1,   3,   9,  27],</span>
+<span class="sd">           [  1,   5,  25, 125]])</span>
+
+<span class="sd">    The determinant of a square Vandermonde matrix is the product</span>
+<span class="sd">    of the differences between the values of the input vector:</span>
+
+<span class="sd">    &gt;&gt;&gt; np.linalg.det(np.vander(x))</span>
+<span class="sd">    48.000000000000043</span>
+<span class="sd">    &gt;&gt;&gt; (5-3)*(5-2)*(5-1)*(3-2)*(3-1)*(2-1)</span>
+<span class="sd">    48</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;x must be a one-dimensional array or sequence.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">v</span> <span class="o">=</span> <span class="n">empty</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">N</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">promote_types</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="nb">int</span><span class="p">))</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">increasing</span> <span class="k">else</span> <span class="n">v</span>
+
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">tmp</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">tmp</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="bp">None</span><span class="p">]</span>
+        <span class="n">multiply</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">tmp</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">out</span><span class="o">=</span><span class="n">tmp</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">v</span></div>
+
+
+<div class="viewcode-block" id="histogram2d"><a class="viewcode-back" href="../../../reference/generated/numpy.histogram2d.html#numpy.histogram2d">[docs]</a><span class="k">def</span> <span class="nf">histogram2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the bi-dimensional histogram of two data samples.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : array_like, shape (N,)</span>
+<span class="sd">        An array containing the x coordinates of the points to be</span>
+<span class="sd">        histogrammed.</span>
+<span class="sd">    y : array_like, shape (N,)</span>
+<span class="sd">        An array containing the y coordinates of the points to be</span>
+<span class="sd">        histogrammed.</span>
+<span class="sd">    bins : int or array_like or [int, int] or [array, array], optional</span>
+<span class="sd">        The bin specification:</span>
+
+<span class="sd">          * If int, the number of bins for the two dimensions (nx=ny=bins).</span>
+<span class="sd">          * If array_like, the bin edges for the two dimensions</span>
+<span class="sd">            (x_edges=y_edges=bins).</span>
+<span class="sd">          * If [int, int], the number of bins in each dimension</span>
+<span class="sd">            (nx, ny = bins).</span>
+<span class="sd">          * If [array, array], the bin edges in each dimension</span>
+<span class="sd">            (x_edges, y_edges = bins).</span>
+<span class="sd">          * A combination [int, array] or [array, int], where int</span>
+<span class="sd">            is the number of bins and array is the bin edges.</span>
+
+<span class="sd">    range : array_like, shape(2,2), optional</span>
+<span class="sd">        The leftmost and rightmost edges of the bins along each dimension</span>
+<span class="sd">        (if not specified explicitly in the `bins` parameters):</span>
+<span class="sd">        ``[[xmin, xmax], [ymin, ymax]]``. All values outside of this range</span>
+<span class="sd">        will be considered outliers and not tallied in the histogram.</span>
+<span class="sd">    normed : bool, optional</span>
+<span class="sd">        If False, returns the number of samples in each bin. If True,</span>
+<span class="sd">        returns the bin density ``bin_count / sample_count / bin_area``.</span>
+<span class="sd">    weights : array_like, shape(N,), optional</span>
+<span class="sd">        An array of values ``w_i`` weighing each sample ``(x_i, y_i)``.</span>
+<span class="sd">        Weights are normalized to 1 if `normed` is True. If `normed` is</span>
+<span class="sd">        False, the values of the returned histogram are equal to the sum of</span>
+<span class="sd">        the weights belonging to the samples falling into each bin.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    H : ndarray, shape(nx, ny)</span>
+<span class="sd">        The bi-dimensional histogram of samples `x` and `y`. Values in `x`</span>
+<span class="sd">        are histogrammed along the first dimension and values in `y` are</span>
+<span class="sd">        histogrammed along the second dimension.</span>
+<span class="sd">    xedges : ndarray, shape(nx,)</span>
+<span class="sd">        The bin edges along the first dimension.</span>
+<span class="sd">    yedges : ndarray, shape(ny,)</span>
+<span class="sd">        The bin edges along the second dimension.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    histogram : 1D histogram</span>
+<span class="sd">    histogramdd : Multidimensional histogram</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    When `normed` is True, then the returned histogram is the sample</span>
+<span class="sd">    density, defined such that the sum over bins of the product</span>
+<span class="sd">    ``bin_value * bin_area`` is 1.</span>
+
+<span class="sd">    Please note that the histogram does not follow the Cartesian convention</span>
+<span class="sd">    where `x` values are on the abscissa and `y` values on the ordinate</span>
+<span class="sd">    axis.  Rather, `x` is histogrammed along the first dimension of the</span>
+<span class="sd">    array (vertical), and `y` along the second dimension of the array</span>
+<span class="sd">    (horizontal).  This ensures compatibility with `histogramdd`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib as mpl</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+
+<span class="sd">    Construct a 2D-histogram with variable bin width. First define the bin</span>
+<span class="sd">    edges:</span>
+
+<span class="sd">    &gt;&gt;&gt; xedges = [0, 1, 1.5, 3, 5]</span>
+<span class="sd">    &gt;&gt;&gt; yedges = [0, 2, 3, 4, 6]</span>
+
+<span class="sd">    Next we create a histogram H with random bin content:</span>
+
+<span class="sd">    &gt;&gt;&gt; x = np.random.normal(3, 1, 100)</span>
+<span class="sd">    &gt;&gt;&gt; y = np.random.normal(1, 1, 100)</span>
+<span class="sd">    &gt;&gt;&gt; H, xedges, yedges = np.histogram2d(y, x, bins=(xedges, yedges))</span>
+
+<span class="sd">    Or we fill the histogram H with a determined bin content:</span>
+
+<span class="sd">    &gt;&gt;&gt; H = np.ones((4, 4)).cumsum().reshape(4, 4)</span>
+<span class="sd">    &gt;&gt;&gt; print H[::-1]  # This shows the bin content in the order as plotted</span>
+<span class="sd">    [[ 13.  14.  15.  16.]</span>
+<span class="sd">     [  9.  10.  11.  12.]</span>
+<span class="sd">     [  5.   6.   7.   8.]</span>
+<span class="sd">     [  1.   2.   3.   4.]]</span>
+
+<span class="sd">    Imshow can only do an equidistant representation of bins:</span>
+
+<span class="sd">    &gt;&gt;&gt; fig = plt.figure(figsize=(7, 3))</span>
+<span class="sd">    &gt;&gt;&gt; ax = fig.add_subplot(131)</span>
+<span class="sd">    &gt;&gt;&gt; ax.set_title(&#39;imshow: equidistant&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; im = plt.imshow(H, interpolation=&#39;nearest&#39;, origin=&#39;low&#39;,</span>
+<span class="sd">                    extent=[xedges[0], xedges[-1], yedges[0], yedges[-1]])</span>
+
+<span class="sd">    pcolormesh can display exact bin edges:</span>
+
+<span class="sd">    &gt;&gt;&gt; ax = fig.add_subplot(132)</span>
+<span class="sd">    &gt;&gt;&gt; ax.set_title(&#39;pcolormesh: exact bin edges&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; X, Y = np.meshgrid(xedges, yedges)</span>
+<span class="sd">    &gt;&gt;&gt; ax.pcolormesh(X, Y, H)</span>
+<span class="sd">    &gt;&gt;&gt; ax.set_aspect(&#39;equal&#39;)</span>
+
+<span class="sd">    NonUniformImage displays exact bin edges with interpolation:</span>
+
+<span class="sd">    &gt;&gt;&gt; ax = fig.add_subplot(133)</span>
+<span class="sd">    &gt;&gt;&gt; ax.set_title(&#39;NonUniformImage: interpolated&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; im = mpl.image.NonUniformImage(ax, interpolation=&#39;bilinear&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; xcenters = xedges[:-1] + 0.5 * (xedges[1:] - xedges[:-1])</span>
+<span class="sd">    &gt;&gt;&gt; ycenters = yedges[:-1] + 0.5 * (yedges[1:] - yedges[:-1])</span>
+<span class="sd">    &gt;&gt;&gt; im.set_data(xcenters, ycenters, H)</span>
+<span class="sd">    &gt;&gt;&gt; ax.images.append(im)</span>
+<span class="sd">    &gt;&gt;&gt; ax.set_xlim(xedges[0], xedges[-1])</span>
+<span class="sd">    &gt;&gt;&gt; ax.set_ylim(yedges[0], yedges[-1])</span>
+<span class="sd">    &gt;&gt;&gt; ax.set_aspect(&#39;equal&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; plt.show()</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">histogramdd</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">N</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">N</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">xedges</span> <span class="o">=</span> <span class="n">yedges</span> <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span><span class="p">]</span>
+    <span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">histogramdd</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">normed</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hist</span><span class="p">,</span> <span class="n">edges</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="mask_indices"><a class="viewcode-back" href="../../../reference/generated/numpy.mask_indices.html#numpy.mask_indices">[docs]</a><span class="k">def</span> <span class="nf">mask_indices</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mask_func</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the indices to access (n, n) arrays, given a masking function.</span>
+
+<span class="sd">    Assume `mask_func` is a function that, for a square array a of size</span>
+<span class="sd">    ``(n, n)`` with a possible offset argument `k`, when called as</span>
+<span class="sd">    ``mask_func(a, k)`` returns a new array with zeros in certain locations</span>
+<span class="sd">    (functions like `triu` or `tril` do precisely this). Then this function</span>
+<span class="sd">    returns the indices where the non-zero values would be located.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The returned indices will be valid to access arrays of shape (n, n).</span>
+<span class="sd">    mask_func : callable</span>
+<span class="sd">        A function whose call signature is similar to that of `triu`, `tril`.</span>
+<span class="sd">        That is, ``mask_func(x, k)`` returns a boolean array, shaped like `x`.</span>
+<span class="sd">        `k` is an optional argument to the function.</span>
+<span class="sd">    k : scalar</span>
+<span class="sd">        An optional argument which is passed through to `mask_func`. Functions</span>
+<span class="sd">        like `triu`, `tril` take a second argument that is interpreted as an</span>
+<span class="sd">        offset.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    indices : tuple of arrays.</span>
+<span class="sd">        The `n` arrays of indices corresponding to the locations where</span>
+<span class="sd">        ``mask_func(np.ones((n, n)), k)`` is True.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    triu, tril, triu_indices, tril_indices</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    .. versionadded:: 1.4.0</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    These are the indices that would allow you to access the upper triangular</span>
+<span class="sd">    part of any 3x3 array:</span>
+
+<span class="sd">    &gt;&gt;&gt; iu = np.mask_indices(3, np.triu)</span>
+
+<span class="sd">    For example, if `a` is a 3x3 array:</span>
+
+<span class="sd">    &gt;&gt;&gt; a = np.arange(9).reshape(3, 3)</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([[0, 1, 2],</span>
+<span class="sd">           [3, 4, 5],</span>
+<span class="sd">           [6, 7, 8]])</span>
+<span class="sd">    &gt;&gt;&gt; a[iu]</span>
+<span class="sd">    array([0, 1, 2, 4, 5, 8])</span>
+
+<span class="sd">    An offset can be passed also to the masking function.  This gets us the</span>
+<span class="sd">    indices starting on the first diagonal right of the main one:</span>
+
+<span class="sd">    &gt;&gt;&gt; iu1 = np.mask_indices(3, np.triu, 1)</span>
+
+<span class="sd">    with which we now extract only three elements:</span>
+
+<span class="sd">    &gt;&gt;&gt; a[iu1]</span>
+<span class="sd">    array([1, 2, 5])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">mask_func</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">where</span><span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="tril_indices"><a class="viewcode-back" href="../../../reference/generated/numpy.tril_indices.html#numpy.tril_indices">[docs]</a><span class="k">def</span> <span class="nf">tril_indices</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the indices for the lower-triangle of an (n, m) array.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The row dimension of the arrays for which the returned</span>
+<span class="sd">        indices will be valid.</span>
+<span class="sd">    k : int, optional</span>
+<span class="sd">        Diagonal offset (see `tril` for details).</span>
+<span class="sd">    m : int, optional</span>
+<span class="sd">        .. versionadded:: 1.9.0</span>
+
+<span class="sd">        The column dimension of the arrays for which the returned</span>
+<span class="sd">        arrays will be valid.</span>
+<span class="sd">        By default `m` is taken equal to `n`.</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    inds : tuple of arrays</span>
+<span class="sd">        The indices for the triangle. The returned tuple contains two arrays,</span>
+<span class="sd">        each with the indices along one dimension of the array.</span>
+
+<span class="sd">    See also</span>
+<span class="sd">    --------</span>
+<span class="sd">    triu_indices : similar function, for upper-triangular.</span>
+<span class="sd">    mask_indices : generic function accepting an arbitrary mask function.</span>
+<span class="sd">    tril, triu</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    .. versionadded:: 1.4.0</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Compute two different sets of indices to access 4x4 arrays, one for the</span>
+<span class="sd">    lower triangular part starting at the main diagonal, and one starting two</span>
+<span class="sd">    diagonals further right:</span>
+
+<span class="sd">    &gt;&gt;&gt; il1 = np.tril_indices(4)</span>
+<span class="sd">    &gt;&gt;&gt; il2 = np.tril_indices(4, 2)</span>
+
+<span class="sd">    Here is how they can be used with a sample array:</span>
+
+<span class="sd">    &gt;&gt;&gt; a = np.arange(16).reshape(4, 4)</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([[ 0,  1,  2,  3],</span>
+<span class="sd">           [ 4,  5,  6,  7],</span>
+<span class="sd">           [ 8,  9, 10, 11],</span>
+<span class="sd">           [12, 13, 14, 15]])</span>
+
+<span class="sd">    Both for indexing:</span>
+
+<span class="sd">    &gt;&gt;&gt; a[il1]</span>
+<span class="sd">    array([ 0,  4,  5,  8,  9, 10, 12, 13, 14, 15])</span>
+
+<span class="sd">    And for assigning values:</span>
+
+<span class="sd">    &gt;&gt;&gt; a[il1] = -1</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([[-1,  1,  2,  3],</span>
+<span class="sd">           [-1, -1,  6,  7],</span>
+<span class="sd">           [-1, -1, -1, 11],</span>
+<span class="sd">           [-1, -1, -1, -1]])</span>
+
+<span class="sd">    These cover almost the whole array (two diagonals right of the main one):</span>
+
+<span class="sd">    &gt;&gt;&gt; a[il2] = -10</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([[-10, -10, -10,   3],</span>
+<span class="sd">           [-10, -10, -10, -10],</span>
+<span class="sd">           [-10, -10, -10, -10],</span>
+<span class="sd">           [-10, -10, -10, -10]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">where</span><span class="p">(</span><span class="n">tri</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="tril_indices_from"><a class="viewcode-back" href="../../../reference/generated/numpy.tril_indices_from.html#numpy.tril_indices_from">[docs]</a><span class="k">def</span> <span class="nf">tril_indices_from</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the indices for the lower-triangle of arr.</span>
+
+<span class="sd">    See `tril_indices` for full details.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : array_like</span>
+<span class="sd">        The indices will be valid for square arrays whose dimensions are</span>
+<span class="sd">        the same as arr.</span>
+<span class="sd">    k : int, optional</span>
+<span class="sd">        Diagonal offset (see `tril` for details).</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    tril_indices, tril</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    .. versionadded:: 1.4.0</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;input array must be 2-d&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tril_indices</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="triu_indices"><a class="viewcode-back" href="../../../reference/generated/numpy.triu_indices.html#numpy.triu_indices">[docs]</a><span class="k">def</span> <span class="nf">triu_indices</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the indices for the upper-triangle of an (n, m) array.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The size of the arrays for which the returned indices will</span>
+<span class="sd">        be valid.</span>
+<span class="sd">    k : int, optional</span>
+<span class="sd">        Diagonal offset (see `triu` for details).</span>
+<span class="sd">    m : int, optional</span>
+<span class="sd">        .. versionadded:: 1.9.0</span>
+
+<span class="sd">        The column dimension of the arrays for which the returned</span>
+<span class="sd">        arrays will be valid.</span>
+<span class="sd">        By default `m` is taken equal to `n`.</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    inds : tuple, shape(2) of ndarrays, shape(`n`)</span>
+<span class="sd">        The indices for the triangle. The returned tuple contains two arrays,</span>
+<span class="sd">        each with the indices along one dimension of the array.  Can be used</span>
+<span class="sd">        to slice a ndarray of shape(`n`, `n`).</span>
+
+<span class="sd">    See also</span>
+<span class="sd">    --------</span>
+<span class="sd">    tril_indices : similar function, for lower-triangular.</span>
+<span class="sd">    mask_indices : generic function accepting an arbitrary mask function.</span>
+<span class="sd">    triu, tril</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    .. versionadded:: 1.4.0</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Compute two different sets of indices to access 4x4 arrays, one for the</span>
+<span class="sd">    upper triangular part starting at the main diagonal, and one starting two</span>
+<span class="sd">    diagonals further right:</span>
+
+<span class="sd">    &gt;&gt;&gt; iu1 = np.triu_indices(4)</span>
+<span class="sd">    &gt;&gt;&gt; iu2 = np.triu_indices(4, 2)</span>
+
+<span class="sd">    Here is how they can be used with a sample array:</span>
+
+<span class="sd">    &gt;&gt;&gt; a = np.arange(16).reshape(4, 4)</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([[ 0,  1,  2,  3],</span>
+<span class="sd">           [ 4,  5,  6,  7],</span>
+<span class="sd">           [ 8,  9, 10, 11],</span>
+<span class="sd">           [12, 13, 14, 15]])</span>
+
+<span class="sd">    Both for indexing:</span>
+
+<span class="sd">    &gt;&gt;&gt; a[iu1]</span>
+<span class="sd">    array([ 0,  1,  2,  3,  5,  6,  7, 10, 11, 15])</span>
+
+<span class="sd">    And for assigning values:</span>
+
+<span class="sd">    &gt;&gt;&gt; a[iu1] = -1</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([[-1, -1, -1, -1],</span>
+<span class="sd">           [ 4, -1, -1, -1],</span>
+<span class="sd">           [ 8,  9, -1, -1],</span>
+<span class="sd">           [12, 13, 14, -1]])</span>
+
+<span class="sd">    These cover only a small part of the whole array (two diagonals right</span>
+<span class="sd">    of the main one):</span>
+
+<span class="sd">    &gt;&gt;&gt; a[iu2] = -10</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([[ -1,  -1, -10, -10],</span>
+<span class="sd">           [  4,  -1,  -1, -10],</span>
+<span class="sd">           [  8,   9,  -1,  -1],</span>
+<span class="sd">           [ 12,  13,  14,  -1]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">where</span><span class="p">(</span><span class="o">~</span><span class="n">tri</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="triu_indices_from"><a class="viewcode-back" href="../../../reference/generated/numpy.triu_indices_from.html#numpy.triu_indices_from">[docs]</a><span class="k">def</span> <span class="nf">triu_indices_from</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the indices for the upper-triangle of arr.</span>
+
+<span class="sd">    See `triu_indices` for full details.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : ndarray, shape(N, N)</span>
+<span class="sd">        The indices will be valid for square arrays.</span>
+<span class="sd">    k : int, optional</span>
+<span class="sd">        Diagonal offset (see `triu` for details).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    triu_indices_from : tuple, shape(2) of ndarray, shape(N)</span>
+<span class="sd">        Indices for the upper-triangle of `arr`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    triu_indices, triu</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    .. versionadded:: 1.4.0</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;input array must be 2-d&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">triu_indices</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

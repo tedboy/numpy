@@ -1,0 +1,6 @@
+numpy.inexact.real
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: inexact.real

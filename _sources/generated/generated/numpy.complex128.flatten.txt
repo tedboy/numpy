@@ -1,0 +1,6 @@
+numpy.complex128.flatten
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.flatten

@@ -1,0 +1,6 @@
+numpy.singlecomplex.shape
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.shape

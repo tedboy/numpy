@@ -1,0 +1,6 @@
+numpy.void.min
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: void.min

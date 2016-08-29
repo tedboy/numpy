@@ -1,0 +1,6 @@
+numpy.longcomplex.clip
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.clip

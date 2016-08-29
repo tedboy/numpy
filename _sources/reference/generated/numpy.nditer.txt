@@ -1,0 +1,51 @@
+numpy.nditer
+============
+
+.. currentmodule:: numpy
+
+.. autoclass:: nditer
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~nditer.copy
+      ~nditer.debug_print
+      ~nditer.enable_external_loop
+      ~nditer.iternext
+      ~nditer.remove_axis
+      ~nditer.remove_multi_index
+      ~nditer.reset
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~nditer.dtypes
+      ~nditer.finished
+      ~nditer.has_delayed_bufalloc
+      ~nditer.has_index
+      ~nditer.has_multi_index
+      ~nditer.index
+      ~nditer.iterationneedsapi
+      ~nditer.iterindex
+      ~nditer.iterrange
+      ~nditer.itersize
+      ~nditer.itviews
+      ~nditer.multi_index
+      ~nditer.ndim
+      ~nditer.next
+      ~nditer.nop
+      ~nditer.operands
+      ~nditer.shape
+      ~nditer.value
+   
+   

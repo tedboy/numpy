@@ -1,0 +1,6 @@
+numpy.lib.nanstd
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nanstd

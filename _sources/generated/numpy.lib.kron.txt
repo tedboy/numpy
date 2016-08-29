@@ -1,0 +1,6 @@
+numpy.lib.kron
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: kron

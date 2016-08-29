@@ -1,0 +1,6 @@
+numpy.bool_.view
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.view

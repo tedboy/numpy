@@ -1,0 +1,6 @@
+numpy.string_.setflags
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.setflags

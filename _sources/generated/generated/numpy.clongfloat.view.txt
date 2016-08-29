@@ -1,0 +1,6 @@
+numpy.clongfloat.view
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.view

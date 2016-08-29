@@ -1,0 +1,6 @@
+numpy.bool8.conj
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.conj

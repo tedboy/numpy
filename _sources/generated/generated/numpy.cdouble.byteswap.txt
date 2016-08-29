@@ -1,0 +1,6 @@
+numpy.cdouble.byteswap
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.byteswap

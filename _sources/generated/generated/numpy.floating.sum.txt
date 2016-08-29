@@ -1,0 +1,6 @@
+numpy.floating.sum
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.sum

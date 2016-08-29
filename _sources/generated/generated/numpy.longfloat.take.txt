@@ -1,0 +1,6 @@
+numpy.longfloat.take
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.take

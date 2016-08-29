@@ -1,0 +1,6 @@
+numpy.singlecomplex.all
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.all

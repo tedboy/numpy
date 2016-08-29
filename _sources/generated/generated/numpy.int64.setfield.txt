@@ -1,0 +1,6 @@
+numpy.int64.setfield
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: int64.setfield

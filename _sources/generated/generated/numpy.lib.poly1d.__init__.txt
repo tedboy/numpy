@@ -1,0 +1,6 @@
+numpy.lib.poly1d.__init__
+=========================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: poly1d.__init__

@@ -1,0 +1,6 @@
+numpy.uintp.sort
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.sort

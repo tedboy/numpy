@@ -1,0 +1,6 @@
+numpy.longdouble.conj
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.conj

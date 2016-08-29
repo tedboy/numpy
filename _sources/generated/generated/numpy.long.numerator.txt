@@ -1,0 +1,6 @@
+numpy.long.numerator
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: long.numerator

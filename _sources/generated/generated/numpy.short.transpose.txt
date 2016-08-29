@@ -1,0 +1,6 @@
+numpy.short.transpose
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.transpose

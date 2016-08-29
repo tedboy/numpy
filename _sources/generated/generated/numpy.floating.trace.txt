@@ -1,0 +1,6 @@
+numpy.floating.trace
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.trace

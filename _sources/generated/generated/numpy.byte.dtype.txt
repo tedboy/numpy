@@ -1,0 +1,6 @@
+numpy.byte.dtype
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.dtype

@@ -1,0 +1,6 @@
+numpy.longdouble.reshape
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.reshape

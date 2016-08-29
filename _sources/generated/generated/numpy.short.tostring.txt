@@ -1,0 +1,6 @@
+numpy.short.tostring
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.tostring

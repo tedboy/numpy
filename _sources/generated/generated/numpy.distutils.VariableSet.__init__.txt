@@ -1,0 +1,6 @@
+numpy.distutils.VariableSet.__init__
+====================================
+
+.. currentmodule:: numpy.distutils
+
+.. automethod:: VariableSet.__init__

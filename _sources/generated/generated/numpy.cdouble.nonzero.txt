@@ -1,0 +1,6 @@
+numpy.cdouble.nonzero
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.nonzero

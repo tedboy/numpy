@@ -1,0 +1,6 @@
+numpy.str_.argmin
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.argmin

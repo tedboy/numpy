@@ -1,0 +1,958 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>numpy.lib.financial &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../../index.html"/>
+        <link rel="up" title="numpy" href="../../numpy.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../numpy.html">numpy</a> &raquo;</li>
+        
+      <li>numpy.lib.financial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for numpy.lib.financial</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Some simple financial calculations</span>
+
+<span class="sd">patterned after spreadsheet computations.</span>
+
+<span class="sd">There is some complexity in each function</span>
+<span class="sd">so that the functions behave like ufuncs with</span>
+<span class="sd">broadcasting and being able to be called with scalars</span>
+<span class="sd">or arrays (or other sequences).</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fv&#39;</span><span class="p">,</span> <span class="s1">&#39;pmt&#39;</span><span class="p">,</span> <span class="s1">&#39;nper&#39;</span><span class="p">,</span> <span class="s1">&#39;ipmt&#39;</span><span class="p">,</span> <span class="s1">&#39;ppmt&#39;</span><span class="p">,</span> <span class="s1">&#39;pv&#39;</span><span class="p">,</span> <span class="s1">&#39;rate&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;irr&#39;</span><span class="p">,</span> <span class="s1">&#39;npv&#39;</span><span class="p">,</span> <span class="s1">&#39;mirr&#39;</span><span class="p">]</span>
+
+<span class="n">_when_to_num</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;end&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;begin&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;e&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;beginning&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;start&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;finish&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">_convert_when</span><span class="p">(</span><span class="n">when</span><span class="p">):</span>
+    <span class="c1">#Test to see if when has already been converted to ndarray</span>
+    <span class="c1">#This will happen if one function calls another, for example ppmt</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">when</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">when</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_when_to_num</span><span class="p">[</span><span class="n">when</span><span class="p">]</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">_when_to_num</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">when</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="fv"><a class="viewcode-back" href="../../../reference/generated/numpy.fv.html#numpy.fv">[docs]</a><span class="k">def</span> <span class="nf">fv</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the future value.</span>
+
+<span class="sd">    Given:</span>
+<span class="sd">     * a present value, `pv`</span>
+<span class="sd">     * an interest `rate` compounded once per period, of which</span>
+<span class="sd">       there are</span>
+<span class="sd">     * `nper` total</span>
+<span class="sd">     * a (fixed) payment, `pmt`, paid either</span>
+<span class="sd">     * at the beginning (`when` = {&#39;begin&#39;, 1}) or the end</span>
+<span class="sd">       (`when` = {&#39;end&#39;, 0}) of each period</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">       the value at the end of the `nper` periods</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rate : scalar or array_like of shape(M, )</span>
+<span class="sd">        Rate of interest as decimal (not per cent) per period</span>
+<span class="sd">    nper : scalar or array_like of shape(M, )</span>
+<span class="sd">        Number of compounding periods</span>
+<span class="sd">    pmt : scalar or array_like of shape(M, )</span>
+<span class="sd">        Payment</span>
+<span class="sd">    pv : scalar or array_like of shape(M, )</span>
+<span class="sd">        Present value</span>
+<span class="sd">    when : {{&#39;begin&#39;, 1}, {&#39;end&#39;, 0}}, {string, int}, optional</span>
+<span class="sd">        When payments are due (&#39;begin&#39; (1) or &#39;end&#39; (0)).</span>
+<span class="sd">        Defaults to {&#39;end&#39;, 0}.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        Future values.  If all input is scalar, returns a scalar float.  If</span>
+<span class="sd">        any input is array_like, returns future values for each input element.</span>
+<span class="sd">        If multiple inputs are array_like, they all must have the same shape.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The future value is computed by solving the equation::</span>
+
+<span class="sd">     fv +</span>
+<span class="sd">     pv*(1+rate)**nper +</span>
+<span class="sd">     pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) == 0</span>
+
+<span class="sd">    or, when ``rate == 0``::</span>
+
+<span class="sd">     fv + pv + pmt * nper == 0</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [WRW] Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May).</span>
+<span class="sd">       Open Document Format for Office Applications (OpenDocument)v1.2,</span>
+<span class="sd">       Part 2: Recalculated Formula (OpenFormula) Format - Annotated Version,</span>
+<span class="sd">       Pre-Draft 12. Organization for the Advancement of Structured Information</span>
+<span class="sd">       Standards (OASIS). Billerica, MA, USA. [ODT Document].</span>
+<span class="sd">       Available:</span>
+<span class="sd">       http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula</span>
+<span class="sd">       OpenDocument-formula-20090508.odt</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    What is the future value after 10 years of saving $100 now, with</span>
+<span class="sd">    an additional monthly savings of $100.  Assume the interest rate is</span>
+<span class="sd">    5% (annually) compounded monthly?</span>
+
+<span class="sd">    &gt;&gt;&gt; np.fv(0.05/12, 10*12, -100, -100)</span>
+<span class="sd">    15692.928894335748</span>
+
+<span class="sd">    By convention, the negative sign represents cash flow out (i.e. money not</span>
+<span class="sd">    available today).  Thus, saving $100 a month at 5% annual interest leads</span>
+<span class="sd">    to $15,692.93 available to spend in 10 years.</span>
+
+<span class="sd">    If any input is array_like, returns an array of equal shape.  Let&#39;s</span>
+<span class="sd">    compare different interest rates from the example above.</span>
+
+<span class="sd">    &gt;&gt;&gt; a = np.array((0.05, 0.06, 0.07))/12</span>
+<span class="sd">    &gt;&gt;&gt; np.fv(a, 10*12, -100, -100)</span>
+<span class="sd">    array([ 15692.92889434,  16569.87435405,  17509.44688102])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">when</span> <span class="o">=</span> <span class="n">_convert_when</span><span class="p">(</span><span class="n">when</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">,</span> <span class="p">[</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">when</span><span class="p">])</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span>
+    <span class="n">miter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span>
+    <span class="n">zer</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">miter</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">fact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">rate</span> <span class="o">==</span> <span class="n">zer</span><span class="p">,</span> <span class="n">nper</span> <span class="o">+</span> <span class="n">zer</span><span class="p">,</span>
+                    <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="o">*</span><span class="n">when</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">temp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">rate</span> <span class="o">+</span> <span class="n">zer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">pv</span><span class="o">*</span><span class="n">temp</span> <span class="o">+</span> <span class="n">pmt</span><span class="o">*</span><span class="n">fact</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="pmt"><a class="viewcode-back" href="../../../reference/generated/numpy.pmt.html#numpy.pmt">[docs]</a><span class="k">def</span> <span class="nf">pmt</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the payment against loan principal plus interest.</span>
+
+<span class="sd">    Given:</span>
+<span class="sd">     * a present value, `pv` (e.g., an amount borrowed)</span>
+<span class="sd">     * a future value, `fv` (e.g., 0)</span>
+<span class="sd">     * an interest `rate` compounded once per period, of which</span>
+<span class="sd">       there are</span>
+<span class="sd">     * `nper` total</span>
+<span class="sd">     * and (optional) specification of whether payment is made</span>
+<span class="sd">       at the beginning (`when` = {&#39;begin&#39;, 1}) or the end</span>
+<span class="sd">       (`when` = {&#39;end&#39;, 0}) of each period</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">       the (fixed) periodic payment.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rate : array_like</span>
+<span class="sd">        Rate of interest (per period)</span>
+<span class="sd">    nper : array_like</span>
+<span class="sd">        Number of compounding periods</span>
+<span class="sd">    pv : array_like</span>
+<span class="sd">        Present value</span>
+<span class="sd">    fv : array_like,  optional</span>
+<span class="sd">        Future value (default = 0)</span>
+<span class="sd">    when : {{&#39;begin&#39;, 1}, {&#39;end&#39;, 0}}, {string, int}</span>
+<span class="sd">        When payments are due (&#39;begin&#39; (1) or &#39;end&#39; (0))</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        Payment against loan plus interest.  If all input is scalar, returns a</span>
+<span class="sd">        scalar float.  If any input is array_like, returns payment for each</span>
+<span class="sd">        input element. If multiple inputs are array_like, they all must have</span>
+<span class="sd">        the same shape.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The payment is computed by solving the equation::</span>
+
+<span class="sd">     fv +</span>
+<span class="sd">     pv*(1 + rate)**nper +</span>
+<span class="sd">     pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) == 0</span>
+
+<span class="sd">    or, when ``rate == 0``::</span>
+
+<span class="sd">      fv + pv + pmt * nper == 0</span>
+
+<span class="sd">    for ``pmt``.</span>
+
+<span class="sd">    Note that computing a monthly mortgage payment is only</span>
+<span class="sd">    one use for this function.  For example, pmt returns the</span>
+<span class="sd">    periodic deposit one must make to achieve a specified</span>
+<span class="sd">    future balance given an initial deposit, a fixed,</span>
+<span class="sd">    periodically compounded interest rate, and the total</span>
+<span class="sd">    number of periods.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [WRW] Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May).</span>
+<span class="sd">       Open Document Format for Office Applications (OpenDocument)v1.2,</span>
+<span class="sd">       Part 2: Recalculated Formula (OpenFormula) Format - Annotated Version,</span>
+<span class="sd">       Pre-Draft 12. Organization for the Advancement of Structured Information</span>
+<span class="sd">       Standards (OASIS). Billerica, MA, USA. [ODT Document].</span>
+<span class="sd">       Available:</span>
+<span class="sd">       http://www.oasis-open.org/committees/documents.php</span>
+<span class="sd">       ?wg_abbrev=office-formulaOpenDocument-formula-20090508.odt</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    What is the monthly payment needed to pay off a $200,000 loan in 15</span>
+<span class="sd">    years at an annual interest rate of 7.5%?</span>
+
+<span class="sd">    &gt;&gt;&gt; np.pmt(0.075/12, 12*15, 200000)</span>
+<span class="sd">    -1854.0247200054619</span>
+
+<span class="sd">    In order to pay-off (i.e., have a future-value of 0) the $200,000 obtained</span>
+<span class="sd">    today, a monthly payment of $1,854.02 would be required.  Note that this</span>
+<span class="sd">    example illustrates usage of `fv` having a default value of 0.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">when</span> <span class="o">=</span> <span class="n">_convert_when</span><span class="p">(</span><span class="n">when</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">,</span> <span class="p">[</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">])</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">rate</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">copyto</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">fact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask</span> <span class="o">!=</span> <span class="n">z</span><span class="p">,</span> <span class="n">nper</span> <span class="o">+</span> <span class="n">z</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="o">*</span><span class="n">when</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">temp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">rate</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">fv</span> <span class="o">+</span> <span class="n">pv</span><span class="o">*</span><span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="n">fact</span></div>
+
+<div class="viewcode-block" id="nper"><a class="viewcode-back" href="../../../reference/generated/numpy.nper.html#numpy.nper">[docs]</a><span class="k">def</span> <span class="nf">nper</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the number of periodic payments.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rate : array_like</span>
+<span class="sd">        Rate of interest (per period)</span>
+<span class="sd">    pmt : array_like</span>
+<span class="sd">        Payment</span>
+<span class="sd">    pv : array_like</span>
+<span class="sd">        Present value</span>
+<span class="sd">    fv : array_like, optional</span>
+<span class="sd">        Future value</span>
+<span class="sd">    when : {{&#39;begin&#39;, 1}, {&#39;end&#39;, 0}}, {string, int}, optional</span>
+<span class="sd">        When payments are due (&#39;begin&#39; (1) or &#39;end&#39; (0))</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The number of periods ``nper`` is computed by solving the equation::</span>
+
+<span class="sd">     fv + pv*(1+rate)**nper + pmt*(1+rate*when)/rate*((1+rate)**nper-1) = 0</span>
+
+<span class="sd">    but if ``rate = 0`` then::</span>
+
+<span class="sd">     fv + pv + pmt*nper = 0</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    If you only had $150/month to pay towards the loan, how long would it take</span>
+<span class="sd">    to pay-off a loan of $8,000 at 7% annual interest?</span>
+
+<span class="sd">    &gt;&gt;&gt; print round(np.nper(0.07/12, -150, 8000), 5)</span>
+<span class="sd">    64.07335</span>
+
+<span class="sd">    So, over 64 months would be required to pay off the loan.</span>
+
+<span class="sd">    The same analysis could be done with several different interest rates</span>
+<span class="sd">    and/or payments and/or total amounts to produce an entire table.</span>
+
+<span class="sd">    &gt;&gt;&gt; np.nper(*(np.ogrid[0.07/12: 0.08/12: 0.01/12,</span>
+<span class="sd">    ...                    -150   : -99     : 50    ,</span>
+<span class="sd">    ...                    8000   : 9001    : 1000]))</span>
+<span class="sd">    array([[[  64.07334877,   74.06368256],</span>
+<span class="sd">            [ 108.07548412,  127.99022654]],</span>
+<span class="sd">           [[  66.12443902,   76.87897353],</span>
+<span class="sd">            [ 114.70165583,  137.90124779]]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">when</span> <span class="o">=</span> <span class="n">_convert_when</span><span class="p">(</span><span class="n">when</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">,</span> <span class="p">[</span><span class="n">rate</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">])</span>
+
+    <span class="n">use_zero_rate</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s2">&quot;raise&quot;</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">pmt</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">rate</span><span class="o">*</span><span class="n">when</span><span class="p">)</span><span class="o">/</span><span class="n">rate</span>
+        <span class="k">except</span> <span class="ne">FloatingPointError</span><span class="p">:</span>
+            <span class="n">use_zero_rate</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">if</span> <span class="n">use_zero_rate</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">fv</span> <span class="o">+</span> <span class="n">pv</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">pmt</span> <span class="o">+</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">fv</span> <span class="o">+</span> <span class="n">pv</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">pmt</span><span class="o">+</span><span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="o">-</span><span class="n">fv</span><span class="o">+</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">pv</span><span class="o">+</span><span class="n">z</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">rate</span><span class="p">)</span>
+        <span class="n">miter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span>
+        <span class="n">zer</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">miter</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">rate</span> <span class="o">==</span> <span class="n">zer</span><span class="p">,</span> <span class="n">A</span> <span class="o">+</span> <span class="n">zer</span><span class="p">,</span> <span class="n">B</span> <span class="o">+</span> <span class="n">zer</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0</span></div>
+
+<div class="viewcode-block" id="ipmt"><a class="viewcode-back" href="../../../reference/generated/numpy.ipmt.html#numpy.ipmt">[docs]</a><span class="k">def</span> <span class="nf">ipmt</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the interest portion of a payment.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rate : scalar or array_like of shape(M, )</span>
+<span class="sd">        Rate of interest as decimal (not per cent) per period</span>
+<span class="sd">    per : scalar or array_like of shape(M, )</span>
+<span class="sd">        Interest paid against the loan changes during the life or the loan.</span>
+<span class="sd">        The `per` is the payment period to calculate the interest amount.</span>
+<span class="sd">    nper : scalar or array_like of shape(M, )</span>
+<span class="sd">        Number of compounding periods</span>
+<span class="sd">    pv : scalar or array_like of shape(M, )</span>
+<span class="sd">        Present value</span>
+<span class="sd">    fv : scalar or array_like of shape(M, ), optional</span>
+<span class="sd">        Future value</span>
+<span class="sd">    when : {{&#39;begin&#39;, 1}, {&#39;end&#39;, 0}}, {string, int}, optional</span>
+<span class="sd">        When payments are due (&#39;begin&#39; (1) or &#39;end&#39; (0)).</span>
+<span class="sd">        Defaults to {&#39;end&#39;, 0}.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        Interest portion of payment.  If all input is scalar, returns a scalar</span>
+<span class="sd">        float.  If any input is array_like, returns interest payment for each</span>
+<span class="sd">        input element. If multiple inputs are array_like, they all must have</span>
+<span class="sd">        the same shape.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    ppmt, pmt, pv</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The total payment is made up of payment against principal plus interest.</span>
+
+<span class="sd">    ``pmt = ppmt + ipmt``</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    What is the amortization schedule for a 1 year loan of $2500 at</span>
+<span class="sd">    8.24% interest per year compounded monthly?</span>
+
+<span class="sd">    &gt;&gt;&gt; principal = 2500.00</span>
+
+<span class="sd">    The &#39;per&#39; variable represents the periods of the loan.  Remember that</span>
+<span class="sd">    financial equations start the period count at 1!</span>
+
+<span class="sd">    &gt;&gt;&gt; per = np.arange(1*12) + 1</span>
+<span class="sd">    &gt;&gt;&gt; ipmt = np.ipmt(0.0824/12, per, 1*12, principal)</span>
+<span class="sd">    &gt;&gt;&gt; ppmt = np.ppmt(0.0824/12, per, 1*12, principal)</span>
+
+<span class="sd">    Each element of the sum of the &#39;ipmt&#39; and &#39;ppmt&#39; arrays should equal</span>
+<span class="sd">    &#39;pmt&#39;.</span>
+
+<span class="sd">    &gt;&gt;&gt; pmt = np.pmt(0.0824/12, 1*12, principal)</span>
+<span class="sd">    &gt;&gt;&gt; np.allclose(ipmt + ppmt, pmt)</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; fmt = &#39;{0:2d} {1:8.2f} {2:8.2f} {3:8.2f}&#39;</span>
+<span class="sd">    &gt;&gt;&gt; for payment in per:</span>
+<span class="sd">    ...     index = payment - 1</span>
+<span class="sd">    ...     principal = principal + ppmt[index]</span>
+<span class="sd">    ...     print fmt.format(payment, ppmt[index], ipmt[index], principal)</span>
+<span class="sd">     1  -200.58   -17.17  2299.42</span>
+<span class="sd">     2  -201.96   -15.79  2097.46</span>
+<span class="sd">     3  -203.35   -14.40  1894.11</span>
+<span class="sd">     4  -204.74   -13.01  1689.37</span>
+<span class="sd">     5  -206.15   -11.60  1483.22</span>
+<span class="sd">     6  -207.56   -10.18  1275.66</span>
+<span class="sd">     7  -208.99    -8.76  1066.67</span>
+<span class="sd">     8  -210.42    -7.32   856.25</span>
+<span class="sd">     9  -211.87    -5.88   644.38</span>
+<span class="sd">    10  -213.32    -4.42   431.05</span>
+<span class="sd">    11  -214.79    -2.96   216.26</span>
+<span class="sd">    12  -216.26    -1.49    -0.00</span>
+
+<span class="sd">    &gt;&gt;&gt; interestpd = np.sum(ipmt)</span>
+<span class="sd">    &gt;&gt;&gt; np.round(interestpd, 2)</span>
+<span class="sd">    -112.98</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">when</span> <span class="o">=</span> <span class="n">_convert_when</span><span class="p">(</span><span class="n">when</span><span class="p">)</span>
+    <span class="n">rate</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_arrays</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span>
+                                                        <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span>
+    <span class="n">total_pmt</span> <span class="o">=</span> <span class="n">pmt</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span>
+    <span class="n">ipmt</span> <span class="o">=</span> <span class="n">_rbl</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="n">total_pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span><span class="o">*</span><span class="n">rate</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ipmt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">when</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ipmt</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="p">),</span> <span class="n">ipmt</span><span class="p">)</span>
+        <span class="n">ipmt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">when</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">per</span> <span class="o">==</span> <span class="mi">1</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ipmt</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">ipmt</span></div>
+
+<span class="k">def</span> <span class="nf">_rbl</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">when</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is here to simply have a different name for the &#39;fv&#39;</span>
+<span class="sd">    function to not interfere with the &#39;fv&#39; keyword argument within the &#39;ipmt&#39;</span>
+<span class="sd">    function.  It is the &#39;remaining balance on loan&#39; which might be useful as</span>
+<span class="sd">    it&#39;s own function, but is easily calculated with the &#39;fv&#39; function.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">fv</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="p">(</span><span class="n">per</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ppmt"><a class="viewcode-back" href="../../../reference/generated/numpy.ppmt.html#numpy.ppmt">[docs]</a><span class="k">def</span> <span class="nf">ppmt</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the payment against loan principal.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rate : array_like</span>
+<span class="sd">        Rate of interest (per period)</span>
+<span class="sd">    per : array_like, int</span>
+<span class="sd">        Amount paid against the loan changes.  The `per` is the period of</span>
+<span class="sd">        interest.</span>
+<span class="sd">    nper : array_like</span>
+<span class="sd">        Number of compounding periods</span>
+<span class="sd">    pv : array_like</span>
+<span class="sd">        Present value</span>
+<span class="sd">    fv : array_like, optional</span>
+<span class="sd">        Future value</span>
+<span class="sd">    when : {{&#39;begin&#39;, 1}, {&#39;end&#39;, 0}}, {string, int}</span>
+<span class="sd">        When payments are due (&#39;begin&#39; (1) or &#39;end&#39; (0))</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    pmt, pv, ipmt</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">pmt</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">total</span> <span class="o">-</span> <span class="n">ipmt</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="pv"><a class="viewcode-back" href="../../../reference/generated/numpy.pv.html#numpy.pv">[docs]</a><span class="k">def</span> <span class="nf">pv</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">fv</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the present value.</span>
+
+<span class="sd">    Given:</span>
+<span class="sd">     * a future value, `fv`</span>
+<span class="sd">     * an interest `rate` compounded once per period, of which</span>
+<span class="sd">       there are</span>
+<span class="sd">     * `nper` total</span>
+<span class="sd">     * a (fixed) payment, `pmt`, paid either</span>
+<span class="sd">     * at the beginning (`when` = {&#39;begin&#39;, 1}) or the end</span>
+<span class="sd">       (`when` = {&#39;end&#39;, 0}) of each period</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">       the value now</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rate : array_like</span>
+<span class="sd">        Rate of interest (per period)</span>
+<span class="sd">    nper : array_like</span>
+<span class="sd">        Number of compounding periods</span>
+<span class="sd">    pmt : array_like</span>
+<span class="sd">        Payment</span>
+<span class="sd">    fv : array_like, optional</span>
+<span class="sd">        Future value</span>
+<span class="sd">    when : {{&#39;begin&#39;, 1}, {&#39;end&#39;, 0}}, {string, int}, optional</span>
+<span class="sd">        When payments are due (&#39;begin&#39; (1) or &#39;end&#39; (0))</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray, float</span>
+<span class="sd">        Present value of a series of payments or investments.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The present value is computed by solving the equation::</span>
+
+<span class="sd">     fv +</span>
+<span class="sd">     pv*(1 + rate)**nper +</span>
+<span class="sd">     pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) = 0</span>
+
+<span class="sd">    or, when ``rate = 0``::</span>
+
+<span class="sd">     fv + pv + pmt * nper = 0</span>
+
+<span class="sd">    for `pv`, which is then returned.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [WRW] Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May).</span>
+<span class="sd">       Open Document Format for Office Applications (OpenDocument)v1.2,</span>
+<span class="sd">       Part 2: Recalculated Formula (OpenFormula) Format - Annotated Version,</span>
+<span class="sd">       Pre-Draft 12. Organization for the Advancement of Structured Information</span>
+<span class="sd">       Standards (OASIS). Billerica, MA, USA. [ODT Document].</span>
+<span class="sd">       Available:</span>
+<span class="sd">       http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula</span>
+<span class="sd">       OpenDocument-formula-20090508.odt</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    What is the present value (e.g., the initial investment)</span>
+<span class="sd">    of an investment that needs to total $15692.93</span>
+<span class="sd">    after 10 years of saving $100 every month?  Assume the</span>
+<span class="sd">    interest rate is 5% (annually) compounded monthly.</span>
+
+<span class="sd">    &gt;&gt;&gt; np.pv(0.05/12, 10*12, -100, 15692.93)</span>
+<span class="sd">    -100.00067131625819</span>
+
+<span class="sd">    By convention, the negative sign represents cash flow out</span>
+<span class="sd">    (i.e., money not available today).  Thus, to end up with</span>
+<span class="sd">    $15,692.93 in 10 years saving $100 a month at 5% annual</span>
+<span class="sd">    interest, one&#39;s initial deposit should also be $100.</span>
+
+<span class="sd">    If any input is array_like, ``pv`` returns an array of equal shape.</span>
+<span class="sd">    Let&#39;s compare different interest rates in the example above:</span>
+
+<span class="sd">    &gt;&gt;&gt; a = np.array((0.05, 0.04, 0.03))/12</span>
+<span class="sd">    &gt;&gt;&gt; np.pv(a, 10*12, -100, 15692.93)</span>
+<span class="sd">    array([ -100.00067132,  -649.26771385, -1273.78633713])</span>
+
+<span class="sd">    So, to end up with the same $15692.93 under the same $100 per month</span>
+<span class="sd">    &quot;savings plan,&quot; for annual interest rates of 4% and 3%, one would</span>
+<span class="sd">    need initial investments of $649.27 and $1273.79, respectively.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">when</span> <span class="o">=</span> <span class="n">_convert_when</span><span class="p">(</span><span class="n">when</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">,</span> <span class="p">[</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">])</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span>
+    <span class="n">miter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span>
+    <span class="n">zer</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">miter</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">fact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">rate</span> <span class="o">==</span> <span class="n">zer</span><span class="p">,</span> <span class="n">nper</span><span class="o">+</span><span class="n">zer</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="o">*</span><span class="n">when</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">temp</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">rate</span><span class="o">+</span><span class="n">zer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">fv</span> <span class="o">+</span> <span class="n">pmt</span><span class="o">*</span><span class="n">fact</span><span class="p">)</span><span class="o">/</span><span class="n">temp</span></div>
+
+<span class="c1"># Computed with Sage</span>
+<span class="c1">#  (y + (r + 1)^n*x + p*((r + 1)^n - 1)*(r*w + 1)/r)/(n*(r + 1)^(n - 1)*x -</span>
+<span class="c1">#  p*((r + 1)^n - 1)*(r*w + 1)/r^2 + n*p*(r + 1)^(n - 1)*(r*w + 1)/r +</span>
+<span class="c1">#  p*((r + 1)^n - 1)*w/r)</span>
+
+<span class="k">def</span> <span class="nf">_g_div_gp</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">y</span> <span class="o">+</span> <span class="n">t1</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">r</span><span class="p">)</span> <span class="o">/</span>
+                <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">t2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">t2</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">r</span> <span class="o">+</span>
+                 <span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="n">r</span><span class="p">))</span>
+
+<span class="c1"># Use Newton&#39;s iteration until the change is less than 1e-6</span>
+<span class="c1">#  for all values or a maximum of 100 iterations is reached.</span>
+<span class="c1">#  Newton&#39;s rule is</span>
+<span class="c1">#  r_{n+1} = r_{n} - g(r_n)/g&#39;(r_n)</span>
+<span class="c1">#     where</span>
+<span class="c1">#  g(r) is the formula</span>
+<span class="c1">#  g&#39;(r) is the derivative with respect to r.</span>
+<div class="viewcode-block" id="rate"><a class="viewcode-back" href="../../../reference/generated/numpy.rate.html#numpy.rate">[docs]</a><span class="k">def</span> <span class="nf">rate</span><span class="p">(</span><span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="n">guess</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the rate of interest per period.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nper : array_like</span>
+<span class="sd">        Number of compounding periods</span>
+<span class="sd">    pmt : array_like</span>
+<span class="sd">        Payment</span>
+<span class="sd">    pv : array_like</span>
+<span class="sd">        Present value</span>
+<span class="sd">    fv : array_like</span>
+<span class="sd">        Future value</span>
+<span class="sd">    when : {{&#39;begin&#39;, 1}, {&#39;end&#39;, 0}}, {string, int}, optional</span>
+<span class="sd">        When payments are due (&#39;begin&#39; (1) or &#39;end&#39; (0))</span>
+<span class="sd">    guess : float, optional</span>
+<span class="sd">        Starting guess for solving the rate of interest</span>
+<span class="sd">    tol : float, optional</span>
+<span class="sd">        Required tolerance for the solution</span>
+<span class="sd">    maxiter : int, optional</span>
+<span class="sd">        Maximum iterations in finding the solution</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The rate of interest is computed by iteratively solving the</span>
+<span class="sd">    (non-linear) equation::</span>
+
+<span class="sd">     fv + pv*(1+rate)**nper + pmt*(1+rate*when)/rate * ((1+rate)**nper - 1) = 0</span>
+
+<span class="sd">    for ``rate``.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May). Open Document</span>
+<span class="sd">    Format for Office Applications (OpenDocument)v1.2, Part 2: Recalculated</span>
+<span class="sd">    Formula (OpenFormula) Format - Annotated Version, Pre-Draft 12.</span>
+<span class="sd">    Organization for the Advancement of Structured Information Standards</span>
+<span class="sd">    (OASIS). Billerica, MA, USA. [ODT Document]. Available:</span>
+<span class="sd">    http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula</span>
+<span class="sd">    OpenDocument-formula-20090508.odt</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">when</span> <span class="o">=</span> <span class="n">_convert_when</span><span class="p">(</span><span class="n">when</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">,</span> <span class="p">[</span><span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">])</span>
+    <span class="n">rn</span> <span class="o">=</span> <span class="n">guess</span>
+    <span class="nb">iter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">close</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">iter</span> <span class="o">&lt;</span> <span class="n">maxiter</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">close</span><span class="p">:</span>
+        <span class="n">rnp1</span> <span class="o">=</span> <span class="n">rn</span> <span class="o">-</span> <span class="n">_g_div_gp</span><span class="p">(</span><span class="n">rn</span><span class="p">,</span> <span class="n">nper</span><span class="p">,</span> <span class="n">pmt</span><span class="p">,</span> <span class="n">pv</span><span class="p">,</span> <span class="n">fv</span><span class="p">,</span> <span class="n">when</span><span class="p">)</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">rnp1</span><span class="o">-</span><span class="n">rn</span><span class="p">)</span>
+        <span class="n">close</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">diff</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">)</span>
+        <span class="nb">iter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">rn</span> <span class="o">=</span> <span class="n">rnp1</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">close</span><span class="p">:</span>
+        <span class="c1"># Return nan&#39;s in array of the same shape as rn</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">+</span> <span class="n">rn</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">rn</span></div>
+
+<div class="viewcode-block" id="irr"><a class="viewcode-back" href="../../../reference/generated/numpy.irr.html#numpy.irr">[docs]</a><span class="k">def</span> <span class="nf">irr</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the Internal Rate of Return (IRR).</span>
+
+<span class="sd">    This is the &quot;average&quot; periodically compounded rate of return</span>
+<span class="sd">    that gives a net present value of 0.0; for a more complete explanation,</span>
+<span class="sd">    see Notes below.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    values : array_like, shape(N,)</span>
+<span class="sd">        Input cash flows per time period.  By convention, net &quot;deposits&quot;</span>
+<span class="sd">        are negative and net &quot;withdrawals&quot; are positive.  Thus, for</span>
+<span class="sd">        example, at least the first element of `values`, which represents</span>
+<span class="sd">        the initial investment, will typically be negative.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : float</span>
+<span class="sd">        Internal Rate of Return for periodic input values.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The IRR is perhaps best understood through an example (illustrated</span>
+<span class="sd">    using np.irr in the Examples section below).  Suppose one invests 100</span>
+<span class="sd">    units and then makes the following withdrawals at regular (fixed)</span>
+<span class="sd">    intervals: 39, 59, 55, 20.  Assuming the ending value is 0, one&#39;s 100</span>
+<span class="sd">    unit investment yields 173 units; however, due to the combination of</span>
+<span class="sd">    compounding and the periodic withdrawals, the &quot;average&quot; rate of return</span>
+<span class="sd">    is neither simply 0.73/4 nor (1.73)^0.25-1.  Rather, it is the solution</span>
+<span class="sd">    (for :math:`r`) of the equation:</span>
+
+<span class="sd">    .. math:: -100 + \\frac{39}{1+r} + \\frac{59}{(1+r)^2}</span>
+<span class="sd">     + \\frac{55}{(1+r)^3} + \\frac{20}{(1+r)^4} = 0</span>
+
+<span class="sd">    In general, for `values` :math:`= [v_0, v_1, ... v_M]`,</span>
+<span class="sd">    irr is the solution of the equation: [G]_</span>
+
+<span class="sd">    .. math:: \\sum_{t=0}^M{\\frac{v_t}{(1+irr)^{t}}} = 0</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [G] L. J. Gitman, &quot;Principles of Managerial Finance, Brief,&quot; 3rd ed.,</span>
+<span class="sd">       Addison-Wesley, 2003, pg. 348.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; round(irr([-100, 39, 59, 55, 20]), 5)</span>
+<span class="sd">    0.28095</span>
+<span class="sd">    &gt;&gt;&gt; round(irr([-100, 0, 0, 74]), 5)</span>
+<span class="sd">    -0.0955</span>
+<span class="sd">    &gt;&gt;&gt; round(irr([-100, 100, 0, -7]), 5)</span>
+<span class="sd">    -0.0833</span>
+<span class="sd">    &gt;&gt;&gt; round(irr([-100, 100, 0, 7]), 5)</span>
+<span class="sd">    0.06206</span>
+<span class="sd">    &gt;&gt;&gt; round(irr([-5, 10.5, 1, -8, 1]), 5)</span>
+<span class="sd">    0.0886</span>
+
+<span class="sd">    (Compare with the Example given for numpy.lib.financial.npv)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">values</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">imag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">real</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">real</span>
+    <span class="c1"># NPV(rate) = 0 can have more than one solution so we return</span>
+    <span class="c1"># only the solution closest to zero.</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">res</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="n">rate</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rate</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">rate</span></div>
+
+<div class="viewcode-block" id="npv"><a class="viewcode-back" href="../../../reference/generated/numpy.npv.html#numpy.npv">[docs]</a><span class="k">def</span> <span class="nf">npv</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the NPV (Net Present Value) of a cash flow series.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rate : scalar</span>
+<span class="sd">        The discount rate.</span>
+<span class="sd">    values : array_like, shape(M, )</span>
+<span class="sd">        The values of the time series of cash flows.  The (fixed) time</span>
+<span class="sd">        interval between cash flow &quot;events&quot; must be the same as that for</span>
+<span class="sd">        which `rate` is given (i.e., if `rate` is per year, then precisely</span>
+<span class="sd">        a year is understood to elapse between each cash flow event).  By</span>
+<span class="sd">        convention, investments or &quot;deposits&quot; are negative, income or</span>
+<span class="sd">        &quot;withdrawals&quot; are positive; `values` must begin with the initial</span>
+<span class="sd">        investment, thus `values[0]` will typically be negative.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : float</span>
+<span class="sd">        The NPV of the input cash flow series `values` at the discount</span>
+<span class="sd">        `rate`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Returns the result of: [G]_</span>
+
+<span class="sd">    .. math :: \\sum_{t=0}^{M-1}{\\frac{values_t}{(1+rate)^{t}}}</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [G] L. J. Gitman, &quot;Principles of Managerial Finance, Brief,&quot; 3rd ed.,</span>
+<span class="sd">       Addison-Wesley, 2003, pg. 346.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.npv(0.281,[-100, 39, 59, 55, 20])</span>
+<span class="sd">    -0.0084785916384548798</span>
+
+<span class="sd">    (Compare with the Example given for numpy.lib.financial.irr)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">values</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="mirr"><a class="viewcode-back" href="../../../reference/generated/numpy.mirr.html#numpy.mirr">[docs]</a><span class="k">def</span> <span class="nf">mirr</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">finance_rate</span><span class="p">,</span> <span class="n">reinvest_rate</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Modified internal rate of return.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    values : array_like</span>
+<span class="sd">        Cash flows (must contain at least one positive and one negative</span>
+<span class="sd">        value) or nan is returned.  The first value is considered a sunk</span>
+<span class="sd">        cost at time zero.</span>
+<span class="sd">    finance_rate : scalar</span>
+<span class="sd">        Interest rate paid on the cash flows</span>
+<span class="sd">    reinvest_rate : scalar</span>
+<span class="sd">        Interest rate received on the cash flows upon reinvestment</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : float</span>
+<span class="sd">        Modified internal rate of return</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">values</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">neg</span> <span class="o">=</span> <span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">any</span><span class="p">()</span> <span class="ow">and</span> <span class="n">neg</span><span class="o">.</span><span class="n">any</span><span class="p">()):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">numer</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">npv</span><span class="p">(</span><span class="n">reinvest_rate</span><span class="p">,</span> <span class="n">values</span><span class="o">*</span><span class="n">pos</span><span class="p">))</span>
+    <span class="n">denom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">npv</span><span class="p">(</span><span class="n">finance_rate</span><span class="p">,</span> <span class="n">values</span><span class="o">*</span><span class="n">neg</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">numer</span><span class="o">/</span><span class="n">denom</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">reinvest_rate</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

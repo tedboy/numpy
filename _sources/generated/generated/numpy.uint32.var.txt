@@ -1,0 +1,6 @@
+numpy.uint32.var
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint32.var

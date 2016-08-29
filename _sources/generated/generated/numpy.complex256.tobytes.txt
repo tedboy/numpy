@@ -1,0 +1,6 @@
+numpy.complex256.tobytes
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.tobytes

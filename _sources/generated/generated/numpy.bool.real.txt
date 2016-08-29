@@ -1,0 +1,6 @@
+numpy.bool.real
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool.real

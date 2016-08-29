@@ -1,0 +1,6 @@
+numpy.character.squeeze
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.squeeze

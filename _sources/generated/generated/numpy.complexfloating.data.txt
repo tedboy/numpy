@@ -1,0 +1,6 @@
+numpy.complexfloating.data
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.data

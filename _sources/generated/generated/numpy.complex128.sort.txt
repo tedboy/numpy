@@ -1,0 +1,6 @@
+numpy.complex128.sort
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.sort

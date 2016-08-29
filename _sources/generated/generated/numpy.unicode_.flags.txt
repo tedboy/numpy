@@ -1,0 +1,6 @@
+numpy.unicode_.flags
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.flags

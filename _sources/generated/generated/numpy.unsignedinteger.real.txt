@@ -1,0 +1,6 @@
+numpy.unsignedinteger.real
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.real

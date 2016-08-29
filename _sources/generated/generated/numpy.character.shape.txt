@@ -1,0 +1,6 @@
+numpy.character.shape
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.shape

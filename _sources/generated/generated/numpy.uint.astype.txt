@@ -1,0 +1,6 @@
+numpy.uint.astype
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint.astype

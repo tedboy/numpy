@@ -1,0 +1,6 @@
+numpy.ulonglong.swapaxes
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.swapaxes

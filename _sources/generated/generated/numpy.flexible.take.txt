@@ -1,0 +1,6 @@
+numpy.flexible.take
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.take

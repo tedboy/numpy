@@ -1,0 +1,19 @@
+numpy.format_parser
+===================
+.. currentmodule:: numpy
+.. autoclass:: format_parser
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~format_parser.__init__
+
+
+
+
+

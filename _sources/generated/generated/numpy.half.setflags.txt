@@ -1,0 +1,6 @@
+numpy.half.setflags
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.setflags

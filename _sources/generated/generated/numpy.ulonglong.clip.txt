@@ -1,0 +1,6 @@
+numpy.ulonglong.clip
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.clip

@@ -1,0 +1,6 @@
+numpy.short.astype
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.astype

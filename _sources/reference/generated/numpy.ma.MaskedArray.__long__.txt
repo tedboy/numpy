@@ -1,0 +1,6 @@
+numpy.ma.MaskedArray.__long__
+=============================
+
+.. currentmodule:: numpy.ma
+
+.. autoattribute:: MaskedArray.__long__

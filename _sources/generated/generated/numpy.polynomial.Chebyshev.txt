@@ -1,0 +1,50 @@
+numpy.polynomial.Chebyshev
+==========================
+.. currentmodule:: numpy.polynomial
+.. autoclass:: Chebyshev
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~Chebyshev.__init__
+   ~Chebyshev.basis
+   ~Chebyshev.cast
+   ~Chebyshev.convert
+   ~Chebyshev.copy
+   ~Chebyshev.cutdeg
+   ~Chebyshev.degree
+   ~Chebyshev.deriv
+   ~Chebyshev.fit
+   ~Chebyshev.fromroots
+   ~Chebyshev.has_samecoef
+   ~Chebyshev.has_samedomain
+   ~Chebyshev.has_sametype
+   ~Chebyshev.has_samewindow
+   ~Chebyshev.identity
+   ~Chebyshev.integ
+   ~Chebyshev.linspace
+   ~Chebyshev.mapparms
+   ~Chebyshev.roots
+   ~Chebyshev.trim
+   ~Chebyshev.truncate
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~Chebyshev.domain
+   ~Chebyshev.maxpower
+   ~Chebyshev.nickname
+   ~Chebyshev.window
+

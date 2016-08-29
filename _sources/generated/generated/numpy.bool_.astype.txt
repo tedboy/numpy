@@ -1,0 +1,6 @@
+numpy.bool_.astype
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.astype

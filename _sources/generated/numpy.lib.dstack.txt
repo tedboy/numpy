@@ -1,0 +1,6 @@
+numpy.lib.dstack
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: dstack

@@ -1,0 +1,6 @@
+numpy.clongdouble.sort
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.sort

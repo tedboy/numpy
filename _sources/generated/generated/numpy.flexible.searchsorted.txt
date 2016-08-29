@@ -1,0 +1,6 @@
+numpy.flexible.searchsorted
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.searchsorted

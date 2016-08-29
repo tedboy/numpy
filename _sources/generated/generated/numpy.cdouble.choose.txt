@@ -1,0 +1,6 @@
+numpy.cdouble.choose
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.choose

@@ -1,0 +1,6 @@
+numpy.longfloat.min
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.min

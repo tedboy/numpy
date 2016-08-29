@@ -1,0 +1,6 @@
+numpy.string_.tolist
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.tolist

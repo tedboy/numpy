@@ -1,0 +1,6 @@
+numpy.byte.mean
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.mean

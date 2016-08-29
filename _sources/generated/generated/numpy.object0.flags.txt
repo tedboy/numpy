@@ -1,0 +1,6 @@
+numpy.object0.flags
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: object0.flags

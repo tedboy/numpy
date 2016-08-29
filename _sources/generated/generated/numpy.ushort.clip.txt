@@ -1,0 +1,6 @@
+numpy.ushort.clip
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.clip

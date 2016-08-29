@@ -1,0 +1,6 @@
+numpy.singlecomplex.std
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.std

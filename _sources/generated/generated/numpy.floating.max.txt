@@ -1,0 +1,6 @@
+numpy.floating.max
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.max

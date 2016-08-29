@@ -1,0 +1,6 @@
+numpy.unicode0.setflags
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode0.setflags

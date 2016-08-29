@@ -1,0 +1,6 @@
+numpy.int_.put
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: int_.put

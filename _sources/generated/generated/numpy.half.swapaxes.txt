@@ -1,0 +1,6 @@
+numpy.half.swapaxes
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.swapaxes

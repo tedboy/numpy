@@ -1,0 +1,6 @@
+numpy.polynomial.Polynomial.identity
+====================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Polynomial.identity

@@ -1,0 +1,6 @@
+numpy.cfloat.argmin
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: cfloat.argmin

@@ -1,0 +1,6 @@
+numpy.unicode_.reshape
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.reshape

@@ -1,0 +1,6 @@
+numpy.longdouble.setflags
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.setflags

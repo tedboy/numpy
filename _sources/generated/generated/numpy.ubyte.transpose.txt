@@ -1,0 +1,6 @@
+numpy.ubyte.transpose
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.transpose

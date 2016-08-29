@@ -1,0 +1,6 @@
+numpy.bool_.clip
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.clip

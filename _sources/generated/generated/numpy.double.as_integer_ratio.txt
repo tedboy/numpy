@@ -1,0 +1,6 @@
+numpy.double.as_integer_ratio
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.as_integer_ratio

@@ -1,0 +1,6 @@
+numpy.longcomplex.round
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.round

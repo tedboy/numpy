@@ -1,0 +1,6 @@
+numpy.flexible.argmin
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.argmin

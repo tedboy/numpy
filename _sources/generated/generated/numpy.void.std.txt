@@ -1,0 +1,6 @@
+numpy.void.std
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: void.std

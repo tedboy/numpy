@@ -1,0 +1,6 @@
+numpy.cdouble.clip
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.clip

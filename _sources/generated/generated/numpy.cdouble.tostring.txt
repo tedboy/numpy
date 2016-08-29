@@ -1,0 +1,6 @@
+numpy.cdouble.tostring
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.tostring

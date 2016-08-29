@@ -1,0 +1,6 @@
+numpy.byte.size
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.size

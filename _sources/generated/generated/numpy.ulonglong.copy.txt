@@ -1,0 +1,6 @@
+numpy.ulonglong.copy
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.copy

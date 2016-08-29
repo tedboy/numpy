@@ -1,0 +1,6 @@
+numpy.character.setfield
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.setfield

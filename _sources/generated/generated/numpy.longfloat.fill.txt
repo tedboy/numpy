@@ -1,0 +1,6 @@
+numpy.longfloat.fill
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.fill

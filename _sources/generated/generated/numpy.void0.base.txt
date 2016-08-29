@@ -1,0 +1,6 @@
+numpy.void0.base
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void0.base

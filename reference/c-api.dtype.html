@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.5.3. Data Type API &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../index.html"/>
+        <link rel="up" title="11.5. Numpy C-API" href="c-api.html"/>
+        <link rel="next" title="11.5.4. Array API" href="c-api.array.html"/>
+        <link rel="prev" title="11.5.2. System configuration" href="c-api.config.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routines.html">11.3. Routines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c-api.html">11.5. Numpy C-API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="c-api.types-and-structures.html">11.5.1. Python Types and C-Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.config.html">11.5.2. System configuration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">11.5.3. Data Type API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enumerated-types">11.5.3.1. Enumerated Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#defines">11.5.3.2. Defines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#c-type-names">11.5.3.3. C-type names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#printf-formatting">11.5.3.4. Printf Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.array.html">11.5.4. Array API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.iterator.html">11.5.5. Array Iterator API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.ufunc.html">11.5.6. UFunc API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.generalized-ufuncs.html">11.5.7. Generalized Universal Function API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.coremath.html">11.5.8. Numpy core libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.deprecations.html">11.5.9. C API Deprecations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="c-api.html">11.5. Numpy C-API</a> &raquo;</li>
+        
+      <li>11.5.3. Data Type API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/c-api.dtype.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-type-api">
+<h1>11.5.3. Data Type API<a class="headerlink" href="#data-type-api" title="Permalink to this headline">¶</a></h1>
+<p>The standard array can have 24 different data types (and has some
+support for adding your own types). These data types all have an
+enumerated type, an enumerated type-character, and a corresponding
+array scalar Python type object (placed in a hierarchy). There are
+also standard C typedefs to make it easier to manipulate elements of
+the given data type. For the numeric types, there are also bit-width
+equivalent C typedefs and named typenumbers that make it easier to
+select the precision desired.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The names for the types in c code follows c naming conventions
+more closely. The Python names for these types follow Python
+conventions.  Thus, <a class="reference internal" href="#c.NPY_FLOAT" title="NPY_FLOAT"><code class="xref c c-data docutils literal"><span class="pre">NPY_FLOAT</span></code></a> picks up a 32-bit float in
+C, but <a class="reference internal" href="../generated/generated/numpy.float_.html#numpy.float_" title="numpy.float_"><code class="xref py py-class docutils literal"><span class="pre">numpy.float_</span></code></a> in Python corresponds to a 64-bit
+double. The bit-width names can be used in both Python and C for
+clarity.</p>
+</div>
+<div class="section" id="enumerated-types">
+<h2>11.5.3.1. Enumerated Types<a class="headerlink" href="#enumerated-types" title="Permalink to this headline">¶</a></h2>
+<p>There is a list of enumerated types defined providing the basic 24
+data types plus some useful generic names. Whenever the code requires
+a type number, one of these enumerated types is requested. The types
+are all called <code class="xref c c-data docutils literal"><span class="pre">NPY_{NAME}</span></code>:</p>
+<dl class="var">
+<dt id="c.NPY_BOOL">
+<code class="descname">NPY_BOOL</code><a class="headerlink" href="#c.NPY_BOOL" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for the boolean type, stored as one byte.
+It may only be set to the values 0 and 1.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_BYTE">
+<code class="descname">NPY_BYTE</code><a class="headerlink" href="#c.NPY_BYTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_INT8">
+<code class="descname">NPY_INT8</code><a class="headerlink" href="#c.NPY_INT8" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for an 8-bit/1-byte signed integer.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_SHORT">
+<code class="descname">NPY_SHORT</code><a class="headerlink" href="#c.NPY_SHORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_INT16">
+<code class="descname">NPY_INT16</code><a class="headerlink" href="#c.NPY_INT16" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 16-bit/2-byte signed integer.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_INT">
+<code class="descname">NPY_INT</code><a class="headerlink" href="#c.NPY_INT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_INT32">
+<code class="descname">NPY_INT32</code><a class="headerlink" href="#c.NPY_INT32" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 32-bit/4-byte signed integer.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_LONG">
+<code class="descname">NPY_LONG</code><a class="headerlink" href="#c.NPY_LONG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to either NPY_INT or NPY_LONGLONG, depending on the
+platform.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_LONGLONG">
+<code class="descname">NPY_LONGLONG</code><a class="headerlink" href="#c.NPY_LONGLONG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_INT64">
+<code class="descname">NPY_INT64</code><a class="headerlink" href="#c.NPY_INT64" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 64-bit/8-byte signed integer.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_UBYTE">
+<code class="descname">NPY_UBYTE</code><a class="headerlink" href="#c.NPY_UBYTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_UINT8">
+<code class="descname">NPY_UINT8</code><a class="headerlink" href="#c.NPY_UINT8" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for an 8-bit/1-byte unsigned integer.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_USHORT">
+<code class="descname">NPY_USHORT</code><a class="headerlink" href="#c.NPY_USHORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_UINT16">
+<code class="descname">NPY_UINT16</code><a class="headerlink" href="#c.NPY_UINT16" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 16-bit/2-byte unsigned integer.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_UINT">
+<code class="descname">NPY_UINT</code><a class="headerlink" href="#c.NPY_UINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_UINT32">
+<code class="descname">NPY_UINT32</code><a class="headerlink" href="#c.NPY_UINT32" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 32-bit/4-byte unsigned integer.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_ULONG">
+<code class="descname">NPY_ULONG</code><a class="headerlink" href="#c.NPY_ULONG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to either NPY_UINT or NPY_ULONGLONG, depending on the
+platform.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_ULONGLONG">
+<code class="descname">NPY_ULONGLONG</code><a class="headerlink" href="#c.NPY_ULONGLONG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_UINT64">
+<code class="descname">NPY_UINT64</code><a class="headerlink" href="#c.NPY_UINT64" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 64-bit/8-byte unsigned integer.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_HALF">
+<code class="descname">NPY_HALF</code><a class="headerlink" href="#c.NPY_HALF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_FLOAT16">
+<code class="descname">NPY_FLOAT16</code><a class="headerlink" href="#c.NPY_FLOAT16" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 16-bit/2-byte IEEE 754-2008 compatible floating
+point type.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_FLOAT">
+<code class="descname">NPY_FLOAT</code><a class="headerlink" href="#c.NPY_FLOAT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_FLOAT32">
+<code class="descname">NPY_FLOAT32</code><a class="headerlink" href="#c.NPY_FLOAT32" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 32-bit/4-byte IEEE 754 compatible floating
+point type.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_DOUBLE">
+<code class="descname">NPY_DOUBLE</code><a class="headerlink" href="#c.NPY_DOUBLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_FLOAT64">
+<code class="descname">NPY_FLOAT64</code><a class="headerlink" href="#c.NPY_FLOAT64" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 64-bit/8-byte IEEE 754 compatible floating
+point type.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_LONGDOUBLE">
+<code class="descname">NPY_LONGDOUBLE</code><a class="headerlink" href="#c.NPY_LONGDOUBLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a platform-specific floating point type which is
+at least as large as NPY_DOUBLE, but larger on many platforms.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_CFLOAT">
+<code class="descname">NPY_CFLOAT</code><a class="headerlink" href="#c.NPY_CFLOAT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_COMPLEX64">
+<code class="descname">NPY_COMPLEX64</code><a class="headerlink" href="#c.NPY_COMPLEX64" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 64-bit/8-byte complex type made up of
+two NPY_FLOAT values.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_CDOUBLE">
+<code class="descname">NPY_CDOUBLE</code><a class="headerlink" href="#c.NPY_CDOUBLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_COMPLEX128">
+<code class="descname">NPY_COMPLEX128</code><a class="headerlink" href="#c.NPY_COMPLEX128" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a 128-bit/16-byte complex type made up of
+two NPY_DOUBLE values.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_CLONGDOUBLE">
+<code class="descname">NPY_CLONGDOUBLE</code><a class="headerlink" href="#c.NPY_CLONGDOUBLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a platform-specific complex floating point
+type which is made up of two NPY_LONGDOUBLE values.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_DATETIME">
+<code class="descname">NPY_DATETIME</code><a class="headerlink" href="#c.NPY_DATETIME" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a data type which holds dates or datetimes with
+a precision based on selectable date or time units.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_TIMEDELTA">
+<code class="descname">NPY_TIMEDELTA</code><a class="headerlink" href="#c.NPY_TIMEDELTA" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a data type which holds lengths of times in
+integers of selectable date or time units.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_STRING">
+<code class="descname">NPY_STRING</code><a class="headerlink" href="#c.NPY_STRING" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for ASCII strings of a selectable size. The
+strings have a fixed maximum size within a given array.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_UNICODE">
+<code class="descname">NPY_UNICODE</code><a class="headerlink" href="#c.NPY_UNICODE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for UCS4 strings of a selectable size. The
+strings have a fixed maximum size within a given array.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_OBJECT">
+<code class="descname">NPY_OBJECT</code><a class="headerlink" href="#c.NPY_OBJECT" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for references to arbitrary Python objects.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_VOID">
+<code class="descname">NPY_VOID</code><a class="headerlink" href="#c.NPY_VOID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Primarily used to hold struct dtypes, but can contain arbitrary
+binary data.</p>
+</dd></dl>
+
+<p>Some useful aliases of the above types are</p>
+<dl class="var">
+<dt id="c.NPY_INTP">
+<code class="descname">NPY_INTP</code><a class="headerlink" href="#c.NPY_INTP" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for a signed integer type which is the same
+size as a (void *) pointer. This is the type used by all
+arrays of indices.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_UINTP">
+<code class="descname">NPY_UINTP</code><a class="headerlink" href="#c.NPY_UINTP" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value for an unsigned integer type which is the
+same size as a (void *) pointer.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_MASK">
+<code class="descname">NPY_MASK</code><a class="headerlink" href="#c.NPY_MASK" title="Permalink to this definition">¶</a></dt>
+<dd><p>The enumeration value of the type used for masks, such as with
+the <a class="reference internal" href="c-api.iterator.html#c.NPY_ITER_ARRAYMASK" title="NPY_ITER_ARRAYMASK"><code class="xref c c-data docutils literal"><span class="pre">NPY_ITER_ARRAYMASK</span></code></a> iterator flag. This is equivalent
+to <a class="reference internal" href="#c.NPY_UINT8" title="NPY_UINT8"><code class="xref c c-data docutils literal"><span class="pre">NPY_UINT8</span></code></a>.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_DEFAULT_TYPE">
+<code class="descname">NPY_DEFAULT_TYPE</code><a class="headerlink" href="#c.NPY_DEFAULT_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The default type to use when no dtype is explicitly specified, for
+example when calling np.zero(shape). This is equivalent to
+<a class="reference internal" href="#c.NPY_DOUBLE" title="NPY_DOUBLE"><code class="xref c c-data docutils literal"><span class="pre">NPY_DOUBLE</span></code></a>.</p>
+</dd></dl>
+
+<p>Other useful related constants are</p>
+<dl class="var">
+<dt id="c.NPY_NTYPES">
+<code class="descname">NPY_NTYPES</code><a class="headerlink" href="#c.NPY_NTYPES" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total number of built-in NumPy types. The enumeration covers
+the range from 0 to NPY_NTYPES-1.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_NOTYPE">
+<code class="descname">NPY_NOTYPE</code><a class="headerlink" href="#c.NPY_NOTYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A signal value guaranteed not to be a valid type enumeration number.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="c.NPY_USERDEF">
+<code class="descname">NPY_USERDEF</code><a class="headerlink" href="#c.NPY_USERDEF" title="Permalink to this definition">¶</a></dt>
+<dd><p>The start of type numbers used for Custom Data types.</p>
+</dd></dl>
+
+<p>The various character codes indicating certain types are also part of
+an enumerated list. References to type characters (should they be
+needed at all) should always use these enumerations. The form of them
+is <code class="xref c c-data docutils literal"><span class="pre">NPY_{NAME}LTR</span></code> where <code class="docutils literal"><span class="pre">{NAME}</span></code> can be</p>
+<blockquote>
+<div><p><strong>BOOL</strong>, <strong>BYTE</strong>, <strong>UBYTE</strong>, <strong>SHORT</strong>, <strong>USHORT</strong>, <strong>INT</strong>,
+<strong>UINT</strong>, <strong>LONG</strong>, <strong>ULONG</strong>, <strong>LONGLONG</strong>, <strong>ULONGLONG</strong>,
+<strong>HALF</strong>, <strong>FLOAT</strong>, <strong>DOUBLE</strong>, <strong>LONGDOUBLE</strong>, <strong>CFLOAT</strong>,
+<strong>CDOUBLE</strong>, <strong>CLONGDOUBLE</strong>, <strong>DATETIME</strong>, <strong>TIMEDELTA</strong>,
+<strong>OBJECT</strong>, <strong>STRING</strong>, <strong>VOID</strong></p>
+<p><strong>INTP</strong>, <strong>UINTP</strong></p>
+<p><strong>GENBOOL</strong>, <strong>SIGNED</strong>, <strong>UNSIGNED</strong>, <strong>FLOATING</strong>, <strong>COMPLEX</strong></p>
+</div></blockquote>
+<p>The latter group of <code class="docutils literal"><span class="pre">{NAME}s</span></code> corresponds to letters used in the array
+interface typestring specification.</p>
+</div>
+<div class="section" id="defines">
+<h2>11.5.3.2. Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="max-and-min-values-for-integers">
+<h3>11.5.3.2.1. Max and min values for integers<a class="headerlink" href="#max-and-min-values-for-integers" title="Permalink to this headline">¶</a></h3>
+<dl class="var">
+<dt>
+<code class="descname">NPY_MAX_INT{bits}</code></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt>
+<code class="descname">NPY_MAX_UINT{bits}</code></dt>
+<dd></dd></dl>
+
+<dl class="var">
+<dt>
+<code class="descname">NPY_MIN_INT{bits}</code></dt>
+<dd><p>These are defined for <code class="docutils literal"><span class="pre">{bits}</span></code> = 8, 16, 32, 64, 128, and 256 and provide
+the maximum (minimum) value of the corresponding (unsigned) integer
+type. Note: the actual integer type may not be available on all
+platforms (i.e. 128-bit and 256-bit integers are rare).</p>
+</dd></dl>
+
+<dl class="var">
+<dt>
+<code class="descname">NPY_MIN_{type}</code></dt>
+<dd><p>This is defined for <code class="docutils literal"><span class="pre">{type}</span></code> = <strong>BYTE</strong>, <strong>SHORT</strong>, <strong>INT</strong>,
+<strong>LONG</strong>, <strong>LONGLONG</strong>, <strong>INTP</strong></p>
+</dd></dl>
+
+<dl class="var">
+<dt>
+<code class="descname">NPY_MAX_{type}</code></dt>
+<dd><p>This is defined for all defined for <code class="docutils literal"><span class="pre">{type}</span></code> = <strong>BYTE</strong>, <strong>UBYTE</strong>,
+<strong>SHORT</strong>, <strong>USHORT</strong>, <strong>INT</strong>, <strong>UINT</strong>, <strong>LONG</strong>, <strong>ULONG</strong>,
+<strong>LONGLONG</strong>, <strong>ULONGLONG</strong>, <strong>INTP</strong>, <strong>UINTP</strong></p>
+</dd></dl>
+
+</div>
+<div class="section" id="number-of-bits-in-data-types">
+<h3>11.5.3.2.2. Number of bits in data types<a class="headerlink" href="#number-of-bits-in-data-types" title="Permalink to this headline">¶</a></h3>
+<p>All <code class="xref c c-data docutils literal"><span class="pre">NPY_SIZEOF_{CTYPE}</span></code> constants have corresponding
+<code class="xref c c-data docutils literal"><span class="pre">NPY_BITSOF_{CTYPE}</span></code> constants defined. The <code class="xref c c-data docutils literal"><span class="pre">NPY_BITSOF_{CTYPE}</span></code>
+constants provide the number of bits in the data type.  Specifically,
+the available <code class="docutils literal"><span class="pre">{CTYPE}s</span></code> are</p>
+<blockquote>
+<div><strong>BOOL</strong>, <strong>CHAR</strong>, <strong>SHORT</strong>, <strong>INT</strong>, <strong>LONG</strong>,
+<strong>LONGLONG</strong>, <strong>FLOAT</strong>, <strong>DOUBLE</strong>, <strong>LONGDOUBLE</strong></div></blockquote>
+</div>
+<div class="section" id="bit-width-references-to-enumerated-typenums">
+<h3>11.5.3.2.3. Bit-width references to enumerated typenums<a class="headerlink" href="#bit-width-references-to-enumerated-typenums" title="Permalink to this headline">¶</a></h3>
+<p>All of the numeric data types (integer, floating point, and complex)
+have constants that are defined to be a specific enumerated type
+number. Exactly which enumerated type a bit-width type refers to is
+platform dependent. In particular, the constants available are
+<code class="xref c c-data docutils literal"><span class="pre">PyArray_{NAME}{BITS}</span></code> where <code class="docutils literal"><span class="pre">{NAME}</span></code> is <strong>INT</strong>, <strong>UINT</strong>,
+<strong>FLOAT</strong>, <strong>COMPLEX</strong> and <code class="docutils literal"><span class="pre">{BITS}</span></code> can be 8, 16, 32, 64, 80, 96, 128,
+160, 192, 256, and 512.  Obviously not all bit-widths are available on
+all platforms for all the kinds of numeric types. Commonly 8-, 16-,
+32-, 64-bit integers; 32-, 64-bit floats; and 64-, 128-bit complex
+types are available.</p>
+</div>
+<div class="section" id="integer-that-can-hold-a-pointer">
+<h3>11.5.3.2.4. Integer that can hold a pointer<a class="headerlink" href="#integer-that-can-hold-a-pointer" title="Permalink to this headline">¶</a></h3>
+<p>The constants <strong>NPY_INTP</strong> and <strong>NPY_UINTP</strong> refer to an
+enumerated integer type that is large enough to hold a pointer on the
+platform. Index arrays should always be converted to <strong>NPY_INTP</strong>
+, because the dimension of the array is of type npy_intp.</p>
+</div>
+</div>
+<div class="section" id="c-type-names">
+<h2>11.5.3.3. C-type names<a class="headerlink" href="#c-type-names" title="Permalink to this headline">¶</a></h2>
+<p>There are standard variable types for each of the numeric data types
+and the bool data type. Some of these are already available in the
+C-specification. You can create variables in extension code with these
+types.</p>
+<div class="section" id="boolean">
+<h3>11.5.3.3.1. Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h3>
+<dl class="type">
+<dt id="c.npy_bool">
+<code class="descname">npy_bool</code><a class="headerlink" href="#c.npy_bool" title="Permalink to this definition">¶</a></dt>
+<dd><p>unsigned char; The constants <a class="reference internal" href="c-api.array.html#c.NPY_FALSE" title="NPY_FALSE"><code class="xref c c-data docutils literal"><span class="pre">NPY_FALSE</span></code></a> and
+<a class="reference internal" href="c-api.array.html#c.NPY_TRUE" title="NPY_TRUE"><code class="xref c c-data docutils literal"><span class="pre">NPY_TRUE</span></code></a> are also defined.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="un-signed-integer">
+<h3>11.5.3.3.2. (Un)Signed Integer<a class="headerlink" href="#un-signed-integer" title="Permalink to this headline">¶</a></h3>
+<p>Unsigned versions of the integers can be defined by pre-pending a &#8216;u&#8217;
+to the front of the integer name.</p>
+<dl class="type">
+<dt>
+<code class="descname">npy_(u)byte</code></dt>
+<dd><p>(unsigned) char</p>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<code class="descname">npy_(u)short</code></dt>
+<dd><p>(unsigned) short</p>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<code class="descname">npy_(u)int</code></dt>
+<dd><p>(unsigned) int</p>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<code class="descname">npy_(u)long</code></dt>
+<dd><p>(unsigned) long int</p>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<code class="descname">npy_(u)longlong</code></dt>
+<dd><p>(unsigned long long int)</p>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<code class="descname">npy_(u)intp</code></dt>
+<dd><p>(unsigned) Py_intptr_t (an integer that is the size of a pointer on
+the platform).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="complex-floating-point">
+<h3>11.5.3.3.3. (Complex) Floating point<a class="headerlink" href="#complex-floating-point" title="Permalink to this headline">¶</a></h3>
+<dl class="type">
+<dt>
+<code class="descname">npy_(c)float</code></dt>
+<dd><p>float</p>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<code class="descname">npy_(c)double</code></dt>
+<dd><p>double</p>
+</dd></dl>
+
+<dl class="type">
+<dt>
+<code class="descname">npy_(c)longdouble</code></dt>
+<dd><p>long double</p>
+</dd></dl>
+
+<p>complex types are structures with <strong>.real</strong> and <strong>.imag</strong> members (in
+that order).</p>
+</div>
+<div class="section" id="bit-width-names">
+<h3>11.5.3.3.4. Bit-width names<a class="headerlink" href="#bit-width-names" title="Permalink to this headline">¶</a></h3>
+<p>There are also typedefs for signed integers, unsigned integers,
+floating point, and complex floating point types of specific bit-
+widths. The available type names are</p>
+<blockquote>
+<div><code class="xref c c-type docutils literal"><span class="pre">npy_int{bits}</span></code>, <code class="xref c c-type docutils literal"><span class="pre">npy_uint{bits}</span></code>, <code class="xref c c-type docutils literal"><span class="pre">npy_float{bits}</span></code>,
+and <code class="xref c c-type docutils literal"><span class="pre">npy_complex{bits}</span></code></div></blockquote>
+<p>where <code class="docutils literal"><span class="pre">{bits}</span></code> is the number of bits in the type and can be <strong>8</strong>,
+<strong>16</strong>, <strong>32</strong>, <strong>64</strong>, 128, and 256 for integer types; 16, <strong>32</strong>
+, <strong>64</strong>, 80, 96, 128, and 256 for floating-point types; and 32,
+<strong>64</strong>, <strong>128</strong>, 160, 192, and 512 for complex-valued types. Which
+bit-widths are available is platform dependent. The bolded bit-widths
+are usually available on all platforms.</p>
+</div>
+</div>
+<div class="section" id="printf-formatting">
+<h2>11.5.3.4. Printf Formatting<a class="headerlink" href="#printf-formatting" title="Permalink to this headline">¶</a></h2>
+<p>For help in printing, the following strings are defined as the correct
+format specifier in printf and related commands.</p>
+<blockquote>
+<div><code class="xref c c-data docutils literal"><span class="pre">NPY_LONGLONG_FMT</span></code>, <code class="xref c c-data docutils literal"><span class="pre">NPY_ULONGLONG_FMT</span></code>,
+<code class="xref c c-data docutils literal"><span class="pre">NPY_INTP_FMT</span></code>, <code class="xref c c-data docutils literal"><span class="pre">NPY_UINTP_FMT</span></code>,
+<code class="xref c c-data docutils literal"><span class="pre">NPY_LONGDOUBLE_FMT</span></code></div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c-api.array.html" class="btn btn-neutral float-right" title="11.5.4. Array API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c-api.config.html" class="btn btn-neutral" title="11.5.2. System configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

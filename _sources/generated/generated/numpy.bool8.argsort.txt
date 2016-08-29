@@ -1,0 +1,6 @@
+numpy.bool8.argsort
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.argsort

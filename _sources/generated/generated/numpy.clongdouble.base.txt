@@ -1,0 +1,6 @@
+numpy.clongdouble.base
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongdouble.base

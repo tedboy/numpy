@@ -1,0 +1,6 @@
+numpy.short.copy
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.copy

@@ -1,0 +1,6 @@
+numpy.signedinteger.repeat
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.repeat

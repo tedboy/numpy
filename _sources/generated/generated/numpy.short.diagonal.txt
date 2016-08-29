@@ -1,0 +1,6 @@
+numpy.short.diagonal
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.diagonal

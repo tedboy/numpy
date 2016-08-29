@@ -1,0 +1,6 @@
+numpy.string_.repeat
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.repeat

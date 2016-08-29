@@ -1,0 +1,6 @@
+numpy.ulonglong.astype
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.astype

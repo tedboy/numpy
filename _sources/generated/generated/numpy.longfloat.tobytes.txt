@@ -1,0 +1,6 @@
+numpy.longfloat.tobytes
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.tobytes

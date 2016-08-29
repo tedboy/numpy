@@ -1,0 +1,6 @@
+numpy.inexact.diagonal
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.diagonal

@@ -1,0 +1,6 @@
+numpy.lib.intersect1d
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: intersect1d

@@ -1,0 +1,6 @@
+numpy.polynomial.Polynomial.window
+==================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Polynomial.window

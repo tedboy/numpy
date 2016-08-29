@@ -1,0 +1,6 @@
+numpy.timedelta64.take
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.take

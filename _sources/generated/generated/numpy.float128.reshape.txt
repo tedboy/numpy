@@ -1,0 +1,6 @@
+numpy.float128.reshape
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: float128.reshape

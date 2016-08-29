@@ -1,0 +1,6 @@
+numpy.flexible.tobytes
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.tobytes

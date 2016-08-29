@@ -1,0 +1,31 @@
+numpy.testing.Tester
+====================
+
+.. currentmodule:: numpy.testing
+
+.. autoclass:: Tester
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Tester.__init__
+      ~Tester.bench
+      ~Tester.prepare_test_args
+      ~Tester.test
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Tester.excludes
+   
+   

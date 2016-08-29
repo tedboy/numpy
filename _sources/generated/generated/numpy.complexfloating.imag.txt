@@ -1,0 +1,6 @@
+numpy.complexfloating.imag
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.imag

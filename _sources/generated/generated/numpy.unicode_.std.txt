@@ -1,0 +1,6 @@
+numpy.unicode_.std
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.std

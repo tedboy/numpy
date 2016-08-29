@@ -1,0 +1,6 @@
+numpy.longcomplex.T
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.T

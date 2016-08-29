@@ -1,0 +1,6 @@
+numpy.single.data
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: single.data

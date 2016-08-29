@@ -1,0 +1,6 @@
+numpy.short.searchsorted
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.searchsorted

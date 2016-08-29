@@ -1,0 +1,6 @@
+numpy.half.transpose
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.transpose

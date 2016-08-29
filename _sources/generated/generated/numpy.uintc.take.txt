@@ -1,0 +1,6 @@
+numpy.uintc.take
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintc.take

@@ -1,0 +1,6 @@
+numpy.unicode_.imag
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.imag

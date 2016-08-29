@@ -1,0 +1,22 @@
+numpy.format_parser
+===================
+
+.. currentmodule:: numpy
+
+.. autoclass:: format_parser
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~format_parser.__init__
+   
+   
+
+   
+   
+   

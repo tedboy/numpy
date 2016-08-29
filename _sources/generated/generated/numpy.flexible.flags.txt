@@ -1,0 +1,6 @@
+numpy.flexible.flags
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.flags

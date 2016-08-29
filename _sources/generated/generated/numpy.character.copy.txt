@@ -1,0 +1,6 @@
+numpy.character.copy
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.copy

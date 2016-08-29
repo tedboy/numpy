@@ -1,0 +1,6 @@
+numpy.signedinteger.itemsize
+============================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.itemsize

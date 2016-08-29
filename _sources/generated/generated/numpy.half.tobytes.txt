@@ -1,0 +1,6 @@
+numpy.half.tobytes
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.tobytes

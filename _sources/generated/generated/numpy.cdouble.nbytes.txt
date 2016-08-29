@@ -1,0 +1,6 @@
+numpy.cdouble.nbytes
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.nbytes

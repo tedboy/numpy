@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.3.7.8.3. numpy.MachAr &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../index.html"/>
+        <link rel="up" title="11.3.7. Data type routines" href="../routines.dtype.html"/>
+        <link rel="next" title="11.3.7.9.1. numpy.issctype" href="numpy.issctype.html"/>
+        <link rel="prev" title="11.3.7.8.2. numpy.iinfo" href="numpy.iinfo.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../routines.html">11.3. Routines</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../routines.array-creation.html">11.3.1. Array creation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.array-manipulation.html">11.3.2. Array manipulation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.bitwise.html">11.3.3. Binary operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.char.html">11.3.4. String operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.ctypeslib.html">11.3.5. C-Types Foreign Function Interface (<code class="docutils literal"><span class="pre">numpy.ctypeslib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.datetime.html">11.3.6. Datetime Support Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../routines.dtype.html">11.3.7. Data type routines</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="numpy.can_cast.html">11.3.7.1. numpy.can_cast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numpy.promote_types.html">11.3.7.2. numpy.promote_types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numpy.min_scalar_type.html">11.3.7.3. numpy.min_scalar_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numpy.result_type.html">11.3.7.4. numpy.result_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numpy.common_type.html">11.3.7.5. numpy.common_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numpy.obj2sctype.html">11.3.7.6. numpy.obj2sctype</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../routines.dtype.html#creating-data-types">11.3.7.7. Creating data types</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../routines.dtype.html#data-type-information">11.3.7.8. Data type information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../routines.dtype.html#data-type-testing">11.3.7.9. Data type testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../routines.dtype.html#miscellaneous">11.3.7.10. Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.dual.html">11.3.8. Optionally Scipy-accelerated routines (<code class="docutils literal"><span class="pre">numpy.dual</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.emath.html">11.3.9. Mathematical functions with automatic domain (<code class="docutils literal"><span class="pre">numpy.emath</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.err.html">11.3.10. Floating point error handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.fft.html">11.3.11. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.financial.html">11.3.12. Financial functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.functional.html">11.3.13. Functional programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.help.html">11.3.14. Numpy-specific help functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.indexing.html">11.3.15. Indexing routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.io.html">11.3.16. Input and output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.linalg.html">11.3.17. Linear algebra (<code class="docutils literal"><span class="pre">numpy.linalg</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.logic.html">11.3.18. Logic functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.ma.html">11.1.7.7. Masked array operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.math.html">11.3.19. Mathematical functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.matlib.html">11.3.20. Matrix library (<code class="docutils literal"><span class="pre">numpy.matlib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.other.html">11.3.21. Miscellaneous routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.padding.html">11.3.22. Padding Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.polynomials.html">11.3.23. Polynomials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.random.html">11.3.24. Random sampling (<code class="docutils literal"><span class="pre">numpy.random</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.set.html">11.3.25. Set routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.sort.html">11.3.26. Sorting, searching, and counting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.statistics.html">11.3.27. Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.testing.html">11.3.28. Test Support (<code class="docutils literal"><span class="pre">numpy.testing</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.window.html">11.3.29. Window functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="../routines.html">11.3. Routines</a> &raquo;</li>
+        
+          <li><a href="../routines.dtype.html">11.3.7. Data type routines</a> &raquo;</li>
+        
+      <li>11.3.7.8.3. numpy.MachAr</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/reference/generated/numpy.MachAr.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy-machar">
+<h1>11.3.7.8.3. numpy.MachAr<a class="headerlink" href="#numpy-machar" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="numpy.MachAr">
+<em class="property">class </em><code class="descclassname">numpy.</code><code class="descname">MachAr</code><span class="sig-paren">(</span><em>float_conv=&lt;type 'float'&gt;</em>, <em>int_conv=&lt;type 'int'&gt;</em>, <em>float_to_float=&lt;type 'float'&gt;</em>, <em>float_to_str=&lt;function &lt;lambda&gt;&gt;</em>, <em>title='Python floating point number'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/numpy/core/machar.html#MachAr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.MachAr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Diagnosing machine parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>float_conv</strong> : function, optional</p>
+<blockquote>
+<div><p>Function that converts an integer or integer array to a float
+or float array. Default is <cite>float</cite>.</p>
+</div></blockquote>
+<p><strong>int_conv</strong> : function, optional</p>
+<blockquote>
+<div><p>Function that converts a float or float array to an integer or
+integer array. Default is <cite>int</cite>.</p>
+</div></blockquote>
+<p><strong>float_to_float</strong> : function, optional</p>
+<blockquote>
+<div><p>Function that converts a float array to float. Default is <cite>float</cite>.
+Note that this does not seem to do anything useful in the current
+implementation.</p>
+</div></blockquote>
+<p><strong>float_to_str</strong> : function, optional</p>
+<blockquote>
+<div><p>Function that converts a single float to a string. Default is
+<code class="docutils literal"><span class="pre">lambda</span> <span class="pre">v:'%24.16e'</span> <span class="pre">%v</span></code>.</p>
+</div></blockquote>
+<p><strong>title</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>Title that is printed in the string representation of <cite>MachAr</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="numpy.finfo.html#numpy.finfo" title="numpy.finfo"><code class="xref py py-obj docutils literal"><span class="pre">finfo</span></code></a></dt>
+<dd>Machine limits for floating point types.</dd>
+<dt><a class="reference internal" href="numpy.iinfo.html#numpy.iinfo" title="numpy.iinfo"><code class="xref py py-obj docutils literal"><span class="pre">iinfo</span></code></a></dt>
+<dd>Machine limits for integer types.</dd>
+</dl>
+</div>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r449" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[R449]</a></td><td>Press, Teukolsky, Vetterling and Flannery,
+&#8220;Numerical Recipes in C++,&#8221; 2nd ed,
+Cambridge University Press, 2002, p. 31.</td></tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ibeta</td>
+<td>(int) Radix in which numbers are represented.</td>
+</tr>
+<tr class="row-even"><td>it</td>
+<td>(int) Number of base-<cite>ibeta</cite> digits in the floating point mantissa M.</td>
+</tr>
+<tr class="row-odd"><td>machep</td>
+<td>(int) Exponent of the smallest (most negative) power of <cite>ibeta</cite> that, added to 1.0, gives something different from 1.0</td>
+</tr>
+<tr class="row-even"><td>eps</td>
+<td>(float) Floating-point number <code class="docutils literal"><span class="pre">beta**machep</span></code> (floating point precision)</td>
+</tr>
+<tr class="row-odd"><td>negep</td>
+<td>(int) Exponent of the smallest power of <cite>ibeta</cite> that, substracted from 1.0, gives something different from 1.0.</td>
+</tr>
+<tr class="row-even"><td>epsneg</td>
+<td>(float) Floating-point number <code class="docutils literal"><span class="pre">beta**negep</span></code>.</td>
+</tr>
+<tr class="row-odd"><td>iexp</td>
+<td>(int) Number of bits in the exponent (including its sign and bias).</td>
+</tr>
+<tr class="row-even"><td>minexp</td>
+<td>(int) Smallest (most negative) power of <cite>ibeta</cite> consistent with there being no leading zeros in the mantissa.</td>
+</tr>
+<tr class="row-odd"><td>xmin</td>
+<td>(float) Floating point number <code class="docutils literal"><span class="pre">beta**minexp</span></code> (the smallest [in magnitude] usable floating value).</td>
+</tr>
+<tr class="row-even"><td>maxexp</td>
+<td>(int) Smallest (positive) power of <cite>ibeta</cite> that causes overflow.</td>
+</tr>
+<tr class="row-odd"><td>xmax</td>
+<td>(float) <code class="docutils literal"><span class="pre">(1-epsneg)</span> <span class="pre">*</span> <span class="pre">beta**maxexp</span></code> (the largest [in magnitude] usable floating value).</td>
+</tr>
+<tr class="row-even"><td>irnd</td>
+<td>(int) In <code class="docutils literal"><span class="pre">range(6)</span></code>, information on what kind of rounding is done in addition, and on how underflow is handled.</td>
+</tr>
+<tr class="row-odd"><td>ngrd</td>
+<td>(int) Number of &#8216;guard digits&#8217; used when truncating the product of two mantissas to fit the representation.</td>
+</tr>
+<tr class="row-even"><td>epsilon</td>
+<td>(float) Same as <cite>eps</cite>.</td>
+</tr>
+<tr class="row-odd"><td>tiny</td>
+<td>(float) Same as <cite>xmin</cite>.</td>
+</tr>
+<tr class="row-even"><td>huge</td>
+<td>(float) Same as <cite>xmax</cite>.</td>
+</tr>
+<tr class="row-odd"><td>precision</td>
+<td>(float) <code class="docutils literal"><span class="pre">-</span> <span class="pre">int(-log10(eps))</span></code></td>
+</tr>
+<tr class="row-even"><td>resolution</td>
+<td>(float) <code class="docutils literal"><span class="pre">-</span> <span class="pre">10**(-precision)</span></code></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="numpy.MachAr.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>float_conv=&lt;type 'float'&gt;</em>, <em>int_conv=&lt;type 'int'&gt;</em>, <em>float_to_float=&lt;type 'float'&gt;</em>, <em>float_to_str=&lt;function &lt;lambda&gt;&gt;</em>, <em>title='Python floating point number'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/numpy/core/machar.html#MachAr.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.MachAr.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>float_conv - convert integer to float (array)
+int_conv   - convert float (array) to integer
+float_to_float - convert float array to float
+float_to_str - convert array float to str
+title        - description of used floating point numbers</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#numpy.MachAr.__init__" title="numpy.MachAr.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([float_conv,&nbsp;int_conv,&nbsp;...])</td>
+<td>float_conv - convert integer to float (array)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numpy.issctype.html" class="btn btn-neutral float-right" title="11.3.7.9.1. numpy.issctype" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numpy.iinfo.html" class="btn btn-neutral" title="11.3.7.8.2. numpy.iinfo" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

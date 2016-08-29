@@ -1,0 +1,6 @@
+numpy.csingle.tostring
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.tostring

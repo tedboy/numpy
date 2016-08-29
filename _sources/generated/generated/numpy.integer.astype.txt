@@ -1,0 +1,6 @@
+numpy.integer.astype
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: integer.astype

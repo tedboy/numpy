@@ -1,0 +1,6 @@
+numpy.bool_.choose
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.choose

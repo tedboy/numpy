@@ -1,0 +1,6 @@
+numpy.inexact.mean
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.mean

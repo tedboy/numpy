@@ -1,0 +1,45 @@
+:mod:`numpy.polynomial`
+=======================
+
+.. automodule:: numpy.polynomial
+
+   
+   
+   
+
+   
+   
+   Classes
+   -------
+   .. autosummary::
+      :toctree:generated/
+      :template:class_custom.rst
+
+   
+      Chebyshev
+      Hermite
+      HermiteE
+      Laguerre
+      Legendre
+      Polynomial
+      Tester
+
+   .. toctree::
+       :maxdepth: 1
+       :hidden:
+
+   
+       generated/numpy.polynomial.Chebyshev
+       generated/numpy.polynomial.Hermite
+       generated/numpy.polynomial.HermiteE
+       generated/numpy.polynomial.Laguerre
+       generated/numpy.polynomial.Legendre
+       generated/numpy.polynomial.Polynomial
+       generated/numpy.polynomial.Tester
+
+   
+   
+
+   
+   
+   

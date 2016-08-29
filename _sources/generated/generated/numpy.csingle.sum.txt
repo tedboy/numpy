@@ -1,0 +1,6 @@
+numpy.csingle.sum
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.sum

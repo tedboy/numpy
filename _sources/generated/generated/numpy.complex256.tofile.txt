@@ -1,0 +1,6 @@
+numpy.complex256.tofile
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.tofile

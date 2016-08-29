@@ -1,0 +1,6 @@
+numpy.ubyte.tolist
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.tolist

@@ -1,0 +1,6 @@
+numpy.timedelta64.swapaxes
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.swapaxes

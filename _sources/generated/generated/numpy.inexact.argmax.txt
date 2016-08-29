@@ -1,0 +1,6 @@
+numpy.inexact.argmax
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.argmax

@@ -1,0 +1,6 @@
+numpy.csingle.tolist
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.tolist

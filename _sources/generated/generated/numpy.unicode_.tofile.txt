@@ -1,0 +1,6 @@
+numpy.unicode_.tofile
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.tofile

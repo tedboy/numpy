@@ -1,0 +1,6 @@
+numpy.str_.conj
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.conj

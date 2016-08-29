@@ -1,0 +1,6 @@
+numpy.lib.place
+===============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: place

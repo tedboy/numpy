@@ -1,0 +1,6 @@
+numpy.uintp.tofile
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.tofile

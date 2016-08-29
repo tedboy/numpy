@@ -1,0 +1,6 @@
+numpy.lib.ix_
+=============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: ix_

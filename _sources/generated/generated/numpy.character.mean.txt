@@ -1,0 +1,6 @@
+numpy.character.mean
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.mean

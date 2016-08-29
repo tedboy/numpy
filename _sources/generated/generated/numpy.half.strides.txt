@@ -1,0 +1,6 @@
+numpy.half.strides
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.strides

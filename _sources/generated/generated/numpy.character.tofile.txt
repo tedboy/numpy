@@ -1,0 +1,6 @@
+numpy.character.tofile
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.tofile

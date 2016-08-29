@@ -1,0 +1,6 @@
+numpy.cdouble.reshape
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.reshape

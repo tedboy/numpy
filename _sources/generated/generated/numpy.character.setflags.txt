@@ -1,0 +1,6 @@
+numpy.character.setflags
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.setflags

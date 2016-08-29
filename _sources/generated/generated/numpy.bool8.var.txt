@@ -1,0 +1,6 @@
+numpy.bool8.var
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.var

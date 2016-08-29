@@ -1,0 +1,6 @@
+numpy.distutils.LibraryInfo.sections
+====================================
+
+.. currentmodule:: numpy.distutils
+
+.. automethod:: LibraryInfo.sections

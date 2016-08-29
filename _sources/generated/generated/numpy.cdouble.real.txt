@@ -1,0 +1,6 @@
+numpy.cdouble.real
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.real

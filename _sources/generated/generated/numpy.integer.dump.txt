@@ -1,0 +1,6 @@
+numpy.integer.dump
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: integer.dump

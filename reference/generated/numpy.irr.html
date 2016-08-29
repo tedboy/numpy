@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.3.12.1.7. numpy.irr &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../index.html"/>
+        <link rel="up" title="11.3.12. Financial functions" href="../routines.financial.html"/>
+        <link rel="next" title="11.3.12.1.8. numpy.mirr" href="numpy.mirr.html"/>
+        <link rel="prev" title="11.3.12.1.6. numpy.ipmt" href="numpy.ipmt.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../routines.html">11.3. Routines</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../routines.array-creation.html">11.3.1. Array creation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.array-manipulation.html">11.3.2. Array manipulation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.bitwise.html">11.3.3. Binary operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.char.html">11.3.4. String operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.ctypeslib.html">11.3.5. C-Types Foreign Function Interface (<code class="docutils literal"><span class="pre">numpy.ctypeslib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.datetime.html">11.3.6. Datetime Support Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.dtype.html">11.3.7. Data type routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.dual.html">11.3.8. Optionally Scipy-accelerated routines (<code class="docutils literal"><span class="pre">numpy.dual</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.emath.html">11.3.9. Mathematical functions with automatic domain (<code class="docutils literal"><span class="pre">numpy.emath</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.err.html">11.3.10. Floating point error handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.fft.html">11.3.11. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../routines.financial.html">11.3.12. Financial functions</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../routines.financial.html#simple-financial-functions">11.3.12.1. Simple financial functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.functional.html">11.3.13. Functional programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.help.html">11.3.14. Numpy-specific help functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.indexing.html">11.3.15. Indexing routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.io.html">11.3.16. Input and output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.linalg.html">11.3.17. Linear algebra (<code class="docutils literal"><span class="pre">numpy.linalg</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.logic.html">11.3.18. Logic functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.ma.html">11.1.7.7. Masked array operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.math.html">11.3.19. Mathematical functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.matlib.html">11.3.20. Matrix library (<code class="docutils literal"><span class="pre">numpy.matlib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.other.html">11.3.21. Miscellaneous routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.padding.html">11.3.22. Padding Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.polynomials.html">11.3.23. Polynomials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.random.html">11.3.24. Random sampling (<code class="docutils literal"><span class="pre">numpy.random</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.set.html">11.3.25. Set routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.sort.html">11.3.26. Sorting, searching, and counting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.statistics.html">11.3.27. Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.testing.html">11.3.28. Test Support (<code class="docutils literal"><span class="pre">numpy.testing</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.window.html">11.3.29. Window functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="../routines.html">11.3. Routines</a> &raquo;</li>
+        
+          <li><a href="../routines.financial.html">11.3.12. Financial functions</a> &raquo;</li>
+        
+      <li>11.3.12.1.7. numpy.irr</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/reference/generated/numpy.irr.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy-irr">
+<h1>11.3.12.1.7. numpy.irr<a class="headerlink" href="#numpy-irr" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="numpy.irr">
+<code class="descclassname">numpy.</code><code class="descname">irr</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/numpy/lib/financial.html#irr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.irr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Internal Rate of Return (IRR).</p>
+<p>This is the &#8220;average&#8221; periodically compounded rate of return
+that gives a net present value of 0.0; for a more complete explanation,
+see Notes below.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>values</strong> : array_like, shape(N,)</p>
+<blockquote>
+<div><p>Input cash flows per time period.  By convention, net &#8220;deposits&#8221;
+are negative and net &#8220;withdrawals&#8221; are positive.  Thus, for
+example, at least the first element of <cite>values</cite>, which represents
+the initial investment, will typically be negative.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<blockquote class="last">
+<div><p>Internal Rate of Return for periodic input values.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The IRR is perhaps best understood through an example (illustrated
+using np.irr in the Examples section below).  Suppose one invests 100
+units and then makes the following withdrawals at regular (fixed)
+intervals: 39, 59, 55, 20.  Assuming the ending value is 0, one&#8217;s 100
+unit investment yields 173 units; however, due to the combination of
+compounding and the periodic withdrawals, the &#8220;average&#8221; rate of return
+is neither simply 0.73/4 nor (1.73)^0.25-1.  Rather, it is the solution
+(for <span class="math">\(r\)</span>) of the equation:</p>
+<div class="math">
+\[-100 + \frac{39}{1+r} + \frac{59}{(1+r)^2}
++ \frac{55}{(1+r)^3} + \frac{20}{(1+r)^4} = 0\]</div>
+<p>In general, for <cite>values</cite> <span class="math">\(= [v_0, v_1, ... v_M]\)</span>,
+irr is the solution of the equation: <a class="reference internal" href="#g480" id="id1">[G480]</a></p>
+<div class="math">
+\[\sum_{t=0}^M{\frac{v_t}{(1+irr)^{t}}} = 0\]</div>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="g480" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[G480]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> L. J. Gitman, &#8220;Principles of Managerial Finance, Brief,&#8221; 3rd ed.,
+Addison-Wesley, 2003, pg. 348.</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">20</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">0.28095</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">74</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">-0.0955</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">-0.0833</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">0.06206</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">0.0886</span>
+</pre></div>
+</div>
+<p>(Compare with the Example given for numpy.lib.financial.npv)</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numpy.mirr.html" class="btn btn-neutral float-right" title="11.3.12.1.8. numpy.mirr" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numpy.ipmt.html" class="btn btn-neutral" title="11.3.12.1.6. numpy.ipmt" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

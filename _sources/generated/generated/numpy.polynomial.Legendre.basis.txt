@@ -1,0 +1,6 @@
+numpy.polynomial.Legendre.basis
+===============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Legendre.basis

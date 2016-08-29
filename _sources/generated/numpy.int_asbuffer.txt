@@ -1,0 +1,6 @@
+numpy.int_asbuffer
+==================
+
+.. currentmodule:: numpy
+
+.. autofunction:: int_asbuffer

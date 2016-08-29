@@ -1,0 +1,6 @@
+numpy.ubyte.flags
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.flags

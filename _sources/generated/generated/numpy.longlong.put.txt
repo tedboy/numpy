@@ -1,0 +1,6 @@
+numpy.longlong.put
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.put

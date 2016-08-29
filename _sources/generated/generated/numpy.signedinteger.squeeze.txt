@@ -1,0 +1,6 @@
+numpy.signedinteger.squeeze
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.squeeze

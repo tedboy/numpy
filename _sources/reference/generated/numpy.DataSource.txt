@@ -1,0 +1,25 @@
+numpy.DataSource
+================
+
+.. currentmodule:: numpy
+
+.. autoclass:: DataSource
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DataSource.__init__
+      ~DataSource.abspath
+      ~DataSource.exists
+      ~DataSource.open
+   
+   
+
+   
+   
+   

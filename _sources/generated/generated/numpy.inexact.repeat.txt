@@ -1,0 +1,6 @@
+numpy.inexact.repeat
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.repeat

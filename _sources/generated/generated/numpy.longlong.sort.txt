@@ -1,0 +1,6 @@
+numpy.longlong.sort
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.sort

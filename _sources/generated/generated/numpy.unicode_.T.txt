@@ -1,0 +1,6 @@
+numpy.unicode_.T
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.T

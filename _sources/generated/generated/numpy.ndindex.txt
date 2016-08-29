@@ -1,0 +1,21 @@
+numpy.ndindex
+=============
+.. currentmodule:: numpy
+.. autoclass:: ndindex
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~ndindex.__init__
+   ~ndindex.ndincr
+   ~ndindex.next
+
+
+
+
+

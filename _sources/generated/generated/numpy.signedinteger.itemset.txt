@@ -1,0 +1,6 @@
+numpy.signedinteger.itemset
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.itemset

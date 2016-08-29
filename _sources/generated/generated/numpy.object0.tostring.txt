@@ -1,0 +1,6 @@
+numpy.object0.tostring
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: object0.tostring

@@ -1,0 +1,92 @@
+numpy.complex256
+================
+.. currentmodule:: numpy
+.. autoclass:: complex256
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~complex256.all
+   ~complex256.any
+   ~complex256.argmax
+   ~complex256.argmin
+   ~complex256.argsort
+   ~complex256.astype
+   ~complex256.byteswap
+   ~complex256.choose
+   ~complex256.clip
+   ~complex256.compress
+   ~complex256.conj
+   ~complex256.conjugate
+   ~complex256.copy
+   ~complex256.cumprod
+   ~complex256.cumsum
+   ~complex256.diagonal
+   ~complex256.dump
+   ~complex256.dumps
+   ~complex256.fill
+   ~complex256.flatten
+   ~complex256.getfield
+   ~complex256.item
+   ~complex256.itemset
+   ~complex256.max
+   ~complex256.mean
+   ~complex256.min
+   ~complex256.newbyteorder
+   ~complex256.nonzero
+   ~complex256.prod
+   ~complex256.ptp
+   ~complex256.put
+   ~complex256.ravel
+   ~complex256.repeat
+   ~complex256.reshape
+   ~complex256.resize
+   ~complex256.round
+   ~complex256.searchsorted
+   ~complex256.setfield
+   ~complex256.setflags
+   ~complex256.sort
+   ~complex256.squeeze
+   ~complex256.std
+   ~complex256.sum
+   ~complex256.swapaxes
+   ~complex256.take
+   ~complex256.tobytes
+   ~complex256.tofile
+   ~complex256.tolist
+   ~complex256.tostring
+   ~complex256.trace
+   ~complex256.transpose
+   ~complex256.var
+   ~complex256.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~complex256.T
+   ~complex256.base
+   ~complex256.data
+   ~complex256.dtype
+   ~complex256.flags
+   ~complex256.flat
+   ~complex256.imag
+   ~complex256.itemsize
+   ~complex256.nbytes
+   ~complex256.ndim
+   ~complex256.real
+   ~complex256.shape
+   ~complex256.size
+   ~complex256.strides
+

@@ -1,0 +1,6 @@
+numpy.bool_.dtype
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool_.dtype

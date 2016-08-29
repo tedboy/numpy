@@ -1,0 +1,6 @@
+numpy.polynomial.Tester.excludes
+================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Tester.excludes

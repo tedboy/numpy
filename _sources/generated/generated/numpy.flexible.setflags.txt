@@ -1,0 +1,6 @@
+numpy.flexible.setflags
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.setflags

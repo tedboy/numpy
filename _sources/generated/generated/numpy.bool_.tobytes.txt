@@ -1,0 +1,6 @@
+numpy.bool_.tobytes
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.tobytes

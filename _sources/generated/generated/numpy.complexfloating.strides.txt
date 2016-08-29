@@ -1,0 +1,6 @@
+numpy.complexfloating.strides
+=============================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.strides

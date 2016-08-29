@@ -1,0 +1,6 @@
+numpy.longfloat.astype
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.astype

@@ -1,0 +1,6 @@
+numpy.cdouble.newbyteorder
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.newbyteorder

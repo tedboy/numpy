@@ -1,0 +1,6 @@
+numpy.timedelta64.repeat
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.repeat

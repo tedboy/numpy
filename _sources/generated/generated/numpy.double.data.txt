@@ -1,0 +1,6 @@
+numpy.double.data
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.data

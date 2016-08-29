@@ -1,0 +1,6 @@
+numpy.inexact.min
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.min

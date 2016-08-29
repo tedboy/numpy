@@ -1,0 +1,6 @@
+numpy.complexfloating.conj
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.conj

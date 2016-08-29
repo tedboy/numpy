@@ -1,0 +1,6 @@
+numpy.longdouble.dtype
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longdouble.dtype

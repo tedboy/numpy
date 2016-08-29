@@ -1,0 +1,1330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. numpy.lib &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../index.html"/>
+        <link rel="up" title="&lt;no title&gt;" href="../api.lib.html"/>
+        <link rel="next" title="3.11.1. numpy.lib.add_docstring" href="numpy.lib.add_docstring.html"/>
+        <link rel="prev" title="&lt;no title&gt;" href="../api.lib.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#type-handling">3.1. Type Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#index-tricks">3.2. Index Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-functions">3.3. Useful Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shape-manipulation">3.4. Shape Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matrix-2d-array-manipulations">3.5. Matrix (2D Array) Manipulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#polynomials">3.6. Polynomials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#import-tricks">3.7. Import Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#machine-arithmetics">3.8. Machine Arithmetics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#threading-tricks">3.9. Threading Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-array-set-operations">3.10. 1D Array Set Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">3.11. Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.add_docstring.html">3.11.1. numpy.lib.add_docstring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.add_newdoc.html">3.11.2. numpy.lib.add_newdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.add_newdoc_ufunc.html">3.11.3. numpy.lib.add_newdoc_ufunc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.angle.html">3.11.4. numpy.lib.angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.append.html">3.11.5. numpy.lib.append</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.apply_along_axis.html">3.11.6. numpy.lib.apply_along_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.apply_over_axes.html">3.11.7. numpy.lib.apply_over_axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.array_split.html">3.11.8. numpy.lib.array_split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.asarray_chkfinite.html">3.11.9. numpy.lib.asarray_chkfinite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.asfarray.html">3.11.10. numpy.lib.asfarray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.asscalar.html">3.11.11. numpy.lib.asscalar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.average.html">3.11.12. numpy.lib.average</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.bartlett.html">3.11.13. numpy.lib.bartlett</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.bincount.html">3.11.14. numpy.lib.bincount</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.blackman.html">3.11.15. numpy.lib.blackman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.broadcast_arrays.html">3.11.16. numpy.lib.broadcast_arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.broadcast_to.html">3.11.17. numpy.lib.broadcast_to</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.byte_bounds.html">3.11.18. numpy.lib.byte_bounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.column_stack.html">3.11.19. numpy.lib.column_stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.common_type.html">3.11.20. numpy.lib.common_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.copy.html">3.11.21. numpy.lib.copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.corrcoef.html">3.11.22. numpy.lib.corrcoef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.cov.html">3.11.23. numpy.lib.cov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.delete.html">3.11.24. numpy.lib.delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.deprecate.html">3.11.25. numpy.lib.deprecate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.deprecate_with_doc.html">3.11.26. numpy.lib.deprecate_with_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.diag.html">3.11.27. numpy.lib.diag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.diag_indices.html">3.11.28. numpy.lib.diag_indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.diag_indices_from.html">3.11.29. numpy.lib.diag_indices_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.diagflat.html">3.11.30. numpy.lib.diagflat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.diff.html">3.11.31. numpy.lib.diff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.digitize.html">3.11.32. numpy.lib.digitize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.disp.html">3.11.33. numpy.lib.disp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.dsplit.html">3.11.34. numpy.lib.dsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.dstack.html">3.11.35. numpy.lib.dstack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.ediff1d.html">3.11.36. numpy.lib.ediff1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.expand_dims.html">3.11.37. numpy.lib.expand_dims</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.extract.html">3.11.38. numpy.lib.extract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.eye.html">3.11.39. numpy.lib.eye</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.fill_diagonal.html">3.11.40. numpy.lib.fill_diagonal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.fix.html">3.11.41. numpy.lib.fix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.fliplr.html">3.11.42. numpy.lib.fliplr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.flipud.html">3.11.43. numpy.lib.flipud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.fromregex.html">3.11.44. numpy.lib.fromregex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.fv.html">3.11.45. numpy.lib.fv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.genfromtxt.html">3.11.46. numpy.lib.genfromtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.get_array_wrap.html">3.11.47. numpy.lib.get_array_wrap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.get_include.html">3.11.48. numpy.lib.get_include</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.gradient.html">3.11.49. numpy.lib.gradient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.hamming.html">3.11.50. numpy.lib.hamming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.hanning.html">3.11.51. numpy.lib.hanning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.histogram.html">3.11.52. numpy.lib.histogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.histogram2d.html">3.11.53. numpy.lib.histogram2d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.histogramdd.html">3.11.54. numpy.lib.histogramdd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.hsplit.html">3.11.55. numpy.lib.hsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.i0.html">3.11.56. numpy.lib.i0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.imag.html">3.11.57. numpy.lib.imag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.in1d.html">3.11.58. numpy.lib.in1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.info.html">3.11.59. numpy.lib.info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.insert.html">3.11.60. numpy.lib.insert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.interp.html">3.11.61. numpy.lib.interp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.intersect1d.html">3.11.62. numpy.lib.intersect1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.ipmt.html">3.11.63. numpy.lib.ipmt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.irr.html">3.11.64. numpy.lib.irr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.iscomplex.html">3.11.65. numpy.lib.iscomplex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.iscomplexobj.html">3.11.66. numpy.lib.iscomplexobj</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.isneginf.html">3.11.67. numpy.lib.isneginf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.isposinf.html">3.11.68. numpy.lib.isposinf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.isreal.html">3.11.69. numpy.lib.isreal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.isrealobj.html">3.11.70. numpy.lib.isrealobj</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.issubclass_.html">3.11.71. numpy.lib.issubclass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.issubdtype.html">3.11.72. numpy.lib.issubdtype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.issubsctype.html">3.11.73. numpy.lib.issubsctype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.iterable.html">3.11.74. numpy.lib.iterable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.ix_.html">3.11.75. numpy.lib.ix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.kaiser.html">3.11.76. numpy.lib.kaiser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.kron.html">3.11.77. numpy.lib.kron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.load.html">3.11.78. numpy.lib.load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.loads.html">3.11.79. numpy.lib.loads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.loadtxt.html">3.11.80. numpy.lib.loadtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.lookfor.html">3.11.81. numpy.lib.lookfor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.mafromtxt.html">3.11.82. numpy.lib.mafromtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.mask_indices.html">3.11.83. numpy.lib.mask_indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.median.html">3.11.84. numpy.lib.median</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.meshgrid.html">3.11.85. numpy.lib.meshgrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.mintypecode.html">3.11.86. numpy.lib.mintypecode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.mirr.html">3.11.87. numpy.lib.mirr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.msort.html">3.11.88. numpy.lib.msort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nan_to_num.html">3.11.89. numpy.lib.nan_to_num</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanargmax.html">3.11.90. numpy.lib.nanargmax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanargmin.html">3.11.91. numpy.lib.nanargmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanmax.html">3.11.92. numpy.lib.nanmax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanmean.html">3.11.93. numpy.lib.nanmean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanmedian.html">3.11.94. numpy.lib.nanmedian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanmin.html">3.11.95. numpy.lib.nanmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanpercentile.html">3.11.96. numpy.lib.nanpercentile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanprod.html">3.11.97. numpy.lib.nanprod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanstd.html">3.11.98. numpy.lib.nanstd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nansum.html">3.11.99. numpy.lib.nansum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nanvar.html">3.11.100. numpy.lib.nanvar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.ndfromtxt.html">3.11.101. numpy.lib.ndfromtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.nper.html">3.11.102. numpy.lib.nper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.npv.html">3.11.103. numpy.lib.npv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.packbits.html">3.11.104. numpy.lib.packbits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.pad.html">3.11.105. numpy.lib.pad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.percentile.html">3.11.106. numpy.lib.percentile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.piecewise.html">3.11.107. numpy.lib.piecewise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.place.html">3.11.108. numpy.lib.place</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.pmt.html">3.11.109. numpy.lib.pmt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.poly.html">3.11.110. numpy.lib.poly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.polyadd.html">3.11.111. numpy.lib.polyadd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.polyder.html">3.11.112. numpy.lib.polyder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.polydiv.html">3.11.113. numpy.lib.polydiv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.polyfit.html">3.11.114. numpy.lib.polyfit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.polyint.html">3.11.115. numpy.lib.polyint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.polymul.html">3.11.116. numpy.lib.polymul</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.polysub.html">3.11.117. numpy.lib.polysub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.polyval.html">3.11.118. numpy.lib.polyval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.ppmt.html">3.11.119. numpy.lib.ppmt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.pv.html">3.11.120. numpy.lib.pv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.rate.html">3.11.121. numpy.lib.rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.ravel_multi_index.html">3.11.122. numpy.lib.ravel_multi_index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.real.html">3.11.123. numpy.lib.real</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.real_if_close.html">3.11.124. numpy.lib.real_if_close</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.recfromcsv.html">3.11.125. numpy.lib.recfromcsv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.recfromtxt.html">3.11.126. numpy.lib.recfromtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.roots.html">3.11.127. numpy.lib.roots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.rot90.html">3.11.128. numpy.lib.rot90</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.row_stack.html">3.11.129. numpy.lib.row_stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.safe_eval.html">3.11.130. numpy.lib.safe_eval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.save.html">3.11.131. numpy.lib.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.savetxt.html">3.11.132. numpy.lib.savetxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.savez.html">3.11.133. numpy.lib.savez</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.savez_compressed.html">3.11.134. numpy.lib.savez_compressed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.select.html">3.11.135. numpy.lib.select</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.setdiff1d.html">3.11.136. numpy.lib.setdiff1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.setxor1d.html">3.11.137. numpy.lib.setxor1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.sinc.html">3.11.138. numpy.lib.sinc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.sort_complex.html">3.11.139. numpy.lib.sort_complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.source.html">3.11.140. numpy.lib.source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.split.html">3.11.141. numpy.lib.split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.tile.html">3.11.142. numpy.lib.tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.trapz.html">3.11.143. numpy.lib.trapz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.tri.html">3.11.144. numpy.lib.tri</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.tril.html">3.11.145. numpy.lib.tril</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.tril_indices.html">3.11.146. numpy.lib.tril_indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.tril_indices_from.html">3.11.147. numpy.lib.tril_indices_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.trim_zeros.html">3.11.148. numpy.lib.trim_zeros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.triu.html">3.11.149. numpy.lib.triu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.triu_indices.html">3.11.150. numpy.lib.triu_indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.triu_indices_from.html">3.11.151. numpy.lib.triu_indices_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.typename.html">3.11.152. numpy.lib.typename</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.union1d.html">3.11.153. numpy.lib.union1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.unique.html">3.11.154. numpy.lib.unique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.unpackbits.html">3.11.155. numpy.lib.unpackbits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.unravel_index.html">3.11.156. numpy.lib.unravel_index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.unwrap.html">3.11.157. numpy.lib.unwrap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.vander.html">3.11.158. numpy.lib.vander</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.vsplit.html">3.11.159. numpy.lib.vsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.who.html">3.11.160. numpy.lib.who</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">3.12. Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.lib.DataSource.html">3.12.1. numpy.lib.DataSource</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.lib.NumpyVersion.html">3.12.2. numpy.lib.NumpyVersion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.lib.Tester.html">3.12.3. numpy.lib.Tester</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.lib.ndenumerate.html">3.12.4. numpy.lib.ndenumerate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.lib.ndindex.html">3.12.5. numpy.lib.ndindex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.lib.poly1d.html">3.12.6. numpy.lib.poly1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.lib.vectorize.html">3.12.7. numpy.lib.vectorize</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exceptions">3.13. Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lib.RankWarning.html">3.13.1. numpy.lib.RankWarning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.lib.html">&lt;no title&gt;</a> &raquo;</li>
+        
+      <li>3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/numpy.lib.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-numpy.lib">
+<span id="numpy-lib"></span><h1>3. <a class="reference internal" href="#module-numpy.lib" title="numpy.lib"><code class="xref py py-mod docutils literal"><span class="pre">numpy.lib</span></code></a><a class="headerlink" href="#module-numpy.lib" title="Permalink to this headline">¶</a></h1>
+<p>Basic functions used by several sub-packages and
+useful to have in the main name-space.</p>
+<div class="section" id="type-handling">
+<h2>3.1. Type Handling<a class="headerlink" href="#type-handling" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>iscomplexobj</td>
+<td>Test for complex object, scalar result</td>
+</tr>
+<tr class="row-even"><td>isrealobj</td>
+<td>Test for real object, scalar result</td>
+</tr>
+<tr class="row-odd"><td>iscomplex</td>
+<td>Test for complex elements, array result</td>
+</tr>
+<tr class="row-even"><td>isreal</td>
+<td>Test for real elements, array result</td>
+</tr>
+<tr class="row-odd"><td>imag</td>
+<td>Imaginary part</td>
+</tr>
+<tr class="row-even"><td>real</td>
+<td>Real part</td>
+</tr>
+<tr class="row-odd"><td>real_if_close</td>
+<td>Turns complex number with tiny imaginary part to real</td>
+</tr>
+<tr class="row-even"><td>isneginf</td>
+<td>Tests for negative infinity, array result</td>
+</tr>
+<tr class="row-odd"><td>isposinf</td>
+<td>Tests for positive infinity, array result</td>
+</tr>
+<tr class="row-even"><td>isnan</td>
+<td>Tests for nans, array result</td>
+</tr>
+<tr class="row-odd"><td>isinf</td>
+<td>Tests for infinity, array result</td>
+</tr>
+<tr class="row-even"><td>isfinite</td>
+<td>Tests for finite numbers, array result</td>
+</tr>
+<tr class="row-odd"><td>isscalar</td>
+<td>True if argument is a scalar</td>
+</tr>
+<tr class="row-even"><td>nan_to_num</td>
+<td>Replaces NaN&#8217;s with 0 and infinities with large numbers</td>
+</tr>
+<tr class="row-odd"><td>cast</td>
+<td>Dictionary of functions to force cast to each type</td>
+</tr>
+<tr class="row-even"><td>common_type</td>
+<td>Determine the minimum common type code for a group
+of arrays</td>
+</tr>
+<tr class="row-odd"><td>mintypecode</td>
+<td>Return minimal allowed common typecode.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="index-tricks">
+<h2>3.2. Index Tricks<a class="headerlink" href="#index-tricks" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>mgrid</td>
+<td>Method which allows easy construction of N-d
+&#8216;mesh-grids&#8217;</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">r_</span></code></td>
+<td>Append and construct arrays: turns slice objects into
+ranges and concatenates them, for 2d arrays appends rows.</td>
+</tr>
+<tr class="row-odd"><td>index_exp</td>
+<td>Konrad Hinsen&#8217;s index_expression class instance which
+can be useful for building complicated slicing syntax.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="useful-functions">
+<h2>3.3. Useful Functions<a class="headerlink" href="#useful-functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>select</td>
+<td>Extension of where to multiple conditions and choices</td>
+</tr>
+<tr class="row-even"><td>extract</td>
+<td>Extract 1d array from flattened array according to mask</td>
+</tr>
+<tr class="row-odd"><td>insert</td>
+<td>Insert 1d array of values into Nd array according to mask</td>
+</tr>
+<tr class="row-even"><td>linspace</td>
+<td>Evenly spaced samples in linear space</td>
+</tr>
+<tr class="row-odd"><td>logspace</td>
+<td>Evenly spaced samples in logarithmic space</td>
+</tr>
+<tr class="row-even"><td>fix</td>
+<td>Round x to nearest integer towards zero</td>
+</tr>
+<tr class="row-odd"><td>mod</td>
+<td>Modulo mod(x,y) = x % y except keeps sign of y</td>
+</tr>
+<tr class="row-even"><td>amax</td>
+<td>Array maximum along axis</td>
+</tr>
+<tr class="row-odd"><td>amin</td>
+<td>Array minimum along axis</td>
+</tr>
+<tr class="row-even"><td>ptp</td>
+<td>Array max-min along axis</td>
+</tr>
+<tr class="row-odd"><td>cumsum</td>
+<td>Cumulative sum along axis</td>
+</tr>
+<tr class="row-even"><td>prod</td>
+<td>Product of elements along axis</td>
+</tr>
+<tr class="row-odd"><td>cumprod</td>
+<td>Cumluative product along axis</td>
+</tr>
+<tr class="row-even"><td>diff</td>
+<td>Discrete differences along axis</td>
+</tr>
+<tr class="row-odd"><td>angle</td>
+<td>Returns angle of complex argument</td>
+</tr>
+<tr class="row-even"><td>unwrap</td>
+<td>Unwrap phase along given axis (1-d algorithm)</td>
+</tr>
+<tr class="row-odd"><td>sort_complex</td>
+<td>Sort a complex-array (based on real, then imaginary)</td>
+</tr>
+<tr class="row-even"><td>trim_zeros</td>
+<td>Trim the leading and trailing zeros from 1D array.</td>
+</tr>
+<tr class="row-odd"><td>vectorize</td>
+<td>A class that wraps a Python function taking scalar
+arguments into a generalized function which can handle
+arrays of arguments using the broadcast rules of
+numerix Python.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="shape-manipulation">
+<h2>3.4. Shape Manipulation<a class="headerlink" href="#shape-manipulation" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>squeeze</td>
+<td>Return a with length-one dimensions removed.</td>
+</tr>
+<tr class="row-even"><td>atleast_1d</td>
+<td>Force arrays to be &gt; 1D</td>
+</tr>
+<tr class="row-odd"><td>atleast_2d</td>
+<td>Force arrays to be &gt; 2D</td>
+</tr>
+<tr class="row-even"><td>atleast_3d</td>
+<td>Force arrays to be &gt; 3D</td>
+</tr>
+<tr class="row-odd"><td>vstack</td>
+<td>Stack arrays vertically (row on row)</td>
+</tr>
+<tr class="row-even"><td>hstack</td>
+<td>Stack arrays horizontally (column on column)</td>
+</tr>
+<tr class="row-odd"><td>column_stack</td>
+<td>Stack 1D arrays as columns into 2D array</td>
+</tr>
+<tr class="row-even"><td>dstack</td>
+<td>Stack arrays depthwise (along third dimension)</td>
+</tr>
+<tr class="row-odd"><td>stack</td>
+<td>Stack arrays along a new axis</td>
+</tr>
+<tr class="row-even"><td>split</td>
+<td>Divide array into a list of sub-arrays</td>
+</tr>
+<tr class="row-odd"><td>hsplit</td>
+<td>Split into columns</td>
+</tr>
+<tr class="row-even"><td>vsplit</td>
+<td>Split into rows</td>
+</tr>
+<tr class="row-odd"><td>dsplit</td>
+<td>Split along third dimension</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="matrix-2d-array-manipulations">
+<h2>3.5. Matrix (2D Array) Manipulations<a class="headerlink" href="#matrix-2d-array-manipulations" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>fliplr</td>
+<td>2D array with columns flipped</td>
+</tr>
+<tr class="row-even"><td>flipud</td>
+<td>2D array with rows flipped</td>
+</tr>
+<tr class="row-odd"><td>rot90</td>
+<td>Rotate a 2D array a multiple of 90 degrees</td>
+</tr>
+<tr class="row-even"><td>eye</td>
+<td>Return a 2D array with ones down a given diagonal</td>
+</tr>
+<tr class="row-odd"><td>diag</td>
+<td>Construct a 2D array from a vector, or return a given
+diagonal from a 2D array.</td>
+</tr>
+<tr class="row-even"><td>mat</td>
+<td>Construct a Matrix</td>
+</tr>
+<tr class="row-odd"><td>bmat</td>
+<td>Build a Matrix from blocks</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="polynomials">
+<h2>3.6. Polynomials<a class="headerlink" href="#polynomials" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>poly1d</td>
+<td>A one-dimensional polynomial class</td>
+</tr>
+<tr class="row-even"><td>poly</td>
+<td>Return polynomial coefficients from roots</td>
+</tr>
+<tr class="row-odd"><td>roots</td>
+<td>Find roots of polynomial given coefficients</td>
+</tr>
+<tr class="row-even"><td>polyint</td>
+<td>Integrate polynomial</td>
+</tr>
+<tr class="row-odd"><td>polyder</td>
+<td>Differentiate polynomial</td>
+</tr>
+<tr class="row-even"><td>polyadd</td>
+<td>Add polynomials</td>
+</tr>
+<tr class="row-odd"><td>polysub</td>
+<td>Substract polynomials</td>
+</tr>
+<tr class="row-even"><td>polymul</td>
+<td>Multiply polynomials</td>
+</tr>
+<tr class="row-odd"><td>polydiv</td>
+<td>Divide polynomials</td>
+</tr>
+<tr class="row-even"><td>polyval</td>
+<td>Evaluate polynomial at given argument</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="import-tricks">
+<h2>3.7. Import Tricks<a class="headerlink" href="#import-tricks" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ppimport</td>
+<td>Postpone module import until trying to use it</td>
+</tr>
+<tr class="row-even"><td>ppimport_attr</td>
+<td>Postpone module import until trying to use its attribute</td>
+</tr>
+<tr class="row-odd"><td>ppresolve</td>
+<td>Import postponed module and return it.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="machine-arithmetics">
+<h2>3.8. Machine Arithmetics<a class="headerlink" href="#machine-arithmetics" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>machar_single</td>
+<td>Single precision floating point arithmetic parameters</td>
+</tr>
+<tr class="row-even"><td>machar_double</td>
+<td>Double precision floating point arithmetic parameters</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="threading-tricks">
+<h2>3.9. Threading Tricks<a class="headerlink" href="#threading-tricks" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ParallelExec</td>
+<td>Execute commands in parallel thread.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="d-array-set-operations">
+<h2>3.10. 1D Array Set Operations<a class="headerlink" href="#d-array-set-operations" title="Permalink to this headline">¶</a></h2>
+<p>Set operations for 1D numeric arrays based on sort() function.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ediff1d</td>
+<td>Array difference (auxiliary function).</td>
+</tr>
+<tr class="row-even"><td>unique</td>
+<td>Unique elements of an array.</td>
+</tr>
+<tr class="row-odd"><td>intersect1d</td>
+<td>Intersection of 1D arrays with unique elements.</td>
+</tr>
+<tr class="row-even"><td>setxor1d</td>
+<td>Set exclusive-or of 1D arrays with unique elements.</td>
+</tr>
+<tr class="row-odd"><td>in1d</td>
+<td>Test whether elements in a 1D array are also present in
+another array.</td>
+</tr>
+<tr class="row-even"><td>union1d</td>
+<td>Union of 1D arrays with unique elements.</td>
+</tr>
+<tr class="row-odd"><td>setdiff1d</td>
+<td>Set difference of 1D arrays with unique elements.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="functions">
+<h2>3.11. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.add_docstring.html#numpy.lib.add_docstring" title="numpy.lib.add_docstring"><code class="xref py py-obj docutils literal"><span class="pre">add_docstring</span></code></a>(obj,&nbsp;docstring)</td>
+<td>Add a docstring to a built-in obj if possible.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.add_newdoc.html#numpy.lib.add_newdoc" title="numpy.lib.add_newdoc"><code class="xref py py-obj docutils literal"><span class="pre">add_newdoc</span></code></a>(place,&nbsp;obj,&nbsp;doc)</td>
+<td>Adds documentation to obj which is in module place.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.add_newdoc_ufunc.html#numpy.lib.add_newdoc_ufunc" title="numpy.lib.add_newdoc_ufunc"><code class="xref py py-obj docutils literal"><span class="pre">add_newdoc_ufunc</span></code></a>(ufunc,&nbsp;new_docstring)</td>
+<td>Replace the docstring for a ufunc with new_docstring.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.angle.html#numpy.lib.angle" title="numpy.lib.angle"><code class="xref py py-obj docutils literal"><span class="pre">angle</span></code></a>(z[,&nbsp;deg])</td>
+<td>Return the angle of the complex argument.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.append.html#numpy.lib.append" title="numpy.lib.append"><code class="xref py py-obj docutils literal"><span class="pre">append</span></code></a>(arr,&nbsp;values[,&nbsp;axis])</td>
+<td>Append values to the end of an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.apply_along_axis.html#numpy.lib.apply_along_axis" title="numpy.lib.apply_along_axis"><code class="xref py py-obj docutils literal"><span class="pre">apply_along_axis</span></code></a>(func1d,&nbsp;axis,&nbsp;arr,&nbsp;*args,&nbsp;...)</td>
+<td>Apply a function to 1-D slices along the given axis.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.apply_over_axes.html#numpy.lib.apply_over_axes" title="numpy.lib.apply_over_axes"><code class="xref py py-obj docutils literal"><span class="pre">apply_over_axes</span></code></a>(func,&nbsp;a,&nbsp;axes)</td>
+<td>Apply a function repeatedly over multiple axes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.array_split.html#numpy.lib.array_split" title="numpy.lib.array_split"><code class="xref py py-obj docutils literal"><span class="pre">array_split</span></code></a>(ary,&nbsp;indices_or_sections[,&nbsp;axis])</td>
+<td>Split an array into multiple sub-arrays.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.asarray_chkfinite.html#numpy.lib.asarray_chkfinite" title="numpy.lib.asarray_chkfinite"><code class="xref py py-obj docutils literal"><span class="pre">asarray_chkfinite</span></code></a>(a[,&nbsp;dtype,&nbsp;order])</td>
+<td>Convert the input to an array, checking for NaNs or Infs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.asfarray.html#numpy.lib.asfarray" title="numpy.lib.asfarray"><code class="xref py py-obj docutils literal"><span class="pre">asfarray</span></code></a>(a[,&nbsp;dtype])</td>
+<td>Return an array converted to a float type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.asscalar.html#numpy.lib.asscalar" title="numpy.lib.asscalar"><code class="xref py py-obj docutils literal"><span class="pre">asscalar</span></code></a>(a)</td>
+<td>Convert an array of size 1 to its scalar equivalent.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.average.html#numpy.lib.average" title="numpy.lib.average"><code class="xref py py-obj docutils literal"><span class="pre">average</span></code></a>(a[,&nbsp;axis,&nbsp;weights,&nbsp;returned])</td>
+<td>Compute the weighted average along the specified axis.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.bartlett.html#numpy.lib.bartlett" title="numpy.lib.bartlett"><code class="xref py py-obj docutils literal"><span class="pre">bartlett</span></code></a>(M)</td>
+<td>Return the Bartlett window.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.bincount.html#numpy.lib.bincount" title="numpy.lib.bincount"><code class="xref py py-obj docutils literal"><span class="pre">bincount</span></code></a>(x[,&nbsp;weights,&nbsp;minlength])</td>
+<td>Count number of occurrences of each value in array of non-negative ints.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.blackman.html#numpy.lib.blackman" title="numpy.lib.blackman"><code class="xref py py-obj docutils literal"><span class="pre">blackman</span></code></a>(M)</td>
+<td>Return the Blackman window.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.broadcast_arrays.html#numpy.lib.broadcast_arrays" title="numpy.lib.broadcast_arrays"><code class="xref py py-obj docutils literal"><span class="pre">broadcast_arrays</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Broadcast any number of arrays against each other.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.broadcast_to.html#numpy.lib.broadcast_to" title="numpy.lib.broadcast_to"><code class="xref py py-obj docutils literal"><span class="pre">broadcast_to</span></code></a>(array,&nbsp;shape[,&nbsp;subok])</td>
+<td>Broadcast an array to a new shape.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.byte_bounds.html#numpy.lib.byte_bounds" title="numpy.lib.byte_bounds"><code class="xref py py-obj docutils literal"><span class="pre">byte_bounds</span></code></a>(a)</td>
+<td>Returns pointers to the end-points of an array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.column_stack.html#numpy.lib.column_stack" title="numpy.lib.column_stack"><code class="xref py py-obj docutils literal"><span class="pre">column_stack</span></code></a>(tup)</td>
+<td>Stack 1-D arrays as columns into a 2-D array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.common_type.html#numpy.lib.common_type" title="numpy.lib.common_type"><code class="xref py py-obj docutils literal"><span class="pre">common_type</span></code></a>(*arrays)</td>
+<td>Return a scalar type which is common to the input arrays.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.copy.html#numpy.lib.copy" title="numpy.lib.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>(a[,&nbsp;order])</td>
+<td>Return an array copy of the given object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.corrcoef.html#numpy.lib.corrcoef" title="numpy.lib.corrcoef"><code class="xref py py-obj docutils literal"><span class="pre">corrcoef</span></code></a>(x[,&nbsp;y,&nbsp;rowvar,&nbsp;bias,&nbsp;ddof])</td>
+<td>Return Pearson product-moment correlation coefficients.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.cov.html#numpy.lib.cov" title="numpy.lib.cov"><code class="xref py py-obj docutils literal"><span class="pre">cov</span></code></a>(m[,&nbsp;y,&nbsp;rowvar,&nbsp;bias,&nbsp;ddof,&nbsp;fweights,&nbsp;...])</td>
+<td>Estimate a covariance matrix, given data and weights.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.delete.html#numpy.lib.delete" title="numpy.lib.delete"><code class="xref py py-obj docutils literal"><span class="pre">delete</span></code></a>(arr,&nbsp;obj[,&nbsp;axis])</td>
+<td>Return a new array with sub-arrays along an axis deleted.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.deprecate.html#numpy.lib.deprecate" title="numpy.lib.deprecate"><code class="xref py py-obj docutils literal"><span class="pre">deprecate</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Issues a DeprecationWarning, adds warning to <cite>old_name</cite>&#8216;s docstring, rebinds <code class="docutils literal"><span class="pre">old_name.__name__</span></code> and returns the new function object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.deprecate_with_doc.html#numpy.lib.deprecate_with_doc" title="numpy.lib.deprecate_with_doc"><code class="xref py py-obj docutils literal"><span class="pre">deprecate_with_doc</span></code></a>(msg)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.diag.html#numpy.lib.diag" title="numpy.lib.diag"><code class="xref py py-obj docutils literal"><span class="pre">diag</span></code></a>(v[,&nbsp;k])</td>
+<td>Extract a diagonal or construct a diagonal array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.diag_indices.html#numpy.lib.diag_indices" title="numpy.lib.diag_indices"><code class="xref py py-obj docutils literal"><span class="pre">diag_indices</span></code></a>(n[,&nbsp;ndim])</td>
+<td>Return the indices to access the main diagonal of an array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.diag_indices_from.html#numpy.lib.diag_indices_from" title="numpy.lib.diag_indices_from"><code class="xref py py-obj docutils literal"><span class="pre">diag_indices_from</span></code></a>(arr)</td>
+<td>Return the indices to access the main diagonal of an n-dimensional array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.diagflat.html#numpy.lib.diagflat" title="numpy.lib.diagflat"><code class="xref py py-obj docutils literal"><span class="pre">diagflat</span></code></a>(v[,&nbsp;k])</td>
+<td>Create a two-dimensional array with the flattened input as a diagonal.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.diff.html#numpy.lib.diff" title="numpy.lib.diff"><code class="xref py py-obj docutils literal"><span class="pre">diff</span></code></a>(a[,&nbsp;n,&nbsp;axis])</td>
+<td>Calculate the n-th order discrete difference along given axis.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.digitize.html#numpy.lib.digitize" title="numpy.lib.digitize"><code class="xref py py-obj docutils literal"><span class="pre">digitize</span></code></a>(x,&nbsp;bins[,&nbsp;right])</td>
+<td>Return the indices of the bins to which each value in input array belongs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.disp.html#numpy.lib.disp" title="numpy.lib.disp"><code class="xref py py-obj docutils literal"><span class="pre">disp</span></code></a>(mesg[,&nbsp;device,&nbsp;linefeed])</td>
+<td>Display a message on a device.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.dsplit.html#numpy.lib.dsplit" title="numpy.lib.dsplit"><code class="xref py py-obj docutils literal"><span class="pre">dsplit</span></code></a>(ary,&nbsp;indices_or_sections)</td>
+<td>Split array into multiple sub-arrays along the 3rd axis (depth).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.dstack.html#numpy.lib.dstack" title="numpy.lib.dstack"><code class="xref py py-obj docutils literal"><span class="pre">dstack</span></code></a>(tup)</td>
+<td>Stack arrays in sequence depth wise (along third axis).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.ediff1d.html#numpy.lib.ediff1d" title="numpy.lib.ediff1d"><code class="xref py py-obj docutils literal"><span class="pre">ediff1d</span></code></a>(ary[,&nbsp;to_end,&nbsp;to_begin])</td>
+<td>The differences between consecutive elements of an array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.expand_dims.html#numpy.lib.expand_dims" title="numpy.lib.expand_dims"><code class="xref py py-obj docutils literal"><span class="pre">expand_dims</span></code></a>(a,&nbsp;axis)</td>
+<td>Expand the shape of an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.extract.html#numpy.lib.extract" title="numpy.lib.extract"><code class="xref py py-obj docutils literal"><span class="pre">extract</span></code></a>(condition,&nbsp;arr)</td>
+<td>Return the elements of an array that satisfy some condition.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.eye.html#numpy.lib.eye" title="numpy.lib.eye"><code class="xref py py-obj docutils literal"><span class="pre">eye</span></code></a>(N[,&nbsp;M,&nbsp;k,&nbsp;dtype])</td>
+<td>Return a 2-D array with ones on the diagonal and zeros elsewhere.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.fill_diagonal.html#numpy.lib.fill_diagonal" title="numpy.lib.fill_diagonal"><code class="xref py py-obj docutils literal"><span class="pre">fill_diagonal</span></code></a>(a,&nbsp;val[,&nbsp;wrap])</td>
+<td>Fill the main diagonal of the given array of any dimensionality.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.fix.html#numpy.lib.fix" title="numpy.lib.fix"><code class="xref py py-obj docutils literal"><span class="pre">fix</span></code></a>(x[,&nbsp;y])</td>
+<td>Round to nearest integer towards zero.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.fliplr.html#numpy.lib.fliplr" title="numpy.lib.fliplr"><code class="xref py py-obj docutils literal"><span class="pre">fliplr</span></code></a>(m)</td>
+<td>Flip array in the left/right direction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.flipud.html#numpy.lib.flipud" title="numpy.lib.flipud"><code class="xref py py-obj docutils literal"><span class="pre">flipud</span></code></a>(m)</td>
+<td>Flip array in the up/down direction.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.fromregex.html#numpy.lib.fromregex" title="numpy.lib.fromregex"><code class="xref py py-obj docutils literal"><span class="pre">fromregex</span></code></a>(file,&nbsp;regexp,&nbsp;dtype)</td>
+<td>Construct an array from a text file, using regular expression parsing.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.fv.html#numpy.lib.fv" title="numpy.lib.fv"><code class="xref py py-obj docutils literal"><span class="pre">fv</span></code></a>(rate,&nbsp;nper,&nbsp;pmt,&nbsp;pv[,&nbsp;when])</td>
+<td>Compute the future value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.genfromtxt.html#numpy.lib.genfromtxt" title="numpy.lib.genfromtxt"><code class="xref py py-obj docutils literal"><span class="pre">genfromtxt</span></code></a>(fname[,&nbsp;dtype,&nbsp;comments,&nbsp;...])</td>
+<td>Load data from a text file, with missing values handled as specified.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.get_array_wrap.html#numpy.lib.get_array_wrap" title="numpy.lib.get_array_wrap"><code class="xref py py-obj docutils literal"><span class="pre">get_array_wrap</span></code></a>(*args)</td>
+<td>Find the wrapper for the array with the highest priority.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.get_include.html#numpy.lib.get_include" title="numpy.lib.get_include"><code class="xref py py-obj docutils literal"><span class="pre">get_include</span></code></a>()</td>
+<td>Return the directory that contains the NumPy *.h header files.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.gradient.html#numpy.lib.gradient" title="numpy.lib.gradient"><code class="xref py py-obj docutils literal"><span class="pre">gradient</span></code></a>(f,&nbsp;*varargs,&nbsp;**kwargs)</td>
+<td>Return the gradient of an N-dimensional array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.hamming.html#numpy.lib.hamming" title="numpy.lib.hamming"><code class="xref py py-obj docutils literal"><span class="pre">hamming</span></code></a>(M)</td>
+<td>Return the Hamming window.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.hanning.html#numpy.lib.hanning" title="numpy.lib.hanning"><code class="xref py py-obj docutils literal"><span class="pre">hanning</span></code></a>(M)</td>
+<td>Return the Hanning window.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.histogram.html#numpy.lib.histogram" title="numpy.lib.histogram"><code class="xref py py-obj docutils literal"><span class="pre">histogram</span></code></a>(a[,&nbsp;bins,&nbsp;range,&nbsp;normed,&nbsp;weights,&nbsp;...])</td>
+<td>Compute the histogram of a set of data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.histogram2d.html#numpy.lib.histogram2d" title="numpy.lib.histogram2d"><code class="xref py py-obj docutils literal"><span class="pre">histogram2d</span></code></a>(x,&nbsp;y[,&nbsp;bins,&nbsp;range,&nbsp;normed,&nbsp;weights])</td>
+<td>Compute the bi-dimensional histogram of two data samples.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.histogramdd.html#numpy.lib.histogramdd" title="numpy.lib.histogramdd"><code class="xref py py-obj docutils literal"><span class="pre">histogramdd</span></code></a>(sample[,&nbsp;bins,&nbsp;range,&nbsp;normed,&nbsp;...])</td>
+<td>Compute the multidimensional histogram of some data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.hsplit.html#numpy.lib.hsplit" title="numpy.lib.hsplit"><code class="xref py py-obj docutils literal"><span class="pre">hsplit</span></code></a>(ary,&nbsp;indices_or_sections)</td>
+<td>Split an array into multiple sub-arrays horizontally (column-wise).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.i0.html#numpy.lib.i0" title="numpy.lib.i0"><code class="xref py py-obj docutils literal"><span class="pre">i0</span></code></a>(x)</td>
+<td>Modified Bessel function of the first kind, order 0.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.imag.html#numpy.lib.imag" title="numpy.lib.imag"><code class="xref py py-obj docutils literal"><span class="pre">imag</span></code></a>(val)</td>
+<td>Return the imaginary part of the elements of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.in1d.html#numpy.lib.in1d" title="numpy.lib.in1d"><code class="xref py py-obj docutils literal"><span class="pre">in1d</span></code></a>(ar1,&nbsp;ar2[,&nbsp;assume_unique,&nbsp;invert])</td>
+<td>Test whether each element of a 1-D array is also present in a second array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.info.html#numpy.lib.info" title="numpy.lib.info"><code class="xref py py-obj docutils literal"><span class="pre">info</span></code></a>([object,&nbsp;maxwidth,&nbsp;output,&nbsp;toplevel])</td>
+<td>Get help information for a function, class, or module.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.insert.html#numpy.lib.insert" title="numpy.lib.insert"><code class="xref py py-obj docutils literal"><span class="pre">insert</span></code></a>(arr,&nbsp;obj,&nbsp;values[,&nbsp;axis])</td>
+<td>Insert values along the given axis before the given indices.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.interp.html#numpy.lib.interp" title="numpy.lib.interp"><code class="xref py py-obj docutils literal"><span class="pre">interp</span></code></a>(x,&nbsp;xp,&nbsp;fp[,&nbsp;left,&nbsp;right,&nbsp;period])</td>
+<td>One-dimensional linear interpolation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.intersect1d.html#numpy.lib.intersect1d" title="numpy.lib.intersect1d"><code class="xref py py-obj docutils literal"><span class="pre">intersect1d</span></code></a>(ar1,&nbsp;ar2[,&nbsp;assume_unique])</td>
+<td>Find the intersection of two arrays.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.ipmt.html#numpy.lib.ipmt" title="numpy.lib.ipmt"><code class="xref py py-obj docutils literal"><span class="pre">ipmt</span></code></a>(rate,&nbsp;per,&nbsp;nper,&nbsp;pv[,&nbsp;fv,&nbsp;when])</td>
+<td>Compute the interest portion of a payment.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.irr.html#numpy.lib.irr" title="numpy.lib.irr"><code class="xref py py-obj docutils literal"><span class="pre">irr</span></code></a>(values)</td>
+<td>Return the Internal Rate of Return (IRR).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.iscomplex.html#numpy.lib.iscomplex" title="numpy.lib.iscomplex"><code class="xref py py-obj docutils literal"><span class="pre">iscomplex</span></code></a>(x)</td>
+<td>Returns a bool array, where True if input element is complex.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.iscomplexobj.html#numpy.lib.iscomplexobj" title="numpy.lib.iscomplexobj"><code class="xref py py-obj docutils literal"><span class="pre">iscomplexobj</span></code></a>(x)</td>
+<td>Check for a complex type or an array of complex numbers.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.isneginf.html#numpy.lib.isneginf" title="numpy.lib.isneginf"><code class="xref py py-obj docutils literal"><span class="pre">isneginf</span></code></a>(x[,&nbsp;y])</td>
+<td>Test element-wise for negative infinity, return result as bool array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.isposinf.html#numpy.lib.isposinf" title="numpy.lib.isposinf"><code class="xref py py-obj docutils literal"><span class="pre">isposinf</span></code></a>(x[,&nbsp;y])</td>
+<td>Test element-wise for positive infinity, return result as bool array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.isreal.html#numpy.lib.isreal" title="numpy.lib.isreal"><code class="xref py py-obj docutils literal"><span class="pre">isreal</span></code></a>(x)</td>
+<td>Returns a bool array, where True if input element is real.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.isrealobj.html#numpy.lib.isrealobj" title="numpy.lib.isrealobj"><code class="xref py py-obj docutils literal"><span class="pre">isrealobj</span></code></a>(x)</td>
+<td>Return True if x is a not complex type or an array of complex numbers.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.issubclass_.html#numpy.lib.issubclass_" title="numpy.lib.issubclass_"><code class="xref py py-obj docutils literal"><span class="pre">issubclass_</span></code></a>(arg1,&nbsp;arg2)</td>
+<td>Determine if a class is a subclass of a second class.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.issubdtype.html#numpy.lib.issubdtype" title="numpy.lib.issubdtype"><code class="xref py py-obj docutils literal"><span class="pre">issubdtype</span></code></a>(arg1,&nbsp;arg2)</td>
+<td>Returns True if first argument is a typecode lower/equal in type hierarchy.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.issubsctype.html#numpy.lib.issubsctype" title="numpy.lib.issubsctype"><code class="xref py py-obj docutils literal"><span class="pre">issubsctype</span></code></a>(arg1,&nbsp;arg2)</td>
+<td>Determine if the first argument is a subclass of the second argument.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.iterable.html#numpy.lib.iterable" title="numpy.lib.iterable"><code class="xref py py-obj docutils literal"><span class="pre">iterable</span></code></a>(y)</td>
+<td>Check whether or not an object can be iterated over.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.ix_.html#numpy.lib.ix_" title="numpy.lib.ix_"><code class="xref py py-obj docutils literal"><span class="pre">ix_</span></code></a>(*args)</td>
+<td>Construct an open mesh from multiple sequences.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.kaiser.html#numpy.lib.kaiser" title="numpy.lib.kaiser"><code class="xref py py-obj docutils literal"><span class="pre">kaiser</span></code></a>(M,&nbsp;beta)</td>
+<td>Return the Kaiser window.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.kron.html#numpy.lib.kron" title="numpy.lib.kron"><code class="xref py py-obj docutils literal"><span class="pre">kron</span></code></a>(a,&nbsp;b)</td>
+<td>Kronecker product of two arrays.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.load.html#numpy.lib.load" title="numpy.lib.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(file[,&nbsp;mmap_mode,&nbsp;allow_pickle,&nbsp;...])</td>
+<td>Load arrays or pickled objects from <code class="docutils literal"><span class="pre">.npy</span></code>, <code class="docutils literal"><span class="pre">.npz</span></code> or pickled files.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.loads.html#numpy.lib.loads" title="numpy.lib.loads"><code class="xref py py-obj docutils literal"><span class="pre">loads</span></code></a></td>
+<td>loads(string) &#8211; Load a pickle from the given string</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.loadtxt.html#numpy.lib.loadtxt" title="numpy.lib.loadtxt"><code class="xref py py-obj docutils literal"><span class="pre">loadtxt</span></code></a>(fname[,&nbsp;dtype,&nbsp;comments,&nbsp;delimiter,&nbsp;...])</td>
+<td>Load data from a text file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.lookfor.html#numpy.lib.lookfor" title="numpy.lib.lookfor"><code class="xref py py-obj docutils literal"><span class="pre">lookfor</span></code></a>(what[,&nbsp;module,&nbsp;import_modules,&nbsp;...])</td>
+<td>Do a keyword search on docstrings.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.mafromtxt.html#numpy.lib.mafromtxt" title="numpy.lib.mafromtxt"><code class="xref py py-obj docutils literal"><span class="pre">mafromtxt</span></code></a>(fname,&nbsp;**kwargs)</td>
+<td>Load ASCII data stored in a text file and return a masked array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.mask_indices.html#numpy.lib.mask_indices" title="numpy.lib.mask_indices"><code class="xref py py-obj docutils literal"><span class="pre">mask_indices</span></code></a>(n,&nbsp;mask_func[,&nbsp;k])</td>
+<td>Return the indices to access (n, n) arrays, given a masking function.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.median.html#numpy.lib.median" title="numpy.lib.median"><code class="xref py py-obj docutils literal"><span class="pre">median</span></code></a>(a[,&nbsp;axis,&nbsp;out,&nbsp;overwrite_input,&nbsp;keepdims])</td>
+<td>Compute the median along the specified axis.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.meshgrid.html#numpy.lib.meshgrid" title="numpy.lib.meshgrid"><code class="xref py py-obj docutils literal"><span class="pre">meshgrid</span></code></a>(*xi,&nbsp;**kwargs)</td>
+<td>Return coordinate matrices from coordinate vectors.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.mintypecode.html#numpy.lib.mintypecode" title="numpy.lib.mintypecode"><code class="xref py py-obj docutils literal"><span class="pre">mintypecode</span></code></a>(typechars[,&nbsp;typeset,&nbsp;default])</td>
+<td>Return the character for the minimum-size type to which given types can be safely cast.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.mirr.html#numpy.lib.mirr" title="numpy.lib.mirr"><code class="xref py py-obj docutils literal"><span class="pre">mirr</span></code></a>(values,&nbsp;finance_rate,&nbsp;reinvest_rate)</td>
+<td>Modified internal rate of return.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.msort.html#numpy.lib.msort" title="numpy.lib.msort"><code class="xref py py-obj docutils literal"><span class="pre">msort</span></code></a>(a)</td>
+<td>Return a copy of an array sorted along the first axis.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.nan_to_num.html#numpy.lib.nan_to_num" title="numpy.lib.nan_to_num"><code class="xref py py-obj docutils literal"><span class="pre">nan_to_num</span></code></a>(x)</td>
+<td>Replace nan with zero and inf with finite numbers.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.nanargmax.html#numpy.lib.nanargmax" title="numpy.lib.nanargmax"><code class="xref py py-obj docutils literal"><span class="pre">nanargmax</span></code></a>(a[,&nbsp;axis])</td>
+<td>Return the indices of the maximum values in the specified axis ignoring NaNs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.nanargmin.html#numpy.lib.nanargmin" title="numpy.lib.nanargmin"><code class="xref py py-obj docutils literal"><span class="pre">nanargmin</span></code></a>(a[,&nbsp;axis])</td>
+<td>Return the indices of the minimum values in the specified axis ignoring NaNs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.nanmax.html#numpy.lib.nanmax" title="numpy.lib.nanmax"><code class="xref py py-obj docutils literal"><span class="pre">nanmax</span></code></a>(a[,&nbsp;axis,&nbsp;out,&nbsp;keepdims])</td>
+<td>Return the maximum of an array or maximum along an axis, ignoring any NaNs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.nanmean.html#numpy.lib.nanmean" title="numpy.lib.nanmean"><code class="xref py py-obj docutils literal"><span class="pre">nanmean</span></code></a>(a[,&nbsp;axis,&nbsp;dtype,&nbsp;out,&nbsp;keepdims])</td>
+<td>Compute the arithmetic mean along the specified axis, ignoring NaNs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.nanmedian.html#numpy.lib.nanmedian" title="numpy.lib.nanmedian"><code class="xref py py-obj docutils literal"><span class="pre">nanmedian</span></code></a>(a[,&nbsp;axis,&nbsp;out,&nbsp;overwrite_input,&nbsp;...])</td>
+<td>Compute the median along the specified axis, while ignoring NaNs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.nanmin.html#numpy.lib.nanmin" title="numpy.lib.nanmin"><code class="xref py py-obj docutils literal"><span class="pre">nanmin</span></code></a>(a[,&nbsp;axis,&nbsp;out,&nbsp;keepdims])</td>
+<td>Return minimum of an array or minimum along an axis, ignoring any NaNs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.nanpercentile.html#numpy.lib.nanpercentile" title="numpy.lib.nanpercentile"><code class="xref py py-obj docutils literal"><span class="pre">nanpercentile</span></code></a>(a,&nbsp;q[,&nbsp;axis,&nbsp;out,&nbsp;...])</td>
+<td>Compute the qth percentile of the data along the specified axis, while ignoring nan values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.nanprod.html#numpy.lib.nanprod" title="numpy.lib.nanprod"><code class="xref py py-obj docutils literal"><span class="pre">nanprod</span></code></a>(a[,&nbsp;axis,&nbsp;dtype,&nbsp;out,&nbsp;keepdims])</td>
+<td>Return the product of array elements over a given axis treating Not a Numbers (NaNs) as zero.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.nanstd.html#numpy.lib.nanstd" title="numpy.lib.nanstd"><code class="xref py py-obj docutils literal"><span class="pre">nanstd</span></code></a>(a[,&nbsp;axis,&nbsp;dtype,&nbsp;out,&nbsp;ddof,&nbsp;keepdims])</td>
+<td>Compute the standard deviation along the specified axis, while ignoring NaNs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.nansum.html#numpy.lib.nansum" title="numpy.lib.nansum"><code class="xref py py-obj docutils literal"><span class="pre">nansum</span></code></a>(a[,&nbsp;axis,&nbsp;dtype,&nbsp;out,&nbsp;keepdims])</td>
+<td>Return the sum of array elements over a given axis treating Not a Numbers (NaNs) as zero.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.nanvar.html#numpy.lib.nanvar" title="numpy.lib.nanvar"><code class="xref py py-obj docutils literal"><span class="pre">nanvar</span></code></a>(a[,&nbsp;axis,&nbsp;dtype,&nbsp;out,&nbsp;ddof,&nbsp;keepdims])</td>
+<td>Compute the variance along the specified axis, while ignoring NaNs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.ndfromtxt.html#numpy.lib.ndfromtxt" title="numpy.lib.ndfromtxt"><code class="xref py py-obj docutils literal"><span class="pre">ndfromtxt</span></code></a>(fname,&nbsp;**kwargs)</td>
+<td>Load ASCII data stored in a file and return it as a single array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.nper.html#numpy.lib.nper" title="numpy.lib.nper"><code class="xref py py-obj docutils literal"><span class="pre">nper</span></code></a>(rate,&nbsp;pmt,&nbsp;pv[,&nbsp;fv,&nbsp;when])</td>
+<td>Compute the number of periodic payments.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.npv.html#numpy.lib.npv" title="numpy.lib.npv"><code class="xref py py-obj docutils literal"><span class="pre">npv</span></code></a>(rate,&nbsp;values)</td>
+<td>Returns the NPV (Net Present Value) of a cash flow series.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.packbits.html#numpy.lib.packbits" title="numpy.lib.packbits"><code class="xref py py-obj docutils literal"><span class="pre">packbits</span></code></a>(myarray[,&nbsp;axis])</td>
+<td>Packs the elements of a binary-valued array into bits in a uint8 array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.pad.html#numpy.lib.pad" title="numpy.lib.pad"><code class="xref py py-obj docutils literal"><span class="pre">pad</span></code></a>(array,&nbsp;pad_width[,&nbsp;mode])</td>
+<td>Pads an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.percentile.html#numpy.lib.percentile" title="numpy.lib.percentile"><code class="xref py py-obj docutils literal"><span class="pre">percentile</span></code></a>(a,&nbsp;q[,&nbsp;axis,&nbsp;out,&nbsp;...])</td>
+<td>Compute the qth percentile of the data along the specified axis.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.piecewise.html#numpy.lib.piecewise" title="numpy.lib.piecewise"><code class="xref py py-obj docutils literal"><span class="pre">piecewise</span></code></a>(x,&nbsp;condlist,&nbsp;funclist,&nbsp;*args,&nbsp;**kw)</td>
+<td>Evaluate a piecewise-defined function.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.place.html#numpy.lib.place" title="numpy.lib.place"><code class="xref py py-obj docutils literal"><span class="pre">place</span></code></a>(arr,&nbsp;mask,&nbsp;vals)</td>
+<td>Change elements of an array based on conditional and input values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.pmt.html#numpy.lib.pmt" title="numpy.lib.pmt"><code class="xref py py-obj docutils literal"><span class="pre">pmt</span></code></a>(rate,&nbsp;nper,&nbsp;pv[,&nbsp;fv,&nbsp;when])</td>
+<td>Compute the payment against loan principal plus interest.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.poly.html#numpy.lib.poly" title="numpy.lib.poly"><code class="xref py py-obj docutils literal"><span class="pre">poly</span></code></a>(seq_of_zeros)</td>
+<td>Find the coefficients of a polynomial with the given sequence of roots.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.polyadd.html#numpy.lib.polyadd" title="numpy.lib.polyadd"><code class="xref py py-obj docutils literal"><span class="pre">polyadd</span></code></a>(a1,&nbsp;a2)</td>
+<td>Find the sum of two polynomials.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.polyder.html#numpy.lib.polyder" title="numpy.lib.polyder"><code class="xref py py-obj docutils literal"><span class="pre">polyder</span></code></a>(p[,&nbsp;m])</td>
+<td>Return the derivative of the specified order of a polynomial.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.polydiv.html#numpy.lib.polydiv" title="numpy.lib.polydiv"><code class="xref py py-obj docutils literal"><span class="pre">polydiv</span></code></a>(u,&nbsp;v)</td>
+<td>Returns the quotient and remainder of polynomial division.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.polyfit.html#numpy.lib.polyfit" title="numpy.lib.polyfit"><code class="xref py py-obj docutils literal"><span class="pre">polyfit</span></code></a>(x,&nbsp;y,&nbsp;deg[,&nbsp;rcond,&nbsp;full,&nbsp;w,&nbsp;cov])</td>
+<td>Least squares polynomial fit.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.polyint.html#numpy.lib.polyint" title="numpy.lib.polyint"><code class="xref py py-obj docutils literal"><span class="pre">polyint</span></code></a>(p[,&nbsp;m,&nbsp;k])</td>
+<td>Return an antiderivative (indefinite integral) of a polynomial.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.polymul.html#numpy.lib.polymul" title="numpy.lib.polymul"><code class="xref py py-obj docutils literal"><span class="pre">polymul</span></code></a>(a1,&nbsp;a2)</td>
+<td>Find the product of two polynomials.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.polysub.html#numpy.lib.polysub" title="numpy.lib.polysub"><code class="xref py py-obj docutils literal"><span class="pre">polysub</span></code></a>(a1,&nbsp;a2)</td>
+<td>Difference (subtraction) of two polynomials.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.polyval.html#numpy.lib.polyval" title="numpy.lib.polyval"><code class="xref py py-obj docutils literal"><span class="pre">polyval</span></code></a>(p,&nbsp;x)</td>
+<td>Evaluate a polynomial at specific values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.ppmt.html#numpy.lib.ppmt" title="numpy.lib.ppmt"><code class="xref py py-obj docutils literal"><span class="pre">ppmt</span></code></a>(rate,&nbsp;per,&nbsp;nper,&nbsp;pv[,&nbsp;fv,&nbsp;when])</td>
+<td>Compute the payment against loan principal.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.pv.html#numpy.lib.pv" title="numpy.lib.pv"><code class="xref py py-obj docutils literal"><span class="pre">pv</span></code></a>(rate,&nbsp;nper,&nbsp;pmt[,&nbsp;fv,&nbsp;when])</td>
+<td>Compute the present value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.rate.html#numpy.lib.rate" title="numpy.lib.rate"><code class="xref py py-obj docutils literal"><span class="pre">rate</span></code></a>(nper,&nbsp;pmt,&nbsp;pv,&nbsp;fv[,&nbsp;when,&nbsp;guess,&nbsp;tol,&nbsp;...])</td>
+<td>Compute the rate of interest per period.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.ravel_multi_index.html#numpy.lib.ravel_multi_index" title="numpy.lib.ravel_multi_index"><code class="xref py py-obj docutils literal"><span class="pre">ravel_multi_index</span></code></a>(multi_index,&nbsp;dims[,&nbsp;mode,&nbsp;...])</td>
+<td>Converts a tuple of index arrays into an array of flat indices, applying boundary modes to the multi-index.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.real.html#numpy.lib.real" title="numpy.lib.real"><code class="xref py py-obj docutils literal"><span class="pre">real</span></code></a>(val)</td>
+<td>Return the real part of the elements of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.real_if_close.html#numpy.lib.real_if_close" title="numpy.lib.real_if_close"><code class="xref py py-obj docutils literal"><span class="pre">real_if_close</span></code></a>(a[,&nbsp;tol])</td>
+<td>If complex input returns a real array if complex parts are close to zero.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.recfromcsv.html#numpy.lib.recfromcsv" title="numpy.lib.recfromcsv"><code class="xref py py-obj docutils literal"><span class="pre">recfromcsv</span></code></a>(fname,&nbsp;**kwargs)</td>
+<td>Load ASCII data stored in a comma-separated file.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.recfromtxt.html#numpy.lib.recfromtxt" title="numpy.lib.recfromtxt"><code class="xref py py-obj docutils literal"><span class="pre">recfromtxt</span></code></a>(fname,&nbsp;**kwargs)</td>
+<td>Load ASCII data from a file and return it in a record array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.roots.html#numpy.lib.roots" title="numpy.lib.roots"><code class="xref py py-obj docutils literal"><span class="pre">roots</span></code></a>(p)</td>
+<td>Return the roots of a polynomial with coefficients given in p.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.rot90.html#numpy.lib.rot90" title="numpy.lib.rot90"><code class="xref py py-obj docutils literal"><span class="pre">rot90</span></code></a>(m[,&nbsp;k])</td>
+<td>Rotate an array by 90 degrees in the counter-clockwise direction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.row_stack.html#numpy.lib.row_stack" title="numpy.lib.row_stack"><code class="xref py py-obj docutils literal"><span class="pre">row_stack</span></code></a>(tup)</td>
+<td>Stack arrays in sequence vertically (row wise).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.safe_eval.html#numpy.lib.safe_eval" title="numpy.lib.safe_eval"><code class="xref py py-obj docutils literal"><span class="pre">safe_eval</span></code></a>(source)</td>
+<td>Protected string evaluation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.save.html#numpy.lib.save" title="numpy.lib.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(file,&nbsp;arr[,&nbsp;allow_pickle,&nbsp;fix_imports])</td>
+<td>Save an array to a binary file in NumPy <code class="docutils literal"><span class="pre">.npy</span></code> format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.savetxt.html#numpy.lib.savetxt" title="numpy.lib.savetxt"><code class="xref py py-obj docutils literal"><span class="pre">savetxt</span></code></a>(fname,&nbsp;X[,&nbsp;fmt,&nbsp;delimiter,&nbsp;newline,&nbsp;...])</td>
+<td>Save an array to a text file.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.savez.html#numpy.lib.savez" title="numpy.lib.savez"><code class="xref py py-obj docutils literal"><span class="pre">savez</span></code></a>(file,&nbsp;*args,&nbsp;**kwds)</td>
+<td>Save several arrays into a single file in uncompressed <code class="docutils literal"><span class="pre">.npz</span></code> format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.savez_compressed.html#numpy.lib.savez_compressed" title="numpy.lib.savez_compressed"><code class="xref py py-obj docutils literal"><span class="pre">savez_compressed</span></code></a>(file,&nbsp;*args,&nbsp;**kwds)</td>
+<td>Save several arrays into a single file in compressed <code class="docutils literal"><span class="pre">.npz</span></code> format.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.select.html#numpy.lib.select" title="numpy.lib.select"><code class="xref py py-obj docutils literal"><span class="pre">select</span></code></a>(condlist,&nbsp;choicelist[,&nbsp;default])</td>
+<td>Return an array drawn from elements in choicelist, depending on conditions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.setdiff1d.html#numpy.lib.setdiff1d" title="numpy.lib.setdiff1d"><code class="xref py py-obj docutils literal"><span class="pre">setdiff1d</span></code></a>(ar1,&nbsp;ar2[,&nbsp;assume_unique])</td>
+<td>Find the set difference of two arrays.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.setxor1d.html#numpy.lib.setxor1d" title="numpy.lib.setxor1d"><code class="xref py py-obj docutils literal"><span class="pre">setxor1d</span></code></a>(ar1,&nbsp;ar2[,&nbsp;assume_unique])</td>
+<td>Find the set exclusive-or of two arrays.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.sinc.html#numpy.lib.sinc" title="numpy.lib.sinc"><code class="xref py py-obj docutils literal"><span class="pre">sinc</span></code></a>(x)</td>
+<td>Return the sinc function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.sort_complex.html#numpy.lib.sort_complex" title="numpy.lib.sort_complex"><code class="xref py py-obj docutils literal"><span class="pre">sort_complex</span></code></a>(a)</td>
+<td>Sort a complex array using the real part first, then the imaginary part.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.source.html#numpy.lib.source" title="numpy.lib.source"><code class="xref py py-obj docutils literal"><span class="pre">source</span></code></a>(object[,&nbsp;output])</td>
+<td>Print or write to a file the source code for a Numpy object.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.split.html#numpy.lib.split" title="numpy.lib.split"><code class="xref py py-obj docutils literal"><span class="pre">split</span></code></a>(ary,&nbsp;indices_or_sections[,&nbsp;axis])</td>
+<td>Split an array into multiple sub-arrays.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.tile.html#numpy.lib.tile" title="numpy.lib.tile"><code class="xref py py-obj docutils literal"><span class="pre">tile</span></code></a>(A,&nbsp;reps)</td>
+<td>Construct an array by repeating A the number of times given by reps.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.trapz.html#numpy.lib.trapz" title="numpy.lib.trapz"><code class="xref py py-obj docutils literal"><span class="pre">trapz</span></code></a>(y[,&nbsp;x,&nbsp;dx,&nbsp;axis])</td>
+<td>Integrate along the given axis using the composite trapezoidal rule.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.tri.html#numpy.lib.tri" title="numpy.lib.tri"><code class="xref py py-obj docutils literal"><span class="pre">tri</span></code></a>(N[,&nbsp;M,&nbsp;k,&nbsp;dtype])</td>
+<td>An array with ones at and below the given diagonal and zeros elsewhere.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.tril.html#numpy.lib.tril" title="numpy.lib.tril"><code class="xref py py-obj docutils literal"><span class="pre">tril</span></code></a>(m[,&nbsp;k])</td>
+<td>Lower triangle of an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.tril_indices.html#numpy.lib.tril_indices" title="numpy.lib.tril_indices"><code class="xref py py-obj docutils literal"><span class="pre">tril_indices</span></code></a>(n[,&nbsp;k,&nbsp;m])</td>
+<td>Return the indices for the lower-triangle of an (n, m) array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.tril_indices_from.html#numpy.lib.tril_indices_from" title="numpy.lib.tril_indices_from"><code class="xref py py-obj docutils literal"><span class="pre">tril_indices_from</span></code></a>(arr[,&nbsp;k])</td>
+<td>Return the indices for the lower-triangle of arr.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.trim_zeros.html#numpy.lib.trim_zeros" title="numpy.lib.trim_zeros"><code class="xref py py-obj docutils literal"><span class="pre">trim_zeros</span></code></a>(filt[,&nbsp;trim])</td>
+<td>Trim the leading and/or trailing zeros from a 1-D array or sequence.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.triu.html#numpy.lib.triu" title="numpy.lib.triu"><code class="xref py py-obj docutils literal"><span class="pre">triu</span></code></a>(m[,&nbsp;k])</td>
+<td>Upper triangle of an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.triu_indices.html#numpy.lib.triu_indices" title="numpy.lib.triu_indices"><code class="xref py py-obj docutils literal"><span class="pre">triu_indices</span></code></a>(n[,&nbsp;k,&nbsp;m])</td>
+<td>Return the indices for the upper-triangle of an (n, m) array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.triu_indices_from.html#numpy.lib.triu_indices_from" title="numpy.lib.triu_indices_from"><code class="xref py py-obj docutils literal"><span class="pre">triu_indices_from</span></code></a>(arr[,&nbsp;k])</td>
+<td>Return the indices for the upper-triangle of arr.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.typename.html#numpy.lib.typename" title="numpy.lib.typename"><code class="xref py py-obj docutils literal"><span class="pre">typename</span></code></a>(char)</td>
+<td>Return a description for the given data type code.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.union1d.html#numpy.lib.union1d" title="numpy.lib.union1d"><code class="xref py py-obj docutils literal"><span class="pre">union1d</span></code></a>(ar1,&nbsp;ar2)</td>
+<td>Find the union of two arrays.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.unique.html#numpy.lib.unique" title="numpy.lib.unique"><code class="xref py py-obj docutils literal"><span class="pre">unique</span></code></a>(ar[,&nbsp;return_index,&nbsp;return_inverse,&nbsp;...])</td>
+<td>Find the unique elements of an array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.unpackbits.html#numpy.lib.unpackbits" title="numpy.lib.unpackbits"><code class="xref py py-obj docutils literal"><span class="pre">unpackbits</span></code></a>(myarray[,&nbsp;axis])</td>
+<td>Unpacks elements of a uint8 array into a binary-valued output array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.unravel_index.html#numpy.lib.unravel_index" title="numpy.lib.unravel_index"><code class="xref py py-obj docutils literal"><span class="pre">unravel_index</span></code></a>(indices,&nbsp;dims[,&nbsp;order])</td>
+<td>Converts a flat index or array of flat indices into a tuple of coordinate arrays.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.unwrap.html#numpy.lib.unwrap" title="numpy.lib.unwrap"><code class="xref py py-obj docutils literal"><span class="pre">unwrap</span></code></a>(p[,&nbsp;discont,&nbsp;axis])</td>
+<td>Unwrap by changing deltas between values to 2*pi complement.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.vander.html#numpy.lib.vander" title="numpy.lib.vander"><code class="xref py py-obj docutils literal"><span class="pre">vander</span></code></a>(x[,&nbsp;N,&nbsp;increasing])</td>
+<td>Generate a Vandermonde matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.vsplit.html#numpy.lib.vsplit" title="numpy.lib.vsplit"><code class="xref py py-obj docutils literal"><span class="pre">vsplit</span></code></a>(ary,&nbsp;indices_or_sections)</td>
+<td>Split an array into multiple sub-arrays vertically (row-wise).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.lib.who.html#numpy.lib.who" title="numpy.lib.who"><code class="xref py py-obj docutils literal"><span class="pre">who</span></code></a>([vardict])</td>
+<td>Print the Numpy arrays in the given dictionary.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>3.12. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.lib.DataSource.html#numpy.lib.DataSource" title="numpy.lib.DataSource"><code class="xref py py-obj docutils literal"><span class="pre">DataSource</span></code></a>([destpath])</td>
+<td>A generic data source file (file, http, ftp, ...).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../reference/generated/numpy.lib.NumpyVersion.html#numpy.lib.NumpyVersion" title="numpy.lib.NumpyVersion"><code class="xref py py-obj docutils literal"><span class="pre">NumpyVersion</span></code></a>(vstring)</td>
+<td>Parse and compare numpy version strings.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.lib.Tester.html#numpy.lib.Tester" title="numpy.lib.Tester"><code class="xref py py-obj docutils literal"><span class="pre">Tester</span></code></a></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">NoseTester</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.lib.ndenumerate.html#numpy.lib.ndenumerate" title="numpy.lib.ndenumerate"><code class="xref py py-obj docutils literal"><span class="pre">ndenumerate</span></code></a>(arr)</td>
+<td>Multidimensional index iterator.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.lib.ndindex.html#numpy.lib.ndindex" title="numpy.lib.ndindex"><code class="xref py py-obj docutils literal"><span class="pre">ndindex</span></code></a>(*shape)</td>
+<td>An N-dimensional iterator object to index arrays.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.lib.poly1d.html#numpy.lib.poly1d" title="numpy.lib.poly1d"><code class="xref py py-obj docutils literal"><span class="pre">poly1d</span></code></a>(c_or_r[,&nbsp;r,&nbsp;variable])</td>
+<td>A one-dimensional polynomial class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.lib.vectorize.html#numpy.lib.vectorize" title="numpy.lib.vectorize"><code class="xref py py-obj docutils literal"><span class="pre">vectorize</span></code></a>(pyfunc[,&nbsp;otypes,&nbsp;doc,&nbsp;excluded,&nbsp;cache])</td>
+<td>Generalized function class.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>3.13. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="numpy.lib.RankWarning.html#numpy.lib.RankWarning" title="numpy.lib.RankWarning"><code class="xref py py-obj docutils literal"><span class="pre">RankWarning</span></code></a></td>
+<td>Issued by <cite>polyfit</cite> when the Vandermonde matrix is rank deficient.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numpy.lib.add_docstring.html" class="btn btn-neutral float-right" title="3.11.1. numpy.lib.add_docstring" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api.lib.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

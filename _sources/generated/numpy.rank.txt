@@ -1,0 +1,6 @@
+numpy.rank
+==========
+
+.. currentmodule:: numpy
+
+.. autofunction:: rank

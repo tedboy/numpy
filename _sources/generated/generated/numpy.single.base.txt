@@ -1,0 +1,6 @@
+numpy.single.base
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: single.base

@@ -1,0 +1,6 @@
+numpy.complex128.data
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex128.data

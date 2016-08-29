@@ -1,0 +1,6 @@
+numpy.lib.packbits
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: packbits

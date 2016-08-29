@@ -1,0 +1,6 @@
+numpy.integer.std
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: integer.std

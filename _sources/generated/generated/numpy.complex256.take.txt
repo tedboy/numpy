@@ -1,0 +1,6 @@
+numpy.complex256.take
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.take

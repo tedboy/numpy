@@ -1,0 +1,6 @@
+numpy.flexible.real
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.real

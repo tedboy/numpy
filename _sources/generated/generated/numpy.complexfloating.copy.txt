@@ -1,0 +1,6 @@
+numpy.complexfloating.copy
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.copy

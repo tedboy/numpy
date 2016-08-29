@@ -1,0 +1,6 @@
+numpy.csingle.flatten
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.flatten

@@ -1,0 +1,6 @@
+numpy.ubyte.min
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.min

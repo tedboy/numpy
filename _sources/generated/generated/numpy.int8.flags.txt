@@ -1,0 +1,6 @@
+numpy.int8.flags
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int8.flags

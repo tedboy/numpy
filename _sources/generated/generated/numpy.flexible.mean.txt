@@ -1,0 +1,6 @@
+numpy.flexible.mean
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.mean

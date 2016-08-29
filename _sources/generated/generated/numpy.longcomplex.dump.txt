@@ -1,0 +1,6 @@
+numpy.longcomplex.dump
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.dump

@@ -1,0 +1,6 @@
+numpy.half.mean
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.mean

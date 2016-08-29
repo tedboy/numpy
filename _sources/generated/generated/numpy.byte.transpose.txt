@@ -1,0 +1,6 @@
+numpy.byte.transpose
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.transpose

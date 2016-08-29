@@ -1,0 +1,6 @@
+numpy.bytes_.rjust
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.rjust

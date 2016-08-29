@@ -1,0 +1,6 @@
+numpy.signedinteger.conj
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.conj

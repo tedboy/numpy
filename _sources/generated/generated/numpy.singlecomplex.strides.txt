@@ -1,0 +1,6 @@
+numpy.singlecomplex.strides
+===========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.strides

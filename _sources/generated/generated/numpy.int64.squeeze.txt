@@ -1,0 +1,6 @@
+numpy.int64.squeeze
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: int64.squeeze

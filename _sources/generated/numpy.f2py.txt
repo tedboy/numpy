@@ -1,0 +1,43 @@
+:mod:`numpy.f2py`
+=================
+
+.. automodule:: numpy.f2py
+
+   
+   
+   Functions
+   ---------
+   .. autosummary::
+      :toctree:
+
+   
+      compile
+      main
+      run_main
+   
+   
+
+   
+   
+   Classes
+   -------
+   .. autosummary::
+      :toctree:generated/
+      :template:class_custom.rst
+
+   
+      Tester
+
+   .. toctree::
+       :maxdepth: 1
+       :hidden:
+
+   
+       generated/numpy.f2py.Tester
+
+   
+   
+
+   
+   
+   

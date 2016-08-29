@@ -1,0 +1,6 @@
+numpy.testing.TestCase.run
+==========================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.run

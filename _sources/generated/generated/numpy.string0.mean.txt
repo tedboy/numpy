@@ -1,0 +1,6 @@
+numpy.string0.mean
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.mean

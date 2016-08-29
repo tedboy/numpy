@@ -1,0 +1,6 @@
+numpy.singlecomplex.var
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.var

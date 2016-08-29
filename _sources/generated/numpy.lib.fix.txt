@@ -1,0 +1,6 @@
+numpy.lib.fix
+=============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: fix

@@ -1,0 +1,6 @@
+numpy.testing.assert_
+=====================
+
+.. currentmodule:: numpy.testing
+
+.. autofunction:: assert_

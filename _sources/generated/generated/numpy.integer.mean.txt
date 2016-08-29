@@ -1,0 +1,6 @@
+numpy.integer.mean
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: integer.mean

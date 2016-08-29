@@ -1,0 +1,6 @@
+numpy.lib.recfromtxt
+====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: recfromtxt

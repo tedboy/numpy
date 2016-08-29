@@ -1,0 +1,6 @@
+numpy.float_.T
+==============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: float_.T

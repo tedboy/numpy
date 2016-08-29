@@ -1,0 +1,6 @@
+numpy.half.flags
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.flags

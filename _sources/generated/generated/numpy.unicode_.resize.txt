@@ -1,0 +1,6 @@
+numpy.unicode_.resize
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.resize

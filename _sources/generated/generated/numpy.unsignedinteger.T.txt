@@ -1,0 +1,6 @@
+numpy.unsignedinteger.T
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.T

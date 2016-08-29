@@ -1,0 +1,6 @@
+numpy.flexible.strides
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.strides

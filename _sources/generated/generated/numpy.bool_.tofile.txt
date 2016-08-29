@@ -1,0 +1,6 @@
+numpy.bool_.tofile
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.tofile

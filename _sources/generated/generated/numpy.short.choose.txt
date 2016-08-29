@@ -1,0 +1,6 @@
+numpy.short.choose
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.choose

@@ -1,0 +1,6 @@
+numpy.polynomial.Hermite.maxpower
+=================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Hermite.maxpower

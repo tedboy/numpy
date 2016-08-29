@@ -1,0 +1,6 @@
+numpy.ubyte.flat
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.flat

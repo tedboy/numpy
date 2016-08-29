@@ -1,0 +1,6 @@
+numpy.byte.ndim
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.ndim

@@ -1,0 +1,6 @@
+numpy.ubyte.compress
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.compress

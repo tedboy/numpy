@@ -1,0 +1,6 @@
+numpy.clongdouble.ravel
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.ravel

@@ -1,0 +1,6 @@
+numpy.cdouble.min
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.min

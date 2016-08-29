@@ -1,0 +1,47 @@
+numpy.dtype
+===========
+.. currentmodule:: numpy
+.. autoclass:: dtype
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~dtype.newbyteorder
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~dtype.alignment
+   ~dtype.base
+   ~dtype.byteorder
+   ~dtype.char
+   ~dtype.descr
+   ~dtype.fields
+   ~dtype.flags
+   ~dtype.hasobject
+   ~dtype.isalignedstruct
+   ~dtype.isbuiltin
+   ~dtype.isnative
+   ~dtype.itemsize
+   ~dtype.kind
+   ~dtype.metadata
+   ~dtype.name
+   ~dtype.names
+   ~dtype.num
+   ~dtype.shape
+   ~dtype.str
+   ~dtype.subdtype
+   ~dtype.type
+

@@ -1,0 +1,6 @@
+numpy.ubyte.diagonal
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.diagonal

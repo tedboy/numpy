@@ -1,0 +1,6 @@
+numpy.uintp.compress
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.compress

@@ -1,0 +1,6 @@
+numpy.float16.resize
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: float16.resize

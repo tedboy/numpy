@@ -1,0 +1,6 @@
+numpy.string0.flags
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: string0.flags

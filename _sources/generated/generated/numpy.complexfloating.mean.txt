@@ -1,0 +1,6 @@
+numpy.complexfloating.mean
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.mean

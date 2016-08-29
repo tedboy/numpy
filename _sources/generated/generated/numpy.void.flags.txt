@@ -1,0 +1,6 @@
+numpy.void.flags
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void.flags

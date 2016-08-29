@@ -1,0 +1,6 @@
+numpy.unicode.ljust
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.ljust

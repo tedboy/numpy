@@ -1,0 +1,6 @@
+numpy.flexible.compress
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.compress

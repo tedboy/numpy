@@ -1,0 +1,6 @@
+numpy.flexible.ravel
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.ravel

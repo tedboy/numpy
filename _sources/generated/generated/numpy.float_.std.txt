@@ -1,0 +1,6 @@
+numpy.float_.std
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.std

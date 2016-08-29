@@ -1,0 +1,6 @@
+numpy.int8.sort
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.sort

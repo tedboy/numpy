@@ -1,0 +1,6 @@
+numpy.unsignedinteger.imag
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.imag

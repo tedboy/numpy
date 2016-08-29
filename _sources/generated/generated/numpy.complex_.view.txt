@@ -1,0 +1,6 @@
+numpy.complex_.view
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.view

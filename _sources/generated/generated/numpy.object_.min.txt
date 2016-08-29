@@ -1,0 +1,6 @@
+numpy.object_.min
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: object_.min

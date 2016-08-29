@@ -1,0 +1,6 @@
+numpy.longlong.max
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.max

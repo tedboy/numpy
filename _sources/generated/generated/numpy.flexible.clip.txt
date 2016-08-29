@@ -1,0 +1,6 @@
+numpy.flexible.clip
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.clip

@@ -1,0 +1,6 @@
+numpy.str_.getfield
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.getfield

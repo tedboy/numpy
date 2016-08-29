@@ -1,0 +1,6 @@
+numpy.signedinteger.dtype
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.dtype

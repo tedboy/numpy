@@ -1,0 +1,6 @@
+numpy.ushort.nbytes
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ushort.nbytes

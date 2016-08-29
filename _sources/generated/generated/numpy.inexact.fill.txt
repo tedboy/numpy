@@ -1,0 +1,6 @@
+numpy.inexact.fill
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.fill

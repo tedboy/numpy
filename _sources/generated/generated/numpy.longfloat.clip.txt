@@ -1,0 +1,6 @@
+numpy.longfloat.clip
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.clip

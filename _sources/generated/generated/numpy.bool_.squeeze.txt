@@ -1,0 +1,6 @@
+numpy.bool_.squeeze
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.squeeze

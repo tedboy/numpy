@@ -1,0 +1,6 @@
+numpy.lib.broadcast_to
+======================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: broadcast_to

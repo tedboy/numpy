@@ -1,0 +1,6 @@
+numpy.singlecomplex.real
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.real

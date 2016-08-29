@@ -1,0 +1,6 @@
+numpy.lib.histogramdd
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: histogramdd

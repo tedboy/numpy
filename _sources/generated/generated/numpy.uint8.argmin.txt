@@ -1,0 +1,6 @@
+numpy.uint8.argmin
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint8.argmin

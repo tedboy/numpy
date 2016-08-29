@@ -1,0 +1,27 @@
+numpy.testing.clear_and_catch_warnings
+======================================
+.. currentmodule:: numpy.testing
+.. autoclass:: clear_and_catch_warnings
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~clear_and_catch_warnings.__init__
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~clear_and_catch_warnings.class_modules
+

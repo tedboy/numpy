@@ -1,0 +1,6 @@
+numpy.unicode.format
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.format

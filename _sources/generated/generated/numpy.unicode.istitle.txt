@@ -1,0 +1,6 @@
+numpy.unicode.istitle
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.istitle

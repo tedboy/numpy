@@ -1,0 +1,6 @@
+numpy.inexact.tobytes
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.tobytes

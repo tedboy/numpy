@@ -1,0 +1,6 @@
+numpy.clongdouble.searchsorted
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.searchsorted

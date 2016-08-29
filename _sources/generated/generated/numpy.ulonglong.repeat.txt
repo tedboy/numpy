@@ -1,0 +1,6 @@
+numpy.ulonglong.repeat
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.repeat

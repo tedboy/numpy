@@ -1,0 +1,6 @@
+numpy.complex128.clip
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.clip

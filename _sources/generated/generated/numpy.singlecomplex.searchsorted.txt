@@ -1,0 +1,6 @@
+numpy.singlecomplex.searchsorted
+================================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.searchsorted

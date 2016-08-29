@@ -1,0 +1,6 @@
+numpy.polynomial.Polynomial.cast
+================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Polynomial.cast

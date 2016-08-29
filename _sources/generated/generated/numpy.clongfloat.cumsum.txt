@@ -1,0 +1,6 @@
+numpy.clongfloat.cumsum
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.cumsum

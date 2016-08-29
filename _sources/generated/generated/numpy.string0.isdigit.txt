@@ -1,0 +1,6 @@
+numpy.string0.isdigit
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.isdigit

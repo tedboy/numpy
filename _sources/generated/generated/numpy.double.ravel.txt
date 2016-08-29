@@ -1,0 +1,6 @@
+numpy.double.ravel
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.ravel

@@ -1,0 +1,6 @@
+numpy.int32.setfield
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: int32.setfield

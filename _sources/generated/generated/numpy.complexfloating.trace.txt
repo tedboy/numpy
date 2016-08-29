@@ -1,0 +1,6 @@
+numpy.complexfloating.trace
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.trace

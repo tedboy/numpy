@@ -1,0 +1,6 @@
+numpy.character.imag
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.imag

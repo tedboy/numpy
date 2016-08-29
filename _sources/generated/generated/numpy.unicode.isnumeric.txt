@@ -1,0 +1,6 @@
+numpy.unicode.isnumeric
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.isnumeric

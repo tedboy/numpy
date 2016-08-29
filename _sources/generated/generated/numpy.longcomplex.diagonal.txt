@@ -1,0 +1,6 @@
+numpy.longcomplex.diagonal
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.diagonal

@@ -1,0 +1,6 @@
+numpy.singlecomplex.flatten
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.flatten

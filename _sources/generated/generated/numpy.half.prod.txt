@@ -1,0 +1,6 @@
+numpy.half.prod
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.prod

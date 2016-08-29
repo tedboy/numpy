@@ -1,0 +1,6 @@
+numpy.lib.real
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: real

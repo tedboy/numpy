@@ -1,0 +1,6 @@
+numpy.void.fill
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: void.fill

@@ -1,0 +1,6 @@
+numpy.longcomplex.setflags
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.setflags

@@ -1,0 +1,6 @@
+numpy.double.nonzero
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.nonzero

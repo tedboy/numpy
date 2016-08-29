@@ -1,0 +1,6 @@
+numpy.lib.pv
+============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: pv

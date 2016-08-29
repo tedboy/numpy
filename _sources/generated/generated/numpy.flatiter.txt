@@ -1,0 +1,30 @@
+numpy.flatiter
+==============
+.. currentmodule:: numpy
+.. autoclass:: flatiter
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~flatiter.copy
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~flatiter.base
+   ~flatiter.coords
+   ~flatiter.index
+   ~flatiter.next
+

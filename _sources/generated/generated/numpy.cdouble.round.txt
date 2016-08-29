@@ -1,0 +1,6 @@
+numpy.cdouble.round
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.round

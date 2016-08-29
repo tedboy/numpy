@@ -1,0 +1,95 @@
+numpy.longlong
+==============
+.. currentmodule:: numpy
+.. autoclass:: longlong
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~longlong.all
+   ~longlong.any
+   ~longlong.argmax
+   ~longlong.argmin
+   ~longlong.argsort
+   ~longlong.astype
+   ~longlong.bit_length
+   ~longlong.byteswap
+   ~longlong.choose
+   ~longlong.clip
+   ~longlong.compress
+   ~longlong.conj
+   ~longlong.conjugate
+   ~longlong.copy
+   ~longlong.cumprod
+   ~longlong.cumsum
+   ~longlong.diagonal
+   ~longlong.dump
+   ~longlong.dumps
+   ~longlong.fill
+   ~longlong.flatten
+   ~longlong.getfield
+   ~longlong.item
+   ~longlong.itemset
+   ~longlong.max
+   ~longlong.mean
+   ~longlong.min
+   ~longlong.newbyteorder
+   ~longlong.nonzero
+   ~longlong.prod
+   ~longlong.ptp
+   ~longlong.put
+   ~longlong.ravel
+   ~longlong.repeat
+   ~longlong.reshape
+   ~longlong.resize
+   ~longlong.round
+   ~longlong.searchsorted
+   ~longlong.setfield
+   ~longlong.setflags
+   ~longlong.sort
+   ~longlong.squeeze
+   ~longlong.std
+   ~longlong.sum
+   ~longlong.swapaxes
+   ~longlong.take
+   ~longlong.tobytes
+   ~longlong.tofile
+   ~longlong.tolist
+   ~longlong.tostring
+   ~longlong.trace
+   ~longlong.transpose
+   ~longlong.var
+   ~longlong.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~longlong.T
+   ~longlong.base
+   ~longlong.data
+   ~longlong.denominator
+   ~longlong.dtype
+   ~longlong.flags
+   ~longlong.flat
+   ~longlong.imag
+   ~longlong.itemsize
+   ~longlong.nbytes
+   ~longlong.ndim
+   ~longlong.numerator
+   ~longlong.real
+   ~longlong.shape
+   ~longlong.size
+   ~longlong.strides
+

@@ -1,0 +1,6 @@
+numpy.half.dtype
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.dtype

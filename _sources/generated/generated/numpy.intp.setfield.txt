@@ -1,0 +1,6 @@
+numpy.intp.setfield
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: intp.setfield

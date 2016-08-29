@@ -1,0 +1,6 @@
+numpy.complex64.min
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex64.min

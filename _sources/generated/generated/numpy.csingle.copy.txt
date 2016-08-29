@@ -1,0 +1,6 @@
+numpy.csingle.copy
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.copy

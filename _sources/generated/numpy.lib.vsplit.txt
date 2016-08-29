@@ -1,0 +1,6 @@
+numpy.lib.vsplit
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: vsplit

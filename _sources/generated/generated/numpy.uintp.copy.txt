@@ -1,0 +1,6 @@
+numpy.uintp.copy
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.copy

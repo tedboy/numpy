@@ -1,0 +1,6 @@
+numpy.float16.flags
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: float16.flags

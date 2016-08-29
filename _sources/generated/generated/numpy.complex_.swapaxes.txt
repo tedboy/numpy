@@ -1,0 +1,6 @@
+numpy.complex_.swapaxes
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.swapaxes

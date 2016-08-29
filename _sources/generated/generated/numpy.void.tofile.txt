@@ -1,0 +1,6 @@
+numpy.void.tofile
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.tofile

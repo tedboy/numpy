@@ -1,0 +1,6 @@
+numpy.ushort.ndim
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ushort.ndim

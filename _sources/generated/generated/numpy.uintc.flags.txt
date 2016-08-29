@@ -1,0 +1,6 @@
+numpy.uintc.flags
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uintc.flags

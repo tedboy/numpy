@@ -1,0 +1,6 @@
+numpy.bool8.ravel
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.ravel

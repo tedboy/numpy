@@ -1,0 +1,6 @@
+numpy.ulonglong.diagonal
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.diagonal

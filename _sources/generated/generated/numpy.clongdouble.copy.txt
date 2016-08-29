@@ -1,0 +1,6 @@
+numpy.clongdouble.copy
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.copy

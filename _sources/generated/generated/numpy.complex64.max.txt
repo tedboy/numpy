@@ -1,0 +1,6 @@
+numpy.complex64.max
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex64.max

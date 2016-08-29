@@ -1,0 +1,6 @@
+numpy.str_.dump
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.dump

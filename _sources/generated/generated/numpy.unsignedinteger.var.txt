@@ -1,0 +1,6 @@
+numpy.unsignedinteger.var
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.var

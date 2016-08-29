@@ -1,0 +1,6 @@
+numpy.csingle.tofile
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.tofile

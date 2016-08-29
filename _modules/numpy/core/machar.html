@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>numpy.core.machar &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../../index.html"/>
+        <link rel="up" title="numpy" href="../../numpy.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../numpy.html">numpy</a> &raquo;</li>
+        
+      <li>numpy.core.machar</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for numpy.core.machar</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Machine arithmetics - determine the parameters of the</span>
+<span class="sd">floating-point arithmetic system</span>
+
+<span class="sd">Author: Pearu Peterson, September 2003</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MachAr&#39;</span><span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">numpy.core.fromnumeric</span> <span class="kn">import</span> <span class="nb">any</span>
+<span class="kn">from</span> <span class="nn">numpy.core.numeric</span> <span class="kn">import</span> <span class="n">errstate</span>
+
+<span class="c1"># Need to speed this up...especially for longfloat</span>
+
+<div class="viewcode-block" id="MachAr"><a class="viewcode-back" href="../../../reference/generated/numpy.MachAr.html#numpy.MachAr">[docs]</a><span class="k">class</span> <span class="nc">MachAr</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Diagnosing machine parameters.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ibeta : int</span>
+<span class="sd">        Radix in which numbers are represented.</span>
+<span class="sd">    it : int</span>
+<span class="sd">        Number of base-`ibeta` digits in the floating point mantissa M.</span>
+<span class="sd">    machep : int</span>
+<span class="sd">        Exponent of the smallest (most negative) power of `ibeta` that,</span>
+<span class="sd">        added to 1.0, gives something different from 1.0</span>
+<span class="sd">    eps : float</span>
+<span class="sd">        Floating-point number ``beta**machep`` (floating point precision)</span>
+<span class="sd">    negep : int</span>
+<span class="sd">        Exponent of the smallest power of `ibeta` that, substracted</span>
+<span class="sd">        from 1.0, gives something different from 1.0.</span>
+<span class="sd">    epsneg : float</span>
+<span class="sd">        Floating-point number ``beta**negep``.</span>
+<span class="sd">    iexp : int</span>
+<span class="sd">        Number of bits in the exponent (including its sign and bias).</span>
+<span class="sd">    minexp : int</span>
+<span class="sd">        Smallest (most negative) power of `ibeta` consistent with there</span>
+<span class="sd">        being no leading zeros in the mantissa.</span>
+<span class="sd">    xmin : float</span>
+<span class="sd">        Floating point number ``beta**minexp`` (the smallest [in</span>
+<span class="sd">        magnitude] usable floating value).</span>
+<span class="sd">    maxexp : int</span>
+<span class="sd">        Smallest (positive) power of `ibeta` that causes overflow.</span>
+<span class="sd">    xmax : float</span>
+<span class="sd">        ``(1-epsneg) * beta**maxexp`` (the largest [in magnitude]</span>
+<span class="sd">        usable floating value).</span>
+<span class="sd">    irnd : int</span>
+<span class="sd">        In ``range(6)``, information on what kind of rounding is done</span>
+<span class="sd">        in addition, and on how underflow is handled.</span>
+<span class="sd">    ngrd : int</span>
+<span class="sd">        Number of &#39;guard digits&#39; used when truncating the product</span>
+<span class="sd">        of two mantissas to fit the representation.</span>
+<span class="sd">    epsilon : float</span>
+<span class="sd">        Same as `eps`.</span>
+<span class="sd">    tiny : float</span>
+<span class="sd">        Same as `xmin`.</span>
+<span class="sd">    huge : float</span>
+<span class="sd">        Same as `xmax`.</span>
+<span class="sd">    precision : float</span>
+<span class="sd">        ``- int(-log10(eps))``</span>
+<span class="sd">    resolution : float</span>
+<span class="sd">        ``- 10**(-precision)``</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    float_conv : function, optional</span>
+<span class="sd">        Function that converts an integer or integer array to a float</span>
+<span class="sd">        or float array. Default is `float`.</span>
+<span class="sd">    int_conv : function, optional</span>
+<span class="sd">        Function that converts a float or float array to an integer or</span>
+<span class="sd">        integer array. Default is `int`.</span>
+<span class="sd">    float_to_float : function, optional</span>
+<span class="sd">        Function that converts a float array to float. Default is `float`.</span>
+<span class="sd">        Note that this does not seem to do anything useful in the current</span>
+<span class="sd">        implementation.</span>
+<span class="sd">    float_to_str : function, optional</span>
+<span class="sd">        Function that converts a single float to a string. Default is</span>
+<span class="sd">        ``lambda v:&#39;%24.16e&#39; %v``.</span>
+<span class="sd">    title : str, optional</span>
+<span class="sd">        Title that is printed in the string representation of `MachAr`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    finfo : Machine limits for floating point types.</span>
+<span class="sd">    iinfo : Machine limits for integer types.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] Press, Teukolsky, Vetterling and Flannery,</span>
+<span class="sd">           &quot;Numerical Recipes in C++,&quot; 2nd ed,</span>
+<span class="sd">           Cambridge University Press, 2002, p. 31.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MachAr.__init__"><a class="viewcode-back" href="../../../reference/generated/numpy.MachAr.html#numpy.MachAr.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">float_conv</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span><span class="n">int_conv</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                 <span class="n">float_to_float</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+                 <span class="n">float_to_str</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span><span class="s1">&#39;</span><span class="si">%24.16e</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">v</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Python floating point number&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        float_conv - convert integer to float (array)</span>
+<span class="sd">        int_conv   - convert float (array) to integer</span>
+<span class="sd">        float_to_float - convert float array to float</span>
+<span class="sd">        float_to_str - convert array float to str</span>
+<span class="sd">        title        - description of used floating point numbers</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># We ignore all errors here because we are purposely triggering</span>
+        <span class="c1"># underflow to detect the properties of the runninng arch.</span>
+        <span class="k">with</span> <span class="n">errstate</span><span class="p">(</span><span class="n">under</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_do_init</span><span class="p">(</span><span class="n">float_conv</span><span class="p">,</span> <span class="n">int_conv</span><span class="p">,</span> <span class="n">float_to_float</span><span class="p">,</span> <span class="n">float_to_str</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_do_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">float_conv</span><span class="p">,</span> <span class="n">int_conv</span><span class="p">,</span> <span class="n">float_to_float</span><span class="p">,</span> <span class="n">float_to_str</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="n">max_iterN</span> <span class="o">=</span> <span class="mi">10000</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Did not converge after </span><span class="si">%d</span><span class="s2"> tries with </span><span class="si">%s</span><span class="s2">&quot;</span>
+        <span class="n">one</span> <span class="o">=</span> <span class="n">float_conv</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">two</span> <span class="o">=</span> <span class="n">one</span> <span class="o">+</span> <span class="n">one</span>
+        <span class="n">zero</span> <span class="o">=</span> <span class="n">one</span> <span class="o">-</span> <span class="n">one</span>
+
+        <span class="c1"># Do we really need to do this?  Aren&#39;t they 2 and 2.0?</span>
+        <span class="c1"># Determine ibeta and beta</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">one</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterN</span><span class="p">):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">a</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">one</span>
+            <span class="n">temp1</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="n">a</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp1</span> <span class="o">-</span> <span class="n">one</span> <span class="o">!=</span> <span class="n">zero</span><span class="p">):</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">one</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">one</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterN</span><span class="p">):</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">b</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+            <span class="n">itemp</span> <span class="o">=</span> <span class="n">int_conv</span><span class="p">(</span><span class="n">temp</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">itemp</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">one</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+        <span class="n">ibeta</span> <span class="o">=</span> <span class="n">itemp</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="n">float_conv</span><span class="p">(</span><span class="n">ibeta</span><span class="p">)</span>
+
+        <span class="c1"># Determine it and irnd</span>
+        <span class="n">it</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">one</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterN</span><span class="p">):</span>
+            <span class="n">it</span> <span class="o">=</span> <span class="n">it</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">beta</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">one</span>
+            <span class="n">temp1</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="n">b</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp1</span> <span class="o">-</span> <span class="n">one</span> <span class="o">!=</span> <span class="n">zero</span><span class="p">):</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">one</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+
+        <span class="n">betah</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">/</span> <span class="n">two</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">one</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterN</span><span class="p">):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">a</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">one</span>
+            <span class="n">temp1</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="n">a</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp1</span> <span class="o">-</span> <span class="n">one</span> <span class="o">!=</span> <span class="n">zero</span><span class="p">):</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">one</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">betah</span>
+        <span class="n">irnd</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp</span><span class="o">-</span><span class="n">a</span> <span class="o">!=</span> <span class="n">zero</span><span class="p">):</span>
+            <span class="n">irnd</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">tempa</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">beta</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">tempa</span> <span class="o">+</span> <span class="n">betah</span>
+        <span class="k">if</span> <span class="n">irnd</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp</span><span class="o">-</span><span class="n">tempa</span> <span class="o">!=</span> <span class="n">zero</span><span class="p">):</span>
+            <span class="n">irnd</span> <span class="o">=</span> <span class="mi">2</span>
+
+        <span class="c1"># Determine negep and epsneg</span>
+        <span class="n">negep</span> <span class="o">=</span> <span class="n">it</span> <span class="o">+</span> <span class="mi">3</span>
+        <span class="n">betain</span> <span class="o">=</span> <span class="n">one</span> <span class="o">/</span> <span class="n">beta</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">one</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">negep</span><span class="p">):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">betain</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterN</span><span class="p">):</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">one</span> <span class="o">-</span> <span class="n">a</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp</span><span class="o">-</span><span class="n">one</span> <span class="o">!=</span> <span class="n">zero</span><span class="p">):</span>
+                <span class="k">break</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">beta</span>
+            <span class="n">negep</span> <span class="o">=</span> <span class="n">negep</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="c1"># Prevent infinite loop on PPC with gcc 4.0:</span>
+            <span class="k">if</span> <span class="n">negep</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;could not determine machine tolerance &quot;</span>
+                                   <span class="s2">&quot;for &#39;negep&#39;, locals() -&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">locals</span><span class="p">()))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">one</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+        <span class="n">negep</span> <span class="o">=</span> <span class="o">-</span><span class="n">negep</span>
+        <span class="n">epsneg</span> <span class="o">=</span> <span class="n">a</span>
+
+        <span class="c1"># Determine machep and eps</span>
+        <span class="n">machep</span> <span class="o">=</span> <span class="o">-</span> <span class="n">it</span> <span class="o">-</span> <span class="mi">3</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterN</span><span class="p">):</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">one</span> <span class="o">+</span> <span class="n">a</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp</span><span class="o">-</span><span class="n">one</span> <span class="o">!=</span> <span class="n">zero</span><span class="p">):</span>
+                <span class="k">break</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">beta</span>
+            <span class="n">machep</span> <span class="o">=</span> <span class="n">machep</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">one</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+        <span class="n">eps</span> <span class="o">=</span> <span class="n">a</span>
+
+        <span class="c1"># Determine ngrd</span>
+        <span class="n">ngrd</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">one</span> <span class="o">+</span> <span class="n">eps</span>
+        <span class="k">if</span> <span class="n">irnd</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp</span><span class="o">*</span><span class="n">one</span> <span class="o">-</span> <span class="n">one</span> <span class="o">!=</span> <span class="n">zero</span><span class="p">):</span>
+            <span class="n">ngrd</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="c1"># Determine iexp</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">betain</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">one</span> <span class="o">+</span> <span class="n">eps</span>
+        <span class="n">nxres</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterN</span><span class="p">):</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">z</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">z</span><span class="o">*</span><span class="n">one</span>  <span class="c1"># Check here for underflow</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">z</span><span class="o">*</span><span class="n">t</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">a</span> <span class="o">==</span> <span class="n">zero</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">y</span><span class="p">):</span>
+                <span class="k">break</span>
+            <span class="n">temp1</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">*</span> <span class="n">betain</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp1</span><span class="o">*</span><span class="n">beta</span> <span class="o">==</span> <span class="n">z</span><span class="p">):</span>
+                <span class="k">break</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">k</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">one</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">ibeta</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">iexp</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">mx</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">k</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">iexp</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="n">iz</span> <span class="o">=</span> <span class="n">ibeta</span>
+            <span class="k">while</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="n">iz</span><span class="p">:</span>
+                <span class="n">iz</span> <span class="o">=</span> <span class="n">iz</span> <span class="o">*</span> <span class="n">ibeta</span>
+                <span class="n">iexp</span> <span class="o">=</span> <span class="n">iexp</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">mx</span> <span class="o">=</span> <span class="n">iz</span> <span class="o">+</span> <span class="n">iz</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="c1"># Determine minexp and xmin</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterN</span><span class="p">):</span>
+            <span class="n">xmin</span> <span class="o">=</span> <span class="n">y</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">betain</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">one</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">t</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">((</span><span class="n">a</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="n">zero</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">xmin</span><span class="p">):</span>
+                <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">temp1</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">*</span> <span class="n">betain</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp1</span><span class="o">*</span><span class="n">beta</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">temp</span> <span class="o">!=</span> <span class="n">y</span><span class="p">):</span>
+                    <span class="n">nxres</span> <span class="o">=</span> <span class="mi">3</span>
+                    <span class="n">xmin</span> <span class="o">=</span> <span class="n">y</span>
+                    <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">one</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+        <span class="n">minexp</span> <span class="o">=</span> <span class="o">-</span><span class="n">k</span>
+
+        <span class="c1"># Determine maxexp, xmax</span>
+        <span class="k">if</span> <span class="n">mx</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">ibeta</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">mx</span> <span class="o">=</span> <span class="n">mx</span> <span class="o">+</span> <span class="n">mx</span>
+            <span class="n">iexp</span> <span class="o">=</span> <span class="n">iexp</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">maxexp</span> <span class="o">=</span> <span class="n">mx</span> <span class="o">+</span> <span class="n">minexp</span>
+        <span class="n">irnd</span> <span class="o">=</span> <span class="n">irnd</span> <span class="o">+</span> <span class="n">nxres</span>
+        <span class="k">if</span> <span class="n">irnd</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">maxexp</span> <span class="o">=</span> <span class="n">maxexp</span> <span class="o">-</span> <span class="mi">2</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">maxexp</span> <span class="o">+</span> <span class="n">minexp</span>
+        <span class="k">if</span> <span class="n">ibeta</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">maxexp</span> <span class="o">=</span> <span class="n">maxexp</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">maxexp</span> <span class="o">=</span> <span class="n">maxexp</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="n">y</span><span class="p">):</span>
+            <span class="n">maxexp</span> <span class="o">=</span> <span class="n">maxexp</span> <span class="o">-</span> <span class="mi">2</span>
+        <span class="n">xmax</span> <span class="o">=</span> <span class="n">one</span> <span class="o">-</span> <span class="n">epsneg</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">xmax</span><span class="o">*</span><span class="n">one</span> <span class="o">!=</span> <span class="n">xmax</span><span class="p">):</span>
+            <span class="n">xmax</span> <span class="o">=</span> <span class="n">one</span> <span class="o">-</span> <span class="n">beta</span><span class="o">*</span><span class="n">epsneg</span>
+        <span class="n">xmax</span> <span class="o">=</span> <span class="n">xmax</span> <span class="o">/</span> <span class="p">(</span><span class="n">xmin</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">beta</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">maxexp</span> <span class="o">+</span> <span class="n">minexp</span> <span class="o">+</span> <span class="mi">3</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">ibeta</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">xmax</span> <span class="o">=</span> <span class="n">xmax</span> <span class="o">+</span> <span class="n">xmax</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">xmax</span> <span class="o">=</span> <span class="n">xmax</span> <span class="o">*</span> <span class="n">beta</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ibeta</span> <span class="o">=</span> <span class="n">ibeta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">it</span> <span class="o">=</span> <span class="n">it</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">negep</span> <span class="o">=</span> <span class="n">negep</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">epsneg</span> <span class="o">=</span> <span class="n">float_to_float</span><span class="p">(</span><span class="n">epsneg</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_str_epsneg</span> <span class="o">=</span> <span class="n">float_to_str</span><span class="p">(</span><span class="n">epsneg</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">machep</span> <span class="o">=</span> <span class="n">machep</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eps</span> <span class="o">=</span> <span class="n">float_to_float</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_str_eps</span> <span class="o">=</span> <span class="n">float_to_str</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ngrd</span> <span class="o">=</span> <span class="n">ngrd</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">iexp</span> <span class="o">=</span> <span class="n">iexp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minexp</span> <span class="o">=</span> <span class="n">minexp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xmin</span> <span class="o">=</span> <span class="n">float_to_float</span><span class="p">(</span><span class="n">xmin</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_str_xmin</span> <span class="o">=</span> <span class="n">float_to_str</span><span class="p">(</span><span class="n">xmin</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxexp</span> <span class="o">=</span> <span class="n">maxexp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xmax</span> <span class="o">=</span> <span class="n">float_to_float</span><span class="p">(</span><span class="n">xmax</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_str_xmax</span> <span class="o">=</span> <span class="n">float_to_str</span><span class="p">(</span><span class="n">xmax</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">irnd</span> <span class="o">=</span> <span class="n">irnd</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="c1"># Commonly used parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eps</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tiny</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xmin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">huge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xmax</span>
+
+        <span class="kn">import</span> <span class="nn">math</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">precision</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">float_to_float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eps</span><span class="p">)))</span>
+        <span class="n">ten</span> <span class="o">=</span> <span class="n">two</span> <span class="o">+</span> <span class="n">two</span> <span class="o">+</span> <span class="n">two</span> <span class="o">+</span> <span class="n">two</span> <span class="o">+</span> <span class="n">two</span>
+        <span class="n">resolution</span> <span class="o">=</span> <span class="n">ten</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">precision</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resolution</span> <span class="o">=</span> <span class="n">float_to_float</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_str_resolution</span> <span class="o">=</span> <span class="n">float_to_str</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="p">(</span>
+           <span class="s1">&#39;Machine parameters for </span><span class="si">%(title)s</span><span class="se">\n</span><span class="s1">&#39;</span>
+           <span class="s1">&#39;---------------------------------------------------------------------</span><span class="se">\n</span><span class="s1">&#39;</span>
+           <span class="s1">&#39;ibeta=</span><span class="si">%(ibeta)s</span><span class="s1"> it=</span><span class="si">%(it)s</span><span class="s1"> iexp=</span><span class="si">%(iexp)s</span><span class="s1"> ngrd=</span><span class="si">%(ngrd)s</span><span class="s1"> irnd=</span><span class="si">%(irnd)s</span><span class="se">\n</span><span class="s1">&#39;</span>
+           <span class="s1">&#39;machep=</span><span class="si">%(machep)s</span><span class="s1">     eps=</span><span class="si">%(_str_eps)s</span><span class="s1"> (beta**machep == epsilon)</span><span class="se">\n</span><span class="s1">&#39;</span>
+           <span class="s1">&#39;negep =</span><span class="si">%(negep)s</span><span class="s1">  epsneg=</span><span class="si">%(_str_epsneg)s</span><span class="s1"> (beta**epsneg)</span><span class="se">\n</span><span class="s1">&#39;</span>
+           <span class="s1">&#39;minexp=</span><span class="si">%(minexp)s</span><span class="s1">   xmin=</span><span class="si">%(_str_xmin)s</span><span class="s1"> (beta**minexp == tiny)</span><span class="se">\n</span><span class="s1">&#39;</span>
+           <span class="s1">&#39;maxexp=</span><span class="si">%(maxexp)s</span><span class="s1">    xmax=</span><span class="si">%(_str_xmax)s</span><span class="s1"> ((1-epsneg)*beta**maxexp == huge)</span><span class="se">\n</span><span class="s1">&#39;</span>
+           <span class="s1">&#39;---------------------------------------------------------------------</span><span class="se">\n</span><span class="s1">&#39;</span>
+           <span class="p">)</span>
+        <span class="k">return</span> <span class="n">fmt</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span></div>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">MachAr</span><span class="p">())</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

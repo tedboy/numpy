@@ -1,0 +1,6 @@
+numpy.datetime64.fill
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.fill

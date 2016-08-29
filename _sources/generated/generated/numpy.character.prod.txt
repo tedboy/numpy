@@ -1,0 +1,6 @@
+numpy.character.prod
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.prod

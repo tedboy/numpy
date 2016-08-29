@@ -1,0 +1,6 @@
+numpy.unicode_.astype
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.astype

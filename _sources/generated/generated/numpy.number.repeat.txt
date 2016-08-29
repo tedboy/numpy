@@ -1,0 +1,6 @@
+numpy.number.repeat
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: number.repeat

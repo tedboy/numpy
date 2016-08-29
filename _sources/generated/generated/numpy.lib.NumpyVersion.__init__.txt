@@ -1,0 +1,6 @@
+numpy.lib.NumpyVersion.__init__
+===============================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: NumpyVersion.__init__

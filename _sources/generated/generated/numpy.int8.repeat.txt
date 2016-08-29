@@ -1,0 +1,6 @@
+numpy.int8.repeat
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.repeat

@@ -1,0 +1,6 @@
+numpy.str.lower
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str.lower

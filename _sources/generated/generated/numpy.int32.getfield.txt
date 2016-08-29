@@ -1,0 +1,6 @@
+numpy.int32.getfield
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: int32.getfield

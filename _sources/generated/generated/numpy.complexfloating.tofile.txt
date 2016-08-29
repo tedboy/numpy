@@ -1,0 +1,6 @@
+numpy.complexfloating.tofile
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.tofile

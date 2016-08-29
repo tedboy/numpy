@@ -1,0 +1,6 @@
+numpy.flexible.ndim
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.ndim

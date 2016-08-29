@@ -1,0 +1,6 @@
+numpy.bool8.min
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.min

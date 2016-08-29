@@ -1,0 +1,6 @@
+numpy.character.compress
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.compress

@@ -1,0 +1,6 @@
+numpy.object0.repeat
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: object0.repeat

@@ -1,0 +1,6 @@
+numpy.cdouble.strides
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.strides

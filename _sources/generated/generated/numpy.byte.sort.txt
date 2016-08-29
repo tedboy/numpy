@@ -1,0 +1,6 @@
+numpy.byte.sort
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.sort

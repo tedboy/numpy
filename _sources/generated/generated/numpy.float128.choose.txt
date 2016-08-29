@@ -1,0 +1,6 @@
+numpy.float128.choose
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: float128.choose

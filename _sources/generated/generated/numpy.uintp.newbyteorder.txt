@@ -1,0 +1,6 @@
+numpy.uintp.newbyteorder
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.newbyteorder

@@ -1,0 +1,6 @@
+numpy.single.flags
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: single.flags

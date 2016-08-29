@@ -1,0 +1,6 @@
+numpy.clongfloat.byteswap
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.byteswap

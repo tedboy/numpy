@@ -1,0 +1,6 @@
+numpy.bool_.searchsorted
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.searchsorted

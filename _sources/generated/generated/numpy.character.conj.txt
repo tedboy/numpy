@@ -1,0 +1,6 @@
+numpy.character.conj
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.conj

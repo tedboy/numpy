@@ -1,0 +1,6 @@
+numpy.complex64.getfield
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex64.getfield

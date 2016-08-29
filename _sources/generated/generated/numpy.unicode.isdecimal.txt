@@ -1,0 +1,6 @@
+numpy.unicode.isdecimal
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.isdecimal

@@ -1,0 +1,6 @@
+numpy.flexible.sum
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.sum

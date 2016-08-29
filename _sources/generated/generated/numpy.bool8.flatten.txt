@@ -1,0 +1,6 @@
+numpy.bool8.flatten
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.flatten

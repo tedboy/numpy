@@ -1,0 +1,6 @@
+numpy.byte.conjugate
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.conjugate

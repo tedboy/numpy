@@ -1,0 +1,6 @@
+numpy.byte.swapaxes
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.swapaxes

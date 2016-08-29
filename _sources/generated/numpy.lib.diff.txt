@@ -1,0 +1,6 @@
+numpy.lib.diff
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: diff

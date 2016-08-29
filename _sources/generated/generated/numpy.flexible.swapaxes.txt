@@ -1,0 +1,6 @@
+numpy.flexible.swapaxes
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.swapaxes

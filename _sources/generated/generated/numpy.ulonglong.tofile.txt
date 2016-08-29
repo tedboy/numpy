@@ -1,0 +1,6 @@
+numpy.ulonglong.tofile
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.tofile

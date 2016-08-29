@@ -1,0 +1,6 @@
+numpy.int_.imag
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int_.imag

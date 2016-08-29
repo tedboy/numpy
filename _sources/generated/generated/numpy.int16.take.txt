@@ -1,0 +1,6 @@
+numpy.int16.take
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: int16.take

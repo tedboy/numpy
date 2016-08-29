@@ -1,0 +1,6 @@
+numpy.complex256.fill
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.fill

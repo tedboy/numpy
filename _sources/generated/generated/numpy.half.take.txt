@@ -1,0 +1,6 @@
+numpy.half.take
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.take

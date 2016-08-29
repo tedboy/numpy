@@ -1,0 +1,6 @@
+numpy.lib.poly1d.coeffs
+=======================
+
+.. currentmodule:: numpy.lib
+
+.. autoattribute:: poly1d.coeffs

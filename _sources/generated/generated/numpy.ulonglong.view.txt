@@ -1,0 +1,6 @@
+numpy.ulonglong.view
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.view

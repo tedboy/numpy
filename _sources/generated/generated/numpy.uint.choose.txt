@@ -1,0 +1,6 @@
+numpy.uint.choose
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint.choose

@@ -1,0 +1,6 @@
+numpy.signedinteger.data
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.data

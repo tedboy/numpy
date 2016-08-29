@@ -1,0 +1,6 @@
+numpy.complex256.tolist
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.tolist

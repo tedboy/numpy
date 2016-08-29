@@ -1,0 +1,6 @@
+numpy.short.byteswap
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.byteswap

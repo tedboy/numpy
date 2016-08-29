@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertRaisesRegexp
+=========================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertRaisesRegexp

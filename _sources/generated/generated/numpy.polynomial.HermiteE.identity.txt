@@ -1,0 +1,6 @@
+numpy.polynomial.HermiteE.identity
+==================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: HermiteE.identity

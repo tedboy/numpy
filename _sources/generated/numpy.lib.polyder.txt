@@ -1,0 +1,6 @@
+numpy.lib.polyder
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: polyder

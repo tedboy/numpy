@@ -1,0 +1,6 @@
+numpy.nested_iters
+==================
+
+.. currentmodule:: numpy
+
+.. autofunction:: nested_iters

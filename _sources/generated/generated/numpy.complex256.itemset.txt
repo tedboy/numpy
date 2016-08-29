@@ -1,0 +1,6 @@
+numpy.complex256.itemset
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.itemset

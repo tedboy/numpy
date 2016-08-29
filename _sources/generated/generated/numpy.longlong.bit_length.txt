@@ -1,0 +1,6 @@
+numpy.longlong.bit_length
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.bit_length

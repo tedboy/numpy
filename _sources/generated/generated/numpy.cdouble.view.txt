@@ -1,0 +1,6 @@
+numpy.cdouble.view
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.view

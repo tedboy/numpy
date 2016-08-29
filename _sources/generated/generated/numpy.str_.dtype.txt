@@ -1,0 +1,6 @@
+numpy.str_.dtype
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: str_.dtype

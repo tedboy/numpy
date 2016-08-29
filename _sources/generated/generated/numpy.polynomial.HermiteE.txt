@@ -1,0 +1,50 @@
+numpy.polynomial.HermiteE
+=========================
+.. currentmodule:: numpy.polynomial
+.. autoclass:: HermiteE
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~HermiteE.__init__
+   ~HermiteE.basis
+   ~HermiteE.cast
+   ~HermiteE.convert
+   ~HermiteE.copy
+   ~HermiteE.cutdeg
+   ~HermiteE.degree
+   ~HermiteE.deriv
+   ~HermiteE.fit
+   ~HermiteE.fromroots
+   ~HermiteE.has_samecoef
+   ~HermiteE.has_samedomain
+   ~HermiteE.has_sametype
+   ~HermiteE.has_samewindow
+   ~HermiteE.identity
+   ~HermiteE.integ
+   ~HermiteE.linspace
+   ~HermiteE.mapparms
+   ~HermiteE.roots
+   ~HermiteE.trim
+   ~HermiteE.truncate
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~HermiteE.domain
+   ~HermiteE.maxpower
+   ~HermiteE.nickname
+   ~HermiteE.window
+

@@ -1,0 +1,6 @@
+numpy.character.argmax
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.argmax

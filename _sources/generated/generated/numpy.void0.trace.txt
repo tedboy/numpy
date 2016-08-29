@@ -1,0 +1,6 @@
+numpy.void0.trace
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: void0.trace

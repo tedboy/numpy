@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>numpy.fft.helper &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../../index.html"/>
+        <link rel="up" title="numpy" href="../../numpy.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../numpy.html">numpy</a> &raquo;</li>
+        
+      <li>numpy.fft.helper</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for numpy.fft.helper</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Discrete Fourier Transforms - helper.py</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">from</span> <span class="nn">numpy.compat</span> <span class="kn">import</span> <span class="n">integer_types</span>
+<span class="kn">from</span> <span class="nn">numpy.core</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">asarray</span><span class="p">,</span> <span class="n">concatenate</span><span class="p">,</span> <span class="n">arange</span><span class="p">,</span> <span class="n">take</span><span class="p">,</span> <span class="n">integer</span><span class="p">,</span> <span class="n">empty</span>
+        <span class="p">)</span>
+
+<span class="c1"># Created by Pearu Peterson, September 2002</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fftshift&#39;</span><span class="p">,</span> <span class="s1">&#39;ifftshift&#39;</span><span class="p">,</span> <span class="s1">&#39;fftfreq&#39;</span><span class="p">,</span> <span class="s1">&#39;rfftfreq&#39;</span><span class="p">]</span>
+
+<span class="n">integer_types</span> <span class="o">=</span> <span class="n">integer_types</span> <span class="o">+</span> <span class="p">(</span><span class="n">integer</span><span class="p">,)</span>
+
+
+<div class="viewcode-block" id="fftshift"><a class="viewcode-back" href="../../../reference/generated/numpy.fft.fftshift.html#numpy.fft.fftshift">[docs]</a><span class="k">def</span> <span class="nf">fftshift</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Shift the zero-frequency component to the center of the spectrum.</span>
+
+<span class="sd">    This function swaps half-spaces for all axes listed (defaults to all).</span>
+<span class="sd">    Note that ``y[0]`` is the Nyquist component only if ``len(x)`` is even.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        Input array.</span>
+<span class="sd">    axes : int or shape tuple, optional</span>
+<span class="sd">        Axes over which to shift.  Default is None, which shifts all axes.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    y : ndarray</span>
+<span class="sd">        The shifted array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    ifftshift : The inverse of `fftshift`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; freqs = np.fft.fftfreq(10, 0.1)</span>
+<span class="sd">    &gt;&gt;&gt; freqs</span>
+<span class="sd">    array([ 0.,  1.,  2.,  3.,  4., -5., -4., -3., -2., -1.])</span>
+<span class="sd">    &gt;&gt;&gt; np.fft.fftshift(freqs)</span>
+<span class="sd">    array([-5., -4., -3., -2., -1.,  0.,  1.,  2.,  3.,  4.])</span>
+
+<span class="sd">    Shift the zero-frequency component only along the second axis:</span>
+
+<span class="sd">    &gt;&gt;&gt; freqs = np.fft.fftfreq(9, d=1./9).reshape(3, 3)</span>
+<span class="sd">    &gt;&gt;&gt; freqs</span>
+<span class="sd">    array([[ 0.,  1.,  2.],</span>
+<span class="sd">           [ 3.,  4., -4.],</span>
+<span class="sd">           [-3., -2., -1.]])</span>
+<span class="sd">    &gt;&gt;&gt; np.fft.fftshift(freqs, axes=(1,))</span>
+<span class="sd">    array([[ 2.,  0.,  1.],</span>
+<span class="sd">           [-4.,  3.,  4.],</span>
+<span class="sd">           [-1., -3., -2.]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">ndim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">axes</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">ndim</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">):</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="p">(</span><span class="n">axes</span><span class="p">,)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">tmp</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+        <span class="n">mylist</span> <span class="o">=</span> <span class="n">concatenate</span><span class="p">((</span><span class="n">arange</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">arange</span><span class="p">(</span><span class="n">p2</span><span class="p">)))</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">take</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">mylist</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span></div>
+
+
+<div class="viewcode-block" id="ifftshift"><a class="viewcode-back" href="../../../reference/generated/numpy.fft.ifftshift.html#numpy.fft.ifftshift">[docs]</a><span class="k">def</span> <span class="nf">ifftshift</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The inverse of `fftshift`. Although identical for even-length `x`, the</span>
+<span class="sd">    functions differ by one sample for odd-length `x`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        Input array.</span>
+<span class="sd">    axes : int or shape tuple, optional</span>
+<span class="sd">        Axes over which to calculate.  Defaults to None, which shifts all axes.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    y : ndarray</span>
+<span class="sd">        The shifted array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    fftshift : Shift zero-frequency component to the center of the spectrum.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; freqs = np.fft.fftfreq(9, d=1./9).reshape(3, 3)</span>
+<span class="sd">    &gt;&gt;&gt; freqs</span>
+<span class="sd">    array([[ 0.,  1.,  2.],</span>
+<span class="sd">           [ 3.,  4., -4.],</span>
+<span class="sd">           [-3., -2., -1.]])</span>
+<span class="sd">    &gt;&gt;&gt; np.fft.ifftshift(np.fft.fftshift(freqs))</span>
+<span class="sd">    array([[ 0.,  1.,  2.],</span>
+<span class="sd">           [ 3.,  4., -4.],</span>
+<span class="sd">           [-3., -2., -1.]])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">ndim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">axes</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">ndim</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">):</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="p">(</span><span class="n">axes</span><span class="p">,)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">tmp</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+        <span class="n">mylist</span> <span class="o">=</span> <span class="n">concatenate</span><span class="p">((</span><span class="n">arange</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">arange</span><span class="p">(</span><span class="n">p2</span><span class="p">)))</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">take</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">mylist</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span></div>
+
+
+<div class="viewcode-block" id="fftfreq"><a class="viewcode-back" href="../../../reference/generated/numpy.fft.fftfreq.html#numpy.fft.fftfreq">[docs]</a><span class="k">def</span> <span class="nf">fftfreq</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the Discrete Fourier Transform sample frequencies.</span>
+
+<span class="sd">    The returned float array `f` contains the frequency bin centers in cycles</span>
+<span class="sd">    per unit of the sample spacing (with zero at the start).  For instance, if</span>
+<span class="sd">    the sample spacing is in seconds, then the frequency unit is cycles/second.</span>
+
+<span class="sd">    Given a window length `n` and a sample spacing `d`::</span>
+
+<span class="sd">      f = [0, 1, ...,   n/2-1,     -n/2, ..., -1] / (d*n)   if n is even</span>
+<span class="sd">      f = [0, 1, ..., (n-1)/2, -(n-1)/2, ..., -1] / (d*n)   if n is odd</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        Window length.</span>
+<span class="sd">    d : scalar, optional</span>
+<span class="sd">        Sample spacing (inverse of the sampling rate). Defaults to 1.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    f : ndarray</span>
+<span class="sd">        Array of length `n` containing the sample frequencies.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; signal = np.array([-2, 8, 6, 4, 1, 0, 3, 5], dtype=float)</span>
+<span class="sd">    &gt;&gt;&gt; fourier = np.fft.fft(signal)</span>
+<span class="sd">    &gt;&gt;&gt; n = signal.size</span>
+<span class="sd">    &gt;&gt;&gt; timestep = 0.1</span>
+<span class="sd">    &gt;&gt;&gt; freq = np.fft.fftfreq(n, d=timestep)</span>
+<span class="sd">    &gt;&gt;&gt; freq</span>
+<span class="sd">    array([ 0.  ,  1.25,  2.5 ,  3.75, -5.  , -3.75, -2.5 , -1.25])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;n should be an integer&quot;</span><span class="p">)</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">empty</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">p1</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="n">N</span><span class="p">:]</span> <span class="o">=</span> <span class="n">p2</span>
+    <span class="k">return</span> <span class="n">results</span> <span class="o">*</span> <span class="n">val</span></div>
+    <span class="c1">#return hstack((arange(0,(n-1)/2 + 1), arange(-(n/2),0))) / (n*d)</span>
+
+
+<div class="viewcode-block" id="rfftfreq"><a class="viewcode-back" href="../../../reference/generated/numpy.fft.rfftfreq.html#numpy.fft.rfftfreq">[docs]</a><span class="k">def</span> <span class="nf">rfftfreq</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the Discrete Fourier Transform sample frequencies</span>
+<span class="sd">    (for usage with rfft, irfft).</span>
+
+<span class="sd">    The returned float array `f` contains the frequency bin centers in cycles</span>
+<span class="sd">    per unit of the sample spacing (with zero at the start).  For instance, if</span>
+<span class="sd">    the sample spacing is in seconds, then the frequency unit is cycles/second.</span>
+
+<span class="sd">    Given a window length `n` and a sample spacing `d`::</span>
+
+<span class="sd">      f = [0, 1, ...,     n/2-1,     n/2] / (d*n)   if n is even</span>
+<span class="sd">      f = [0, 1, ..., (n-1)/2-1, (n-1)/2] / (d*n)   if n is odd</span>
+
+<span class="sd">    Unlike `fftfreq` (but like `scipy.fftpack.rfftfreq`)</span>
+<span class="sd">    the Nyquist frequency component is considered to be positive.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n : int</span>
+<span class="sd">        Window length.</span>
+<span class="sd">    d : scalar, optional</span>
+<span class="sd">        Sample spacing (inverse of the sampling rate). Defaults to 1.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    f : ndarray</span>
+<span class="sd">        Array of length ``n//2 + 1`` containing the sample frequencies.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; signal = np.array([-2, 8, 6, 4, 1, 0, 3, 5, -3, 4], dtype=float)</span>
+<span class="sd">    &gt;&gt;&gt; fourier = np.fft.rfft(signal)</span>
+<span class="sd">    &gt;&gt;&gt; n = signal.size</span>
+<span class="sd">    &gt;&gt;&gt; sample_rate = 100</span>
+<span class="sd">    &gt;&gt;&gt; freq = np.fft.fftfreq(n, d=1./sample_rate)</span>
+<span class="sd">    &gt;&gt;&gt; freq</span>
+<span class="sd">    array([  0.,  10.,  20.,  30.,  40., -50., -40., -30., -20., -10.])</span>
+<span class="sd">    &gt;&gt;&gt; freq = np.fft.rfftfreq(n, d=1./sample_rate)</span>
+<span class="sd">    &gt;&gt;&gt; freq</span>
+<span class="sd">    array([  0.,  10.,  20.,  30.,  40.,  50.])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">integer_types</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;n should be an integer&quot;</span><span class="p">)</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">results</span> <span class="o">*</span> <span class="n">val</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

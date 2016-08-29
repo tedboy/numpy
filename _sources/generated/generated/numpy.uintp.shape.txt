@@ -1,0 +1,6 @@
+numpy.uintp.shape
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uintp.shape

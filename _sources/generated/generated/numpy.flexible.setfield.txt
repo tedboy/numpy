@@ -1,0 +1,6 @@
+numpy.flexible.setfield
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.setfield

@@ -1,0 +1,92 @@
+numpy.single
+============
+.. currentmodule:: numpy
+.. autoclass:: single
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~single.all
+   ~single.any
+   ~single.argmax
+   ~single.argmin
+   ~single.argsort
+   ~single.astype
+   ~single.byteswap
+   ~single.choose
+   ~single.clip
+   ~single.compress
+   ~single.conj
+   ~single.conjugate
+   ~single.copy
+   ~single.cumprod
+   ~single.cumsum
+   ~single.diagonal
+   ~single.dump
+   ~single.dumps
+   ~single.fill
+   ~single.flatten
+   ~single.getfield
+   ~single.item
+   ~single.itemset
+   ~single.max
+   ~single.mean
+   ~single.min
+   ~single.newbyteorder
+   ~single.nonzero
+   ~single.prod
+   ~single.ptp
+   ~single.put
+   ~single.ravel
+   ~single.repeat
+   ~single.reshape
+   ~single.resize
+   ~single.round
+   ~single.searchsorted
+   ~single.setfield
+   ~single.setflags
+   ~single.sort
+   ~single.squeeze
+   ~single.std
+   ~single.sum
+   ~single.swapaxes
+   ~single.take
+   ~single.tobytes
+   ~single.tofile
+   ~single.tolist
+   ~single.tostring
+   ~single.trace
+   ~single.transpose
+   ~single.var
+   ~single.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~single.T
+   ~single.base
+   ~single.data
+   ~single.dtype
+   ~single.flags
+   ~single.flat
+   ~single.imag
+   ~single.itemsize
+   ~single.nbytes
+   ~single.ndim
+   ~single.real
+   ~single.shape
+   ~single.size
+   ~single.strides
+

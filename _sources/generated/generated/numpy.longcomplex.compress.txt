@@ -1,0 +1,6 @@
+numpy.longcomplex.compress
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.compress

@@ -1,0 +1,6 @@
+numpy.longfloat.dump
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.dump

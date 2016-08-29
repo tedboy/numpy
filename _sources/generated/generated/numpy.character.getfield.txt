@@ -1,0 +1,6 @@
+numpy.character.getfield
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.getfield

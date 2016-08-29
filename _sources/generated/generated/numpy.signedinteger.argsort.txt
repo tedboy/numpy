@@ -1,0 +1,6 @@
+numpy.signedinteger.argsort
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.argsort

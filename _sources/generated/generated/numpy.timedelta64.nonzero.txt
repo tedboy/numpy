@@ -1,0 +1,6 @@
+numpy.timedelta64.nonzero
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.nonzero

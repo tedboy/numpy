@@ -1,0 +1,6 @@
+numpy.complexfloating.fill
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.fill

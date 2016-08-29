@@ -1,0 +1,6 @@
+numpy.ubyte.itemsize
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.itemsize

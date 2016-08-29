@@ -1,0 +1,6 @@
+numpy.single.trace
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.trace

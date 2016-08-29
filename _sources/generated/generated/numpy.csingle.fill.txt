@@ -1,0 +1,6 @@
+numpy.csingle.fill
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.fill

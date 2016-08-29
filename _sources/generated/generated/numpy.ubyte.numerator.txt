@@ -1,0 +1,6 @@
+numpy.ubyte.numerator
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.numerator

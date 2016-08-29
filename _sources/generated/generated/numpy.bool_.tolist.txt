@@ -1,0 +1,6 @@
+numpy.bool_.tolist
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.tolist

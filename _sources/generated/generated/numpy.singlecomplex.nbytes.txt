@@ -1,0 +1,6 @@
+numpy.singlecomplex.nbytes
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.nbytes

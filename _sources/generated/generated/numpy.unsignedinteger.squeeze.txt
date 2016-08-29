@@ -1,0 +1,6 @@
+numpy.unsignedinteger.squeeze
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.squeeze

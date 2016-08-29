@@ -1,0 +1,6 @@
+numpy.clongdouble.sum
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.sum

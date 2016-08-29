@@ -1,0 +1,6 @@
+numpy.half.conjugate
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.conjugate

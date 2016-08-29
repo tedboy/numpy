@@ -1,0 +1,6 @@
+numpy.testing.TestCase.debug
+============================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.debug

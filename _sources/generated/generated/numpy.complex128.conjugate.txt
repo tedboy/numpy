@@ -1,0 +1,6 @@
+numpy.complex128.conjugate
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.conjugate

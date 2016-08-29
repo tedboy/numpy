@@ -1,0 +1,6 @@
+numpy.longlong.conj
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.conj

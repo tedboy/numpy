@@ -1,0 +1,6 @@
+numpy.datetime64.imag
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: datetime64.imag

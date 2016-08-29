@@ -1,0 +1,6 @@
+numpy.unicode_.take
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.take

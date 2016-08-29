@@ -1,0 +1,6 @@
+numpy.int8.numerator
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int8.numerator

@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertNotRegexpMatches
+=============================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertNotRegexpMatches

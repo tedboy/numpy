@@ -1,0 +1,6 @@
+numpy.float64.ravel
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: float64.ravel

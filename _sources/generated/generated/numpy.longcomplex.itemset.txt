@@ -1,0 +1,6 @@
+numpy.longcomplex.itemset
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.itemset

@@ -1,0 +1,6 @@
+numpy.lib.irr
+=============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: irr

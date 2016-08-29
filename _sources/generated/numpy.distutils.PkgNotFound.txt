@@ -1,0 +1,6 @@
+numpy.distutils.PkgNotFound
+===========================
+
+.. currentmodule:: numpy.distutils
+
+.. autoexception:: PkgNotFound

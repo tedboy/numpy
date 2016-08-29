@@ -1,0 +1,6 @@
+numpy.half.shape
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.shape

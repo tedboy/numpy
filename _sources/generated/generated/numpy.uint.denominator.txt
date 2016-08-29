@@ -1,0 +1,6 @@
+numpy.uint.denominator
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint.denominator

@@ -1,0 +1,6 @@
+numpy.complex128.trace
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.trace

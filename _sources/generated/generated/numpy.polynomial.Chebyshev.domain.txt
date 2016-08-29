@@ -1,0 +1,6 @@
+numpy.polynomial.Chebyshev.domain
+=================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Chebyshev.domain

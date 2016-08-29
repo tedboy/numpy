@@ -1,0 +1,6 @@
+numpy.signedinteger.put
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.put

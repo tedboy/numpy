@@ -1,0 +1,6 @@
+numpy.unicode.join
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.join

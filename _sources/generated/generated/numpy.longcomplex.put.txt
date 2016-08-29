@@ -1,0 +1,6 @@
+numpy.longcomplex.put
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.put

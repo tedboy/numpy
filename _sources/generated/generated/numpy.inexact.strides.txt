@@ -1,0 +1,6 @@
+numpy.inexact.strides
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: inexact.strides

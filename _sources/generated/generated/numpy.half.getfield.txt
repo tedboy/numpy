@@ -1,0 +1,6 @@
+numpy.half.getfield
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.getfield

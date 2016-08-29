@@ -1,0 +1,6 @@
+numpy.complexfloating.tobytes
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.tobytes

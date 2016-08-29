@@ -1,0 +1,6 @@
+numpy.unsignedinteger.sort
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.sort

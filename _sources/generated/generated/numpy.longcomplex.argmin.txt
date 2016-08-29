@@ -1,0 +1,6 @@
+numpy.longcomplex.argmin
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.argmin

@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertNotIsInstance
+==========================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertNotIsInstance

@@ -1,0 +1,92 @@
+numpy.csingle
+=============
+.. currentmodule:: numpy
+.. autoclass:: csingle
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~csingle.all
+   ~csingle.any
+   ~csingle.argmax
+   ~csingle.argmin
+   ~csingle.argsort
+   ~csingle.astype
+   ~csingle.byteswap
+   ~csingle.choose
+   ~csingle.clip
+   ~csingle.compress
+   ~csingle.conj
+   ~csingle.conjugate
+   ~csingle.copy
+   ~csingle.cumprod
+   ~csingle.cumsum
+   ~csingle.diagonal
+   ~csingle.dump
+   ~csingle.dumps
+   ~csingle.fill
+   ~csingle.flatten
+   ~csingle.getfield
+   ~csingle.item
+   ~csingle.itemset
+   ~csingle.max
+   ~csingle.mean
+   ~csingle.min
+   ~csingle.newbyteorder
+   ~csingle.nonzero
+   ~csingle.prod
+   ~csingle.ptp
+   ~csingle.put
+   ~csingle.ravel
+   ~csingle.repeat
+   ~csingle.reshape
+   ~csingle.resize
+   ~csingle.round
+   ~csingle.searchsorted
+   ~csingle.setfield
+   ~csingle.setflags
+   ~csingle.sort
+   ~csingle.squeeze
+   ~csingle.std
+   ~csingle.sum
+   ~csingle.swapaxes
+   ~csingle.take
+   ~csingle.tobytes
+   ~csingle.tofile
+   ~csingle.tolist
+   ~csingle.tostring
+   ~csingle.trace
+   ~csingle.transpose
+   ~csingle.var
+   ~csingle.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~csingle.T
+   ~csingle.base
+   ~csingle.data
+   ~csingle.dtype
+   ~csingle.flags
+   ~csingle.flat
+   ~csingle.imag
+   ~csingle.itemsize
+   ~csingle.nbytes
+   ~csingle.ndim
+   ~csingle.real
+   ~csingle.shape
+   ~csingle.size
+   ~csingle.strides
+

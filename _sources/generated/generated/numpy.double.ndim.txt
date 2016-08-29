@@ -1,0 +1,6 @@
+numpy.double.ndim
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.ndim

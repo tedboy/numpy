@@ -1,0 +1,6 @@
+numpy.complexfloating.base
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.base

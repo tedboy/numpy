@@ -1,0 +1,6 @@
+numpy.unicode_.swapcase
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.swapcase

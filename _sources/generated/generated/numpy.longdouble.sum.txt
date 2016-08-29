@@ -1,0 +1,6 @@
+numpy.longdouble.sum
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.sum

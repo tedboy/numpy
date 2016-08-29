@@ -1,0 +1,6 @@
+numpy.longdouble.nbytes
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longdouble.nbytes

@@ -1,0 +1,95 @@
+numpy.int0
+==========
+.. currentmodule:: numpy
+.. autoclass:: int0
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~int0.all
+   ~int0.any
+   ~int0.argmax
+   ~int0.argmin
+   ~int0.argsort
+   ~int0.astype
+   ~int0.bit_length
+   ~int0.byteswap
+   ~int0.choose
+   ~int0.clip
+   ~int0.compress
+   ~int0.conj
+   ~int0.conjugate
+   ~int0.copy
+   ~int0.cumprod
+   ~int0.cumsum
+   ~int0.diagonal
+   ~int0.dump
+   ~int0.dumps
+   ~int0.fill
+   ~int0.flatten
+   ~int0.getfield
+   ~int0.item
+   ~int0.itemset
+   ~int0.max
+   ~int0.mean
+   ~int0.min
+   ~int0.newbyteorder
+   ~int0.nonzero
+   ~int0.prod
+   ~int0.ptp
+   ~int0.put
+   ~int0.ravel
+   ~int0.repeat
+   ~int0.reshape
+   ~int0.resize
+   ~int0.round
+   ~int0.searchsorted
+   ~int0.setfield
+   ~int0.setflags
+   ~int0.sort
+   ~int0.squeeze
+   ~int0.std
+   ~int0.sum
+   ~int0.swapaxes
+   ~int0.take
+   ~int0.tobytes
+   ~int0.tofile
+   ~int0.tolist
+   ~int0.tostring
+   ~int0.trace
+   ~int0.transpose
+   ~int0.var
+   ~int0.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~int0.T
+   ~int0.base
+   ~int0.data
+   ~int0.denominator
+   ~int0.dtype
+   ~int0.flags
+   ~int0.flat
+   ~int0.imag
+   ~int0.itemsize
+   ~int0.nbytes
+   ~int0.ndim
+   ~int0.numerator
+   ~int0.real
+   ~int0.shape
+   ~int0.size
+   ~int0.strides
+

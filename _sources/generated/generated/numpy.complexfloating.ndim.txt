@@ -1,0 +1,6 @@
+numpy.complexfloating.ndim
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.ndim

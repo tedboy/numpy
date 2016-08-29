@@ -1,0 +1,6 @@
+numpy.unicode_.replace
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.replace

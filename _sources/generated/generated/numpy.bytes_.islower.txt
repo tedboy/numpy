@@ -1,0 +1,6 @@
+numpy.bytes_.islower
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.islower

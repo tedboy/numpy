@@ -1,0 +1,6 @@
+numpy.longfloat.data
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longfloat.data

@@ -1,0 +1,6 @@
+numpy.clongfloat.transpose
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.transpose

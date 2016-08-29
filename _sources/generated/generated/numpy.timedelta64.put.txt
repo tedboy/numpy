@@ -1,0 +1,6 @@
+numpy.timedelta64.put
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.put

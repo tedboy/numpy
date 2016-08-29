@@ -1,0 +1,6 @@
+numpy.singlecomplex.setfield
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.setfield

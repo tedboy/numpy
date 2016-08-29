@@ -1,0 +1,6 @@
+numpy.complexfloating.dumps
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.dumps

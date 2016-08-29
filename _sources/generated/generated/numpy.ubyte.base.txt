@@ -1,0 +1,6 @@
+numpy.ubyte.base
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.base

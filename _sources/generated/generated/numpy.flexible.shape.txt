@@ -1,0 +1,6 @@
+numpy.flexible.shape
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.shape

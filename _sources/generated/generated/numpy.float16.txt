@@ -1,0 +1,92 @@
+numpy.float16
+=============
+.. currentmodule:: numpy
+.. autoclass:: float16
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~float16.all
+   ~float16.any
+   ~float16.argmax
+   ~float16.argmin
+   ~float16.argsort
+   ~float16.astype
+   ~float16.byteswap
+   ~float16.choose
+   ~float16.clip
+   ~float16.compress
+   ~float16.conj
+   ~float16.conjugate
+   ~float16.copy
+   ~float16.cumprod
+   ~float16.cumsum
+   ~float16.diagonal
+   ~float16.dump
+   ~float16.dumps
+   ~float16.fill
+   ~float16.flatten
+   ~float16.getfield
+   ~float16.item
+   ~float16.itemset
+   ~float16.max
+   ~float16.mean
+   ~float16.min
+   ~float16.newbyteorder
+   ~float16.nonzero
+   ~float16.prod
+   ~float16.ptp
+   ~float16.put
+   ~float16.ravel
+   ~float16.repeat
+   ~float16.reshape
+   ~float16.resize
+   ~float16.round
+   ~float16.searchsorted
+   ~float16.setfield
+   ~float16.setflags
+   ~float16.sort
+   ~float16.squeeze
+   ~float16.std
+   ~float16.sum
+   ~float16.swapaxes
+   ~float16.take
+   ~float16.tobytes
+   ~float16.tofile
+   ~float16.tolist
+   ~float16.tostring
+   ~float16.trace
+   ~float16.transpose
+   ~float16.var
+   ~float16.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~float16.T
+   ~float16.base
+   ~float16.data
+   ~float16.dtype
+   ~float16.flags
+   ~float16.flat
+   ~float16.imag
+   ~float16.itemsize
+   ~float16.nbytes
+   ~float16.ndim
+   ~float16.real
+   ~float16.shape
+   ~float16.size
+   ~float16.strides
+

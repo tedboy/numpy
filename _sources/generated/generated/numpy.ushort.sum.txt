@@ -1,0 +1,6 @@
+numpy.ushort.sum
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.sum

@@ -1,0 +1,6 @@
+numpy.bool8.diagonal
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.diagonal

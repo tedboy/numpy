@@ -1,0 +1,6 @@
+numpy.clongdouble.nonzero
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.nonzero

@@ -1,0 +1,6 @@
+numpy.bool_.transpose
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.transpose

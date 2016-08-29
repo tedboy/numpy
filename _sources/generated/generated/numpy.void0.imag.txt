@@ -1,0 +1,6 @@
+numpy.void0.imag
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void0.imag

@@ -1,0 +1,6 @@
+numpy.object0.compress
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: object0.compress

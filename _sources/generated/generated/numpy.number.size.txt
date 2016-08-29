@@ -1,0 +1,6 @@
+numpy.number.size
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: number.size

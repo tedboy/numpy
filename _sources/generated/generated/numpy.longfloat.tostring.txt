@@ -1,0 +1,6 @@
+numpy.longfloat.tostring
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.tostring

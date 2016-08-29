@@ -1,0 +1,6 @@
+numpy.unsignedinteger.dtype
+===========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.dtype

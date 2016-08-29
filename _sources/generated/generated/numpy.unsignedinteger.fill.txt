@@ -1,0 +1,6 @@
+numpy.unsignedinteger.fill
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.fill

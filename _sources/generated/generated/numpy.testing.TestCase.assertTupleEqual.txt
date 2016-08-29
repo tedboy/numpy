@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertTupleEqual
+=======================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertTupleEqual

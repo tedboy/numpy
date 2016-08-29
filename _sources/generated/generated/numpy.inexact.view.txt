@@ -1,0 +1,6 @@
+numpy.inexact.view
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.view

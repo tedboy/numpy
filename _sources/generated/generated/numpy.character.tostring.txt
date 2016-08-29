@@ -1,0 +1,6 @@
+numpy.character.tostring
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.tostring

@@ -1,0 +1,6 @@
+numpy.double.tofile
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.tofile

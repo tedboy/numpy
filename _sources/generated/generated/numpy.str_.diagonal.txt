@@ -1,0 +1,6 @@
+numpy.str_.diagonal
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.diagonal

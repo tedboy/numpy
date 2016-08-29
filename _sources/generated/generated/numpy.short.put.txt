@@ -1,0 +1,6 @@
+numpy.short.put
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: short.put

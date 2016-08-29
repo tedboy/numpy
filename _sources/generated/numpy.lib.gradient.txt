@@ -1,0 +1,6 @@
+numpy.lib.gradient
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: gradient

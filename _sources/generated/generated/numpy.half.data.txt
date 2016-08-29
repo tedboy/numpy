@@ -1,0 +1,6 @@
+numpy.half.data
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.data

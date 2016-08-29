@@ -1,0 +1,6 @@
+numpy.int8.T
+============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int8.T

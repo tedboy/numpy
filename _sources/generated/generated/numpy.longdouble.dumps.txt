@@ -1,0 +1,6 @@
+numpy.longdouble.dumps
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.dumps

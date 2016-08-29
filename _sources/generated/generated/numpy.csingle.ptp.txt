@@ -1,0 +1,6 @@
+numpy.csingle.ptp
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.ptp

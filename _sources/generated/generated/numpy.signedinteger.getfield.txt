@@ -1,0 +1,6 @@
+numpy.signedinteger.getfield
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.getfield

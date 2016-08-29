@@ -1,0 +1,6 @@
+numpy.csingle.data
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: csingle.data

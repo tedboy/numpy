@@ -1,0 +1,6 @@
+numpy.ulonglong.dtype
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.dtype

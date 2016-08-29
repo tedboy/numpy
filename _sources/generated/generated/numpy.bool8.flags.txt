@@ -1,0 +1,6 @@
+numpy.bool8.flags
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool8.flags

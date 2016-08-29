@@ -1,0 +1,6 @@
+numpy.lib.issubdtype
+====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: issubdtype

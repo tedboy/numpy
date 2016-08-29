@@ -1,0 +1,6 @@
+numpy.half.min
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.min

@@ -1,0 +1,6 @@
+numpy.byte.astype
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.astype

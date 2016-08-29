@@ -1,0 +1,6 @@
+numpy.complexfloating.choose
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.choose

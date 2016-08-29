@@ -1,0 +1,6 @@
+numpy.singlecomplex.repeat
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.repeat

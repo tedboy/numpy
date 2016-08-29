@@ -1,0 +1,6 @@
+numpy.polynomial.Chebyshev.nickname
+===================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Chebyshev.nickname

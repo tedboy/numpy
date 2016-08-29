@@ -1,0 +1,6 @@
+numpy.half.tofile
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.tofile

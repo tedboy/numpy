@@ -1,0 +1,6 @@
+numpy.longcomplex.transpose
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.transpose

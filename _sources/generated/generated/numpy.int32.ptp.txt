@@ -1,0 +1,6 @@
+numpy.int32.ptp
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: int32.ptp

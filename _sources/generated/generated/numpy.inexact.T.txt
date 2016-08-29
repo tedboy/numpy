@@ -1,0 +1,6 @@
+numpy.inexact.T
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: inexact.T

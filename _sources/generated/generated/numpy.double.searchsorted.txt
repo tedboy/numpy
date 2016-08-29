@@ -1,0 +1,6 @@
+numpy.double.searchsorted
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.searchsorted

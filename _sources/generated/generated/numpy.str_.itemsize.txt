@@ -1,0 +1,6 @@
+numpy.str_.itemsize
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: str_.itemsize

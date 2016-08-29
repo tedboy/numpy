@@ -1,0 +1,6 @@
+numpy.character.ndim
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.ndim

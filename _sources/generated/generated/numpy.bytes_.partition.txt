@@ -1,0 +1,6 @@
+numpy.bytes_.partition
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.partition

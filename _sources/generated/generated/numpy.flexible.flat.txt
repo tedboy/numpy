@@ -1,0 +1,6 @@
+numpy.flexible.flat
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.flat

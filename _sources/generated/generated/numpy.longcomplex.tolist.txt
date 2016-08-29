@@ -1,0 +1,6 @@
+numpy.longcomplex.tolist
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.tolist

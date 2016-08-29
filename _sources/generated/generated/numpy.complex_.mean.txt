@@ -1,0 +1,6 @@
+numpy.complex_.mean
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.mean

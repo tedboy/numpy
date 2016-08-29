@@ -1,0 +1,6 @@
+numpy.testing.runstring
+=======================
+
+.. currentmodule:: numpy.testing
+
+.. autofunction:: runstring

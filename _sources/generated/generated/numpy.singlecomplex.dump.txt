@@ -1,0 +1,6 @@
+numpy.singlecomplex.dump
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.dump

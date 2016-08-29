@@ -1,0 +1,6 @@
+numpy.lib.fv
+============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: fv

@@ -1,0 +1,6 @@
+numpy.longfloat.setfield
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.setfield

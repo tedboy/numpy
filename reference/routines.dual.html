@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.3.8. Optionally Scipy-accelerated routines (numpy.dual) &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../index.html"/>
+        <link rel="up" title="11.3. Routines" href="routines.html"/>
+        <link rel="next" title="11.3.9. Mathematical functions with automatic domain (numpy.emath)" href="routines.emath.html"/>
+        <link rel="prev" title="11.3.7.10.3. numpy.mintypecode" href="generated/numpy.mintypecode.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="routines.html">11.3. Routines</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="routines.array-creation.html">11.3.1. Array creation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.array-manipulation.html">11.3.2. Array manipulation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.bitwise.html">11.3.3. Binary operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.char.html">11.3.4. String operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.ctypeslib.html">11.3.5. C-Types Foreign Function Interface (<code class="docutils literal"><span class="pre">numpy.ctypeslib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.datetime.html">11.3.6. Datetime Support Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.dtype.html">11.3.7. Data type routines</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">11.3.8. Optionally Scipy-accelerated routines (<code class="docutils literal"><span class="pre">numpy.dual</span></code>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#linear-algebra">11.3.8.1. Linear algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fft">11.3.8.2. FFT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other">11.3.8.3. Other</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="routines.emath.html">11.3.9. Mathematical functions with automatic domain (<code class="docutils literal"><span class="pre">numpy.emath</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.err.html">11.3.10. Floating point error handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.fft.html">11.3.11. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.financial.html">11.3.12. Financial functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.functional.html">11.3.13. Functional programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.help.html">11.3.14. Numpy-specific help functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.indexing.html">11.3.15. Indexing routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.io.html">11.3.16. Input and output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.linalg.html">11.3.17. Linear algebra (<code class="docutils literal"><span class="pre">numpy.linalg</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.logic.html">11.3.18. Logic functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.ma.html">11.1.7.7. Masked array operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.math.html">11.3.19. Mathematical functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.matlib.html">11.3.20. Matrix library (<code class="docutils literal"><span class="pre">numpy.matlib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.other.html">11.3.21. Miscellaneous routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.padding.html">11.3.22. Padding Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.polynomials.html">11.3.23. Polynomials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.random.html">11.3.24. Random sampling (<code class="docutils literal"><span class="pre">numpy.random</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.set.html">11.3.25. Set routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.sort.html">11.3.26. Sorting, searching, and counting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.statistics.html">11.3.27. Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.testing.html">11.3.28. Test Support (<code class="docutils literal"><span class="pre">numpy.testing</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.window.html">11.3.29. Window functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="routines.html">11.3. Routines</a> &raquo;</li>
+        
+      <li>11.3.8. Optionally Scipy-accelerated routines (<code class="docutils literal"><span class="pre">numpy.dual</span></code>)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/routines.dual.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-numpy.dual">
+<span id="optionally-scipy-accelerated-routines-numpy-dual"></span><h1>11.3.8. Optionally Scipy-accelerated routines (<a class="reference internal" href="#module-numpy.dual" title="numpy.dual"><code class="xref py py-mod docutils literal"><span class="pre">numpy.dual</span></code></a>)<a class="headerlink" href="#module-numpy.dual" title="Permalink to this headline">¶</a></h1>
+<p>Aliases for functions which may be accelerated by Scipy.</p>
+<p><a class="reference external" href="http://www.scipy.org">Scipy</a> can be built to use accelerated or otherwise improved libraries
+for FFTs, linear algebra, and special functions. This module allows
+developers to transparently support these accelerated functions when
+scipy is available but still support users who have only installed
+Numpy.</p>
+<div class="section" id="linear-algebra">
+<h2>11.3.8.1. Linear algebra<a class="headerlink" href="#linear-algebra" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.linalg.cholesky.html#numpy.linalg.cholesky" title="numpy.linalg.cholesky"><code class="xref py py-obj docutils literal"><span class="pre">cholesky</span></code></a>(a)</td>
+<td>Cholesky decomposition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.linalg.det.html#numpy.linalg.det" title="numpy.linalg.det"><code class="xref py py-obj docutils literal"><span class="pre">det</span></code></a>(a)</td>
+<td>Compute the determinant of an array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.linalg.eig.html#numpy.linalg.eig" title="numpy.linalg.eig"><code class="xref py py-obj docutils literal"><span class="pre">eig</span></code></a>(a)</td>
+<td>Compute the eigenvalues and right eigenvectors of a square array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.linalg.eigh.html#numpy.linalg.eigh" title="numpy.linalg.eigh"><code class="xref py py-obj docutils literal"><span class="pre">eigh</span></code></a>(a[,&nbsp;UPLO])</td>
+<td>Return the eigenvalues and eigenvectors of a Hermitian or symmetric matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.linalg.eigvals.html#numpy.linalg.eigvals" title="numpy.linalg.eigvals"><code class="xref py py-obj docutils literal"><span class="pre">eigvals</span></code></a>(a)</td>
+<td>Compute the eigenvalues of a general matrix.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.linalg.eigvalsh.html#numpy.linalg.eigvalsh" title="numpy.linalg.eigvalsh"><code class="xref py py-obj docutils literal"><span class="pre">eigvalsh</span></code></a>(a[,&nbsp;UPLO])</td>
+<td>Compute the eigenvalues of a Hermitian or real symmetric matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.linalg.inv.html#numpy.linalg.inv" title="numpy.linalg.inv"><code class="xref py py-obj docutils literal"><span class="pre">inv</span></code></a>(a)</td>
+<td>Compute the (multiplicative) inverse of a matrix.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.linalg.lstsq.html#numpy.linalg.lstsq" title="numpy.linalg.lstsq"><code class="xref py py-obj docutils literal"><span class="pre">lstsq</span></code></a>(a,&nbsp;b[,&nbsp;rcond])</td>
+<td>Return the least-squares solution to a linear matrix equation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.linalg.norm.html#numpy.linalg.norm" title="numpy.linalg.norm"><code class="xref py py-obj docutils literal"><span class="pre">norm</span></code></a>(x[,&nbsp;ord,&nbsp;axis,&nbsp;keepdims])</td>
+<td>Matrix or vector norm.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.linalg.pinv.html#numpy.linalg.pinv" title="numpy.linalg.pinv"><code class="xref py py-obj docutils literal"><span class="pre">pinv</span></code></a>(a[,&nbsp;rcond])</td>
+<td>Compute the (Moore-Penrose) pseudo-inverse of a matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.linalg.solve.html#numpy.linalg.solve" title="numpy.linalg.solve"><code class="xref py py-obj docutils literal"><span class="pre">solve</span></code></a>(a,&nbsp;b)</td>
+<td>Solve a linear matrix equation, or system of linear scalar equations.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.linalg.svd.html#numpy.linalg.svd" title="numpy.linalg.svd"><code class="xref py py-obj docutils literal"><span class="pre">svd</span></code></a>(a[,&nbsp;full_matrices,&nbsp;compute_uv])</td>
+<td>Singular Value Decomposition.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fft">
+<h2>11.3.8.2. FFT<a class="headerlink" href="#fft" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.fft.fft.html#numpy.fft.fft" title="numpy.fft.fft"><code class="xref py py-obj docutils literal"><span class="pre">fft</span></code></a>(a[,&nbsp;n,&nbsp;axis,&nbsp;norm])</td>
+<td>Compute the one-dimensional discrete Fourier Transform.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.fft.fft2.html#numpy.fft.fft2" title="numpy.fft.fft2"><code class="xref py py-obj docutils literal"><span class="pre">fft2</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the 2-dimensional discrete Fourier Transform</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.fft.fftn.html#numpy.fft.fftn" title="numpy.fft.fftn"><code class="xref py py-obj docutils literal"><span class="pre">fftn</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the N-dimensional discrete Fourier Transform.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.fft.ifft.html#numpy.fft.ifft" title="numpy.fft.ifft"><code class="xref py py-obj docutils literal"><span class="pre">ifft</span></code></a>(a[,&nbsp;n,&nbsp;axis,&nbsp;norm])</td>
+<td>Compute the one-dimensional inverse discrete Fourier Transform.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.fft.ifft2.html#numpy.fft.ifft2" title="numpy.fft.ifft2"><code class="xref py py-obj docutils literal"><span class="pre">ifft2</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the 2-dimensional inverse discrete Fourier Transform.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.fft.ifftn.html#numpy.fft.ifftn" title="numpy.fft.ifftn"><code class="xref py py-obj docutils literal"><span class="pre">ifftn</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the N-dimensional inverse discrete Fourier Transform.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="other">
+<h2>11.3.8.3. Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.i0.html#numpy.i0" title="numpy.i0"><code class="xref py py-obj docutils literal"><span class="pre">i0</span></code></a>(x)</td>
+<td>Modified Bessel function of the first kind, order 0.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="routines.emath.html" class="btn btn-neutral float-right" title="11.3.9. Mathematical functions with automatic domain (numpy.emath)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/numpy.mintypecode.html" class="btn btn-neutral" title="11.3.7.10.3. numpy.mintypecode" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

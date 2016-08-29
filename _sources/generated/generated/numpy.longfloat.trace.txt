@@ -1,0 +1,6 @@
+numpy.longfloat.trace
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.trace

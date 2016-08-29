@@ -1,0 +1,6 @@
+numpy.inexact.var
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.var

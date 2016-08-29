@@ -1,0 +1,6 @@
+numpy.signedinteger.flat
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.flat

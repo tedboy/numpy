@@ -1,0 +1,6 @@
+numpy.ushort.all
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.all

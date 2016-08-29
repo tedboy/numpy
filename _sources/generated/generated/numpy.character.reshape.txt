@@ -1,0 +1,6 @@
+numpy.character.reshape
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.reshape

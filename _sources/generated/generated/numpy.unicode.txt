@@ -1,0 +1,58 @@
+numpy.unicode
+=============
+.. currentmodule:: numpy
+.. autoclass:: unicode
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~unicode.capitalize
+   ~unicode.center
+   ~unicode.count
+   ~unicode.decode
+   ~unicode.encode
+   ~unicode.endswith
+   ~unicode.expandtabs
+   ~unicode.find
+   ~unicode.format
+   ~unicode.index
+   ~unicode.isalnum
+   ~unicode.isalpha
+   ~unicode.isdecimal
+   ~unicode.isdigit
+   ~unicode.islower
+   ~unicode.isnumeric
+   ~unicode.isspace
+   ~unicode.istitle
+   ~unicode.isupper
+   ~unicode.join
+   ~unicode.ljust
+   ~unicode.lower
+   ~unicode.lstrip
+   ~unicode.partition
+   ~unicode.replace
+   ~unicode.rfind
+   ~unicode.rindex
+   ~unicode.rjust
+   ~unicode.rpartition
+   ~unicode.rsplit
+   ~unicode.rstrip
+   ~unicode.split
+   ~unicode.splitlines
+   ~unicode.startswith
+   ~unicode.strip
+   ~unicode.swapcase
+   ~unicode.title
+   ~unicode.translate
+   ~unicode.upper
+   ~unicode.zfill
+
+
+
+
+

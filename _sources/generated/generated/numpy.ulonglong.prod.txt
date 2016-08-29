@@ -1,0 +1,6 @@
+numpy.ulonglong.prod
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.prod

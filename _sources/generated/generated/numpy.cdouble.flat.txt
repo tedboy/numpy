@@ -1,0 +1,6 @@
+numpy.cdouble.flat
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.flat

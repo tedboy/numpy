@@ -1,0 +1,6 @@
+numpy.singlecomplex.flags
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.flags

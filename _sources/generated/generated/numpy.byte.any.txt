@@ -1,0 +1,6 @@
+numpy.byte.any
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.any

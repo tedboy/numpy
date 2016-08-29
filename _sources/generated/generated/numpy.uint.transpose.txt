@@ -1,0 +1,6 @@
+numpy.uint.transpose
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint.transpose

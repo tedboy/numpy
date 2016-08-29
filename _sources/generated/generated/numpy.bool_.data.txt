@@ -1,0 +1,6 @@
+numpy.bool_.data
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool_.data

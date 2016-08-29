@@ -1,0 +1,6 @@
+numpy.testing.TestCase.longMessage
+==================================
+
+.. currentmodule:: numpy.testing
+
+.. autoattribute:: TestCase.longMessage

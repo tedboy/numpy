@@ -1,0 +1,6 @@
+numpy.polynomial.HermiteE.domain
+================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: HermiteE.domain

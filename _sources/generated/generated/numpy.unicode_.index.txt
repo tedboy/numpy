@@ -1,0 +1,6 @@
+numpy.unicode_.index
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.index

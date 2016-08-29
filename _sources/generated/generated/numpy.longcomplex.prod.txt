@@ -1,0 +1,6 @@
+numpy.longcomplex.prod
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.prod

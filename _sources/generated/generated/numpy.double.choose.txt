@@ -1,0 +1,6 @@
+numpy.double.choose
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.choose

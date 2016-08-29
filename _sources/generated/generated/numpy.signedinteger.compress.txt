@@ -1,0 +1,6 @@
+numpy.signedinteger.compress
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.compress

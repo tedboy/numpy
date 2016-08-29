@@ -1,0 +1,6 @@
+numpy.inexact.argmin
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.argmin

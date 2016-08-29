@@ -1,0 +1,6 @@
+numpy.unsignedinteger.newbyteorder
+==================================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.newbyteorder

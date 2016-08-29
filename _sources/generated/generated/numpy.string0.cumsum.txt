@@ -1,0 +1,6 @@
+numpy.string0.cumsum
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.cumsum

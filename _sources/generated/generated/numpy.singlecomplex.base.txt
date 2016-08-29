@@ -1,0 +1,6 @@
+numpy.singlecomplex.base
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.base

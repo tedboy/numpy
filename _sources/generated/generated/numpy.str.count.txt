@@ -1,0 +1,6 @@
+numpy.str.count
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str.count

@@ -1,0 +1,6 @@
+numpy.int_.shape
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int_.shape

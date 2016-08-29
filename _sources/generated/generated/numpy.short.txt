@@ -1,0 +1,94 @@
+numpy.short
+===========
+.. currentmodule:: numpy
+.. autoclass:: short
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~short.all
+   ~short.any
+   ~short.argmax
+   ~short.argmin
+   ~short.argsort
+   ~short.astype
+   ~short.byteswap
+   ~short.choose
+   ~short.clip
+   ~short.compress
+   ~short.conj
+   ~short.conjugate
+   ~short.copy
+   ~short.cumprod
+   ~short.cumsum
+   ~short.diagonal
+   ~short.dump
+   ~short.dumps
+   ~short.fill
+   ~short.flatten
+   ~short.getfield
+   ~short.item
+   ~short.itemset
+   ~short.max
+   ~short.mean
+   ~short.min
+   ~short.newbyteorder
+   ~short.nonzero
+   ~short.prod
+   ~short.ptp
+   ~short.put
+   ~short.ravel
+   ~short.repeat
+   ~short.reshape
+   ~short.resize
+   ~short.round
+   ~short.searchsorted
+   ~short.setfield
+   ~short.setflags
+   ~short.sort
+   ~short.squeeze
+   ~short.std
+   ~short.sum
+   ~short.swapaxes
+   ~short.take
+   ~short.tobytes
+   ~short.tofile
+   ~short.tolist
+   ~short.tostring
+   ~short.trace
+   ~short.transpose
+   ~short.var
+   ~short.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~short.T
+   ~short.base
+   ~short.data
+   ~short.denominator
+   ~short.dtype
+   ~short.flags
+   ~short.flat
+   ~short.imag
+   ~short.itemsize
+   ~short.nbytes
+   ~short.ndim
+   ~short.numerator
+   ~short.real
+   ~short.shape
+   ~short.size
+   ~short.strides
+

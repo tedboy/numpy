@@ -1,0 +1,6 @@
+numpy.longcomplex.repeat
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.repeat

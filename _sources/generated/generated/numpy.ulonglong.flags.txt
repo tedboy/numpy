@@ -1,0 +1,6 @@
+numpy.ulonglong.flags
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.flags

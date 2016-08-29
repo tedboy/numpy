@@ -1,0 +1,6 @@
+numpy.str_.find
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.find

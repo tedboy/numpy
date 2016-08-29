@@ -1,0 +1,6 @@
+numpy.complexfloating.ptp
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.ptp

@@ -1,0 +1,92 @@
+numpy.clongfloat
+================
+.. currentmodule:: numpy
+.. autoclass:: clongfloat
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~clongfloat.all
+   ~clongfloat.any
+   ~clongfloat.argmax
+   ~clongfloat.argmin
+   ~clongfloat.argsort
+   ~clongfloat.astype
+   ~clongfloat.byteswap
+   ~clongfloat.choose
+   ~clongfloat.clip
+   ~clongfloat.compress
+   ~clongfloat.conj
+   ~clongfloat.conjugate
+   ~clongfloat.copy
+   ~clongfloat.cumprod
+   ~clongfloat.cumsum
+   ~clongfloat.diagonal
+   ~clongfloat.dump
+   ~clongfloat.dumps
+   ~clongfloat.fill
+   ~clongfloat.flatten
+   ~clongfloat.getfield
+   ~clongfloat.item
+   ~clongfloat.itemset
+   ~clongfloat.max
+   ~clongfloat.mean
+   ~clongfloat.min
+   ~clongfloat.newbyteorder
+   ~clongfloat.nonzero
+   ~clongfloat.prod
+   ~clongfloat.ptp
+   ~clongfloat.put
+   ~clongfloat.ravel
+   ~clongfloat.repeat
+   ~clongfloat.reshape
+   ~clongfloat.resize
+   ~clongfloat.round
+   ~clongfloat.searchsorted
+   ~clongfloat.setfield
+   ~clongfloat.setflags
+   ~clongfloat.sort
+   ~clongfloat.squeeze
+   ~clongfloat.std
+   ~clongfloat.sum
+   ~clongfloat.swapaxes
+   ~clongfloat.take
+   ~clongfloat.tobytes
+   ~clongfloat.tofile
+   ~clongfloat.tolist
+   ~clongfloat.tostring
+   ~clongfloat.trace
+   ~clongfloat.transpose
+   ~clongfloat.var
+   ~clongfloat.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~clongfloat.T
+   ~clongfloat.base
+   ~clongfloat.data
+   ~clongfloat.dtype
+   ~clongfloat.flags
+   ~clongfloat.flat
+   ~clongfloat.imag
+   ~clongfloat.itemsize
+   ~clongfloat.nbytes
+   ~clongfloat.ndim
+   ~clongfloat.real
+   ~clongfloat.shape
+   ~clongfloat.size
+   ~clongfloat.strides
+

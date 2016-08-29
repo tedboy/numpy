@@ -1,0 +1,817 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>numpy.lib.type_check &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../../index.html"/>
+        <link rel="up" title="numpy" href="../../numpy.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../numpy.html">numpy</a> &raquo;</li>
+        
+      <li>numpy.lib.type_check</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for numpy.lib.type_check</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Automatically adapted for numpy Sep 19, 2005 by convertcode.py</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;iscomplexobj&#39;</span><span class="p">,</span> <span class="s1">&#39;isrealobj&#39;</span><span class="p">,</span> <span class="s1">&#39;imag&#39;</span><span class="p">,</span> <span class="s1">&#39;iscomplex&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;isreal&#39;</span><span class="p">,</span> <span class="s1">&#39;nan_to_num&#39;</span><span class="p">,</span> <span class="s1">&#39;real&#39;</span><span class="p">,</span> <span class="s1">&#39;real_if_close&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;typename&#39;</span><span class="p">,</span> <span class="s1">&#39;asfarray&#39;</span><span class="p">,</span> <span class="s1">&#39;mintypecode&#39;</span><span class="p">,</span> <span class="s1">&#39;asscalar&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;common_type&#39;</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">numpy.core.numeric</span> <span class="kn">as</span> <span class="nn">_nx</span>
+<span class="kn">from</span> <span class="nn">numpy.core.numeric</span> <span class="kn">import</span> <span class="n">asarray</span><span class="p">,</span> <span class="n">asanyarray</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">isnan</span><span class="p">,</span> \
+                <span class="n">obj2sctype</span><span class="p">,</span> <span class="n">zeros</span>
+<span class="kn">from</span> <span class="nn">.ufunclike</span> <span class="kn">import</span> <span class="n">isneginf</span><span class="p">,</span> <span class="n">isposinf</span>
+
+<span class="n">_typecodes_by_elsize</span> <span class="o">=</span> <span class="s1">&#39;GDFgdfQqLlIiHhBb?&#39;</span>
+
+<div class="viewcode-block" id="mintypecode"><a class="viewcode-back" href="../../../reference/generated/numpy.mintypecode.html#numpy.mintypecode">[docs]</a><span class="k">def</span> <span class="nf">mintypecode</span><span class="p">(</span><span class="n">typechars</span><span class="p">,</span><span class="n">typeset</span><span class="o">=</span><span class="s1">&#39;GDFgdf&#39;</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the character for the minimum-size type to which given types can</span>
+<span class="sd">    be safely cast.</span>
+
+<span class="sd">    The returned type character must represent the smallest size dtype such</span>
+<span class="sd">    that an array of the returned type can handle the data from an array of</span>
+<span class="sd">    all types in `typechars` (or if `typechars` is an array, then its</span>
+<span class="sd">    dtype.char).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    typechars : list of str or array_like</span>
+<span class="sd">        If a list of strings, each string should represent a dtype.</span>
+<span class="sd">        If array_like, the character representation of the array dtype is used.</span>
+<span class="sd">    typeset : str or list of str, optional</span>
+<span class="sd">        The set of characters that the returned character is chosen from.</span>
+<span class="sd">        The default set is &#39;GDFgdf&#39;.</span>
+<span class="sd">    default : str, optional</span>
+<span class="sd">        The default character, this is returned if none of the characters in</span>
+<span class="sd">        `typechars` matches a character in `typeset`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    typechar : str</span>
+<span class="sd">        The character representing the minimum-size type that was found.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    dtype, sctype2char, maximum_sctype</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.mintypecode([&#39;d&#39;, &#39;f&#39;, &#39;S&#39;])</span>
+<span class="sd">    &#39;d&#39;</span>
+<span class="sd">    &gt;&gt;&gt; x = np.array([1.1, 2-3.j])</span>
+<span class="sd">    &gt;&gt;&gt; np.mintypecode(x)</span>
+<span class="sd">    &#39;D&#39;</span>
+
+<span class="sd">    &gt;&gt;&gt; np.mintypecode(&#39;abceh&#39;, default=&#39;G&#39;)</span>
+<span class="sd">    &#39;G&#39;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">typecodes</span> <span class="o">=</span> <span class="p">[(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">t</span><span class="p">)</span> <span class="ow">or</span> <span class="n">asarray</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">char</span>
+                 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">typechars</span><span class="p">]</span>
+    <span class="n">intersection</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">typecodes</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">typeset</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">intersection</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">default</span>
+    <span class="k">if</span> <span class="s1">&#39;F&#39;</span> <span class="ow">in</span> <span class="n">intersection</span> <span class="ow">and</span> <span class="s1">&#39;d&#39;</span> <span class="ow">in</span> <span class="n">intersection</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;D&#39;</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">intersection</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">_typecodes_by_elsize</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="asfarray"><a class="viewcode-back" href="../../../reference/generated/numpy.asfarray.html#numpy.asfarray">[docs]</a><span class="k">def</span> <span class="nf">asfarray</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">_nx</span><span class="o">.</span><span class="n">float_</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return an array converted to a float type.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : array_like</span>
+<span class="sd">        The input array.</span>
+<span class="sd">    dtype : str or dtype object, optional</span>
+<span class="sd">        Float type code to coerce input array `a`.  If `dtype` is one of the</span>
+<span class="sd">        &#39;int&#39; dtypes, it is replaced with float64.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        The input `a` as a float ndarray.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.asfarray([2, 3])</span>
+<span class="sd">    array([ 2.,  3.])</span>
+<span class="sd">    &gt;&gt;&gt; np.asfarray([2, 3], dtype=&#39;float&#39;)</span>
+<span class="sd">    array([ 2.,  3.])</span>
+<span class="sd">    &gt;&gt;&gt; np.asfarray([2, 3], dtype=&#39;int8&#39;)</span>
+<span class="sd">    array([ 2.,  3.])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="n">_nx</span><span class="o">.</span><span class="n">obj2sctype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">inexact</span><span class="p">):</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">_nx</span><span class="o">.</span><span class="n">float_</span>
+    <span class="k">return</span> <span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="real"><a class="viewcode-back" href="../../../reference/generated/numpy.real.html#numpy.real">[docs]</a><span class="k">def</span> <span class="nf">real</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the real part of the elements of the array.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    val : array_like</span>
+<span class="sd">        Input array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        Output array. If `val` is real, the type of `val` is used for the</span>
+<span class="sd">        output.  If `val` has complex elements, the returned type is float.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    real_if_close, imag, angle</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; a = np.array([1+2j, 3+4j, 5+6j])</span>
+<span class="sd">    &gt;&gt;&gt; a.real</span>
+<span class="sd">    array([ 1.,  3.,  5.])</span>
+<span class="sd">    &gt;&gt;&gt; a.real = 9</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([ 9.+2.j,  9.+4.j,  9.+6.j])</span>
+<span class="sd">    &gt;&gt;&gt; a.real = np.array([9, 8, 7])</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([ 9.+2.j,  8.+4.j,  7.+6.j])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">real</span></div>
+
+<div class="viewcode-block" id="imag"><a class="viewcode-back" href="../../../reference/generated/numpy.imag.html#numpy.imag">[docs]</a><span class="k">def</span> <span class="nf">imag</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the imaginary part of the elements of the array.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    val : array_like</span>
+<span class="sd">        Input array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        Output array. If `val` is real, the type of `val` is used for the</span>
+<span class="sd">        output.  If `val` has complex elements, the returned type is float.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    real, angle, real_if_close</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; a = np.array([1+2j, 3+4j, 5+6j])</span>
+<span class="sd">    &gt;&gt;&gt; a.imag</span>
+<span class="sd">    array([ 2.,  4.,  6.])</span>
+<span class="sd">    &gt;&gt;&gt; a.imag = np.array([8, 10, 12])</span>
+<span class="sd">    &gt;&gt;&gt; a</span>
+<span class="sd">    array([ 1. +8.j,  3.+10.j,  5.+12.j])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">imag</span></div>
+
+<div class="viewcode-block" id="iscomplex"><a class="viewcode-back" href="../../../reference/generated/numpy.iscomplex.html#numpy.iscomplex">[docs]</a><span class="k">def</span> <span class="nf">iscomplex</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a bool array, where True if input element is complex.</span>
+
+<span class="sd">    What is tested is whether the input has a non-zero imaginary part, not if</span>
+<span class="sd">    the input type is complex.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        Input array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray of bools</span>
+<span class="sd">        Output array.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    isreal</span>
+<span class="sd">    iscomplexobj : Return True if x is a complex type or an array of complex</span>
+<span class="sd">                   numbers.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.iscomplex([1+1j, 1+0j, 4.5, 3, 2, 2j])</span>
+<span class="sd">    array([ True, False, False, False, False,  True], dtype=bool)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">complexfloating</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">imag</span> <span class="o">!=</span> <span class="mi">0</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">+</span><span class="n">res</span>  <span class="c1"># convet to array-scalar if needed</span></div>
+
+<div class="viewcode-block" id="isreal"><a class="viewcode-back" href="../../../reference/generated/numpy.isreal.html#numpy.isreal">[docs]</a><span class="k">def</span> <span class="nf">isreal</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a bool array, where True if input element is real.</span>
+
+<span class="sd">    If element has complex type with zero complex part, the return value</span>
+<span class="sd">    for that element is True.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        Input array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray, bool</span>
+<span class="sd">        Boolean array of same shape as `x`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    iscomplex</span>
+<span class="sd">    isrealobj : Return True if x is not a complex type.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.isreal([1+1j, 1+0j, 4.5, 3, 2, 2j])</span>
+<span class="sd">    array([False,  True,  True,  True,  True, False], dtype=bool)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">imag</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+<div class="viewcode-block" id="iscomplexobj"><a class="viewcode-back" href="../../../reference/generated/numpy.iscomplexobj.html#numpy.iscomplexobj">[docs]</a><span class="k">def</span> <span class="nf">iscomplexobj</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check for a complex type or an array of complex numbers.</span>
+
+<span class="sd">    The type of the input is checked, not the value. Even if the input</span>
+<span class="sd">    has an imaginary part equal to zero, `iscomplexobj` evaluates to True.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : any</span>
+<span class="sd">        The input can be of any type and shape.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    iscomplexobj : bool</span>
+<span class="sd">        The return value, True if `x` is of a complex type or has at least</span>
+<span class="sd">        one complex element.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    isrealobj, iscomplex</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.iscomplexobj(1)</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; np.iscomplexobj(1+0j)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; np.iscomplexobj([3, 1+0j, True])</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">complexfloating</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="isrealobj"><a class="viewcode-back" href="../../../reference/generated/numpy.isrealobj.html#numpy.isrealobj">[docs]</a><span class="k">def</span> <span class="nf">isrealobj</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return True if x is a not complex type or an array of complex numbers.</span>
+
+<span class="sd">    The type of the input is checked, not the value. So even if the input</span>
+<span class="sd">    has an imaginary part equal to zero, `isrealobj` evaluates to False</span>
+<span class="sd">    if the data type is complex.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : any</span>
+<span class="sd">        The input can be of any type and shape.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    y : bool</span>
+<span class="sd">        The return value, False if `x` is of a complex type.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    iscomplexobj, isreal</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.isrealobj(1)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; np.isrealobj(1+0j)</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; np.isrealobj([3, 1+0j, True])</span>
+<span class="sd">    False</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">complexfloating</span><span class="p">)</span></div>
+
+<span class="c1">#-----------------------------------------------------------------------------</span>
+
+<span class="k">def</span> <span class="nf">_getmaxmin</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">numpy.core</span> <span class="kn">import</span> <span class="n">getlimits</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">getlimits</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">min</span>
+
+<div class="viewcode-block" id="nan_to_num"><a class="viewcode-back" href="../../../reference/generated/numpy.nan_to_num.html#numpy.nan_to_num">[docs]</a><span class="k">def</span> <span class="nf">nan_to_num</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Replace nan with zero and inf with finite numbers.</span>
+
+<span class="sd">    Returns an array or scalar replacing Not a Number (NaN) with zero,</span>
+<span class="sd">    (positive) infinity with a very large number and negative infinity</span>
+<span class="sd">    with a very small (or negative) number.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        Input data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        New Array with the same shape as `x` and dtype of the element in</span>
+<span class="sd">        `x`  with the greatest precision. If `x` is inexact, then NaN is</span>
+<span class="sd">        replaced by zero, and infinity (-infinity) is replaced by the</span>
+<span class="sd">        largest (smallest or most negative) floating point value that fits</span>
+<span class="sd">        in the output dtype. If `x` is not inexact, then a copy of `x` is</span>
+<span class="sd">        returned.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    isinf : Shows which elements are negative or negative infinity.</span>
+<span class="sd">    isneginf : Shows which elements are negative infinity.</span>
+<span class="sd">    isposinf : Shows which elements are positive infinity.</span>
+<span class="sd">    isnan : Shows which elements are Not a Number (NaN).</span>
+<span class="sd">    isfinite : Shows which elements are finite (not NaN, not infinity)</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Numpy uses the IEEE Standard for Binary Floating-Point for Arithmetic</span>
+<span class="sd">    (IEEE 754). This means that Not a Number is not equivalent to infinity.</span>
+
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.set_printoptions(precision=8)</span>
+<span class="sd">    &gt;&gt;&gt; x = np.array([np.inf, -np.inf, np.nan, -128, 128])</span>
+<span class="sd">    &gt;&gt;&gt; np.nan_to_num(x)</span>
+<span class="sd">    array([  1.79769313e+308,  -1.79769313e+308,   0.00000000e+000,</span>
+<span class="sd">            -1.28000000e+002,   1.28000000e+002])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">_nx</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">subok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">xtype</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">xtype</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">inexact</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+    <span class="n">iscomplex</span> <span class="o">=</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">xtype</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">complexfloating</span><span class="p">)</span>
+    <span class="n">isscalar</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="k">if</span> <span class="n">isscalar</span> <span class="k">else</span> <span class="n">x</span>
+    <span class="n">dest</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span> <span class="k">if</span> <span class="n">iscomplex</span> <span class="k">else</span> <span class="p">(</span><span class="n">x</span><span class="p">,)</span>
+    <span class="n">maxf</span><span class="p">,</span> <span class="n">minf</span> <span class="o">=</span> <span class="n">_getmaxmin</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dest</span><span class="p">:</span>
+        <span class="n">_nx</span><span class="o">.</span><span class="n">copyto</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">isnan</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+        <span class="n">_nx</span><span class="o">.</span><span class="n">copyto</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">maxf</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">isposinf</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+        <span class="n">_nx</span><span class="o">.</span><span class="n">copyto</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">minf</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">isneginf</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">isscalar</span> <span class="k">else</span> <span class="n">x</span></div>
+
+<span class="c1">#-----------------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="real_if_close"><a class="viewcode-back" href="../../../reference/generated/numpy.real_if_close.html#numpy.real_if_close">[docs]</a><span class="k">def</span> <span class="nf">real_if_close</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    If complex input returns a real array if complex parts are close to zero.</span>
+
+<span class="sd">    &quot;Close to zero&quot; is defined as `tol` * (machine epsilon of the type for</span>
+<span class="sd">    `a`).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : array_like</span>
+<span class="sd">        Input array.</span>
+<span class="sd">    tol : float</span>
+<span class="sd">        Tolerance in machine epsilons for the complex part of the elements</span>
+<span class="sd">        in the array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : ndarray</span>
+<span class="sd">        If `a` is real, the type of `a` is used for the output.  If `a`</span>
+<span class="sd">        has complex elements, the returned type is float.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    real, imag, angle</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Machine epsilon varies from machine to machine and between data types</span>
+<span class="sd">    but Python floats on most platforms have a machine epsilon equal to</span>
+<span class="sd">    2.2204460492503131e-16.  You can use &#39;np.finfo(np.float).eps&#39; to print</span>
+<span class="sd">    out the machine epsilon for floats.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.finfo(np.float).eps</span>
+<span class="sd">    2.2204460492503131e-16</span>
+
+<span class="sd">    &gt;&gt;&gt; np.real_if_close([2.1 + 4e-14j], tol=1000)</span>
+<span class="sd">    array([ 2.1])</span>
+<span class="sd">    &gt;&gt;&gt; np.real_if_close([2.1 + 4e-13j], tol=1000)</span>
+<span class="sd">    array([ 2.1 +4.00000000e-13j])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">complexfloating</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span>
+    <span class="k">if</span> <span class="n">tol</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">numpy.core</span> <span class="kn">import</span> <span class="n">getlimits</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">getlimits</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+        <span class="n">tol</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">eps</span> <span class="o">*</span> <span class="n">tol</span>
+    <span class="k">if</span> <span class="n">_nx</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="n">tol</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">real</span>
+    <span class="k">return</span> <span class="n">a</span></div>
+
+
+<div class="viewcode-block" id="asscalar"><a class="viewcode-back" href="../../../reference/generated/numpy.asscalar.html#numpy.asscalar">[docs]</a><span class="k">def</span> <span class="nf">asscalar</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert an array of size 1 to its scalar equivalent.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : ndarray</span>
+<span class="sd">        Input array of size 1.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : scalar</span>
+<span class="sd">        Scalar representation of `a`. The output data type is the same type</span>
+<span class="sd">        returned by the input&#39;s `item` method.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.asscalar(np.array([24]))</span>
+<span class="sd">    24</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">item</span><span class="p">()</span></div>
+
+<span class="c1">#-----------------------------------------------------------------------------</span>
+
+<span class="n">_namefromtype</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;S1&#39;</span><span class="p">:</span> <span class="s1">&#39;character&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;?&#39;</span><span class="p">:</span> <span class="s1">&#39;bool&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;signed char&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s1">&#39;unsigned char&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="s1">&#39;short&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="s1">&#39;unsigned short&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="s1">&#39;integer&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="s1">&#39;unsigned integer&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="s1">&#39;long integer&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="s1">&#39;unsigned long integer&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="s1">&#39;long long integer&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;Q&#39;</span><span class="p">:</span> <span class="s1">&#39;unsigned long long integer&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="s1">&#39;single precision&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="s1">&#39;double precision&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="s1">&#39;long precision&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="s1">&#39;complex single precision&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="s1">&#39;complex double precision&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="s1">&#39;complex long double precision&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;U&#39;</span><span class="p">:</span> <span class="s1">&#39;unicode&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="s1">&#39;void&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span>
+                 <span class="p">}</span>
+
+<div class="viewcode-block" id="typename"><a class="viewcode-back" href="../../../reference/generated/numpy.typename.html#numpy.typename">[docs]</a><span class="k">def</span> <span class="nf">typename</span><span class="p">(</span><span class="n">char</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a description for the given data type code.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    char : str</span>
+<span class="sd">        Data type code.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : str</span>
+<span class="sd">        Description of the input data type code.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    dtype, typecodes</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; typechars = [&#39;S1&#39;, &#39;?&#39;, &#39;B&#39;, &#39;D&#39;, &#39;G&#39;, &#39;F&#39;, &#39;I&#39;, &#39;H&#39;, &#39;L&#39;, &#39;O&#39;, &#39;Q&#39;,</span>
+<span class="sd">    ...              &#39;S&#39;, &#39;U&#39;, &#39;V&#39;, &#39;b&#39;, &#39;d&#39;, &#39;g&#39;, &#39;f&#39;, &#39;i&#39;, &#39;h&#39;, &#39;l&#39;, &#39;q&#39;]</span>
+<span class="sd">    &gt;&gt;&gt; for typechar in typechars:</span>
+<span class="sd">    ...     print typechar, &#39; : &#39;, np.typename(typechar)</span>
+<span class="sd">    ...</span>
+<span class="sd">    S1  :  character</span>
+<span class="sd">    ?  :  bool</span>
+<span class="sd">    B  :  unsigned char</span>
+<span class="sd">    D  :  complex double precision</span>
+<span class="sd">    G  :  complex long double precision</span>
+<span class="sd">    F  :  complex single precision</span>
+<span class="sd">    I  :  unsigned integer</span>
+<span class="sd">    H  :  unsigned short</span>
+<span class="sd">    L  :  unsigned long integer</span>
+<span class="sd">    O  :  object</span>
+<span class="sd">    Q  :  unsigned long long integer</span>
+<span class="sd">    S  :  string</span>
+<span class="sd">    U  :  unicode</span>
+<span class="sd">    V  :  void</span>
+<span class="sd">    b  :  signed char</span>
+<span class="sd">    d  :  double precision</span>
+<span class="sd">    g  :  long precision</span>
+<span class="sd">    f  :  single precision</span>
+<span class="sd">    i  :  integer</span>
+<span class="sd">    h  :  short</span>
+<span class="sd">    l  :  long integer</span>
+<span class="sd">    q  :  long long integer</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_namefromtype</span><span class="p">[</span><span class="n">char</span><span class="p">]</span></div>
+
+<span class="c1">#-----------------------------------------------------------------------------</span>
+
+<span class="c1">#determine the &quot;minimum common type&quot; for a group of arrays.</span>
+<span class="n">array_type</span> <span class="o">=</span> <span class="p">[[</span><span class="n">_nx</span><span class="o">.</span><span class="n">half</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">single</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">longdouble</span><span class="p">],</span>
+              <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">csingle</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">cdouble</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">clongdouble</span><span class="p">]]</span>
+<span class="n">array_precision</span> <span class="o">=</span> <span class="p">{</span><span class="n">_nx</span><span class="o">.</span><span class="n">half</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                   <span class="n">_nx</span><span class="o">.</span><span class="n">single</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                   <span class="n">_nx</span><span class="o">.</span><span class="n">double</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                   <span class="n">_nx</span><span class="o">.</span><span class="n">longdouble</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                   <span class="n">_nx</span><span class="o">.</span><span class="n">csingle</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                   <span class="n">_nx</span><span class="o">.</span><span class="n">cdouble</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                   <span class="n">_nx</span><span class="o">.</span><span class="n">clongdouble</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<div class="viewcode-block" id="common_type"><a class="viewcode-back" href="../../../reference/generated/numpy.common_type.html#numpy.common_type">[docs]</a><span class="k">def</span> <span class="nf">common_type</span><span class="p">(</span><span class="o">*</span><span class="n">arrays</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a scalar type which is common to the input arrays.</span>
+
+<span class="sd">    The return type will always be an inexact (i.e. floating point) scalar</span>
+<span class="sd">    type, even if all the arrays are integer arrays. If one of the inputs is</span>
+<span class="sd">    an integer array, the minimum precision type that is returned is a</span>
+<span class="sd">    64-bit floating point dtype.</span>
+
+<span class="sd">    All input arrays can be safely cast to the returned dtype without loss</span>
+<span class="sd">    of information.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    array1, array2, ... : ndarrays</span>
+<span class="sd">        Input arrays.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out : data type code</span>
+<span class="sd">        Data type code.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    dtype, mintypecode</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; np.common_type(np.arange(2, dtype=np.float32))</span>
+<span class="sd">    &lt;type &#39;numpy.float32&#39;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; np.common_type(np.arange(2, dtype=np.float32), np.arange(2))</span>
+<span class="sd">    &lt;type &#39;numpy.float64&#39;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; np.common_type(np.arange(4), np.array([45, 6.j]), np.array([45.0]))</span>
+<span class="sd">    &lt;type &#39;numpy.complex128&#39;&gt;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">is_complex</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">precision</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">:</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span>
+        <span class="k">if</span> <span class="n">iscomplexobj</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+            <span class="n">is_complex</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">_nx</span><span class="o">.</span><span class="n">integer</span><span class="p">):</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># array_precision[_nx.double]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">array_precision</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;can&#39;t get common type for non-numeric array&quot;</span><span class="p">)</span>
+        <span class="n">precision</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">precision</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">is_complex</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">array_type</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">precision</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">array_type</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">precision</span><span class="p">]</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

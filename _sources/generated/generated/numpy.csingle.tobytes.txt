@@ -1,0 +1,6 @@
+numpy.csingle.tobytes
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.tobytes

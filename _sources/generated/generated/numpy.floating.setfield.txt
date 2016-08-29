@@ -1,0 +1,6 @@
+numpy.floating.setfield
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.setfield

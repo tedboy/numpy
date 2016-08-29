@@ -1,0 +1,6 @@
+numpy.double.transpose
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.transpose

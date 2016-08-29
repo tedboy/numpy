@@ -1,0 +1,6 @@
+numpy.double.flags
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.flags

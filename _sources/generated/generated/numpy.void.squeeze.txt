@@ -1,0 +1,6 @@
+numpy.void.squeeze
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.squeeze

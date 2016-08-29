@@ -1,0 +1,6 @@
+numpy.polynomial.Legendre.identity
+==================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Legendre.identity

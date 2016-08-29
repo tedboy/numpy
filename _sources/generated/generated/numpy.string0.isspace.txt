@@ -1,0 +1,6 @@
+numpy.string0.isspace
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.isspace

@@ -1,0 +1,6 @@
+numpy.double.strides
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.strides

@@ -1,0 +1,6 @@
+numpy.flexible.max
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.max

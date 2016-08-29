@@ -1,0 +1,6 @@
+numpy.clongdouble.round
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.round

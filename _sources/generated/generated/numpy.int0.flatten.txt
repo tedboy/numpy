@@ -1,0 +1,6 @@
+numpy.int0.flatten
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: int0.flatten

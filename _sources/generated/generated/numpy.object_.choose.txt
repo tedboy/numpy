@@ -1,0 +1,6 @@
+numpy.object_.choose
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: object_.choose

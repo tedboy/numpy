@@ -1,0 +1,6 @@
+numpy.clongdouble.getfield
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.getfield

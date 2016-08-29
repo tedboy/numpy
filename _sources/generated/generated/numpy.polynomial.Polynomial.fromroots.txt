@@ -1,0 +1,6 @@
+numpy.polynomial.Polynomial.fromroots
+=====================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Polynomial.fromroots

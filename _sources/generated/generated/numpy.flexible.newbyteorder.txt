@@ -1,0 +1,6 @@
+numpy.flexible.newbyteorder
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.newbyteorder

@@ -1,0 +1,6 @@
+numpy.datetime64.tofile
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.tofile

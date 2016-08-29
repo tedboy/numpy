@@ -1,0 +1,6 @@
+numpy.cdouble.ndim
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.ndim

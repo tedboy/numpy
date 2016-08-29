@@ -1,0 +1,6 @@
+numpy.unsignedinteger.conj
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.conj

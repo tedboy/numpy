@@ -1,0 +1,6 @@
+numpy.singlecomplex.argmin
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.argmin

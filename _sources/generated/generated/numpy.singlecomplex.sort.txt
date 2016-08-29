@@ -1,0 +1,6 @@
+numpy.singlecomplex.sort
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.sort

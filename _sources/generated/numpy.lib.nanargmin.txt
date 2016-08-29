@@ -1,0 +1,6 @@
+numpy.lib.nanargmin
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nanargmin

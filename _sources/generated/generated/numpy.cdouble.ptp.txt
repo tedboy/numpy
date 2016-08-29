@@ -1,0 +1,6 @@
+numpy.cdouble.ptp
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.ptp

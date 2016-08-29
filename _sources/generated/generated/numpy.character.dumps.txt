@@ -1,0 +1,6 @@
+numpy.character.dumps
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.dumps

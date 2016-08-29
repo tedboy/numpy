@@ -1,0 +1,6 @@
+numpy.timedelta64.imag
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: timedelta64.imag

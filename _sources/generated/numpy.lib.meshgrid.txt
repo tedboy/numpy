@@ -1,0 +1,6 @@
+numpy.lib.meshgrid
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: meshgrid

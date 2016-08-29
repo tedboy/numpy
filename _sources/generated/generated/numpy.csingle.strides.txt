@@ -1,0 +1,6 @@
+numpy.csingle.strides
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: csingle.strides

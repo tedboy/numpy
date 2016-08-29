@@ -1,0 +1,624 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>numpy.polynomial.polyutils &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../../index.html"/>
+        <link rel="up" title="numpy" href="../../numpy.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../numpy.html">numpy</a> &raquo;</li>
+        
+      <li>numpy.polynomial.polyutils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for numpy.polynomial.polyutils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Utililty classes and functions for the polynomial modules.</span>
+
+<span class="sd">This module provides: error and warning objects; a polynomial base class;</span>
+<span class="sd">and some routines used in both the `polynomial` and `chebyshev` modules.</span>
+
+<span class="sd">Error objects</span>
+<span class="sd">-------------</span>
+
+<span class="sd">.. autosummary::</span>
+<span class="sd">   :toctree: generated/</span>
+
+<span class="sd">   PolyError            base class for this sub-package&#39;s errors.</span>
+<span class="sd">   PolyDomainError      raised when domains are mismatched.</span>
+
+<span class="sd">Warning objects</span>
+<span class="sd">---------------</span>
+
+<span class="sd">.. autosummary::</span>
+<span class="sd">   :toctree: generated/</span>
+
+<span class="sd">   RankWarning  raised in least-squares fit for rank-deficient matrix.</span>
+
+<span class="sd">Base class</span>
+<span class="sd">----------</span>
+
+<span class="sd">.. autosummary::</span>
+<span class="sd">   :toctree: generated/</span>
+
+<span class="sd">   PolyBase Obsolete base class for the polynomial classes. Do not use.</span>
+
+<span class="sd">Functions</span>
+<span class="sd">---------</span>
+
+<span class="sd">.. autosummary::</span>
+<span class="sd">   :toctree: generated/</span>
+
+<span class="sd">   as_series    convert list of array_likes into 1-D arrays of common type.</span>
+<span class="sd">   trimseq      remove trailing zeros.</span>
+<span class="sd">   trimcoef     remove small trailing coefficients.</span>
+<span class="sd">   getdomain    return the domain appropriate for a given set of abscissae.</span>
+<span class="sd">   mapdomain    maps points between domains.</span>
+<span class="sd">   mapparms     parameters of the linear map between domains.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;RankWarning&#39;</span><span class="p">,</span> <span class="s1">&#39;PolyError&#39;</span><span class="p">,</span> <span class="s1">&#39;PolyDomainError&#39;</span><span class="p">,</span> <span class="s1">&#39;as_series&#39;</span><span class="p">,</span> <span class="s1">&#39;trimseq&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;trimcoef&#39;</span><span class="p">,</span> <span class="s1">&#39;getdomain&#39;</span><span class="p">,</span> <span class="s1">&#39;mapdomain&#39;</span><span class="p">,</span> <span class="s1">&#39;mapparms&#39;</span><span class="p">,</span> <span class="s1">&#39;PolyBase&#39;</span><span class="p">]</span>
+
+<span class="c1">#</span>
+<span class="c1"># Warnings and Exceptions</span>
+<span class="c1">#</span>
+
+<span class="k">class</span> <span class="nc">RankWarning</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Issued by chebfit when the design matrix is rank deficient.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">PolyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base class for errors in this module.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">PolyDomainError</span><span class="p">(</span><span class="n">PolyError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Issued by the generic Poly class when two domains don&#39;t match.</span>
+
+<span class="sd">    This is raised when an binary operation is passed Poly objects with</span>
+<span class="sd">    different domains.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+<span class="c1">#</span>
+<span class="c1"># Base class for all polynomial types</span>
+<span class="c1">#</span>
+
+<span class="k">class</span> <span class="nc">PolyBase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class for all polynomial types.</span>
+
+<span class="sd">    Deprecated in numpy 1.9.0, use the abstract</span>
+<span class="sd">    ABCPolyBase class instead. Note that the latter</span>
+<span class="sd">    reguires a number of virtual functions to be</span>
+<span class="sd">    implemented.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+<span class="c1">#</span>
+<span class="c1"># Helper functions to convert inputs to 1-D arrays</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">trimseq</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Remove small Poly series coefficients.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    seq : sequence</span>
+<span class="sd">        Sequence of Poly series coefficients. This routine fails for</span>
+<span class="sd">        empty sequences.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    series : sequence</span>
+<span class="sd">        Subsequence with trailing zeros removed. If the resulting sequence</span>
+<span class="sd">        would be empty, return the first element. The returned sequence may</span>
+<span class="sd">        or may not be a view.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Do not lose the type info if the sequence contains unknown objects.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">seq</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">return</span> <span class="n">seq</span><span class="p">[:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">as_series</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return argument as a list of 1-d arrays.</span>
+
+<span class="sd">    The returned list contains array(s) of dtype double, complex double, or</span>
+<span class="sd">    object.  A 1-d argument of shape ``(N,)`` is parsed into ``N`` arrays of</span>
+<span class="sd">    size one; a 2-d argument of shape ``(M,N)`` is parsed into ``M`` arrays</span>
+<span class="sd">    of size ``N`` (i.e., is &quot;parsed by row&quot;); and a higher dimensional array</span>
+<span class="sd">    raises a Value Error if it is not first reshaped into either a 1-d or 2-d</span>
+<span class="sd">    array.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    alist : array_like</span>
+<span class="sd">        A 1- or 2-d array_like</span>
+<span class="sd">    trim : boolean, optional</span>
+<span class="sd">        When True, trailing zeros are removed from the inputs.</span>
+<span class="sd">        When False, the inputs are passed through intact.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    [a1, a2,...] : list of 1-D arrays</span>
+<span class="sd">        A copy of the input data as a list of 1-d arrays.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        Raised when `as_series` cannot convert its input to 1-d arrays, or at</span>
+<span class="sd">        least one of the resulting arrays is empty.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from numpy import polynomial as P</span>
+<span class="sd">    &gt;&gt;&gt; a = np.arange(4)</span>
+<span class="sd">    &gt;&gt;&gt; P.as_series(a)</span>
+<span class="sd">    [array([ 0.]), array([ 1.]), array([ 2.]), array([ 3.])]</span>
+<span class="sd">    &gt;&gt;&gt; b = np.arange(6).reshape((2,3))</span>
+<span class="sd">    &gt;&gt;&gt; P.as_series(b)</span>
+<span class="sd">    [array([ 0.,  1.,  2.]), array([ 3.,  4.,  5.])]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">alist</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">min</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">size</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Coefficient array is empty&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Coefficient array is not 1-d&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">trim</span><span class="p">:</span>
+        <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">trimseq</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+                <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">object</span><span class="p">))</span>
+                <span class="n">tmp</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+                <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">common_type</span><span class="p">(</span><span class="o">*</span><span class="n">arrays</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Coefficient arrays have no common type&quot;</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>
+
+
+<span class="k">def</span> <span class="nf">trimcoef</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove &quot;small&quot; &quot;trailing&quot; coefficients from a polynomial.</span>
+
+<span class="sd">    &quot;Small&quot; means &quot;small in absolute value&quot; and is controlled by the</span>
+<span class="sd">    parameter `tol`; &quot;trailing&quot; means highest order coefficient(s), e.g., in</span>
+<span class="sd">    ``[0, 1, 1, 0, 0]`` (which represents ``0 + x + x**2 + 0*x**3 + 0*x**4``)</span>
+<span class="sd">    both the 3-rd and 4-th order coefficients would be &quot;trimmed.&quot;</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    c : array_like</span>
+<span class="sd">        1-d array of coefficients, ordered from lowest order to highest.</span>
+<span class="sd">    tol : number, optional</span>
+<span class="sd">        Trailing (i.e., highest order) elements with absolute value less</span>
+<span class="sd">        than or equal to `tol` (default value is zero) are removed.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    trimmed : ndarray</span>
+<span class="sd">        1-d array with trailing zeros removed.  If the resulting series</span>
+<span class="sd">        would be empty, a series containing a single zero is returned.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If `tol` &lt; 0</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    trimseq</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from numpy import polynomial as P</span>
+<span class="sd">    &gt;&gt;&gt; P.trimcoef((0,0,3,0,5,0,0))</span>
+<span class="sd">    array([ 0.,  0.,  3.,  0.,  5.])</span>
+<span class="sd">    &gt;&gt;&gt; P.trimcoef((0,0,1e-3,0,1e-5,0,0),1e-3) # item == tol is trimmed</span>
+<span class="sd">    array([ 0.])</span>
+<span class="sd">    &gt;&gt;&gt; i = complex(0,1) # works for complex</span>
+<span class="sd">    &gt;&gt;&gt; P.trimcoef((3e-4,1e-3*(1-i),5e-4,2e-5*(1+i)), 1e-3)</span>
+<span class="sd">    array([ 0.0003+0.j   ,  0.0010-0.001j])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">tol</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;tol must be non-negative&quot;</span><span class="p">)</span>
+
+    <span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">as_series</span><span class="p">([</span><span class="n">c</span><span class="p">])</span>
+    <span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">c</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">c</span><span class="p">[:</span><span class="n">ind</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">getdomain</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a domain suitable for given abscissae.</span>
+
+<span class="sd">    Find a domain suitable for a polynomial or Chebyshev series</span>
+<span class="sd">    defined at the values supplied.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        1-d array of abscissae whose domain will be determined.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    domain : ndarray</span>
+<span class="sd">        1-d array containing two values.  If the inputs are complex, then</span>
+<span class="sd">        the two returned points are the lower left and upper right corners</span>
+<span class="sd">        of the smallest rectangle (aligned with the axes) in the complex</span>
+<span class="sd">        plane containing the points `x`. If the inputs are real, then the</span>
+<span class="sd">        two points are the ends of the smallest interval containing the</span>
+<span class="sd">        points `x`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    mapparms, mapdomain</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from numpy.polynomial import polyutils as pu</span>
+<span class="sd">    &gt;&gt;&gt; points = np.arange(4)**2 - 5; points</span>
+<span class="sd">    array([-5, -4, -1,  4])</span>
+<span class="sd">    &gt;&gt;&gt; pu.getdomain(points)</span>
+<span class="sd">    array([-5.,  4.])</span>
+<span class="sd">    &gt;&gt;&gt; c = np.exp(complex(0,1)*np.pi*np.arange(12)/6) # unit circle</span>
+<span class="sd">    &gt;&gt;&gt; pu.getdomain(c)</span>
+<span class="sd">    array([-1.-1.j,  1.+1.j])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">as_series</span><span class="p">([</span><span class="n">x</span><span class="p">],</span> <span class="n">trim</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">char</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">typecodes</span><span class="p">[</span><span class="s1">&#39;Complex&#39;</span><span class="p">]:</span>
+        <span class="n">rmin</span><span class="p">,</span> <span class="n">rmax</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">imin</span><span class="p">,</span> <span class="n">imax</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">imag</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">imag</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="nb">complex</span><span class="p">(</span><span class="n">rmin</span><span class="p">,</span> <span class="n">imin</span><span class="p">),</span> <span class="nb">complex</span><span class="p">(</span><span class="n">rmax</span><span class="p">,</span> <span class="n">imax</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+
+<span class="k">def</span> <span class="nf">mapparms</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Linear map parameters between domains.</span>
+
+<span class="sd">    Return the parameters of the linear map ``offset + scale*x`` that maps</span>
+<span class="sd">    `old` to `new` such that ``old[i] -&gt; new[i]``, ``i = 0, 1``.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    old, new : array_like</span>
+<span class="sd">        Domains. Each domain must (successfully) convert to a 1-d array</span>
+<span class="sd">        containing precisely two values.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    offset, scale : scalars</span>
+<span class="sd">        The map ``L(x) = offset + scale*x`` maps the first domain to the</span>
+<span class="sd">        second.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    getdomain, mapdomain</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Also works for complex numbers, and thus can be used to calculate the</span>
+<span class="sd">    parameters required to map any line in the complex plane to any other</span>
+<span class="sd">    line therein.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from numpy import polynomial as P</span>
+<span class="sd">    &gt;&gt;&gt; P.mapparms((-1,1),(-1,1))</span>
+<span class="sd">    (0.0, 1.0)</span>
+<span class="sd">    &gt;&gt;&gt; P.mapparms((1,-1),(-1,1))</span>
+<span class="sd">    (0.0, -1.0)</span>
+<span class="sd">    &gt;&gt;&gt; i = complex(0,1)</span>
+<span class="sd">    &gt;&gt;&gt; P.mapparms((-i,-1),(1,i))</span>
+<span class="sd">    ((1+1j), (1+0j))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">oldlen</span> <span class="o">=</span> <span class="n">old</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">old</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">newlen</span> <span class="o">=</span> <span class="n">new</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">new</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">off</span> <span class="o">=</span> <span class="p">(</span><span class="n">old</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">new</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">old</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">new</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">oldlen</span>
+    <span class="n">scl</span> <span class="o">=</span> <span class="n">newlen</span><span class="o">/</span><span class="n">oldlen</span>
+    <span class="k">return</span> <span class="n">off</span><span class="p">,</span> <span class="n">scl</span>
+
+<span class="k">def</span> <span class="nf">mapdomain</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Apply linear map to input points.</span>
+
+<span class="sd">    The linear map ``offset + scale*x`` that maps the domain `old` to</span>
+<span class="sd">    the domain `new` is applied to the points `x`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : array_like</span>
+<span class="sd">        Points to be mapped. If `x` is a subtype of ndarray the subtype</span>
+<span class="sd">        will be preserved.</span>
+<span class="sd">    old, new : array_like</span>
+<span class="sd">        The two domains that determine the map.  Each must (successfully)</span>
+<span class="sd">        convert to 1-d arrays containing precisely two values.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    x_out : ndarray</span>
+<span class="sd">        Array of points of the same shape as `x`, after application of the</span>
+<span class="sd">        linear map between the two domains.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    getdomain, mapparms</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Effectively, this implements:</span>
+
+<span class="sd">    .. math ::</span>
+<span class="sd">        x\\_out = new[0] + m(x - old[0])</span>
+
+<span class="sd">    where</span>
+
+<span class="sd">    .. math ::</span>
+<span class="sd">        m = \\frac{new[1]-new[0]}{old[1]-old[0]}</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from numpy import polynomial as P</span>
+<span class="sd">    &gt;&gt;&gt; old_domain = (-1,1)</span>
+<span class="sd">    &gt;&gt;&gt; new_domain = (0,2*np.pi)</span>
+<span class="sd">    &gt;&gt;&gt; x = np.linspace(-1,1,6); x</span>
+<span class="sd">    array([-1. , -0.6, -0.2,  0.2,  0.6,  1. ])</span>
+<span class="sd">    &gt;&gt;&gt; x_out = P.mapdomain(x, old_domain, new_domain); x_out</span>
+<span class="sd">    array([ 0.        ,  1.25663706,  2.51327412,  3.76991118,  5.02654825,</span>
+<span class="sd">            6.28318531])</span>
+<span class="sd">    &gt;&gt;&gt; x - P.mapdomain(x_out, new_domain, old_domain)</span>
+<span class="sd">    array([ 0.,  0.,  0.,  0.,  0.,  0.])</span>
+
+<span class="sd">    Also works for complex numbers (and thus can be used to map any line in</span>
+<span class="sd">    the complex plane to any other line therein).</span>
+
+<span class="sd">    &gt;&gt;&gt; i = complex(0,1)</span>
+<span class="sd">    &gt;&gt;&gt; old = (-1 - i, 1 + i)</span>
+<span class="sd">    &gt;&gt;&gt; new = (-1 + i, 1 - i)</span>
+<span class="sd">    &gt;&gt;&gt; z = np.linspace(old[0], old[1], 6); z</span>
+<span class="sd">    array([-1.0-1.j , -0.6-0.6j, -0.2-0.2j,  0.2+0.2j,  0.6+0.6j,  1.0+1.j ])</span>
+<span class="sd">    &gt;&gt;&gt; new_z = P.mapdomain(z, old, new); new_z</span>
+<span class="sd">    array([-1.0+1.j , -0.6+0.6j, -0.2+0.2j,  0.2-0.2j,  0.6-0.6j,  1.0-1.j ])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">off</span><span class="p">,</span> <span class="n">scl</span> <span class="o">=</span> <span class="n">mapparms</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">off</span> <span class="o">+</span> <span class="n">scl</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+numpy.unicode_.argmin
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.argmin

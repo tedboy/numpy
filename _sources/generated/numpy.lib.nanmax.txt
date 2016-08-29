@@ -1,0 +1,6 @@
+numpy.lib.nanmax
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nanmax

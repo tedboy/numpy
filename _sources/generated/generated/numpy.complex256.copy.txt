@@ -1,0 +1,6 @@
+numpy.complex256.copy
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.copy

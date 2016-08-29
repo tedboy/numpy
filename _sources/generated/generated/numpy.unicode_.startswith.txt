@@ -1,0 +1,6 @@
+numpy.unicode_.startswith
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.startswith

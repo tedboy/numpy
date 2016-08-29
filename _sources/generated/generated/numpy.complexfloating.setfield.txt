@@ -1,0 +1,6 @@
+numpy.complexfloating.setfield
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.setfield

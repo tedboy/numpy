@@ -1,0 +1,6 @@
+numpy.character.trace
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.trace

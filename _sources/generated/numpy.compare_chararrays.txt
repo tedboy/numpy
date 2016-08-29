@@ -1,0 +1,6 @@
+numpy.compare_chararrays
+========================
+
+.. currentmodule:: numpy
+
+.. autofunction:: compare_chararrays

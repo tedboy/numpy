@@ -1,0 +1,6 @@
+numpy.lib.array_split
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: array_split

@@ -1,0 +1,6 @@
+numpy.ModuleDeprecationWarning
+==============================
+
+.. currentmodule:: numpy
+
+.. autoexception:: ModuleDeprecationWarning

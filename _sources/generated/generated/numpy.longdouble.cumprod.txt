@@ -1,0 +1,6 @@
+numpy.longdouble.cumprod
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.cumprod

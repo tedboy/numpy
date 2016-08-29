@@ -1,0 +1,6 @@
+numpy.clongdouble.ptp
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.ptp

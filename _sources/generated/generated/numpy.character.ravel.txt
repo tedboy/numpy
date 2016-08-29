@@ -1,0 +1,6 @@
+numpy.character.ravel
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.ravel

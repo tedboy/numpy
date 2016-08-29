@@ -1,0 +1,6 @@
+numpy.short.resize
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.resize

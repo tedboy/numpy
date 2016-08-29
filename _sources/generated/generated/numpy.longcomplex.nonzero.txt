@@ -1,0 +1,6 @@
+numpy.longcomplex.nonzero
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.nonzero

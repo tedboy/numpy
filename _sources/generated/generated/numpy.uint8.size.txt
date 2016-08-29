@@ -1,0 +1,6 @@
+numpy.uint8.size
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint8.size

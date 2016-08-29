@@ -1,0 +1,6 @@
+numpy.ufunc.signature
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ufunc.signature

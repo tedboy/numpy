@@ -1,0 +1,6 @@
+numpy.singlecomplex.size
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.size

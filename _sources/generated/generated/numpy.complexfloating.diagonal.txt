@@ -1,0 +1,6 @@
+numpy.complexfloating.diagonal
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.diagonal

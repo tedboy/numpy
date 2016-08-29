@@ -1,0 +1,6 @@
+numpy.longlong.searchsorted
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.searchsorted

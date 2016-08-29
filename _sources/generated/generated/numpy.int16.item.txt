@@ -1,0 +1,6 @@
+numpy.int16.item
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: int16.item

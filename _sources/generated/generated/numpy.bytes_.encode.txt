@@ -1,0 +1,6 @@
+numpy.bytes_.encode
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.encode

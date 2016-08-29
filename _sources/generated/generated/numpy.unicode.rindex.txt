@@ -1,0 +1,6 @@
+numpy.unicode.rindex
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.rindex

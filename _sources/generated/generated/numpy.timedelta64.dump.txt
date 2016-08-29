@@ -1,0 +1,6 @@
+numpy.timedelta64.dump
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.dump

@@ -1,0 +1,6 @@
+numpy.longcomplex.newbyteorder
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.newbyteorder

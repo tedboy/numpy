@@ -1,0 +1,6 @@
+numpy.singlecomplex.conj
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.conj

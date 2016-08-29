@@ -1,0 +1,6 @@
+numpy.max
+=========
+
+.. currentmodule:: numpy
+
+.. autofunction:: max

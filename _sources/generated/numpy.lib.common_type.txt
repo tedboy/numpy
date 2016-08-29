@@ -1,0 +1,6 @@
+numpy.lib.common_type
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: common_type

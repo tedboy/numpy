@@ -1,0 +1,6 @@
+numpy.character.diagonal
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.diagonal

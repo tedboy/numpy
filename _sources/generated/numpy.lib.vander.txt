@@ -1,0 +1,6 @@
+numpy.lib.vander
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: vander

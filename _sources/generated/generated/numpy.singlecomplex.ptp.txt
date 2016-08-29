@@ -1,0 +1,6 @@
+numpy.singlecomplex.ptp
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.ptp

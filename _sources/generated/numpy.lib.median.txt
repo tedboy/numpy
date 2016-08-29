@@ -1,0 +1,6 @@
+numpy.lib.median
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: median

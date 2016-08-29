@@ -1,0 +1,6 @@
+numpy.float_.clip
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.clip

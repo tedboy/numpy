@@ -1,0 +1,6 @@
+numpy.longfloat.itemsize
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longfloat.itemsize

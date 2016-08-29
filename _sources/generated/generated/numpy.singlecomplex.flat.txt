@@ -1,0 +1,6 @@
+numpy.singlecomplex.flat
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.flat

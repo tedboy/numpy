@@ -1,0 +1,6 @@
+numpy.float64.mean
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: float64.mean

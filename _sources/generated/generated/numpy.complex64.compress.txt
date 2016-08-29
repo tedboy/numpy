@@ -1,0 +1,6 @@
+numpy.complex64.compress
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex64.compress

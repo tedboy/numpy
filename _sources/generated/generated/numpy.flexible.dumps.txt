@@ -1,0 +1,6 @@
+numpy.flexible.dumps
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.dumps

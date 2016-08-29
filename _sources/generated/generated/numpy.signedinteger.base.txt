@@ -1,0 +1,6 @@
+numpy.signedinteger.base
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.base

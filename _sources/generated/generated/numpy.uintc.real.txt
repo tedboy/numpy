@@ -1,0 +1,6 @@
+numpy.uintc.real
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uintc.real

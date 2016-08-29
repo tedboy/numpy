@@ -1,0 +1,6 @@
+numpy.clongfloat.mean
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.mean

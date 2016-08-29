@@ -1,0 +1,6 @@
+numpy.double.size
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.size

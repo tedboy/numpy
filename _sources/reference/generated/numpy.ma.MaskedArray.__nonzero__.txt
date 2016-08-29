@@ -1,0 +1,6 @@
+numpy.ma.MaskedArray.__nonzero__
+================================
+
+.. currentmodule:: numpy.ma
+
+.. autoattribute:: MaskedArray.__nonzero__

@@ -1,0 +1,6 @@
+numpy.floating.all
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.all

@@ -1,0 +1,6 @@
+numpy.longcomplex.view
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.view

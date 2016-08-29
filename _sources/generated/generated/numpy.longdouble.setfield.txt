@@ -1,0 +1,6 @@
+numpy.longdouble.setfield
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.setfield

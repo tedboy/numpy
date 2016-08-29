@@ -1,0 +1,6 @@
+numpy.lib.ndenumerate.__init__
+==============================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: ndenumerate.__init__

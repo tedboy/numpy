@@ -1,0 +1,6 @@
+numpy.clongdouble.flags
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongdouble.flags

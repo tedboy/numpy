@@ -1,0 +1,6 @@
+numpy.inexact.resize
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.resize

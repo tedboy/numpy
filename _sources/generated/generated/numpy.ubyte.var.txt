@@ -1,0 +1,6 @@
+numpy.ubyte.var
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.var

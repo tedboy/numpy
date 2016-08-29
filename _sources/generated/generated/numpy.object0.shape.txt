@@ -1,0 +1,6 @@
+numpy.object0.shape
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: object0.shape

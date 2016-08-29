@@ -1,0 +1,6 @@
+numpy.longcomplex.conjugate
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.conjugate

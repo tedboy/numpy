@@ -1,0 +1,6 @@
+numpy.ushort.itemsize
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ushort.itemsize

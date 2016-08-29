@@ -1,0 +1,6 @@
+numpy.longlong.choose
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.choose

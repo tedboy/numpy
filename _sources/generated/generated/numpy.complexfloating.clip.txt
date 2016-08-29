@@ -1,0 +1,6 @@
+numpy.complexfloating.clip
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.clip

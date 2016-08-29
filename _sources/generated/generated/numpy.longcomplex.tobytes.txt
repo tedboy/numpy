@@ -1,0 +1,6 @@
+numpy.longcomplex.tobytes
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.tobytes

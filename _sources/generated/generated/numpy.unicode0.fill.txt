@@ -1,0 +1,6 @@
+numpy.unicode0.fill
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode0.fill

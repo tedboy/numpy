@@ -1,0 +1,92 @@
+numpy.datetime64
+================
+.. currentmodule:: numpy
+.. autoclass:: datetime64
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~datetime64.all
+   ~datetime64.any
+   ~datetime64.argmax
+   ~datetime64.argmin
+   ~datetime64.argsort
+   ~datetime64.astype
+   ~datetime64.byteswap
+   ~datetime64.choose
+   ~datetime64.clip
+   ~datetime64.compress
+   ~datetime64.conj
+   ~datetime64.conjugate
+   ~datetime64.copy
+   ~datetime64.cumprod
+   ~datetime64.cumsum
+   ~datetime64.diagonal
+   ~datetime64.dump
+   ~datetime64.dumps
+   ~datetime64.fill
+   ~datetime64.flatten
+   ~datetime64.getfield
+   ~datetime64.item
+   ~datetime64.itemset
+   ~datetime64.max
+   ~datetime64.mean
+   ~datetime64.min
+   ~datetime64.newbyteorder
+   ~datetime64.nonzero
+   ~datetime64.prod
+   ~datetime64.ptp
+   ~datetime64.put
+   ~datetime64.ravel
+   ~datetime64.repeat
+   ~datetime64.reshape
+   ~datetime64.resize
+   ~datetime64.round
+   ~datetime64.searchsorted
+   ~datetime64.setfield
+   ~datetime64.setflags
+   ~datetime64.sort
+   ~datetime64.squeeze
+   ~datetime64.std
+   ~datetime64.sum
+   ~datetime64.swapaxes
+   ~datetime64.take
+   ~datetime64.tobytes
+   ~datetime64.tofile
+   ~datetime64.tolist
+   ~datetime64.tostring
+   ~datetime64.trace
+   ~datetime64.transpose
+   ~datetime64.var
+   ~datetime64.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~datetime64.T
+   ~datetime64.base
+   ~datetime64.data
+   ~datetime64.dtype
+   ~datetime64.flags
+   ~datetime64.flat
+   ~datetime64.imag
+   ~datetime64.itemsize
+   ~datetime64.nbytes
+   ~datetime64.ndim
+   ~datetime64.real
+   ~datetime64.shape
+   ~datetime64.size
+   ~datetime64.strides
+

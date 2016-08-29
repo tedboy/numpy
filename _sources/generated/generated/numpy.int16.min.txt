@@ -1,0 +1,6 @@
+numpy.int16.min
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: int16.min

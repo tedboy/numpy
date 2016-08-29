@@ -1,0 +1,6 @@
+numpy.lib.in1d
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: in1d

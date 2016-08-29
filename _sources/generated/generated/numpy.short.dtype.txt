@@ -1,0 +1,6 @@
+numpy.short.dtype
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: short.dtype

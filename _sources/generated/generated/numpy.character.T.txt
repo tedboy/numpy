@@ -1,0 +1,6 @@
+numpy.character.T
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.T

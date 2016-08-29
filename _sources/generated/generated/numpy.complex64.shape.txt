@@ -1,0 +1,6 @@
+numpy.complex64.shape
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex64.shape

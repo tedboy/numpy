@@ -1,0 +1,6 @@
+numpy.unsignedinteger.size
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.size

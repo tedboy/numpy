@@ -1,0 +1,6 @@
+numpy.unsignedinteger.put
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.put

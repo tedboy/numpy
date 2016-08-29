@@ -1,0 +1,6 @@
+numpy.polynomial.Polynomial.nickname
+====================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Polynomial.nickname

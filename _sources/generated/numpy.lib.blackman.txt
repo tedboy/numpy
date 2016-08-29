@@ -1,0 +1,6 @@
+numpy.lib.blackman
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: blackman

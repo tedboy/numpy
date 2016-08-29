@@ -1,0 +1,6 @@
+numpy.unicode.decode
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.decode

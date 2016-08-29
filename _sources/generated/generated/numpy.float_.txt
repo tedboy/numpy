@@ -1,0 +1,96 @@
+numpy.float_
+============
+.. currentmodule:: numpy
+.. autoclass:: float_
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~float_.all
+   ~float_.any
+   ~float_.argmax
+   ~float_.argmin
+   ~float_.argsort
+   ~float_.as_integer_ratio
+   ~float_.astype
+   ~float_.byteswap
+   ~float_.choose
+   ~float_.clip
+   ~float_.compress
+   ~float_.conj
+   ~float_.conjugate
+   ~float_.copy
+   ~float_.cumprod
+   ~float_.cumsum
+   ~float_.diagonal
+   ~float_.dump
+   ~float_.dumps
+   ~float_.fill
+   ~float_.flatten
+   ~float_.fromhex
+   ~float_.getfield
+   ~float_.hex
+   ~float_.is_integer
+   ~float_.item
+   ~float_.itemset
+   ~float_.max
+   ~float_.mean
+   ~float_.min
+   ~float_.newbyteorder
+   ~float_.nonzero
+   ~float_.prod
+   ~float_.ptp
+   ~float_.put
+   ~float_.ravel
+   ~float_.repeat
+   ~float_.reshape
+   ~float_.resize
+   ~float_.round
+   ~float_.searchsorted
+   ~float_.setfield
+   ~float_.setflags
+   ~float_.sort
+   ~float_.squeeze
+   ~float_.std
+   ~float_.sum
+   ~float_.swapaxes
+   ~float_.take
+   ~float_.tobytes
+   ~float_.tofile
+   ~float_.tolist
+   ~float_.tostring
+   ~float_.trace
+   ~float_.transpose
+   ~float_.var
+   ~float_.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~float_.T
+   ~float_.base
+   ~float_.data
+   ~float_.dtype
+   ~float_.flags
+   ~float_.flat
+   ~float_.imag
+   ~float_.itemsize
+   ~float_.nbytes
+   ~float_.ndim
+   ~float_.real
+   ~float_.shape
+   ~float_.size
+   ~float_.strides
+

@@ -1,0 +1,6 @@
+numpy.complexfloating.size
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.size

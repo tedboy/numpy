@@ -1,0 +1,6 @@
+numpy.flexible.resize
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.resize

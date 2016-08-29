@@ -1,0 +1,6 @@
+numpy.lib.bincount
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: bincount

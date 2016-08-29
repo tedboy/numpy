@@ -1,0 +1,6 @@
+numpy.complexfloating.flags
+===========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.flags

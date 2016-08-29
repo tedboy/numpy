@@ -1,0 +1,6 @@
+numpy.object_.T
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: object_.T

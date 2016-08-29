@@ -1,0 +1,6 @@
+numpy.csingle.clip
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.clip

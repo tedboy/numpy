@@ -1,0 +1,6 @@
+numpy.inexact.clip
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.clip

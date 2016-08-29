@@ -1,0 +1,6 @@
+numpy.lib.isrealobj
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: isrealobj

@@ -1,0 +1,6 @@
+numpy.float_.ptp
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.ptp

@@ -1,0 +1,6 @@
+numpy.half.nbytes
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.nbytes

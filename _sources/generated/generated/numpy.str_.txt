@@ -1,0 +1,130 @@
+numpy.str_
+==========
+.. currentmodule:: numpy
+.. autoclass:: str_
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~str_.all
+   ~str_.any
+   ~str_.argmax
+   ~str_.argmin
+   ~str_.argsort
+   ~str_.astype
+   ~str_.byteswap
+   ~str_.capitalize
+   ~str_.center
+   ~str_.choose
+   ~str_.clip
+   ~str_.compress
+   ~str_.conj
+   ~str_.conjugate
+   ~str_.copy
+   ~str_.count
+   ~str_.cumprod
+   ~str_.cumsum
+   ~str_.decode
+   ~str_.diagonal
+   ~str_.dump
+   ~str_.dumps
+   ~str_.encode
+   ~str_.endswith
+   ~str_.expandtabs
+   ~str_.fill
+   ~str_.find
+   ~str_.flatten
+   ~str_.format
+   ~str_.getfield
+   ~str_.index
+   ~str_.isalnum
+   ~str_.isalpha
+   ~str_.isdigit
+   ~str_.islower
+   ~str_.isspace
+   ~str_.istitle
+   ~str_.isupper
+   ~str_.item
+   ~str_.itemset
+   ~str_.join
+   ~str_.ljust
+   ~str_.lower
+   ~str_.lstrip
+   ~str_.max
+   ~str_.mean
+   ~str_.min
+   ~str_.newbyteorder
+   ~str_.nonzero
+   ~str_.partition
+   ~str_.prod
+   ~str_.ptp
+   ~str_.put
+   ~str_.ravel
+   ~str_.repeat
+   ~str_.replace
+   ~str_.reshape
+   ~str_.resize
+   ~str_.rfind
+   ~str_.rindex
+   ~str_.rjust
+   ~str_.round
+   ~str_.rpartition
+   ~str_.rsplit
+   ~str_.rstrip
+   ~str_.searchsorted
+   ~str_.setfield
+   ~str_.setflags
+   ~str_.sort
+   ~str_.split
+   ~str_.splitlines
+   ~str_.squeeze
+   ~str_.startswith
+   ~str_.std
+   ~str_.strip
+   ~str_.sum
+   ~str_.swapaxes
+   ~str_.swapcase
+   ~str_.take
+   ~str_.title
+   ~str_.tobytes
+   ~str_.tofile
+   ~str_.tolist
+   ~str_.tostring
+   ~str_.trace
+   ~str_.translate
+   ~str_.transpose
+   ~str_.upper
+   ~str_.var
+   ~str_.view
+   ~str_.zfill
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~str_.T
+   ~str_.base
+   ~str_.data
+   ~str_.dtype
+   ~str_.flags
+   ~str_.flat
+   ~str_.imag
+   ~str_.itemsize
+   ~str_.nbytes
+   ~str_.ndim
+   ~str_.real
+   ~str_.shape
+   ~str_.size
+   ~str_.strides
+

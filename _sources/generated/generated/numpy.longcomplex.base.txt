@@ -1,0 +1,6 @@
+numpy.longcomplex.base
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.base

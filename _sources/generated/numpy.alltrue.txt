@@ -1,0 +1,6 @@
+numpy.alltrue
+=============
+
+.. currentmodule:: numpy
+
+.. autofunction:: alltrue

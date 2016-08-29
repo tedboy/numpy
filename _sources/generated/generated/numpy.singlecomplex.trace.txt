@@ -1,0 +1,6 @@
+numpy.singlecomplex.trace
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.trace

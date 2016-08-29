@@ -1,0 +1,6 @@
+numpy.longdouble.round
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.round

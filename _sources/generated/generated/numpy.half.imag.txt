@@ -1,0 +1,6 @@
+numpy.half.imag
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.imag

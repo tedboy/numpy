@@ -1,0 +1,6 @@
+numpy.byte.trace
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.trace

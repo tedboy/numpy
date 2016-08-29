@@ -1,0 +1,6 @@
+numpy.lib.fromregex
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: fromregex

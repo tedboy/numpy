@@ -1,0 +1,6 @@
+numpy.uint8.trace
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint8.trace

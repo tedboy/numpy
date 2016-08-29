@@ -1,0 +1,94 @@
+numpy.uintc
+===========
+.. currentmodule:: numpy
+.. autoclass:: uintc
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~uintc.all
+   ~uintc.any
+   ~uintc.argmax
+   ~uintc.argmin
+   ~uintc.argsort
+   ~uintc.astype
+   ~uintc.byteswap
+   ~uintc.choose
+   ~uintc.clip
+   ~uintc.compress
+   ~uintc.conj
+   ~uintc.conjugate
+   ~uintc.copy
+   ~uintc.cumprod
+   ~uintc.cumsum
+   ~uintc.diagonal
+   ~uintc.dump
+   ~uintc.dumps
+   ~uintc.fill
+   ~uintc.flatten
+   ~uintc.getfield
+   ~uintc.item
+   ~uintc.itemset
+   ~uintc.max
+   ~uintc.mean
+   ~uintc.min
+   ~uintc.newbyteorder
+   ~uintc.nonzero
+   ~uintc.prod
+   ~uintc.ptp
+   ~uintc.put
+   ~uintc.ravel
+   ~uintc.repeat
+   ~uintc.reshape
+   ~uintc.resize
+   ~uintc.round
+   ~uintc.searchsorted
+   ~uintc.setfield
+   ~uintc.setflags
+   ~uintc.sort
+   ~uintc.squeeze
+   ~uintc.std
+   ~uintc.sum
+   ~uintc.swapaxes
+   ~uintc.take
+   ~uintc.tobytes
+   ~uintc.tofile
+   ~uintc.tolist
+   ~uintc.tostring
+   ~uintc.trace
+   ~uintc.transpose
+   ~uintc.var
+   ~uintc.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~uintc.T
+   ~uintc.base
+   ~uintc.data
+   ~uintc.denominator
+   ~uintc.dtype
+   ~uintc.flags
+   ~uintc.flat
+   ~uintc.imag
+   ~uintc.itemsize
+   ~uintc.nbytes
+   ~uintc.ndim
+   ~uintc.numerator
+   ~uintc.real
+   ~uintc.shape
+   ~uintc.size
+   ~uintc.strides
+

@@ -1,0 +1,6 @@
+numpy.complex256.nbytes
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex256.nbytes

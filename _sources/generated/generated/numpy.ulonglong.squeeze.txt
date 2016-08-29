@@ -1,0 +1,6 @@
+numpy.ulonglong.squeeze
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.squeeze

@@ -1,0 +1,6 @@
+numpy.complex128.tofile
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.tofile

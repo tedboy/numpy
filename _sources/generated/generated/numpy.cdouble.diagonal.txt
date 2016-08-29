@@ -1,0 +1,6 @@
+numpy.cdouble.diagonal
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.diagonal

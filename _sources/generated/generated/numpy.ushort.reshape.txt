@@ -1,0 +1,6 @@
+numpy.ushort.reshape
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.reshape

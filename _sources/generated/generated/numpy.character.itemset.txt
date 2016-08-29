@@ -1,0 +1,6 @@
+numpy.character.itemset
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.itemset

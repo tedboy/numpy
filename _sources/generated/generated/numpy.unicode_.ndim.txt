@@ -1,0 +1,6 @@
+numpy.unicode_.ndim
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.ndim

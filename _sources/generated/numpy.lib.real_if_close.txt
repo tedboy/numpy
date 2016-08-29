@@ -1,0 +1,6 @@
+numpy.lib.real_if_close
+=======================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: real_if_close

@@ -1,0 +1,6 @@
+numpy.cdouble.astype
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.astype

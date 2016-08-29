@@ -1,0 +1,6 @@
+numpy.testing.TestCase.fail
+===========================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.fail

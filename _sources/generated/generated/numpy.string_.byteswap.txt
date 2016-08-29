@@ -1,0 +1,6 @@
+numpy.string_.byteswap
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.byteswap

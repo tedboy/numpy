@@ -1,0 +1,6 @@
+numpy.short.setfield
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.setfield

@@ -1,0 +1,6 @@
+numpy.polynomial.HermiteE.nickname
+==================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: HermiteE.nickname

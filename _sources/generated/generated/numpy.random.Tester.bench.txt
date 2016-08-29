@@ -1,0 +1,6 @@
+numpy.random.Tester.bench
+=========================
+
+.. currentmodule:: numpy.random
+
+.. automethod:: Tester.bench

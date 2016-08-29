@@ -1,0 +1,6 @@
+numpy.inexact.choose
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.choose

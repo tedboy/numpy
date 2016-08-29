@@ -1,0 +1,6 @@
+numpy.int64.choose
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: int64.choose

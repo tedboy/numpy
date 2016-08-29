@@ -1,0 +1,6 @@
+numpy.half.diagonal
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.diagonal

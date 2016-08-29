@@ -1,0 +1,6 @@
+numpy.flexible.cumsum
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.cumsum

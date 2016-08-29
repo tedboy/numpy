@@ -1,0 +1,6 @@
+numpy.void.tolist
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.tolist

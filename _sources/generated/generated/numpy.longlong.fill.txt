@@ -1,0 +1,6 @@
+numpy.longlong.fill
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.fill

@@ -1,0 +1,6 @@
+numpy.bool_.round
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.round

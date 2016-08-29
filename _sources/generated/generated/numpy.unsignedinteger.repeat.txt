@@ -1,0 +1,6 @@
+numpy.unsignedinteger.repeat
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.repeat

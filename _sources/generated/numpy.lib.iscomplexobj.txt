@@ -1,0 +1,6 @@
+numpy.lib.iscomplexobj
+======================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: iscomplexobj

@@ -1,0 +1,6 @@
+numpy.ushort.getfield
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.getfield

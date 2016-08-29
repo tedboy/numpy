@@ -1,0 +1,6 @@
+numpy.unicode.zfill
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.zfill

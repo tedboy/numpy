@@ -1,0 +1,6 @@
+numpy.double.conj
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.conj

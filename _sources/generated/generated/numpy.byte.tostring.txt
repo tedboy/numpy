@@ -1,0 +1,6 @@
+numpy.byte.tostring
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.tostring

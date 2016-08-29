@@ -1,0 +1,6 @@
+numpy.ushort.flags
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ushort.flags

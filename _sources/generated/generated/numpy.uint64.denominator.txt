@@ -1,0 +1,6 @@
+numpy.uint64.denominator
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint64.denominator

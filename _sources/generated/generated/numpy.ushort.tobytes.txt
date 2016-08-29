@@ -1,0 +1,6 @@
+numpy.ushort.tobytes
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.tobytes

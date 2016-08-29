@@ -1,0 +1,6 @@
+numpy.complex_.reshape
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.reshape

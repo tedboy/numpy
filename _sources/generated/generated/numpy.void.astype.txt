@@ -1,0 +1,6 @@
+numpy.void.astype
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.astype

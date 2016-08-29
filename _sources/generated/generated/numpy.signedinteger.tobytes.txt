@@ -1,0 +1,6 @@
+numpy.signedinteger.tobytes
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.tobytes

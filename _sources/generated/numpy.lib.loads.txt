@@ -1,0 +1,6 @@
+numpy.lib.loads
+===============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: loads

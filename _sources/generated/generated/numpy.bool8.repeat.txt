@@ -1,0 +1,6 @@
+numpy.bool8.repeat
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.repeat

@@ -1,0 +1,92 @@
+numpy.bool_
+===========
+.. currentmodule:: numpy
+.. autoclass:: bool_
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~bool_.all
+   ~bool_.any
+   ~bool_.argmax
+   ~bool_.argmin
+   ~bool_.argsort
+   ~bool_.astype
+   ~bool_.byteswap
+   ~bool_.choose
+   ~bool_.clip
+   ~bool_.compress
+   ~bool_.conj
+   ~bool_.conjugate
+   ~bool_.copy
+   ~bool_.cumprod
+   ~bool_.cumsum
+   ~bool_.diagonal
+   ~bool_.dump
+   ~bool_.dumps
+   ~bool_.fill
+   ~bool_.flatten
+   ~bool_.getfield
+   ~bool_.item
+   ~bool_.itemset
+   ~bool_.max
+   ~bool_.mean
+   ~bool_.min
+   ~bool_.newbyteorder
+   ~bool_.nonzero
+   ~bool_.prod
+   ~bool_.ptp
+   ~bool_.put
+   ~bool_.ravel
+   ~bool_.repeat
+   ~bool_.reshape
+   ~bool_.resize
+   ~bool_.round
+   ~bool_.searchsorted
+   ~bool_.setfield
+   ~bool_.setflags
+   ~bool_.sort
+   ~bool_.squeeze
+   ~bool_.std
+   ~bool_.sum
+   ~bool_.swapaxes
+   ~bool_.take
+   ~bool_.tobytes
+   ~bool_.tofile
+   ~bool_.tolist
+   ~bool_.tostring
+   ~bool_.trace
+   ~bool_.transpose
+   ~bool_.var
+   ~bool_.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~bool_.T
+   ~bool_.base
+   ~bool_.data
+   ~bool_.dtype
+   ~bool_.flags
+   ~bool_.flat
+   ~bool_.imag
+   ~bool_.itemsize
+   ~bool_.nbytes
+   ~bool_.ndim
+   ~bool_.real
+   ~bool_.shape
+   ~bool_.size
+   ~bool_.strides
+

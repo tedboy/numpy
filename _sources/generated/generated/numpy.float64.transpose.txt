@@ -1,0 +1,6 @@
+numpy.float64.transpose
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: float64.transpose

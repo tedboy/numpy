@@ -1,0 +1,6 @@
+numpy.void0.setfield
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: void0.setfield

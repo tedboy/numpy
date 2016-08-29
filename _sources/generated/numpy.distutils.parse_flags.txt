@@ -1,0 +1,6 @@
+numpy.distutils.parse_flags
+===========================
+
+.. currentmodule:: numpy.distutils
+
+.. autofunction:: parse_flags

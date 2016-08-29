@@ -1,0 +1,6 @@
+numpy.cdouble.size
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.size

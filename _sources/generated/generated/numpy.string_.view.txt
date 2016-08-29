@@ -1,0 +1,6 @@
+numpy.string_.view
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.view

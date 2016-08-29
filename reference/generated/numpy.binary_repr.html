@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.3.3.3.1. numpy.binary_repr &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../index.html"/>
+        <link rel="up" title="11.3.3. Binary operations" href="../routines.bitwise.html"/>
+        <link rel="next" title="11.3.4. String operations" href="../routines.char.html"/>
+        <link rel="prev" title="11.3.3.2.2. numpy.unpackbits" href="numpy.unpackbits.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../routines.html">11.3. Routines</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../routines.array-creation.html">11.3.1. Array creation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.array-manipulation.html">11.3.2. Array manipulation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.bitwise.html">11.3.3. Binary operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.char.html">11.3.4. String operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.ctypeslib.html">11.3.5. C-Types Foreign Function Interface (<code class="docutils literal"><span class="pre">numpy.ctypeslib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.datetime.html">11.3.6. Datetime Support Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.dtype.html">11.3.7. Data type routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.dual.html">11.3.8. Optionally Scipy-accelerated routines (<code class="docutils literal"><span class="pre">numpy.dual</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.emath.html">11.3.9. Mathematical functions with automatic domain (<code class="docutils literal"><span class="pre">numpy.emath</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.err.html">11.3.10. Floating point error handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.fft.html">11.3.11. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.financial.html">11.3.12. Financial functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.functional.html">11.3.13. Functional programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.help.html">11.3.14. Numpy-specific help functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.indexing.html">11.3.15. Indexing routines</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../routines.io.html">11.3.16. Input and output</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../routines.io.html#numpy-binary-files-npy-npz">11.3.16.1. Numpy binary files (NPY, NPZ)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../routines.io.html#text-files">11.3.16.2. Text files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../routines.io.html#raw-binary-files">11.3.16.3. Raw binary files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../routines.io.html#string-formatting">11.3.16.4. String formatting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../routines.io.html#memory-mapping-files">11.3.16.5. Memory mapping files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../routines.io.html#text-formatting-options">11.3.16.6. Text formatting options</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../routines.io.html#base-n-representations">11.3.16.7. Base-n representations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../routines.io.html#data-sources">11.3.16.8. Data sources</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.linalg.html">11.3.17. Linear algebra (<code class="docutils literal"><span class="pre">numpy.linalg</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.logic.html">11.3.18. Logic functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.ma.html">11.1.7.7. Masked array operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.math.html">11.3.19. Mathematical functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.matlib.html">11.3.20. Matrix library (<code class="docutils literal"><span class="pre">numpy.matlib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.other.html">11.3.21. Miscellaneous routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.padding.html">11.3.22. Padding Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.polynomials.html">11.3.23. Polynomials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.random.html">11.3.24. Random sampling (<code class="docutils literal"><span class="pre">numpy.random</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.set.html">11.3.25. Set routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.sort.html">11.3.26. Sorting, searching, and counting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.statistics.html">11.3.27. Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.testing.html">11.3.28. Test Support (<code class="docutils literal"><span class="pre">numpy.testing</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../routines.window.html">11.3.29. Window functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="../routines.html">11.3. Routines</a> &raquo;</li>
+        
+          <li><a href="../routines.bitwise.html">11.3.3. Binary operations</a> &raquo;</li>
+        
+      <li>11.3.3.3.1. numpy.binary_repr</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/reference/generated/numpy.binary_repr.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy-binary-repr">
+<h1>11.3.3.3.1. numpy.binary_repr<a class="headerlink" href="#numpy-binary-repr" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="numpy.binary_repr">
+<code class="descclassname">numpy.</code><code class="descname">binary_repr</code><span class="sig-paren">(</span><em>num</em>, <em>width=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/numpy/core/numeric.html#binary_repr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.binary_repr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the binary representation of the input number as a string.</p>
+<p>For negative numbers, if width is not given, a minus sign is added to the
+front. If width is given, the two&#8217;s complement of the number is
+returned, with respect to that width.</p>
+<p>In a two&#8217;s-complement system negative numbers are represented by the two&#8217;s
+complement of the absolute value. This is the most common method of
+representing signed integers on computers <a class="reference internal" href="#r464" id="id1">[R464]</a>. A N-bit two&#8217;s-complement
+system can represent every integer in the range
+<span class="math">\(-2^{N-1}\)</span> to <span class="math">\(+2^{N-1}-1\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num</strong> : int</p>
+<blockquote>
+<div><p>Only an integer decimal number can be used.</p>
+</div></blockquote>
+<p><strong>width</strong> : int, optional</p>
+<blockquote>
+<div><p>The length of the returned string if <cite>num</cite> is positive, the length of
+the two&#8217;s complement if <cite>num</cite> is negative.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>bin</strong> : str</p>
+<blockquote class="last">
+<div><p>Binary representation of <cite>num</cite> or two&#8217;s complement of <cite>num</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="numpy.base_repr.html#numpy.base_repr" title="numpy.base_repr"><code class="xref py py-obj docutils literal"><span class="pre">base_repr</span></code></a></dt>
+<dd>Return a string representation of a number in the given base system.</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p><cite>binary_repr</cite> is equivalent to using <cite>base_repr</cite> with base 2, but about 25x
+faster.</p>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="r464" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[R464]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Wikipedia, &#8220;Two&#8217;s complement&#8221;,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Two's_complement">http://en.wikipedia.org/wiki/Two&#8217;s_complement</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&#39;11&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&#39;-11&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">&#39;0011&#39;</span>
+</pre></div>
+</div>
+<p>The two&#8217;s complement is returned when the input number is negative and
+width is specified:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">&#39;1101&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../routines.char.html" class="btn btn-neutral float-right" title="11.3.4. String operations" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numpy.unpackbits.html" class="btn btn-neutral" title="11.3.3.2.2. numpy.unpackbits" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

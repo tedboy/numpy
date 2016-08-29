@@ -1,0 +1,6 @@
+numpy.bytes_.squeeze
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.squeeze

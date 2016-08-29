@@ -1,0 +1,6 @@
+numpy.bool_.nonzero
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.nonzero

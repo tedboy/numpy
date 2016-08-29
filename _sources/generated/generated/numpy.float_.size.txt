@@ -1,0 +1,6 @@
+numpy.float_.size
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: float_.size

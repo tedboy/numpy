@@ -1,0 +1,6 @@
+numpy.unsignedinteger.take
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.take

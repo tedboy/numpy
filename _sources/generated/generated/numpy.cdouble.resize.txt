@@ -1,0 +1,6 @@
+numpy.cdouble.resize
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.resize

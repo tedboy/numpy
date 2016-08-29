@@ -1,0 +1,6 @@
+numpy.uintp.item
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.item

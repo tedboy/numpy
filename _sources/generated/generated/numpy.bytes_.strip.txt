@@ -1,0 +1,6 @@
+numpy.bytes_.strip
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.strip

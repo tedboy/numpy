@@ -1,0 +1,6 @@
+numpy.floating.byteswap
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.byteswap

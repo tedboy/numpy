@@ -1,0 +1,6 @@
+numpy.distutils.FormatError
+===========================
+
+.. currentmodule:: numpy.distutils
+
+.. autoexception:: FormatError

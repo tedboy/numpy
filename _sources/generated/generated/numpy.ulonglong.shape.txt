@@ -1,0 +1,6 @@
+numpy.ulonglong.shape
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.shape

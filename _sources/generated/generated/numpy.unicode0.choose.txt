@@ -1,0 +1,6 @@
+numpy.unicode0.choose
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode0.choose

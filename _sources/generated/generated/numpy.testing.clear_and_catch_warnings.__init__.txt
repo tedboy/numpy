@@ -1,0 +1,6 @@
+numpy.testing.clear_and_catch_warnings.__init__
+===============================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: clear_and_catch_warnings.__init__

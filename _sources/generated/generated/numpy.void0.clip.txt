@@ -1,0 +1,6 @@
+numpy.void0.clip
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: void0.clip

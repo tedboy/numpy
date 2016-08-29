@@ -1,0 +1,6 @@
+numpy.unicode0.compress
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode0.compress

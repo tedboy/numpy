@@ -1,0 +1,6 @@
+numpy.clongfloat.choose
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.choose

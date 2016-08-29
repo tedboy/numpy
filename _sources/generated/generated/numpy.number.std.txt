@@ -1,0 +1,6 @@
+numpy.number.std
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: number.std

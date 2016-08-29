@@ -1,0 +1,6 @@
+numpy.half.choose
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.choose

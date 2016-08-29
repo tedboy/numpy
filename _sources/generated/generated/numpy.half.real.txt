@@ -1,0 +1,6 @@
+numpy.half.real
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.real

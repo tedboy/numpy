@@ -1,0 +1,6 @@
+numpy.longcomplex.imag
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.imag

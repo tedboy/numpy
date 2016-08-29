@@ -1,0 +1,6 @@
+numpy.uint8.var
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: uint8.var

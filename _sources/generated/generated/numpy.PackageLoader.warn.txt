@@ -1,0 +1,6 @@
+numpy.PackageLoader.warn
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: PackageLoader.warn

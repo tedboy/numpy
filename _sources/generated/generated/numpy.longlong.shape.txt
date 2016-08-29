@@ -1,0 +1,6 @@
+numpy.longlong.shape
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longlong.shape

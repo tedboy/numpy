@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.1.8. The Array Interface &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../index.html"/>
+        <link rel="up" title="11.1. Array objects" href="arrays.html"/>
+        <link rel="next" title="11.1.9. Datetimes and Timedeltas" href="arrays.datetime.html"/>
+        <link rel="prev" title="11.1.7.7.7.7.8. numpy.ma.where" href="generated/numpy.ma.where.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="arrays.html">11.1. Array objects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arrays.ndarray.html">11.1.1. The N-dimensional array (<code class="docutils literal"><span class="pre">ndarray</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arrays.scalars.html">11.1.2. Scalars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arrays.dtypes.html">11.1.3. Data type objects (<code class="docutils literal"><span class="pre">dtype</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arrays.indexing.html">11.1.4. Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arrays.nditer.html">11.1.5. Iterating Over Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arrays.classes.html">11.1.6. Standard array subclasses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maskedarray.html">11.1.7. Masked arrays</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">11.1.8. The Array Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#python-side">11.1.8.1. Python side</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#c-struct-access">11.1.8.2. C-struct access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type-description-examples">11.1.8.3. Type description examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#differences-with-array-interface-version-2">11.1.8.4. Differences with Array interface (Version 2)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arrays.datetime.html">11.1.9. Datetimes and Timedeltas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routines.html">11.3. Routines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="arrays.html">11.1. Array objects</a> &raquo;</li>
+        
+      <li>11.1.8. The Array Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/arrays.interface.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-array-interface">
+<span id="arrays-interface"></span><span id="index-0"></span><h1>11.1.8. The Array Interface<a class="headerlink" href="#the-array-interface" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This page describes the numpy-specific API for accessing the contents of
+a numpy array from other C extensions. <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3118"><strong>PEP 3118</strong></a> &#8211;
+<code class="xref c c-func docutils literal"><span class="pre">The</span> <span class="pre">Revised</span> <span class="pre">Buffer</span> <span class="pre">Protocol</span></code> introduces
+similar, standardized API to Python 2.6 and 3.0 for any extension
+module to use. <a class="reference external" href="http://cython.org/">Cython</a>&#8216;s buffer array support
+uses the <span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3118"><strong>PEP 3118</strong></a> API; see the <a class="reference external" href="http://wiki.cython.org/tutorials/numpy">Cython numpy
+tutorial</a>. Cython provides a way to write code that supports the buffer
+protocol with Python versions older than 2.6 because it has a
+backward-compatible implementation utilizing the array interface
+described here.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">version:</th><td class="field-body">3</td>
+</tr>
+</tbody>
+</table>
+<p>The array interface (sometimes called array protocol) was created in
+2005 as a means for array-like Python objects to re-use each other&#8217;s
+data buffers intelligently whenever possible. The homogeneous
+N-dimensional array interface is a default mechanism for objects to
+share N-dimensional array memory and information.  The interface
+consists of a Python-side and a C-side using two attributes.  Objects
+wishing to be considered an N-dimensional array in application code
+should support at least one of these attributes.  Objects wishing to
+support an N-dimensional array in application code should look for at
+least one of these attributes and use the information provided
+appropriately.</p>
+<p>This interface describes homogeneous arrays in the sense that each
+item of the array has the same &#8220;type&#8221;.  This type can be very simple
+or it can be a quite arbitrary and complicated C-like structure.</p>
+<p>There are two ways to use the interface: A Python side and a C-side.
+Both are separate attributes.</p>
+<div class="section" id="python-side">
+<h2>11.1.8.1. Python side<a class="headerlink" href="#python-side" title="Permalink to this headline">¶</a></h2>
+<p>This approach to the interface consists of the object having an
+<a class="reference internal" href="#__array_interface__" title="__array_interface__"><code class="xref py py-data docutils literal"><span class="pre">__array_interface__</span></code></a> attribute.</p>
+<dl class="data">
+<dt id="__array_interface__">
+<code class="descname">__array_interface__</code><a class="headerlink" href="#__array_interface__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of items (3 required and 5 optional).  The optional
+keys in the dictionary have implied defaults if they are not
+provided.</p>
+<p>The keys are:</p>
+<p><strong>shape</strong> (required)</p>
+<blockquote>
+<div>Tuple whose elements are the array size in each dimension. Each
+entry is an integer (a Python int or long).  Note that these
+integers could be larger than the platform &#8220;int&#8221; or &#8220;long&#8221;
+could hold (a Python int is a C long). It is up to the code
+using this attribute to handle this appropriately; either by
+raising an error when overflow is possible, or by using
+<code class="xref c c-data docutils literal"><span class="pre">Py_LONG_LONG</span></code> as the C type for the shapes.</div></blockquote>
+<p><strong>typestr</strong> (required)</p>
+<blockquote>
+<div><p>A string providing the basic type of the homogenous array The
+basic string format consists of 3 parts: a character describing
+the byteorder of the data (<code class="docutils literal"><span class="pre">&lt;</span></code>: little-endian, <code class="docutils literal"><span class="pre">&gt;</span></code>:
+big-endian, <code class="docutils literal"><span class="pre">|</span></code>: not-relevant), a character code giving the
+basic type of the array, and an integer providing the number of
+bytes the type uses.</p>
+<p>The basic type character codes are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">t</span></code></td>
+<td>Bit field (following integer gives the number of
+bits in the bit field).</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">b</span></code></td>
+<td>Boolean (integer type where all values are only True or False)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">i</span></code></td>
+<td>Integer</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">u</span></code></td>
+<td>Unsigned integer</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">f</span></code></td>
+<td>Floating point</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">c</span></code></td>
+<td>Complex floating point</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">m</span></code></td>
+<td>Timedelta</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">M</span></code></td>
+<td>Datetime</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">O</span></code></td>
+<td>Object (i.e. the memory contains a pointer to <code class="xref c c-type docutils literal"><span class="pre">PyObject</span></code>)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">S</span></code></td>
+<td>String (fixed-length sequence of char)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">U</span></code></td>
+<td>Unicode (fixed-length sequence of <code class="xref c c-type docutils literal"><span class="pre">Py_UNICODE</span></code>)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">V</span></code></td>
+<td>Other (void * &#8211; each item is a fixed-size chunk of memory)</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>descr</strong> (optional)</p>
+<blockquote>
+<div><p>A list of tuples providing a more detailed description of the
+memory layout for each item in the homogeneous array.  Each
+tuple in the list has two or three elements.  Normally, this
+attribute would be used when <em>typestr</em> is <code class="docutils literal"><span class="pre">V[0-9]+</span></code>, but this is
+not a requirement.  The only requirement is that the number of
+bytes represented in the <em>typestr</em> key is the same as the total
+number of bytes represented here.  The idea is to support
+descriptions of C-like structs that make up array
+elements.  The elements of each tuple in the list are</p>
+<ol class="arabic simple">
+<li>A string providing a name associated with this portion of
+the datatype.  This could also be a tuple of <code class="docutils literal"><span class="pre">('full</span> <span class="pre">name',</span>
+<span class="pre">'basic_name')</span></code> where basic name would be a valid Python
+variable name representing the full name of the field.</li>
+<li>Either a basic-type description string as in <em>typestr</em> or
+another list (for nested structured types)</li>
+<li>An optional shape tuple providing how many times this part
+of the structure should be repeated.  No repeats are assumed
+if this is not given.  Very complicated structures can be
+described using this generic interface.  Notice, however,
+that each element of the array is still of the same
+data-type.  Some examples of using this interface are given
+below.</li>
+</ol>
+<p><strong>Default</strong>: <code class="docutils literal"><span class="pre">[('',</span> <span class="pre">typestr)]</span></code></p>
+</div></blockquote>
+<p><strong>data</strong> (optional)</p>
+<blockquote>
+<div><p>A 2-tuple whose first argument is an integer (a long integer
+if necessary) that points to the data-area storing the array
+contents.  This pointer must point to the first element of
+data (in other words any offset is always ignored in this
+case). The second entry in the tuple is a read-only flag (true
+means the data area is read-only).</p>
+<p>This attribute can also be an object exposing the
+<code class="xref c c-func docutils literal"><span class="pre">buffer</span> <span class="pre">interface</span></code> which
+will be used to share the data. If this key is not present (or
+returns <code class="xref py py-class docutils literal"><span class="pre">None</span></code>), then memory sharing will be done
+through the buffer interface of the object itself.  In this
+case, the offset key can be used to indicate the start of the
+buffer.  A reference to the object exposing the array interface
+must be stored by the new object if the memory area is to be
+secured.</p>
+<p><strong>Default</strong>: <code class="xref py py-const docutils literal"><span class="pre">None</span></code></p>
+</div></blockquote>
+<p><strong>strides</strong> (optional)</p>
+<blockquote>
+<div><p>Either <code class="xref py py-const docutils literal"><span class="pre">None</span></code> to indicate a C-style contiguous array or
+a Tuple of strides which provides the number of bytes needed
+to jump to the next array element in the corresponding
+dimension. Each entry must be an integer (a Python
+<code class="xref py py-const docutils literal"><span class="pre">int</span></code> or <code class="xref py py-const docutils literal"><span class="pre">long</span></code>). As with shape, the values may
+be larger than can be represented by a C &#8220;int&#8221; or &#8220;long&#8221;; the
+calling code should handle this appropriately, either by
+raising an error, or by using <code class="xref c c-type docutils literal"><span class="pre">Py_LONG_LONG</span></code> in C. The
+default is <code class="xref py py-const docutils literal"><span class="pre">None</span></code> which implies a C-style contiguous
+memory buffer.  In this model, the last dimension of the array
+varies the fastest.  For example, the default strides tuple
+for an object whose array entries are 8 bytes long and whose
+shape is (10,20,30) would be (4800, 240, 8)</p>
+<p><strong>Default</strong>: <code class="xref py py-const docutils literal"><span class="pre">None</span></code> (C-style contiguous)</p>
+</div></blockquote>
+<p><strong>mask</strong> (optional)</p>
+<blockquote>
+<div><p><code class="xref py py-const docutils literal"><span class="pre">None</span></code> or an object exposing the array interface.  All
+elements of the mask array should be interpreted only as true
+or not true indicating which elements of this array are valid.
+The shape of this object should be <cite>&#8220;broadcastable&#8221;
+&lt;arrays.broadcasting.broadcastable&gt;</cite> to the shape of the
+original array.</p>
+<p><strong>Default</strong>: <code class="xref py py-const docutils literal"><span class="pre">None</span></code> (All array values are valid)</p>
+</div></blockquote>
+<p><strong>offset</strong> (optional)</p>
+<blockquote>
+<div><p>An integer offset into the array data region. This can only be
+used when data is <code class="xref py py-const docutils literal"><span class="pre">None</span></code> or returns a <code class="xref py py-class docutils literal"><span class="pre">buffer</span></code>
+object.</p>
+<p><strong>Default</strong>: 0.</p>
+</div></blockquote>
+<p><strong>version</strong> (required)</p>
+<blockquote>
+<div>An integer showing the version of the interface (i.e. 3 for
+this version).  Be careful not to use this to invalidate
+objects exposing future versions of the interface.</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="c-struct-access">
+<h2>11.1.8.2. C-struct access<a class="headerlink" href="#c-struct-access" title="Permalink to this headline">¶</a></h2>
+<p>This approach to the array interface allows for faster access to an
+array using only one attribute lookup and a well-defined C-structure.</p>
+<dl class="var">
+<dt id="c.__array_struct__">
+<code class="descname">__array_struct__</code><a class="headerlink" href="#c.__array_struct__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A :c:type: <cite>PyCObject</cite> whose <code class="xref c c-data docutils literal"><span class="pre">voidptr</span></code> member contains a
+pointer to a filled <a class="reference internal" href="c-api.types-and-structures.html#c.PyArrayInterface" title="PyArrayInterface"><code class="xref c c-type docutils literal"><span class="pre">PyArrayInterface</span></code></a> structure.  Memory
+for the structure is dynamically created and the <code class="xref c c-type docutils literal"><span class="pre">PyCObject</span></code>
+is also created with an appropriate destructor so the retriever of
+this attribute simply has to apply <code class="xref c c-func docutils literal"><span class="pre">Py_DECREF()</span></code> to the
+object returned by this attribute when it is finished.  Also,
+either the data needs to be copied out, or a reference to the
+object exposing this attribute must be held to ensure the data is
+not freed.  Objects exposing the <code class="xref py py-obj docutils literal"><span class="pre">__array_struct__</span></code> interface
+must also not reallocate their memory if other objects are
+referencing them.</p>
+</dd></dl>
+
+<p>The PyArrayInterface structure is defined in <code class="docutils literal"><span class="pre">numpy/ndarrayobject.h</span></code>
+as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>typedef struct {
+  int two;              /* contains the integer 2 -- simple sanity check */
+  int nd;               /* number of dimensions */
+  char typekind;        /* kind in array --- character code of typestr */
+  int itemsize;         /* size of each element */
+  int flags;            /* flags indicating how the data should be interpreted */
+                        /*   must set ARR_HAS_DESCR bit to validate descr */
+  Py_intptr_t *shape;   /* A length-nd array of shape information */
+  Py_intptr_t *strides; /* A length-nd array of stride information */
+  void *data;           /* A pointer to the first element of the array */
+  PyObject *descr;      /* NULL or data-description (same as descr key
+                                of __array_interface__) -- must set ARR_HAS_DESCR
+                                flag or this will be ignored. */
+} PyArrayInterface;
+</pre></div>
+</div>
+<p>The flags member may consist of 5 bits showing how the data should be
+interpreted and one bit showing how the Interface should be
+interpreted.  The data-bits are <code class="xref py py-const docutils literal"><span class="pre">CONTIGUOUS</span></code> (0x1),
+<code class="xref py py-const docutils literal"><span class="pre">FORTRAN</span></code> (0x2), <code class="xref py py-const docutils literal"><span class="pre">ALIGNED</span></code> (0x100), <code class="xref py py-const docutils literal"><span class="pre">NOTSWAPPED</span></code>
+(0x200), and <code class="xref py py-const docutils literal"><span class="pre">WRITEABLE</span></code> (0x400).  A final flag
+<code class="xref py py-const docutils literal"><span class="pre">ARR_HAS_DESCR</span></code> (0x800) indicates whether or not this structure
+has the arrdescr field.  The field should not be accessed unless this
+flag is present.</p>
+<div class="admonition-new-since-june-16-2006 admonition">
+<p class="first admonition-title">New since June 16, 2006:</p>
+<p class="last">In the past most implementations used the &#8220;desc&#8221; member of the
+<code class="xref c c-type docutils literal"><span class="pre">PyCObject</span></code> itself (do not confuse this with the &#8220;descr&#8221; member of
+the <a class="reference internal" href="c-api.types-and-structures.html#c.PyArrayInterface" title="PyArrayInterface"><code class="xref c c-type docutils literal"><span class="pre">PyArrayInterface</span></code></a> structure above &#8212; they are two separate
+things) to hold the pointer to the object exposing the interface.
+This is now an explicit part of the interface.  Be sure to own a
+reference to the object when the <code class="xref c c-type docutils literal"><span class="pre">PyCObject</span></code> is created using
+<code class="xref c c-type docutils literal"><span class="pre">PyCObject_FromVoidPtrAndDesc</span></code>.</p>
+</div>
+</div>
+<div class="section" id="type-description-examples">
+<h2>11.1.8.3. Type description examples<a class="headerlink" href="#type-description-examples" title="Permalink to this headline">¶</a></h2>
+<p>For clarity it is useful to provide some examples of the type
+description and corresponding <a class="reference internal" href="#__array_interface__" title="__array_interface__"><code class="xref py py-data docutils literal"><span class="pre">__array_interface__</span></code></a> &#8216;descr&#8217;
+entries.  Thanks to Scott Gilbert for these examples:</p>
+<p>In every case, the &#8216;descr&#8217; key is optional, but of course provides
+more information which may be important for various applications:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>* Float data
+    typestr == &#39;&gt;f4&#39;
+    descr == [(&#39;&#39;,&#39;&gt;f4&#39;)]
+
+* Complex double
+    typestr == &#39;&gt;c8&#39;
+    descr == [(&#39;real&#39;,&#39;&gt;f4&#39;), (&#39;imag&#39;,&#39;&gt;f4&#39;)]
+
+* RGB Pixel data
+    typestr == &#39;|V3&#39;
+    descr == [(&#39;r&#39;,&#39;|u1&#39;), (&#39;g&#39;,&#39;|u1&#39;), (&#39;b&#39;,&#39;|u1&#39;)]
+
+* Mixed endian (weird but could happen).
+    typestr == &#39;|V8&#39; (or &#39;&gt;u8&#39;)
+    descr == [(&#39;big&#39;,&#39;&gt;i4&#39;), (&#39;little&#39;,&#39;&lt;i4&#39;)]
+
+* Nested structure
+    struct {
+        int ival;
+        struct {
+            unsigned short sval;
+            unsigned char bval;
+            unsigned char cval;
+        } sub;
+    }
+    typestr == &#39;|V8&#39; (or &#39;&lt;u8&#39; if you want)
+    descr == [(&#39;ival&#39;,&#39;&lt;i4&#39;), (&#39;sub&#39;, [(&#39;sval&#39;,&#39;&lt;u2&#39;), (&#39;bval&#39;,&#39;|u1&#39;), (&#39;cval&#39;,&#39;|u1&#39;) ]) ]
+
+* Nested array
+    struct {
+        int ival;
+        double data[16*4];
+    }
+    typestr == &#39;|V516&#39;
+    descr == [(&#39;ival&#39;,&#39;&gt;i4&#39;), (&#39;data&#39;,&#39;&gt;f8&#39;,(16,4))]
+
+* Padded structure
+    struct {
+        int ival;
+        double dval;
+    }
+    typestr == &#39;|V16&#39;
+    descr == [(&#39;ival&#39;,&#39;&gt;i4&#39;),(&#39;&#39;,&#39;|V4&#39;),(&#39;dval&#39;,&#39;&gt;f8&#39;)]
+</pre></div>
+</div>
+<p>It should be clear that any structured type could be described using this
+interface.</p>
+</div>
+<div class="section" id="differences-with-array-interface-version-2">
+<h2>11.1.8.4. Differences with Array interface (Version 2)<a class="headerlink" href="#differences-with-array-interface-version-2" title="Permalink to this headline">¶</a></h2>
+<p>The version 2 interface was very similar.  The differences were
+largely aesthetic.  In particular:</p>
+<ol class="arabic simple">
+<li>The PyArrayInterface structure had no descr member at the end
+(and therefore no flag ARR_HAS_DESCR)</li>
+<li>The desc member of the PyCObject returned from __array_struct__ was
+not specified.  Usually, it was the object exposing the array (so
+that a reference to it could be kept and destroyed when the
+C-object was destroyed).  Now it must be a tuple whose first
+element is a string with &#8220;PyArrayInterface Version #&#8221; and whose
+second element is the object exposing the array.</li>
+<li>The tuple returned from __array_interface__[&#8216;data&#8217;] used to be a
+hex-string (now it is an integer or a long integer).</li>
+<li>There was no __array_interface__ attribute instead all of the keys
+(except for version) in the __array_interface__ dictionary were
+their own attribute: Thus to obtain the Python-side information you
+had to access separately the attributes:<ul>
+<li>__array_data__</li>
+<li>__array_shape__</li>
+<li>__array_strides__</li>
+<li>__array_typestr__</li>
+<li>__array_descr__</li>
+<li>__array_offset__</li>
+<li>__array_mask__</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arrays.datetime.html" class="btn btn-neutral float-right" title="11.1.9. Datetimes and Timedeltas" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/numpy.ma.where.html" class="btn btn-neutral" title="11.1.7.7.7.7.8. numpy.ma.where" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

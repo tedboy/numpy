@@ -1,0 +1,6 @@
+numpy.half.byteswap
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.byteswap

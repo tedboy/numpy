@@ -1,0 +1,6 @@
+numpy.longcomplex.ravel
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.ravel

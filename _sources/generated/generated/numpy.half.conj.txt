@@ -1,0 +1,6 @@
+numpy.half.conj
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.conj

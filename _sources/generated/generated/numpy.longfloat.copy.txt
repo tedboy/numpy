@@ -1,0 +1,6 @@
+numpy.longfloat.copy
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.copy

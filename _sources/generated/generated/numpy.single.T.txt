@@ -1,0 +1,6 @@
+numpy.single.T
+==============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: single.T

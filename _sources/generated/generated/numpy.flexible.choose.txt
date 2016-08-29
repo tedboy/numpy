@@ -1,0 +1,6 @@
+numpy.flexible.choose
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.choose

@@ -1,0 +1,6 @@
+numpy.lib.trim_zeros
+====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: trim_zeros

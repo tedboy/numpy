@@ -1,0 +1,6 @@
+numpy.void0.strides
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void0.strides

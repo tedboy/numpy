@@ -1,0 +1,6 @@
+numpy.void0.dtype
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void0.dtype

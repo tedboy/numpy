@@ -1,0 +1,6 @@
+numpy.testing.clear_and_catch_warnings.class_modules
+====================================================
+
+.. currentmodule:: numpy.testing
+
+.. autoattribute:: clear_and_catch_warnings.class_modules

@@ -1,0 +1,92 @@
+numpy.float32
+=============
+.. currentmodule:: numpy
+.. autoclass:: float32
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~float32.all
+   ~float32.any
+   ~float32.argmax
+   ~float32.argmin
+   ~float32.argsort
+   ~float32.astype
+   ~float32.byteswap
+   ~float32.choose
+   ~float32.clip
+   ~float32.compress
+   ~float32.conj
+   ~float32.conjugate
+   ~float32.copy
+   ~float32.cumprod
+   ~float32.cumsum
+   ~float32.diagonal
+   ~float32.dump
+   ~float32.dumps
+   ~float32.fill
+   ~float32.flatten
+   ~float32.getfield
+   ~float32.item
+   ~float32.itemset
+   ~float32.max
+   ~float32.mean
+   ~float32.min
+   ~float32.newbyteorder
+   ~float32.nonzero
+   ~float32.prod
+   ~float32.ptp
+   ~float32.put
+   ~float32.ravel
+   ~float32.repeat
+   ~float32.reshape
+   ~float32.resize
+   ~float32.round
+   ~float32.searchsorted
+   ~float32.setfield
+   ~float32.setflags
+   ~float32.sort
+   ~float32.squeeze
+   ~float32.std
+   ~float32.sum
+   ~float32.swapaxes
+   ~float32.take
+   ~float32.tobytes
+   ~float32.tofile
+   ~float32.tolist
+   ~float32.tostring
+   ~float32.trace
+   ~float32.transpose
+   ~float32.var
+   ~float32.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~float32.T
+   ~float32.base
+   ~float32.data
+   ~float32.dtype
+   ~float32.flags
+   ~float32.flat
+   ~float32.imag
+   ~float32.itemsize
+   ~float32.nbytes
+   ~float32.ndim
+   ~float32.real
+   ~float32.shape
+   ~float32.size
+   ~float32.strides
+

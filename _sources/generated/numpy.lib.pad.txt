@@ -1,0 +1,6 @@
+numpy.lib.pad
+=============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: pad

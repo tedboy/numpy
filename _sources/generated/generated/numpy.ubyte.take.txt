@@ -1,0 +1,6 @@
+numpy.ubyte.take
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.take

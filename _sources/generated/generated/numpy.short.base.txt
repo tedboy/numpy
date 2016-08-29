@@ -1,0 +1,6 @@
+numpy.short.base
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: short.base

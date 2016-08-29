@@ -1,0 +1,6 @@
+numpy.byte.base
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.base

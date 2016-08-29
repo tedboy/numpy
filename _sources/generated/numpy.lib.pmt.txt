@@ -1,0 +1,6 @@
+numpy.lib.pmt
+=============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: pmt

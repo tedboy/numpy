@@ -1,0 +1,6 @@
+numpy.polynomial.Laguerre.basis
+===============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Laguerre.basis

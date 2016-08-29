@@ -1,0 +1,6 @@
+numpy.polynomial.Chebyshev.basis
+================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Chebyshev.basis

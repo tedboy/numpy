@@ -1,0 +1,23 @@
+numpy.busdaycalendar
+====================
+
+.. currentmodule:: numpy
+
+.. autoclass:: busdaycalendar
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~busdaycalendar.holidays
+      ~busdaycalendar.weekmask
+   
+   

@@ -1,0 +1,6 @@
+numpy.bytes_.copy
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.copy

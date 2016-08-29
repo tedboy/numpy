@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertRaises
+===================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertRaises

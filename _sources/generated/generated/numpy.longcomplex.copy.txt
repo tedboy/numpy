@@ -1,0 +1,6 @@
+numpy.longcomplex.copy
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.copy

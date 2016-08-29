@@ -1,0 +1,6 @@
+numpy.str_.tostring
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.tostring

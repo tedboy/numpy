@@ -1,0 +1,6 @@
+numpy.number.nonzero
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: number.nonzero

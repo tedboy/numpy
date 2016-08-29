@@ -1,0 +1,6 @@
+numpy.int32.nbytes
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int32.nbytes

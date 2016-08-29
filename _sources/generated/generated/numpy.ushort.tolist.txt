@@ -1,0 +1,6 @@
+numpy.ushort.tolist
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.tolist

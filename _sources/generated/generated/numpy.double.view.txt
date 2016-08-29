@@ -1,0 +1,6 @@
+numpy.double.view
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.view

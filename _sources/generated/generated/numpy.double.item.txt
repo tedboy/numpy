@@ -1,0 +1,6 @@
+numpy.double.item
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.item

@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertListEqual
+======================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertListEqual

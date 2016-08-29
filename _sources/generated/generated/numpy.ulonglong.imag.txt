@@ -1,0 +1,6 @@
+numpy.ulonglong.imag
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.imag

@@ -1,0 +1,6 @@
+numpy.signedinteger.transpose
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.transpose

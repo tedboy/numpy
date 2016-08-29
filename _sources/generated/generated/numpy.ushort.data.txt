@@ -1,0 +1,6 @@
+numpy.ushort.data
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ushort.data

@@ -1,0 +1,6 @@
+numpy.unicode.center
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.center

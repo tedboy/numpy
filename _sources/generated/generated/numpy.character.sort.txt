@@ -1,0 +1,6 @@
+numpy.character.sort
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.sort

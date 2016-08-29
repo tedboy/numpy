@@ -1,0 +1,6 @@
+numpy.floating.conjugate
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.conjugate

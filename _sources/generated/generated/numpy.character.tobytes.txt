@@ -1,0 +1,6 @@
+numpy.character.tobytes
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.tobytes

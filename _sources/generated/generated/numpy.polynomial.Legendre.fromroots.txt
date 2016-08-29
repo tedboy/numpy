@@ -1,0 +1,6 @@
+numpy.polynomial.Legendre.fromroots
+===================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Legendre.fromroots

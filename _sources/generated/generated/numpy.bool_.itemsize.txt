@@ -1,0 +1,6 @@
+numpy.bool_.itemsize
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool_.itemsize

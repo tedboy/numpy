@@ -1,0 +1,6 @@
+numpy.byte.cumsum
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.cumsum

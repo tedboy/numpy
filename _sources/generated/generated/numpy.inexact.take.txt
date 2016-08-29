@@ -1,0 +1,6 @@
+numpy.inexact.take
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.take

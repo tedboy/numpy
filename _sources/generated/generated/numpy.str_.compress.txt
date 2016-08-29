@@ -1,0 +1,6 @@
+numpy.str_.compress
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.compress

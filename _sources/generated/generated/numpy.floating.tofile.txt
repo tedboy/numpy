@@ -1,0 +1,6 @@
+numpy.floating.tofile
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.tofile

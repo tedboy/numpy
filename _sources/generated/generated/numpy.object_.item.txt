@@ -1,0 +1,6 @@
+numpy.object_.item
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: object_.item

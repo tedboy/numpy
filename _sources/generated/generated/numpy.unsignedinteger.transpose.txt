@@ -1,0 +1,6 @@
+numpy.unsignedinteger.transpose
+===============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.transpose

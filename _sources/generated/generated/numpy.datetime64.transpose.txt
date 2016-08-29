@@ -1,0 +1,6 @@
+numpy.datetime64.transpose
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.transpose

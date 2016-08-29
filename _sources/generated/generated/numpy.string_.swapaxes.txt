@@ -1,0 +1,6 @@
+numpy.string_.swapaxes
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.swapaxes

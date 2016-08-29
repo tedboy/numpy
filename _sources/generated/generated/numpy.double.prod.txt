@@ -1,0 +1,6 @@
+numpy.double.prod
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.prod

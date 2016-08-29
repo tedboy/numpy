@@ -1,0 +1,6 @@
+numpy.ulonglong.setflags
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.setflags

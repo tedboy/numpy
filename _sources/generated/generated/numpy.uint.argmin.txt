@@ -1,0 +1,6 @@
+numpy.uint.argmin
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint.argmin

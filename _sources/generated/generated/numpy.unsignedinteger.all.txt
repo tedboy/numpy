@@ -1,0 +1,6 @@
+numpy.unsignedinteger.all
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.all

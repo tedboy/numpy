@@ -1,0 +1,6 @@
+numpy.integer.repeat
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: integer.repeat

@@ -1,0 +1,6 @@
+numpy.clongfloat.item
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.item

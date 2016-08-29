@@ -1,0 +1,6 @@
+numpy.float16.dumps
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: float16.dumps

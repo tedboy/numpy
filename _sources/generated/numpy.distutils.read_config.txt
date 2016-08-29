@@ -1,0 +1,6 @@
+numpy.distutils.read_config
+===========================
+
+.. currentmodule:: numpy.distutils
+
+.. autofunction:: read_config

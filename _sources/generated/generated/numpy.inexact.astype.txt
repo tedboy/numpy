@@ -1,0 +1,6 @@
+numpy.inexact.astype
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.astype

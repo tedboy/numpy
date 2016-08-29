@@ -1,0 +1,6 @@
+numpy.byte.numerator
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.numerator

@@ -1,0 +1,6 @@
+numpy.datetime64.sum
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.sum

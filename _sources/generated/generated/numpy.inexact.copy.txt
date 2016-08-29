@@ -1,0 +1,6 @@
+numpy.inexact.copy
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.copy

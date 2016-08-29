@@ -1,0 +1,6 @@
+numpy.longdouble.base
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longdouble.base

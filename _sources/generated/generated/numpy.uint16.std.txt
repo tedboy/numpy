@@ -1,0 +1,6 @@
+numpy.uint16.std
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint16.std

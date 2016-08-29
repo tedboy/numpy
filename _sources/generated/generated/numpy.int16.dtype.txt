@@ -1,0 +1,6 @@
+numpy.int16.dtype
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int16.dtype

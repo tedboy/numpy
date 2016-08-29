@@ -1,0 +1,6 @@
+numpy.clongdouble.shape
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongdouble.shape

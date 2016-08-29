@@ -1,0 +1,6 @@
+numpy.ushort.repeat
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.repeat

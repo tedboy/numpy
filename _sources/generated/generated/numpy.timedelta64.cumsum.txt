@@ -1,0 +1,6 @@
+numpy.timedelta64.cumsum
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.cumsum

@@ -1,0 +1,16 @@
+:mod:`numpy.doc`
+================
+
+.. automodule:: numpy.doc
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

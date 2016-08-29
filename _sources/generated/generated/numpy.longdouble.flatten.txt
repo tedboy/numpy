@@ -1,0 +1,6 @@
+numpy.longdouble.flatten
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.flatten

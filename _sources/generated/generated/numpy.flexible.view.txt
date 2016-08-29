@@ -1,0 +1,6 @@
+numpy.flexible.view
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.view

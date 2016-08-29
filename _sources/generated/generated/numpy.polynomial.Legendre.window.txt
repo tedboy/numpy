@@ -1,0 +1,6 @@
+numpy.polynomial.Legendre.window
+================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Legendre.window

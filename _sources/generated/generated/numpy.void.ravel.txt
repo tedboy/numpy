@@ -1,0 +1,6 @@
+numpy.void.ravel
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.ravel

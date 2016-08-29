@@ -1,0 +1,6 @@
+numpy.longdouble.repeat
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.repeat

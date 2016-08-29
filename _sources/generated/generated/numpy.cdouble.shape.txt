@@ -1,0 +1,6 @@
+numpy.cdouble.shape
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.shape

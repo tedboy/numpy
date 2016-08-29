@@ -1,0 +1,6 @@
+numpy.complex_.squeeze
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.squeeze

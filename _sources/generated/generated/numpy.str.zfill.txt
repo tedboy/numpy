@@ -1,0 +1,6 @@
+numpy.str.zfill
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str.zfill

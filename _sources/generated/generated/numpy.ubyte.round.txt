@@ -1,0 +1,6 @@
+numpy.ubyte.round
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.round

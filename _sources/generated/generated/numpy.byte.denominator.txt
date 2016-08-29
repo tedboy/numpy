@@ -1,0 +1,6 @@
+numpy.byte.denominator
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.denominator

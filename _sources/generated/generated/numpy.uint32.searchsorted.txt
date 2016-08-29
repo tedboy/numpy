@@ -1,0 +1,6 @@
+numpy.uint32.searchsorted
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint32.searchsorted

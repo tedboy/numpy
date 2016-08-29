@@ -1,0 +1,6 @@
+numpy.inexact.getfield
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.getfield

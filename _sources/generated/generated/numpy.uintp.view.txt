@@ -1,0 +1,6 @@
+numpy.uintp.view
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.view

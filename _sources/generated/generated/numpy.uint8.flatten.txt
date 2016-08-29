@@ -1,0 +1,6 @@
+numpy.uint8.flatten
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint8.flatten

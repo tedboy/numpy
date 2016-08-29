@@ -1,0 +1,6 @@
+numpy.csingle.dtype
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: csingle.dtype

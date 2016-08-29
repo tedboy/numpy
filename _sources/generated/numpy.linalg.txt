@@ -1,0 +1,68 @@
+:mod:`numpy.linalg`
+===================
+
+.. automodule:: numpy.linalg
+
+   
+   
+   Functions
+   ---------
+   .. autosummary::
+      :toctree:
+
+   
+      cholesky
+      cond
+      det
+      eig
+      eigh
+      eigvals
+      eigvalsh
+      inv
+      lstsq
+      matrix_power
+      matrix_rank
+      multi_dot
+      norm
+      pinv
+      qr
+      slogdet
+      solve
+      svd
+      tensorinv
+      tensorsolve
+   
+   
+
+   
+   
+   Classes
+   -------
+   .. autosummary::
+      :toctree:generated/
+      :template:class_custom.rst
+
+   
+      Tester
+
+   .. toctree::
+       :maxdepth: 1
+       :hidden:
+
+   
+       generated/numpy.linalg.Tester
+
+   
+   
+
+   
+   
+   Exceptions
+   ----------
+   .. autosummary::
+      :toctree:
+
+   
+      LinAlgError
+   
+   

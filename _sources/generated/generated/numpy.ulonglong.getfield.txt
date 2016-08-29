@@ -1,0 +1,6 @@
+numpy.ulonglong.getfield
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.getfield

@@ -1,0 +1,6 @@
+numpy.inexact.transpose
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.transpose

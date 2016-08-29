@@ -1,0 +1,6 @@
+numpy.longcomplex.ptp
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.ptp

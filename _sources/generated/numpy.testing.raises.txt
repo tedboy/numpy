@@ -1,0 +1,6 @@
+numpy.testing.raises
+====================
+
+.. currentmodule:: numpy.testing
+
+.. autofunction:: raises

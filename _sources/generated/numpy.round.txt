@@ -1,0 +1,6 @@
+numpy.round
+===========
+
+.. currentmodule:: numpy
+
+.. autofunction:: round

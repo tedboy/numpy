@@ -1,0 +1,6 @@
+numpy.string_.setfield
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.setfield

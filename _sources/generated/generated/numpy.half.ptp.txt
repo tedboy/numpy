@@ -1,0 +1,6 @@
+numpy.half.ptp
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.ptp

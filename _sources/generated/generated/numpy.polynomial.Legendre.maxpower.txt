@@ -1,0 +1,6 @@
+numpy.polynomial.Legendre.maxpower
+==================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Legendre.maxpower

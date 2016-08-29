@@ -1,0 +1,32 @@
+numpy.float
+===========
+.. currentmodule:: numpy
+.. autoclass:: float
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~float.as_integer_ratio
+   ~float.conjugate
+   ~float.fromhex
+   ~float.hex
+   ~float.is_integer
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~float.imag
+   ~float.real
+

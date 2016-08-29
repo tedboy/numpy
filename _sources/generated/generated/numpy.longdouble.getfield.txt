@@ -1,0 +1,6 @@
+numpy.longdouble.getfield
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.getfield

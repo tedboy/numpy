@@ -1,0 +1,6 @@
+numpy.double.copy
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.copy

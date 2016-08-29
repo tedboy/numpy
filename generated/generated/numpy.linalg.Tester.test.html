@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.3.1.1.4. numpy.linalg.Tester.test &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../index.html"/>
+        <link rel="up" title="5.3.1. numpy.linalg.Tester" href="numpy.linalg.Tester.html"/>
+        <link rel="next" title="5.3.1.2.1. numpy.linalg.Tester.excludes" href="numpy.linalg.Tester.excludes.html"/>
+        <link rel="prev" title="5.3.1.1.3. numpy.linalg.Tester.prepare_test_args" href="numpy.linalg.Tester.prepare_test_args.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../numpy.linalg.html#core-linear-algebra-tools">5.1. Core Linear Algebra Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy.linalg.html#functions">5.2. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../numpy.linalg.html#classes">5.3. Classes</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="numpy.linalg.Tester.html">5.3.1. numpy.linalg.Tester</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="numpy.linalg.Tester.html#methods">5.3.1.1. Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numpy.linalg.Tester.html#attributes">5.3.1.2. Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy.linalg.html#exceptions">5.4. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../api.linalg.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="../numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a> &raquo;</li>
+        
+          <li><a href="numpy.linalg.Tester.html">5.3.1. numpy.linalg.Tester</a> &raquo;</li>
+        
+      <li>5.3.1.1.4. numpy.linalg.Tester.test</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/numpy.linalg.Tester.test.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy-linalg-tester-test">
+<h1>5.3.1.1.4. numpy.linalg.Tester.test<a class="headerlink" href="#numpy-linalg-tester-test" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="numpy.linalg.Tester.test">
+<code class="descclassname">Tester.</code><code class="descname">test</code><span class="sig-paren">(</span><em>label='fast'</em>, <em>verbose=1</em>, <em>extra_argv=None</em>, <em>doctests=False</em>, <em>coverage=False</em>, <em>raise_warnings=None</em><span class="sig-paren">)</span><a class="headerlink" href="#numpy.linalg.Tester.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run tests for module using nose.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>label</strong> : {&#8216;fast&#8217;, &#8216;full&#8217;, &#8216;&#8217;, attribute identifier}, optional</p>
+<blockquote>
+<div><p>Identifies the tests to run. This can be a string to pass to
+the nosetests executable with the &#8216;-A&#8217; option, or one of several
+special values.  Special values are:
+* &#8216;fast&#8217; - the default - which corresponds to the <code class="docutils literal"><span class="pre">nosetests</span> <span class="pre">-A</span></code></p>
+<blockquote>
+<div><p>option of &#8216;not slow&#8217;.</p>
+</div></blockquote>
+<ul class="simple">
+<li>&#8216;full&#8217; - fast (as above) and slow tests as in the
+&#8216;no -A&#8217; option to nosetests - this is the same as &#8216;&#8217;.</li>
+<li>None or &#8216;&#8217; - run all tests.</li>
+</ul>
+<p>attribute_identifier - string passed directly to nosetests as &#8216;-A&#8217;.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : int, optional</p>
+<blockquote>
+<div><p>Verbosity value for test outputs, in the range 1-10. Default is 1.</p>
+</div></blockquote>
+<p><strong>extra_argv</strong> : list, optional</p>
+<blockquote>
+<div><p>List with any extra arguments to pass to nosetests.</p>
+</div></blockquote>
+<p><strong>doctests</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, run doctests in module. Default is False.</p>
+</div></blockquote>
+<p><strong>coverage</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, report coverage of NumPy code. Default is False.
+(This requires the <a href="#id1"><span class="problematic" id="id2">`</span></a>coverage module:</p>
+<blockquote>
+<div><p>&lt;<a class="reference external" href="http://nedbatchelder.com/code/modules/coverage.html">http://nedbatchelder.com/code/modules/coverage.html</a>&gt;`_).</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>raise_warnings</strong> : str or sequence of warnings, optional</p>
+<blockquote>
+<div><p>This specifies which warnings to configure as &#8216;raise&#8217; instead
+of &#8216;warn&#8217; during the test execution.  Valid strings are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8220;develop&#8221; : equals <code class="docutils literal"><span class="pre">(DeprecationWarning,</span> <span class="pre">RuntimeWarning)</span></code></li>
+<li>&#8220;release&#8221; : equals <code class="docutils literal"><span class="pre">()</span></code>, don&#8217;t raise on any warnings.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : object</p>
+<blockquote class="last">
+<div><p>Returns the result of running the tests as a
+<code class="docutils literal"><span class="pre">nose.result.TextTestResult</span></code> object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Each NumPy module exposes <cite>test</cite> in its namespace to run all tests for it.
+For example, to run all tests for numpy.lib:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">test</span><span class="p">()</span> 
+</pre></div>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">test</span><span class="p">()</span> 
+<span class="go">Running unit tests for numpy.lib</span>
+<span class="gp">...</span>
+<span class="go">Ran 976 tests in 3.933s</span>
+</pre></div>
+</div>
+<p>OK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">errors</span> 
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">knownfail</span> 
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numpy.linalg.Tester.excludes.html" class="btn btn-neutral float-right" title="5.3.1.2.1. numpy.linalg.Tester.excludes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numpy.linalg.Tester.prepare_test_args.html" class="btn btn-neutral" title="5.3.1.1.3. numpy.linalg.Tester.prepare_test_args" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

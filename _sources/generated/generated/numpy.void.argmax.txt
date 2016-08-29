@@ -1,0 +1,6 @@
+numpy.void.argmax
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.argmax

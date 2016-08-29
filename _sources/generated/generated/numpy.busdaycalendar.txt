@@ -1,0 +1,20 @@
+numpy.busdaycalendar
+====================
+.. currentmodule:: numpy
+.. autoclass:: busdaycalendar
+   :undoc-members:
+
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~busdaycalendar.holidays
+   ~busdaycalendar.weekmask
+

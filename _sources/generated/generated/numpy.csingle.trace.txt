@@ -1,0 +1,6 @@
+numpy.csingle.trace
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.trace

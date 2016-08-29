@@ -1,0 +1,6 @@
+numpy.testing.print_assert_equal
+================================
+
+.. currentmodule:: numpy.testing
+
+.. autofunction:: print_assert_equal

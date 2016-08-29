@@ -1,0 +1,6 @@
+numpy.ubyte.shape
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.shape

@@ -1,0 +1,6 @@
+numpy.inexact.ndim
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: inexact.ndim

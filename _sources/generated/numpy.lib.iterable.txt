@@ -1,0 +1,6 @@
+numpy.lib.iterable
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: iterable

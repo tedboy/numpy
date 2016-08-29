@@ -1,0 +1,6 @@
+numpy.cdouble.dumps
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.dumps

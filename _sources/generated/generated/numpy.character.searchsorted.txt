@@ -1,0 +1,6 @@
+numpy.character.searchsorted
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.searchsorted

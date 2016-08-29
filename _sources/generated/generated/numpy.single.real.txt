@@ -1,0 +1,6 @@
+numpy.single.real
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: single.real

@@ -1,0 +1,6 @@
+numpy.bool8.choose
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.choose

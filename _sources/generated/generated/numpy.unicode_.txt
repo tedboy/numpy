@@ -1,0 +1,132 @@
+numpy.unicode_
+==============
+.. currentmodule:: numpy
+.. autoclass:: unicode_
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~unicode_.all
+   ~unicode_.any
+   ~unicode_.argmax
+   ~unicode_.argmin
+   ~unicode_.argsort
+   ~unicode_.astype
+   ~unicode_.byteswap
+   ~unicode_.capitalize
+   ~unicode_.center
+   ~unicode_.choose
+   ~unicode_.clip
+   ~unicode_.compress
+   ~unicode_.conj
+   ~unicode_.conjugate
+   ~unicode_.copy
+   ~unicode_.count
+   ~unicode_.cumprod
+   ~unicode_.cumsum
+   ~unicode_.decode
+   ~unicode_.diagonal
+   ~unicode_.dump
+   ~unicode_.dumps
+   ~unicode_.encode
+   ~unicode_.endswith
+   ~unicode_.expandtabs
+   ~unicode_.fill
+   ~unicode_.find
+   ~unicode_.flatten
+   ~unicode_.format
+   ~unicode_.getfield
+   ~unicode_.index
+   ~unicode_.isalnum
+   ~unicode_.isalpha
+   ~unicode_.isdecimal
+   ~unicode_.isdigit
+   ~unicode_.islower
+   ~unicode_.isnumeric
+   ~unicode_.isspace
+   ~unicode_.istitle
+   ~unicode_.isupper
+   ~unicode_.item
+   ~unicode_.itemset
+   ~unicode_.join
+   ~unicode_.ljust
+   ~unicode_.lower
+   ~unicode_.lstrip
+   ~unicode_.max
+   ~unicode_.mean
+   ~unicode_.min
+   ~unicode_.newbyteorder
+   ~unicode_.nonzero
+   ~unicode_.partition
+   ~unicode_.prod
+   ~unicode_.ptp
+   ~unicode_.put
+   ~unicode_.ravel
+   ~unicode_.repeat
+   ~unicode_.replace
+   ~unicode_.reshape
+   ~unicode_.resize
+   ~unicode_.rfind
+   ~unicode_.rindex
+   ~unicode_.rjust
+   ~unicode_.round
+   ~unicode_.rpartition
+   ~unicode_.rsplit
+   ~unicode_.rstrip
+   ~unicode_.searchsorted
+   ~unicode_.setfield
+   ~unicode_.setflags
+   ~unicode_.sort
+   ~unicode_.split
+   ~unicode_.splitlines
+   ~unicode_.squeeze
+   ~unicode_.startswith
+   ~unicode_.std
+   ~unicode_.strip
+   ~unicode_.sum
+   ~unicode_.swapaxes
+   ~unicode_.swapcase
+   ~unicode_.take
+   ~unicode_.title
+   ~unicode_.tobytes
+   ~unicode_.tofile
+   ~unicode_.tolist
+   ~unicode_.tostring
+   ~unicode_.trace
+   ~unicode_.translate
+   ~unicode_.transpose
+   ~unicode_.upper
+   ~unicode_.var
+   ~unicode_.view
+   ~unicode_.zfill
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~unicode_.T
+   ~unicode_.base
+   ~unicode_.data
+   ~unicode_.dtype
+   ~unicode_.flags
+   ~unicode_.flat
+   ~unicode_.imag
+   ~unicode_.itemsize
+   ~unicode_.nbytes
+   ~unicode_.ndim
+   ~unicode_.real
+   ~unicode_.shape
+   ~unicode_.size
+   ~unicode_.strides
+

@@ -1,0 +1,6 @@
+numpy.longdouble.clip
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.clip

@@ -1,0 +1,6 @@
+numpy.lib.tri
+=============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: tri

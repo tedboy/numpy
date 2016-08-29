@@ -1,0 +1,6 @@
+numpy.lib.DataSource.__init__
+=============================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: DataSource.__init__

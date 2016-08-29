@@ -1,0 +1,6 @@
+numpy.unicode.count
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.count

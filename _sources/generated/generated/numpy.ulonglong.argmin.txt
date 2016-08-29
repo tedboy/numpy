@@ -1,0 +1,6 @@
+numpy.ulonglong.argmin
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.argmin

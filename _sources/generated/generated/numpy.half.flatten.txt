@@ -1,0 +1,6 @@
+numpy.half.flatten
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.flatten

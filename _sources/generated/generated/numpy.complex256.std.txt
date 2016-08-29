@@ -1,0 +1,6 @@
+numpy.complex256.std
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.std

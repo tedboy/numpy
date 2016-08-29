@@ -1,0 +1,6 @@
+numpy.float_.getfield
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.getfield

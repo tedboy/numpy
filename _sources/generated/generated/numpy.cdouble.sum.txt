@@ -1,0 +1,6 @@
+numpy.cdouble.sum
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.sum

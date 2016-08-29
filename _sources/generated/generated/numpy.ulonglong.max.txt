@@ -1,0 +1,6 @@
+numpy.ulonglong.max
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.max

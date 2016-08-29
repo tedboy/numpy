@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.5. Numpy C-API &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../index.html"/>
+        <link rel="up" title="11. NumPy Reference" href="index.html"/>
+        <link rel="next" title="11.5.1. Python Types and C-Structures" href="c-api.types-and-structures.html"/>
+        <link rel="prev" title="11.4.1.2.5. numpy.distutils.exec_command" href="generated/numpy.distutils.exec_command.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routines.html">11.3. Routines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">11.5. Numpy C-API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="c-api.types-and-structures.html">11.5.1. Python Types and C-Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.config.html">11.5.2. System configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.dtype.html">11.5.3. Data Type API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.array.html">11.5.4. Array API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.iterator.html">11.5.5. Array Iterator API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.ufunc.html">11.5.6. UFunc API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.generalized-ufuncs.html">11.5.7. Generalized Universal Function API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.coremath.html">11.5.8. Numpy core libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c-api.deprecations.html">11.5.9. C API Deprecations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">11. NumPy Reference</a> &raquo;</li>
+        
+      <li>11.5. Numpy C-API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/c-api.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy-c-api">
+<span id="c-api"></span><h1>11.5. Numpy C-API<a class="headerlink" href="#numpy-c-api" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">Beware of the man who won&#8217;t be bothered with details.</div>
+<div class="line">&#8212; <em>William Feather, Sr.</em></div>
+</div>
+<div class="line-block">
+<div class="line">The truth is out there.</div>
+<div class="line">&#8212; <em>Chris Carter, The X Files</em></div>
+</div>
+<p>NumPy provides a C-API to enable users to extend the system and get
+access to the array object for use in other routines. The best way to
+truly understand the C-API is to read the source code. If you are
+unfamiliar with (C) source code, however, this can be a daunting
+experience at first. Be assured that the task becomes easier with
+practice, and you may be surprised at how simple the C-code can be to
+understand. Even if you don&#8217;t think you can write C-code from scratch,
+it is much easier to understand and modify already-written source code
+then create it <em>de novo</em>.</p>
+<p>Python extensions are especially straightforward to understand because
+they all have a very similar structure. Admittedly, NumPy is not a
+trivial extension to Python, and may take a little more snooping to
+grasp. This is especially true because of the code-generation
+techniques, which simplify maintenance of very similar code, but can
+make the code a little less readable to beginners. Still, with a
+little persistence, the code can be opened to your understanding. It
+is my hope, that this guide to the C-API can assist in the process of
+becoming familiar with the compiled-level work that can be done with
+NumPy in order to squeeze that last bit of necessary speed out of your
+code.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="c-api.types-and-structures.html">11.5.1. Python Types and C-Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c-api.types-and-structures.html#new-python-types-defined">11.5.1.1. New Python Types Defined</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.types-and-structures.html#other-c-structures">11.5.1.2. Other C-Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c-api.config.html">11.5.2. System configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c-api.config.html#data-type-sizes">11.5.2.1. Data type sizes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.config.html#platform-information">11.5.2.2. Platform information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c-api.dtype.html">11.5.3. Data Type API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c-api.dtype.html#enumerated-types">11.5.3.1. Enumerated Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.dtype.html#defines">11.5.3.2. Defines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.dtype.html#c-type-names">11.5.3.3. C-type names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.dtype.html#printf-formatting">11.5.3.4. Printf Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c-api.array.html">11.5.4. Array API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#array-structure-and-data-access">11.5.4.1. Array structure and data access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#creating-arrays">11.5.4.2. Creating arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#dealing-with-types">11.5.4.3. Dealing with types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#array-flags">11.5.4.4. Array flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#array-method-alternative-api">11.5.4.5. Array method alternative API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#functions">11.5.4.6. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#auxiliary-data-with-object-semantics">11.5.4.7. Auxiliary Data With Object Semantics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#array-iterators">11.5.4.8. Array Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#broadcasting-multi-iterators">11.5.4.9. Broadcasting (multi-iterators)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#neighborhood-iterator">11.5.4.10. Neighborhood iterator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#array-scalars">11.5.4.11. Array Scalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#data-type-descriptors">11.5.4.12. Data-type descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#conversion-utilities">11.5.4.13. Conversion Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.array.html#miscellaneous">11.5.4.14. Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c-api.iterator.html">11.5.5. Array Iterator API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c-api.iterator.html#array-iterator">11.5.5.1. Array Iterator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.iterator.html#simple-iteration-example">11.5.5.2. Simple Iteration Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.iterator.html#simple-multi-iteration-example">11.5.5.3. Simple Multi-Iteration Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.iterator.html#iterator-data-types">11.5.5.4. Iterator Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.iterator.html#construction-and-destruction">11.5.5.5. Construction and Destruction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.iterator.html#functions-for-iteration">11.5.5.6. Functions For Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.iterator.html#converting-from-previous-numpy-iterators">11.5.5.7. Converting from Previous NumPy Iterators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c-api.ufunc.html">11.5.6. UFunc API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c-api.ufunc.html#constants">11.5.6.1. Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.ufunc.html#macros">11.5.6.2. Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.ufunc.html#functions">11.5.6.3. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.ufunc.html#generic-functions">11.5.6.4. Generic functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.ufunc.html#importing-the-api">11.5.6.5. Importing the API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c-api.generalized-ufuncs.html">11.5.7. Generalized Universal Function API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c-api.generalized-ufuncs.html#definitions">11.5.7.1. Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.generalized-ufuncs.html#details-of-signature">11.5.7.2. Details of Signature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.generalized-ufuncs.html#c-api-for-implementing-elementary-functions">11.5.7.3. C-API for implementing Elementary Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c-api.coremath.html">11.5.8. Numpy core libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c-api.coremath.html#numpy-core-math-library">11.5.8.1. Numpy core math library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c-api.deprecations.html">11.5.9. C API Deprecations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c-api.deprecations.html#background">11.5.9.1. Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.deprecations.html#deprecation-mechanism-npy-no-deprecated-api">11.5.9.2. Deprecation Mechanism NPY_NO_DEPRECATED_API</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c-api.types-and-structures.html" class="btn btn-neutral float-right" title="11.5.1. Python Types and C-Structures" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/numpy.distutils.exec_command.html" class="btn btn-neutral" title="11.4.1.2.5. numpy.distutils.exec_command" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+numpy.longdouble.trace
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.trace

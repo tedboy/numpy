@@ -1,0 +1,6 @@
+numpy.ulonglong.byteswap
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.byteswap

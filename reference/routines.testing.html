@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.3.28. Test Support (numpy.testing) &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../index.html"/>
+        <link rel="up" title="11.3. Routines" href="routines.html"/>
+        <link rel="next" title="11.3.28.1.1. numpy.testing.assert_almost_equal" href="generated/numpy.testing.assert_almost_equal.html"/>
+        <link rel="prev" title="11.3.27.4.5. numpy.digitize" href="generated/numpy.digitize.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="routines.html">11.3. Routines</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="routines.array-creation.html">11.3.1. Array creation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.array-manipulation.html">11.3.2. Array manipulation routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.bitwise.html">11.3.3. Binary operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.char.html">11.3.4. String operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.ctypeslib.html">11.3.5. C-Types Foreign Function Interface (<code class="docutils literal"><span class="pre">numpy.ctypeslib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.datetime.html">11.3.6. Datetime Support Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.dtype.html">11.3.7. Data type routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.dual.html">11.3.8. Optionally Scipy-accelerated routines (<code class="docutils literal"><span class="pre">numpy.dual</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.emath.html">11.3.9. Mathematical functions with automatic domain (<code class="docutils literal"><span class="pre">numpy.emath</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.err.html">11.3.10. Floating point error handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.fft.html">11.3.11. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.financial.html">11.3.12. Financial functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.functional.html">11.3.13. Functional programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.help.html">11.3.14. Numpy-specific help functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.indexing.html">11.3.15. Indexing routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.io.html">11.3.16. Input and output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.linalg.html">11.3.17. Linear algebra (<code class="docutils literal"><span class="pre">numpy.linalg</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.logic.html">11.3.18. Logic functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.ma.html">11.1.7.7. Masked array operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.math.html">11.3.19. Mathematical functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.matlib.html">11.3.20. Matrix library (<code class="docutils literal"><span class="pre">numpy.matlib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.other.html">11.3.21. Miscellaneous routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.padding.html">11.3.22. Padding Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.polynomials.html">11.3.23. Polynomials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.random.html">11.3.24. Random sampling (<code class="docutils literal"><span class="pre">numpy.random</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.set.html">11.3.25. Set routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.sort.html">11.3.26. Sorting, searching, and counting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.statistics.html">11.3.27. Statistics</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">11.3.28. Test Support (<code class="docutils literal"><span class="pre">numpy.testing</span></code>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#asserts">11.3.28.1. Asserts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#decorators">11.3.28.2. Decorators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-running">11.3.28.3. Test Running</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="routines.window.html">11.3.29. Window functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="routines.html">11.3. Routines</a> &raquo;</li>
+        
+      <li>11.3.28. Test Support (<code class="docutils literal"><span class="pre">numpy.testing</span></code>)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/routines.testing.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="test-support-numpy-testing">
+<h1>11.3.28. Test Support (<a class="reference internal" href="../generated/numpy.testing.html#module-numpy.testing" title="numpy.testing"><code class="xref py py-mod docutils literal"><span class="pre">numpy.testing</span></code></a>)<a class="headerlink" href="#test-support-numpy-testing" title="Permalink to this headline">¶</a></h1>
+<p>Common test support for all numpy test scripts.</p>
+<p>This single module should provide all the common functionality for numpy
+tests in a single location, so that test scripts can just import it and
+work right away.</p>
+<div class="section" id="asserts">
+<h2>11.3.28.1. Asserts<a class="headerlink" href="#asserts" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.assert_almost_equal.html#numpy.testing.assert_almost_equal" title="numpy.testing.assert_almost_equal"><code class="xref py py-obj docutils literal"><span class="pre">assert_almost_equal</span></code></a>(actual,&nbsp;desired[,&nbsp;...])</td>
+<td>Raises an AssertionError if two items are not equal up to desired precision.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.assert_approx_equal.html#numpy.testing.assert_approx_equal" title="numpy.testing.assert_approx_equal"><code class="xref py py-obj docutils literal"><span class="pre">assert_approx_equal</span></code></a>(actual,&nbsp;desired[,&nbsp;...])</td>
+<td>Raises an AssertionError if two items are not equal up to significant digits.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.assert_array_almost_equal.html#numpy.testing.assert_array_almost_equal" title="numpy.testing.assert_array_almost_equal"><code class="xref py py-obj docutils literal"><span class="pre">assert_array_almost_equal</span></code></a>(x,&nbsp;y[,&nbsp;decimal,&nbsp;...])</td>
+<td>Raises an AssertionError if two objects are not equal up to desired precision.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.assert_allclose.html#numpy.testing.assert_allclose" title="numpy.testing.assert_allclose"><code class="xref py py-obj docutils literal"><span class="pre">assert_allclose</span></code></a>(actual,&nbsp;desired[,&nbsp;rtol,&nbsp;...])</td>
+<td>Raises an AssertionError if two objects are not equal up to desired tolerance.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.assert_array_almost_equal_nulp.html#numpy.testing.assert_array_almost_equal_nulp" title="numpy.testing.assert_array_almost_equal_nulp"><code class="xref py py-obj docutils literal"><span class="pre">assert_array_almost_equal_nulp</span></code></a>(x,&nbsp;y[,&nbsp;nulp])</td>
+<td>Compare two arrays relatively to their spacing.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.assert_array_max_ulp.html#numpy.testing.assert_array_max_ulp" title="numpy.testing.assert_array_max_ulp"><code class="xref py py-obj docutils literal"><span class="pre">assert_array_max_ulp</span></code></a>(a,&nbsp;b[,&nbsp;maxulp,&nbsp;dtype])</td>
+<td>Check that all items of arrays differ in at most N Units in the Last Place.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.assert_array_equal.html#numpy.testing.assert_array_equal" title="numpy.testing.assert_array_equal"><code class="xref py py-obj docutils literal"><span class="pre">assert_array_equal</span></code></a>(x,&nbsp;y[,&nbsp;err_msg,&nbsp;verbose])</td>
+<td>Raises an AssertionError if two array_like objects are not equal.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.assert_array_less.html#numpy.testing.assert_array_less" title="numpy.testing.assert_array_less"><code class="xref py py-obj docutils literal"><span class="pre">assert_array_less</span></code></a>(x,&nbsp;y[,&nbsp;err_msg,&nbsp;verbose])</td>
+<td>Raises an AssertionError if two array_like objects are not ordered by less than.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.assert_equal.html#numpy.testing.assert_equal" title="numpy.testing.assert_equal"><code class="xref py py-obj docutils literal"><span class="pre">assert_equal</span></code></a>(actual,&nbsp;desired[,&nbsp;err_msg,&nbsp;verbose])</td>
+<td>Raises an AssertionError if two objects are not equal.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.assert_raises.html#numpy.testing.assert_raises" title="numpy.testing.assert_raises"><code class="xref py py-obj docutils literal"><span class="pre">assert_raises</span></code></a>(exception_class,&nbsp;callable,&nbsp;...)</td>
+<td>Fail unless an exception of class exception_class is thrown by callable when invoked with arguments args and keyword arguments kwargs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.assert_raises_regex.html#numpy.testing.assert_raises_regex" title="numpy.testing.assert_raises_regex"><code class="xref py py-obj docutils literal"><span class="pre">assert_raises_regex</span></code></a>(exception_class,&nbsp;...[,&nbsp;...])</td>
+<td>Fail unless an exception of class exception_class and with message that matches expected_regexp is thrown by callable when invoked with arguments args and keyword arguments kwargs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.assert_warns.html#numpy.testing.assert_warns" title="numpy.testing.assert_warns"><code class="xref py py-obj docutils literal"><span class="pre">assert_warns</span></code></a>(warning_class,&nbsp;func,&nbsp;*args,&nbsp;**kw)</td>
+<td>Fail unless the given callable throws the specified warning.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.assert_string_equal.html#numpy.testing.assert_string_equal" title="numpy.testing.assert_string_equal"><code class="xref py py-obj docutils literal"><span class="pre">assert_string_equal</span></code></a>(actual,&nbsp;desired)</td>
+<td>Test if two strings are equal.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="decorators">
+<h2>11.3.28.2. Decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.decorators.deprecated.html#numpy.testing.decorators.deprecated" title="numpy.testing.decorators.deprecated"><code class="xref py py-obj docutils literal"><span class="pre">decorators.deprecated</span></code></a>([conditional])</td>
+<td>Filter deprecation warnings while running the test suite.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.decorators.knownfailureif.html#numpy.testing.decorators.knownfailureif" title="numpy.testing.decorators.knownfailureif"><code class="xref py py-obj docutils literal"><span class="pre">decorators.knownfailureif</span></code></a>(fail_condition[,&nbsp;msg])</td>
+<td>Make function raise KnownFailureTest exception if given condition is true.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.decorators.setastest.html#numpy.testing.decorators.setastest" title="numpy.testing.decorators.setastest"><code class="xref py py-obj docutils literal"><span class="pre">decorators.setastest</span></code></a>([tf])</td>
+<td>Signals to nose that this function is or is not a test.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.decorators.skipif.html#numpy.testing.decorators.skipif" title="numpy.testing.decorators.skipif"><code class="xref py py-obj docutils literal"><span class="pre">decorators.skipif</span></code></a>(skip_condition[,&nbsp;msg])</td>
+<td>Make function raise SkipTest exception if a given condition is true.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.decorators.slow.html#numpy.testing.decorators.slow" title="numpy.testing.decorators.slow"><code class="xref py py-obj docutils literal"><span class="pre">decorators.slow</span></code></a>(t)</td>
+<td>Label a test as &#8216;slow&#8217;.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.decorate_methods.html#numpy.testing.decorate_methods" title="numpy.testing.decorate_methods"><code class="xref py py-obj docutils literal"><span class="pre">decorate_methods</span></code></a>(cls,&nbsp;decorator[,&nbsp;testmatch])</td>
+<td>Apply a decorator to all methods in a class matching a regular expression.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="test-running">
+<h2>11.3.28.3. Test Running<a class="headerlink" href="#test-running" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.Tester.html#numpy.testing.Tester" title="numpy.testing.Tester"><code class="xref py py-obj docutils literal"><span class="pre">Tester</span></code></a></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">NoseTester</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.testing.run_module_suite.html#numpy.testing.run_module_suite" title="numpy.testing.run_module_suite"><code class="xref py py-obj docutils literal"><span class="pre">run_module_suite</span></code></a>([file_to_run,&nbsp;argv])</td>
+<td>Run a test module.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.testing.rundocs.html#numpy.testing.rundocs" title="numpy.testing.rundocs"><code class="xref py py-obj docutils literal"><span class="pre">rundocs</span></code></a>([filename,&nbsp;raise_on_error])</td>
+<td>Run doctests found in the given file.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/numpy.testing.assert_almost_equal.html" class="btn btn-neutral float-right" title="11.3.28.1.1. numpy.testing.assert_almost_equal" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/numpy.digitize.html" class="btn btn-neutral" title="11.3.27.4.5. numpy.digitize" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

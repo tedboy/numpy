@@ -1,0 +1,6 @@
+numpy.bool8.clip
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.clip

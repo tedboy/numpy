@@ -1,0 +1,6 @@
+numpy.str.expandtabs
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: str.expandtabs

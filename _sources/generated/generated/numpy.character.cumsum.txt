@@ -1,0 +1,6 @@
+numpy.character.cumsum
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.cumsum

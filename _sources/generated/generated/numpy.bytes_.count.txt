@@ -1,0 +1,6 @@
+numpy.bytes_.count
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.count

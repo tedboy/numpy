@@ -1,0 +1,6 @@
+numpy.object_.astype
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: object_.astype

@@ -1,0 +1,6 @@
+numpy.half.compress
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.compress

@@ -1,0 +1,6 @@
+numpy.clongdouble.dtype
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongdouble.dtype

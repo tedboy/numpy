@@ -1,0 +1,92 @@
+numpy.longfloat
+===============
+.. currentmodule:: numpy
+.. autoclass:: longfloat
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~longfloat.all
+   ~longfloat.any
+   ~longfloat.argmax
+   ~longfloat.argmin
+   ~longfloat.argsort
+   ~longfloat.astype
+   ~longfloat.byteswap
+   ~longfloat.choose
+   ~longfloat.clip
+   ~longfloat.compress
+   ~longfloat.conj
+   ~longfloat.conjugate
+   ~longfloat.copy
+   ~longfloat.cumprod
+   ~longfloat.cumsum
+   ~longfloat.diagonal
+   ~longfloat.dump
+   ~longfloat.dumps
+   ~longfloat.fill
+   ~longfloat.flatten
+   ~longfloat.getfield
+   ~longfloat.item
+   ~longfloat.itemset
+   ~longfloat.max
+   ~longfloat.mean
+   ~longfloat.min
+   ~longfloat.newbyteorder
+   ~longfloat.nonzero
+   ~longfloat.prod
+   ~longfloat.ptp
+   ~longfloat.put
+   ~longfloat.ravel
+   ~longfloat.repeat
+   ~longfloat.reshape
+   ~longfloat.resize
+   ~longfloat.round
+   ~longfloat.searchsorted
+   ~longfloat.setfield
+   ~longfloat.setflags
+   ~longfloat.sort
+   ~longfloat.squeeze
+   ~longfloat.std
+   ~longfloat.sum
+   ~longfloat.swapaxes
+   ~longfloat.take
+   ~longfloat.tobytes
+   ~longfloat.tofile
+   ~longfloat.tolist
+   ~longfloat.tostring
+   ~longfloat.trace
+   ~longfloat.transpose
+   ~longfloat.var
+   ~longfloat.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~longfloat.T
+   ~longfloat.base
+   ~longfloat.data
+   ~longfloat.dtype
+   ~longfloat.flags
+   ~longfloat.flat
+   ~longfloat.imag
+   ~longfloat.itemsize
+   ~longfloat.nbytes
+   ~longfloat.ndim
+   ~longfloat.real
+   ~longfloat.shape
+   ~longfloat.size
+   ~longfloat.strides
+

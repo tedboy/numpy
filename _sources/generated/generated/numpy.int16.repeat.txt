@@ -1,0 +1,6 @@
+numpy.int16.repeat
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: int16.repeat

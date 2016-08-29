@@ -1,0 +1,6 @@
+numpy.complex128.prod
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.prod

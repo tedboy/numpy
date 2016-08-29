@@ -1,0 +1,6 @@
+numpy.str_.partition
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.partition

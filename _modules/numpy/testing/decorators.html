@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>numpy.testing.decorators &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../../index.html"/>
+        <link rel="up" title="numpy" href="../../numpy.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../numpy.html">numpy</a> &raquo;</li>
+        
+      <li>numpy.testing.decorators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for numpy.testing.decorators</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Decorators for labeling and modifying behavior of test objects.</span>
+
+<span class="sd">Decorators that merely return a modified version of the original</span>
+<span class="sd">function object are straightforward. Decorators that return a new</span>
+<span class="sd">function object need to use</span>
+<span class="sd">::</span>
+
+<span class="sd">  nose.tools.make_decorator(original_function)(decorator)</span>
+
+<span class="sd">in returning the decorator, in order to preserve meta-data such as</span>
+<span class="sd">function name, setup and teardown functions and so on - see</span>
+<span class="sd">``nose.tools`` for more information.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+
+
+<div class="viewcode-block" id="slow"><a class="viewcode-back" href="../../../reference/generated/numpy.testing.decorators.slow.html#numpy.testing.decorators.slow">[docs]</a><span class="k">def</span> <span class="nf">slow</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label a test as &#39;slow&#39;.</span>
+
+<span class="sd">    The exact definition of a slow test is obviously both subjective and</span>
+<span class="sd">    hardware-dependent, but in general any individual test that requires more</span>
+<span class="sd">    than a second or two should be labeled as slow (the whole suite consits of</span>
+<span class="sd">    thousands of tests, so even a second is significant).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    t : callable</span>
+<span class="sd">        The test to label as slow.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    t : callable</span>
+<span class="sd">        The decorated test `t`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    The `numpy.testing` module includes ``import decorators as dec``.</span>
+<span class="sd">    A test can be decorated as slow like this::</span>
+
+<span class="sd">      from numpy.testing import *</span>
+
+<span class="sd">      @dec.slow</span>
+<span class="sd">      def test_big(self):</span>
+<span class="sd">          print &#39;Big, slow test&#39;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">t</span><span class="o">.</span><span class="n">slow</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="n">t</span></div>
+
+<div class="viewcode-block" id="setastest"><a class="viewcode-back" href="../../../reference/generated/numpy.testing.decorators.setastest.html#numpy.testing.decorators.setastest">[docs]</a><span class="k">def</span> <span class="nf">setastest</span><span class="p">(</span><span class="n">tf</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Signals to nose that this function is or is not a test.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tf : bool</span>
+<span class="sd">        If True, specifies that the decorated callable is a test.</span>
+<span class="sd">        If False, specifies that the decorated callable is not a test.</span>
+<span class="sd">        Default is True.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This decorator can&#39;t use the nose namespace, because it can be</span>
+<span class="sd">    called from a non-test module. See also ``istest`` and ``nottest`` in</span>
+<span class="sd">    ``nose.tools``.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    `setastest` can be used in the following way::</span>
+
+<span class="sd">      from numpy.testing.decorators import setastest</span>
+
+<span class="sd">      @setastest(False)</span>
+<span class="sd">      def func_with_test_in_name(arg1, arg2):</span>
+<span class="sd">          pass</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">set_test</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">__test__</span> <span class="o">=</span> <span class="n">tf</span>
+        <span class="k">return</span> <span class="n">t</span>
+    <span class="k">return</span> <span class="n">set_test</span></div>
+
+<div class="viewcode-block" id="skipif"><a class="viewcode-back" href="../../../reference/generated/numpy.testing.decorators.skipif.html#numpy.testing.decorators.skipif">[docs]</a><span class="k">def</span> <span class="nf">skipif</span><span class="p">(</span><span class="n">skip_condition</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make function raise SkipTest exception if a given condition is true.</span>
+
+<span class="sd">    If the condition is a callable, it is used at runtime to dynamically</span>
+<span class="sd">    make the decision. This is useful for tests that may require costly</span>
+<span class="sd">    imports, to delay the cost until the test suite is actually executed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    skip_condition : bool or callable</span>
+<span class="sd">        Flag to determine whether to skip the decorated test.</span>
+<span class="sd">    msg : str, optional</span>
+<span class="sd">        Message to give on raising a SkipTest exception. Default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    decorator : function</span>
+<span class="sd">        Decorator which, when applied to a function, causes SkipTest</span>
+<span class="sd">        to be raised when `skip_condition` is True, and the function</span>
+<span class="sd">        to be called normally otherwise.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The decorator itself is decorated with the ``nose.tools.make_decorator``</span>
+<span class="sd">    function in order to transmit function name, and various other metadata.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">skip_decorator</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="c1"># Local import to avoid a hard nose dependency and only incur the</span>
+        <span class="c1"># import time overhead at actual test-time.</span>
+        <span class="kn">import</span> <span class="nn">nose</span>
+
+        <span class="c1"># Allow for both boolean or callable skip conditions.</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">skip_condition</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">Callable</span><span class="p">):</span>
+            <span class="n">skip_val</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">skip_condition</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">skip_val</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">skip_condition</span>
+
+        <span class="k">def</span> <span class="nf">get_msg</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Skip message with information about function being skipped.&quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">msg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;Test skipped due to test condition&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">out</span> <span class="o">=</span> <span class="n">msg</span>
+
+            <span class="k">return</span> <span class="s2">&quot;Skipping test: </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+
+        <span class="c1"># We need to define *two* skippers because Python doesn&#39;t allow both</span>
+        <span class="c1"># return with value and yield inside the same function.</span>
+        <span class="k">def</span> <span class="nf">skipper_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Skipper for normal test functions.&quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">skip_val</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">nose</span><span class="o">.</span><span class="n">SkipTest</span><span class="p">(</span><span class="n">get_msg</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">msg</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">skipper_gen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Skipper for test generators.&quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">skip_val</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">nose</span><span class="o">.</span><span class="n">SkipTest</span><span class="p">(</span><span class="n">get_msg</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">msg</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                    <span class="k">yield</span> <span class="n">x</span>
+
+        <span class="c1"># Choose the right skipper to use when building the actual decorator.</span>
+        <span class="k">if</span> <span class="n">nose</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isgenerator</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+            <span class="n">skipper</span> <span class="o">=</span> <span class="n">skipper_gen</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">skipper</span> <span class="o">=</span> <span class="n">skipper_func</span>
+
+        <span class="k">return</span> <span class="n">nose</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">make_decorator</span><span class="p">(</span><span class="n">f</span><span class="p">)(</span><span class="n">skipper</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">skip_decorator</span></div>
+
+
+<div class="viewcode-block" id="knownfailureif"><a class="viewcode-back" href="../../../reference/generated/numpy.testing.decorators.knownfailureif.html#numpy.testing.decorators.knownfailureif">[docs]</a><span class="k">def</span> <span class="nf">knownfailureif</span><span class="p">(</span><span class="n">fail_condition</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make function raise KnownFailureTest exception if given condition is true.</span>
+
+<span class="sd">    If the condition is a callable, it is used at runtime to dynamically</span>
+<span class="sd">    make the decision. This is useful for tests that may require costly</span>
+<span class="sd">    imports, to delay the cost until the test suite is actually executed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fail_condition : bool or callable</span>
+<span class="sd">        Flag to determine whether to mark the decorated test as a known</span>
+<span class="sd">        failure (if True) or not (if False).</span>
+<span class="sd">    msg : str, optional</span>
+<span class="sd">        Message to give on raising a KnownFailureTest exception.</span>
+<span class="sd">        Default is None.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    decorator : function</span>
+<span class="sd">        Decorator, which, when applied to a function, causes SkipTest</span>
+<span class="sd">        to be raised when `skip_condition` is True, and the function</span>
+<span class="sd">        to be called normally otherwise.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The decorator itself is decorated with the ``nose.tools.make_decorator``</span>
+<span class="sd">    function in order to transmit function name, and various other metadata.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">msg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Test skipped due to known failure&#39;</span>
+
+    <span class="c1"># Allow for both boolean or callable known failure conditions.</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fail_condition</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">Callable</span><span class="p">):</span>
+        <span class="n">fail_val</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">fail_condition</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fail_val</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">fail_condition</span>
+
+    <span class="k">def</span> <span class="nf">knownfail_decorator</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="c1"># Local import to avoid a hard nose dependency and only incur the</span>
+        <span class="c1"># import time overhead at actual test-time.</span>
+        <span class="kn">import</span> <span class="nn">nose</span>
+        <span class="kn">from</span> <span class="nn">.noseclasses</span> <span class="kn">import</span> <span class="n">KnownFailureTest</span>
+
+        <span class="k">def</span> <span class="nf">knownfailer</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">fail_val</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">KnownFailureTest</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nose</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">make_decorator</span><span class="p">(</span><span class="n">f</span><span class="p">)(</span><span class="n">knownfailer</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">knownfail_decorator</span></div>
+
+<div class="viewcode-block" id="deprecated"><a class="viewcode-back" href="../../../reference/generated/numpy.testing.decorators.deprecated.html#numpy.testing.decorators.deprecated">[docs]</a><span class="k">def</span> <span class="nf">deprecated</span><span class="p">(</span><span class="n">conditional</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Filter deprecation warnings while running the test suite.</span>
+
+<span class="sd">    This decorator can be used to filter DeprecationWarning&#39;s, to avoid</span>
+<span class="sd">    printing them during the test suite run, while checking that the test</span>
+<span class="sd">    actually raises a DeprecationWarning.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    conditional : bool or callable, optional</span>
+<span class="sd">        Flag to determine whether to mark test as deprecated or not. If the</span>
+<span class="sd">        condition is a callable, it is used at runtime to dynamically make the</span>
+<span class="sd">        decision. Default is True.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    decorator : function</span>
+<span class="sd">        The `deprecated` decorator itself.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    .. versionadded:: 1.4.0</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">deprecate_decorator</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="c1"># Local import to avoid a hard nose dependency and only incur the</span>
+        <span class="c1"># import time overhead at actual test-time.</span>
+        <span class="kn">import</span> <span class="nn">nose</span>
+
+        <span class="k">def</span> <span class="nf">_deprecated_imp</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="c1"># Poor man&#39;s replacement for the with statement</span>
+            <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">l</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;always&#39;</span><span class="p">)</span>
+                <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;No warning raised when calling </span><span class="si">%s</span><span class="s2">&quot;</span>
+                            <span class="o">%</span> <span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">category</span> <span class="ow">is</span> <span class="ne">DeprecationWarning</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;First warning for </span><span class="si">%s</span><span class="s2"> is not a &quot;</span>
+                            <span class="s2">&quot;DeprecationWarning( is </span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">conditional</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">Callable</span><span class="p">):</span>
+            <span class="n">cond</span> <span class="o">=</span> <span class="n">conditional</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cond</span> <span class="o">=</span> <span class="n">conditional</span>
+        <span class="k">if</span> <span class="n">cond</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">nose</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">make_decorator</span><span class="p">(</span><span class="n">f</span><span class="p">)(</span><span class="n">_deprecated_imp</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">f</span>
+    <span class="k">return</span> <span class="n">deprecate_decorator</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

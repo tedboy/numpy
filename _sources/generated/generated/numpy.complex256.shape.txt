@@ -1,0 +1,6 @@
+numpy.complex256.shape
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex256.shape

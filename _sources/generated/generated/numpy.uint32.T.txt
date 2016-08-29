@@ -1,0 +1,6 @@
+numpy.uint32.T
+==============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint32.T

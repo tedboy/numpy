@@ -1,0 +1,6 @@
+numpy.datetime64.copy
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.copy

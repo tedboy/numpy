@@ -1,0 +1,6 @@
+numpy.singlecomplex.transpose
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.transpose

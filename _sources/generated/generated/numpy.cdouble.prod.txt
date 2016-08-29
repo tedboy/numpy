@@ -1,0 +1,6 @@
+numpy.cdouble.prod
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.prod

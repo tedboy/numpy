@@ -1,0 +1,6 @@
+numpy.half.argmax
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.argmax

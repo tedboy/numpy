@@ -1,0 +1,6 @@
+numpy.singlecomplex.min
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.min

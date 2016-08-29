@@ -1,0 +1,220 @@
+:mod:`numpy.lib`
+================
+
+.. automodule:: numpy.lib
+
+   
+   
+   Functions
+   ---------
+   .. autosummary::
+      :toctree:
+
+   
+      add_docstring
+      add_newdoc
+      add_newdoc_ufunc
+      angle
+      append
+      apply_along_axis
+      apply_over_axes
+      array_split
+      asarray_chkfinite
+      asfarray
+      asscalar
+      average
+      bartlett
+      bincount
+      blackman
+      broadcast_arrays
+      broadcast_to
+      byte_bounds
+      column_stack
+      common_type
+      copy
+      corrcoef
+      cov
+      delete
+      deprecate
+      deprecate_with_doc
+      diag
+      diag_indices
+      diag_indices_from
+      diagflat
+      diff
+      digitize
+      disp
+      dsplit
+      dstack
+      ediff1d
+      expand_dims
+      extract
+      eye
+      fill_diagonal
+      fix
+      fliplr
+      flipud
+      fromregex
+      fv
+      genfromtxt
+      get_array_wrap
+      get_include
+      gradient
+      hamming
+      hanning
+      histogram
+      histogram2d
+      histogramdd
+      hsplit
+      i0
+      imag
+      in1d
+      info
+      insert
+      interp
+      intersect1d
+      ipmt
+      irr
+      iscomplex
+      iscomplexobj
+      isneginf
+      isposinf
+      isreal
+      isrealobj
+      issubclass_
+      issubdtype
+      issubsctype
+      iterable
+      ix_
+      kaiser
+      kron
+      load
+      loads
+      loadtxt
+      lookfor
+      mafromtxt
+      mask_indices
+      median
+      meshgrid
+      mintypecode
+      mirr
+      msort
+      nan_to_num
+      nanargmax
+      nanargmin
+      nanmax
+      nanmean
+      nanmedian
+      nanmin
+      nanpercentile
+      nanprod
+      nanstd
+      nansum
+      nanvar
+      ndfromtxt
+      nper
+      npv
+      packbits
+      pad
+      percentile
+      piecewise
+      place
+      pmt
+      poly
+      polyadd
+      polyder
+      polydiv
+      polyfit
+      polyint
+      polymul
+      polysub
+      polyval
+      ppmt
+      pv
+      rate
+      ravel_multi_index
+      real
+      real_if_close
+      recfromcsv
+      recfromtxt
+      roots
+      rot90
+      row_stack
+      safe_eval
+      save
+      savetxt
+      savez
+      savez_compressed
+      select
+      setdiff1d
+      setxor1d
+      sinc
+      sort_complex
+      source
+      split
+      tile
+      trapz
+      tri
+      tril
+      tril_indices
+      tril_indices_from
+      trim_zeros
+      triu
+      triu_indices
+      triu_indices_from
+      typename
+      union1d
+      unique
+      unpackbits
+      unravel_index
+      unwrap
+      vander
+      vsplit
+      who
+   
+   
+
+   
+   
+   Classes
+   -------
+   .. autosummary::
+      :toctree:generated/
+      :template:class_custom.rst
+
+   
+      DataSource
+      NumpyVersion
+      Tester
+      ndenumerate
+      ndindex
+      poly1d
+      vectorize
+
+   .. toctree::
+       :maxdepth: 1
+       :hidden:
+
+   
+       generated/numpy.lib.DataSource
+       generated/numpy.lib.NumpyVersion
+       generated/numpy.lib.Tester
+       generated/numpy.lib.ndenumerate
+       generated/numpy.lib.ndindex
+       generated/numpy.lib.poly1d
+       generated/numpy.lib.vectorize
+
+   
+   
+
+   
+   
+   Exceptions
+   ----------
+   .. autosummary::
+      :toctree:
+
+   
+      RankWarning
+   
+   

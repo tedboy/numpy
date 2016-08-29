@@ -1,0 +1,6 @@
+numpy.double.repeat
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.repeat

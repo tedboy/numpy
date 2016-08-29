@@ -1,0 +1,6 @@
+numpy.cdouble.conj
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.conj

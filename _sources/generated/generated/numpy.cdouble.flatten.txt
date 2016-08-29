@@ -1,0 +1,6 @@
+numpy.cdouble.flatten
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.flatten

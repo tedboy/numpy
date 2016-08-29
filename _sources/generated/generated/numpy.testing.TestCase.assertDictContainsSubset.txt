@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertDictContainsSubset
+===============================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertDictContainsSubset

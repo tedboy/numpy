@@ -1,0 +1,6 @@
+numpy.complexfloating.max
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.max

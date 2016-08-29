@@ -1,0 +1,6 @@
+numpy.uint32.byteswap
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint32.byteswap

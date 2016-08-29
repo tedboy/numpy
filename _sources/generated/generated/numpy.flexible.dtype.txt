@@ -1,0 +1,6 @@
+numpy.flexible.dtype
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.dtype

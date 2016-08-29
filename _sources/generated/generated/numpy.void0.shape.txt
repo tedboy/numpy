@@ -1,0 +1,6 @@
+numpy.void0.shape
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void0.shape

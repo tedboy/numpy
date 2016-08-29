@@ -1,0 +1,6 @@
+numpy.bool8.std
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.std

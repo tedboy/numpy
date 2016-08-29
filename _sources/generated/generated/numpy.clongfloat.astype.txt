@@ -1,0 +1,6 @@
+numpy.clongfloat.astype
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.astype

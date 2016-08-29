@@ -1,0 +1,6 @@
+numpy.longdouble.resize
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.resize

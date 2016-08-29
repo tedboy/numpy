@@ -1,0 +1,6 @@
+numpy.longdouble.diagonal
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.diagonal

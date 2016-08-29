@@ -1,0 +1,6 @@
+numpy.datetime64.real
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: datetime64.real

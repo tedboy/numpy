@@ -1,0 +1,6 @@
+numpy.double.round
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.round

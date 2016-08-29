@@ -1,0 +1,6 @@
+numpy.complex128.copy
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.copy

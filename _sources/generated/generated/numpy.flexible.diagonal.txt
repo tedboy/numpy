@@ -1,0 +1,6 @@
+numpy.flexible.diagonal
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.diagonal

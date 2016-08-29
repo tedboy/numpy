@@ -1,0 +1,6 @@
+numpy.unicode_.isalpha
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.isalpha

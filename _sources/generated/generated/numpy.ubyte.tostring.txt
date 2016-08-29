@@ -1,0 +1,6 @@
+numpy.ubyte.tostring
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.tostring

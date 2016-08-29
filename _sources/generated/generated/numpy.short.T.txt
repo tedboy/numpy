@@ -1,0 +1,6 @@
+numpy.short.T
+=============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: short.T

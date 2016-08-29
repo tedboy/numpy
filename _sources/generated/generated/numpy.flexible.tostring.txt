@@ -1,0 +1,6 @@
+numpy.flexible.tostring
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.tostring

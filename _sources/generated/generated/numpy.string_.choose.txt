@@ -1,0 +1,6 @@
+numpy.string_.choose
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.choose

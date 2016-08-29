@@ -1,0 +1,6 @@
+numpy.complex64.base
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex64.base

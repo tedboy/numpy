@@ -1,0 +1,6 @@
+numpy.short.ptp
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: short.ptp

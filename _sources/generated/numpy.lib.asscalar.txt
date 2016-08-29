@@ -1,0 +1,6 @@
+numpy.lib.asscalar
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: asscalar

@@ -1,0 +1,6 @@
+numpy.str.center
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: str.center

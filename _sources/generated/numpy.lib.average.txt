@@ -1,0 +1,6 @@
+numpy.lib.average
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: average

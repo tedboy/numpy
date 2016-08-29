@@ -1,0 +1,6 @@
+numpy.bool_.mean
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.mean

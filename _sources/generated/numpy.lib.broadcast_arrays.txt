@@ -1,0 +1,6 @@
+numpy.lib.broadcast_arrays
+==========================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: broadcast_arrays

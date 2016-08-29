@@ -1,0 +1,6 @@
+numpy.signedinteger.byteswap
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.byteswap

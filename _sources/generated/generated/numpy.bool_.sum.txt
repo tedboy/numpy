@@ -1,0 +1,6 @@
+numpy.bool_.sum
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.sum

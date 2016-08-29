@@ -1,0 +1,6 @@
+numpy.longdouble.compress
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.compress

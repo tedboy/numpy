@@ -1,0 +1,6 @@
+numpy.clongdouble.byteswap
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.byteswap

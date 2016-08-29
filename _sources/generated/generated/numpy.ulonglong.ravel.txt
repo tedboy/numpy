@@ -1,0 +1,6 @@
+numpy.ulonglong.ravel
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.ravel

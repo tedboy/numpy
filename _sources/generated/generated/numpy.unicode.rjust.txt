@@ -1,0 +1,6 @@
+numpy.unicode.rjust
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.rjust

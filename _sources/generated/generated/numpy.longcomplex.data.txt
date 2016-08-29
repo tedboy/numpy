@@ -1,0 +1,6 @@
+numpy.longcomplex.data
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.data

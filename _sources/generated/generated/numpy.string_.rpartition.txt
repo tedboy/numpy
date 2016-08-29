@@ -1,0 +1,6 @@
+numpy.string_.rpartition
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.rpartition

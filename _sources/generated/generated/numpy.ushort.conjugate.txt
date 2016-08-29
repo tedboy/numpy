@@ -1,0 +1,6 @@
+numpy.ushort.conjugate
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.conjugate

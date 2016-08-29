@@ -1,0 +1,6 @@
+numpy.longlong.denominator
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longlong.denominator

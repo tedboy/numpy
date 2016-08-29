@@ -1,0 +1,6 @@
+numpy.longfloat.setflags
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.setflags

@@ -1,0 +1,6 @@
+numpy.timedelta64.ravel
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.ravel

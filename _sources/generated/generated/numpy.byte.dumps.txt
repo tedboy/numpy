@@ -1,0 +1,6 @@
+numpy.byte.dumps
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.dumps

@@ -1,0 +1,6 @@
+numpy.unicode_.islower
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.islower

@@ -1,0 +1,6 @@
+numpy.ulonglong.mean
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.mean

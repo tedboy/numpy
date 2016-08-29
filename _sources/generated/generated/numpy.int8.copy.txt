@@ -1,0 +1,6 @@
+numpy.int8.copy
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.copy

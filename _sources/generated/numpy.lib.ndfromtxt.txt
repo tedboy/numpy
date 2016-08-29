@@ -1,0 +1,6 @@
+numpy.lib.ndfromtxt
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: ndfromtxt

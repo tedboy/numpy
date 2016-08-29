@@ -1,0 +1,6 @@
+numpy.lib.trapz
+===============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: trapz

@@ -1,0 +1,6 @@
+numpy.bool8.newbyteorder
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.newbyteorder

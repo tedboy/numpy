@@ -1,0 +1,6 @@
+numpy.complex_.all
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.all

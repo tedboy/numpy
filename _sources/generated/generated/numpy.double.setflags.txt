@@ -1,0 +1,6 @@
+numpy.double.setflags
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.setflags

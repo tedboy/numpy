@@ -1,0 +1,6 @@
+numpy.character.itemsize
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.itemsize

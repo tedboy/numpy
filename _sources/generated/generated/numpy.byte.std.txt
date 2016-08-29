@@ -1,0 +1,6 @@
+numpy.byte.std
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.std

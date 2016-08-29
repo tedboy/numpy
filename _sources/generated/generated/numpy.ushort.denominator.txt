@@ -1,0 +1,6 @@
+numpy.ushort.denominator
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ushort.denominator

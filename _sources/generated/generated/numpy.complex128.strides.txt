@@ -1,0 +1,6 @@
+numpy.complex128.strides
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex128.strides

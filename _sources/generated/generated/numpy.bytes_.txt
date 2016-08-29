@@ -1,0 +1,130 @@
+numpy.bytes_
+============
+.. currentmodule:: numpy
+.. autoclass:: bytes_
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~bytes_.all
+   ~bytes_.any
+   ~bytes_.argmax
+   ~bytes_.argmin
+   ~bytes_.argsort
+   ~bytes_.astype
+   ~bytes_.byteswap
+   ~bytes_.capitalize
+   ~bytes_.center
+   ~bytes_.choose
+   ~bytes_.clip
+   ~bytes_.compress
+   ~bytes_.conj
+   ~bytes_.conjugate
+   ~bytes_.copy
+   ~bytes_.count
+   ~bytes_.cumprod
+   ~bytes_.cumsum
+   ~bytes_.decode
+   ~bytes_.diagonal
+   ~bytes_.dump
+   ~bytes_.dumps
+   ~bytes_.encode
+   ~bytes_.endswith
+   ~bytes_.expandtabs
+   ~bytes_.fill
+   ~bytes_.find
+   ~bytes_.flatten
+   ~bytes_.format
+   ~bytes_.getfield
+   ~bytes_.index
+   ~bytes_.isalnum
+   ~bytes_.isalpha
+   ~bytes_.isdigit
+   ~bytes_.islower
+   ~bytes_.isspace
+   ~bytes_.istitle
+   ~bytes_.isupper
+   ~bytes_.item
+   ~bytes_.itemset
+   ~bytes_.join
+   ~bytes_.ljust
+   ~bytes_.lower
+   ~bytes_.lstrip
+   ~bytes_.max
+   ~bytes_.mean
+   ~bytes_.min
+   ~bytes_.newbyteorder
+   ~bytes_.nonzero
+   ~bytes_.partition
+   ~bytes_.prod
+   ~bytes_.ptp
+   ~bytes_.put
+   ~bytes_.ravel
+   ~bytes_.repeat
+   ~bytes_.replace
+   ~bytes_.reshape
+   ~bytes_.resize
+   ~bytes_.rfind
+   ~bytes_.rindex
+   ~bytes_.rjust
+   ~bytes_.round
+   ~bytes_.rpartition
+   ~bytes_.rsplit
+   ~bytes_.rstrip
+   ~bytes_.searchsorted
+   ~bytes_.setfield
+   ~bytes_.setflags
+   ~bytes_.sort
+   ~bytes_.split
+   ~bytes_.splitlines
+   ~bytes_.squeeze
+   ~bytes_.startswith
+   ~bytes_.std
+   ~bytes_.strip
+   ~bytes_.sum
+   ~bytes_.swapaxes
+   ~bytes_.swapcase
+   ~bytes_.take
+   ~bytes_.title
+   ~bytes_.tobytes
+   ~bytes_.tofile
+   ~bytes_.tolist
+   ~bytes_.tostring
+   ~bytes_.trace
+   ~bytes_.translate
+   ~bytes_.transpose
+   ~bytes_.upper
+   ~bytes_.var
+   ~bytes_.view
+   ~bytes_.zfill
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~bytes_.T
+   ~bytes_.base
+   ~bytes_.data
+   ~bytes_.dtype
+   ~bytes_.flags
+   ~bytes_.flat
+   ~bytes_.imag
+   ~bytes_.itemsize
+   ~bytes_.nbytes
+   ~bytes_.ndim
+   ~bytes_.real
+   ~bytes_.shape
+   ~bytes_.size
+   ~bytes_.strides
+

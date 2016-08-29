@@ -1,0 +1,6 @@
+numpy.flexible.tofile
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.tofile

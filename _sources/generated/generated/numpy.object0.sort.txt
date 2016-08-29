@@ -1,0 +1,6 @@
+numpy.object0.sort
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: object0.sort

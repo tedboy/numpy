@@ -1,0 +1,19 @@
+numpy.MachAr
+============
+.. currentmodule:: numpy
+.. autoclass:: MachAr
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~MachAr.__init__
+
+
+
+
+

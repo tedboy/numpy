@@ -1,0 +1,6 @@
+numpy.longdouble.ravel
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.ravel

@@ -1,0 +1,6 @@
+numpy.clongdouble.put
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.put

@@ -1,0 +1,6 @@
+numpy.inexact.newbyteorder
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.newbyteorder

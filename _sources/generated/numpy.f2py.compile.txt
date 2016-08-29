@@ -1,0 +1,6 @@
+numpy.f2py.compile
+==================
+
+.. currentmodule:: numpy.f2py
+
+.. autofunction:: compile

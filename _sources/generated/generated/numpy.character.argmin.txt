@@ -1,0 +1,6 @@
+numpy.character.argmin
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.argmin

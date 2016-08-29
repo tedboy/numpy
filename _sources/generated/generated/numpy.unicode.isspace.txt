@@ -1,0 +1,6 @@
+numpy.unicode.isspace
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.isspace

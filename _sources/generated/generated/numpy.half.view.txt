@@ -1,0 +1,6 @@
+numpy.half.view
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.view

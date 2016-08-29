@@ -1,0 +1,6 @@
+numpy.short.shape
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: short.shape

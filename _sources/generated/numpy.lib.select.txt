@@ -1,0 +1,6 @@
+numpy.lib.select
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: select

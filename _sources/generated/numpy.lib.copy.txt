@@ -1,0 +1,6 @@
+numpy.lib.copy
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: copy

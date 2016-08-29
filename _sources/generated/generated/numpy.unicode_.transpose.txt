@@ -1,0 +1,6 @@
+numpy.unicode_.transpose
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.transpose

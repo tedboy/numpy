@@ -1,0 +1,6 @@
+numpy.bool_.newbyteorder
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.newbyteorder

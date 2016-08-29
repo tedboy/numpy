@@ -1,0 +1,6 @@
+numpy.complexfloating.conjugate
+===============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.conjugate

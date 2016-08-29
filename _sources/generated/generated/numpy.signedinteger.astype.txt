@@ -1,0 +1,6 @@
+numpy.signedinteger.astype
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.astype

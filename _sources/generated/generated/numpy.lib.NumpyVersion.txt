@@ -1,0 +1,19 @@
+numpy.lib.NumpyVersion
+======================
+.. currentmodule:: numpy.lib
+.. autoclass:: NumpyVersion
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~NumpyVersion.__init__
+
+
+
+
+

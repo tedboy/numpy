@@ -1,0 +1,6 @@
+numpy.datetime64.dumps
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.dumps

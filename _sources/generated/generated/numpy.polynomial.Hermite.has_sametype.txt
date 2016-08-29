@@ -1,0 +1,6 @@
+numpy.polynomial.Hermite.has_sametype
+=====================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Hermite.has_sametype

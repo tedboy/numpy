@@ -1,0 +1,6 @@
+numpy.clongdouble.diagonal
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.diagonal

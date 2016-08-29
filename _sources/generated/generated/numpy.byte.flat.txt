@@ -1,0 +1,6 @@
+numpy.byte.flat
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.flat

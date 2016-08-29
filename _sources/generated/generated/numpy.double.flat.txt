@@ -1,0 +1,6 @@
+numpy.double.flat
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.flat

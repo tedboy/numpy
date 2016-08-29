@@ -1,0 +1,6 @@
+numpy.int64.var
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: int64.var

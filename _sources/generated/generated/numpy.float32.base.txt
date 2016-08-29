@@ -1,0 +1,6 @@
+numpy.float32.base
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: float32.base

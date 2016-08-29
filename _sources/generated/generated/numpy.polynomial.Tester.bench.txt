@@ -1,0 +1,6 @@
+numpy.polynomial.Tester.bench
+=============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Tester.bench

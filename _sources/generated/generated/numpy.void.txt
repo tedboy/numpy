@@ -1,0 +1,92 @@
+numpy.void
+==========
+.. currentmodule:: numpy
+.. autoclass:: void
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~void.all
+   ~void.any
+   ~void.argmax
+   ~void.argmin
+   ~void.argsort
+   ~void.astype
+   ~void.byteswap
+   ~void.choose
+   ~void.clip
+   ~void.compress
+   ~void.conj
+   ~void.conjugate
+   ~void.copy
+   ~void.cumprod
+   ~void.cumsum
+   ~void.diagonal
+   ~void.dump
+   ~void.dumps
+   ~void.fill
+   ~void.flatten
+   ~void.getfield
+   ~void.item
+   ~void.itemset
+   ~void.max
+   ~void.mean
+   ~void.min
+   ~void.newbyteorder
+   ~void.nonzero
+   ~void.prod
+   ~void.ptp
+   ~void.put
+   ~void.ravel
+   ~void.repeat
+   ~void.reshape
+   ~void.resize
+   ~void.round
+   ~void.searchsorted
+   ~void.setfield
+   ~void.setflags
+   ~void.sort
+   ~void.squeeze
+   ~void.std
+   ~void.sum
+   ~void.swapaxes
+   ~void.take
+   ~void.tobytes
+   ~void.tofile
+   ~void.tolist
+   ~void.tostring
+   ~void.trace
+   ~void.transpose
+   ~void.var
+   ~void.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~void.T
+   ~void.base
+   ~void.data
+   ~void.dtype
+   ~void.flags
+   ~void.flat
+   ~void.imag
+   ~void.itemsize
+   ~void.nbytes
+   ~void.ndim
+   ~void.real
+   ~void.shape
+   ~void.size
+   ~void.strides
+

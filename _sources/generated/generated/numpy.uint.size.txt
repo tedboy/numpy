@@ -1,0 +1,6 @@
+numpy.uint.size
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint.size

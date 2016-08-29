@@ -1,0 +1,6 @@
+numpy.void0.T
+=============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void0.T

@@ -1,0 +1,6 @@
+numpy.void.flat
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void.flat

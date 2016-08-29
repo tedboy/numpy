@@ -1,0 +1,6 @@
+numpy.int0.data
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int0.data

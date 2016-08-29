@@ -1,0 +1,6 @@
+numpy.int8.std
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.std

@@ -1,0 +1,6 @@
+numpy.datetime64.base
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: datetime64.base

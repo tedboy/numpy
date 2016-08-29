@@ -1,0 +1,6 @@
+numpy.cdouble.tolist
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.tolist

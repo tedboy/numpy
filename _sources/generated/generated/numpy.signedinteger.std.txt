@@ -1,0 +1,6 @@
+numpy.signedinteger.std
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.std

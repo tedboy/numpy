@@ -1,0 +1,6 @@
+numpy.lib.info
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: info

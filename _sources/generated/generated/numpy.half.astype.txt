@@ -1,0 +1,6 @@
+numpy.half.astype
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.astype

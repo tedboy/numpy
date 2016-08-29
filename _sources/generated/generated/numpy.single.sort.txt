@@ -1,0 +1,6 @@
+numpy.single.sort
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.sort

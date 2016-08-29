@@ -1,0 +1,6 @@
+numpy.double.setfield
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.setfield

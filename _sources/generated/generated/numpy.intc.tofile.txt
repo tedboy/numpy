@@ -1,0 +1,6 @@
+numpy.intc.tofile
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.tofile

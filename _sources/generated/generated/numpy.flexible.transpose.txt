@@ -1,0 +1,6 @@
+numpy.flexible.transpose
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.transpose

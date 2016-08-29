@@ -1,0 +1,6 @@
+numpy.uint8.nonzero
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint8.nonzero

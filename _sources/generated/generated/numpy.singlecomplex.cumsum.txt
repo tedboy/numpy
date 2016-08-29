@@ -1,0 +1,6 @@
+numpy.singlecomplex.cumsum
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.cumsum

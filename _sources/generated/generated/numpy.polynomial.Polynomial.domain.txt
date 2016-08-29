@@ -1,0 +1,6 @@
+numpy.polynomial.Polynomial.domain
+==================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Polynomial.domain

@@ -1,0 +1,6 @@
+numpy.void.mean
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: void.mean

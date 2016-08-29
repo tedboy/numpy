@@ -1,0 +1,16 @@
+numpy.finfo
+===========
+
+.. currentmodule:: numpy
+
+.. autoclass:: finfo
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

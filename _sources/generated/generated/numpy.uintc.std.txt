@@ -1,0 +1,6 @@
+numpy.uintc.std
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: uintc.std

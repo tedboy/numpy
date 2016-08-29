@@ -1,0 +1,6 @@
+numpy.longlong.ptp
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.ptp

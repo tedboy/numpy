@@ -1,0 +1,6 @@
+numpy.single.transpose
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.transpose

@@ -1,0 +1,6 @@
+numpy.lib.ndindex.__init__
+==========================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: ndindex.__init__

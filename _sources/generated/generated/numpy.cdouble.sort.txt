@@ -1,0 +1,6 @@
+numpy.cdouble.sort
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.sort

@@ -1,0 +1,6 @@
+numpy.unsignedinteger.resize
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.resize

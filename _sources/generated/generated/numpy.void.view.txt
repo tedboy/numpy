@@ -1,0 +1,6 @@
+numpy.void.view
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: void.view

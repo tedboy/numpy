@@ -1,0 +1,6 @@
+numpy.uint8.fill
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint8.fill

@@ -1,0 +1,6 @@
+numpy.flexible.getfield
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.getfield

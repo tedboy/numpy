@@ -1,0 +1,6 @@
+numpy.datetime64.strides
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: datetime64.strides

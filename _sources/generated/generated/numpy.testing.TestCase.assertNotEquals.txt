@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertNotEquals
+======================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertNotEquals

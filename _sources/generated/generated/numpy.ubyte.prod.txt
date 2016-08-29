@@ -1,0 +1,6 @@
+numpy.ubyte.prod
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.prod

@@ -1,0 +1,6 @@
+numpy.signedinteger.tostring
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.tostring

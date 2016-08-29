@@ -1,0 +1,6 @@
+numpy.str_.rsplit
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.rsplit

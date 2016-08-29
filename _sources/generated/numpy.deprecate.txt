@@ -1,0 +1,6 @@
+numpy.deprecate
+===============
+
+.. currentmodule:: numpy
+
+.. autofunction:: deprecate

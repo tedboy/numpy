@@ -1,0 +1,6 @@
+numpy.signedinteger.denominator
+===============================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.denominator

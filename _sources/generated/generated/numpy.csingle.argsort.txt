@@ -1,0 +1,6 @@
+numpy.csingle.argsort
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.argsort

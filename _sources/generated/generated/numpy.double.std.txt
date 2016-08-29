@@ -1,0 +1,6 @@
+numpy.double.std
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.std

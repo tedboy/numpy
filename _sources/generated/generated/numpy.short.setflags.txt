@@ -1,0 +1,6 @@
+numpy.short.setflags
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.setflags

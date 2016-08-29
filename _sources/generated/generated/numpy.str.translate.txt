@@ -1,0 +1,6 @@
+numpy.str.translate
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: str.translate

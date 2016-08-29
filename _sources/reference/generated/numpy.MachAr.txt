@@ -1,0 +1,22 @@
+numpy.MachAr
+============
+
+.. currentmodule:: numpy
+
+.. autoclass:: MachAr
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MachAr.__init__
+   
+   
+
+   
+   
+   

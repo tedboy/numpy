@@ -1,0 +1,6 @@
+numpy.ubyte.put
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.put

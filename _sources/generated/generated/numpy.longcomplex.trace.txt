@@ -1,0 +1,6 @@
+numpy.longcomplex.trace
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.trace

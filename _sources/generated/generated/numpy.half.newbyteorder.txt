@@ -1,0 +1,6 @@
+numpy.half.newbyteorder
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.newbyteorder

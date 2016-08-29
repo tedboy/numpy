@@ -1,0 +1,6 @@
+numpy.bool_.tostring
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.tostring

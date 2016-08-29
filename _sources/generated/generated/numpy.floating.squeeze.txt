@@ -1,0 +1,6 @@
+numpy.floating.squeeze
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.squeeze

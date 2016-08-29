@@ -1,0 +1,6 @@
+numpy.complex128.astype
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.astype

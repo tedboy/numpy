@@ -1,0 +1,6 @@
+numpy.bool.conjugate
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool.conjugate

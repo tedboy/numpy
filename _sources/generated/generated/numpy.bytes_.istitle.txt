@@ -1,0 +1,6 @@
+numpy.bytes_.istitle
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.istitle

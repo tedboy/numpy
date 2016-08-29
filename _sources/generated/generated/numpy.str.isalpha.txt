@@ -1,0 +1,6 @@
+numpy.str.isalpha
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: str.isalpha

@@ -1,0 +1,6 @@
+numpy.float16.put
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: float16.put

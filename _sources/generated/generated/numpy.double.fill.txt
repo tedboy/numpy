@@ -1,0 +1,6 @@
+numpy.double.fill
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.fill

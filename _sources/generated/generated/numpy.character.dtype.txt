@@ -1,0 +1,6 @@
+numpy.character.dtype
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.dtype

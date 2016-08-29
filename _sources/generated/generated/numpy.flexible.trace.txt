@@ -1,0 +1,6 @@
+numpy.flexible.trace
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.trace

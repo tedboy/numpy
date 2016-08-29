@@ -1,0 +1,6 @@
+numpy.polynomial.Laguerre.identity
+==================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Laguerre.identity

@@ -1,0 +1,6 @@
+numpy.polynomial.Legendre.domain
+================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Legendre.domain

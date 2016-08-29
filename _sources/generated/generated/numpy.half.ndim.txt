@@ -1,0 +1,6 @@
+numpy.half.ndim
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.ndim

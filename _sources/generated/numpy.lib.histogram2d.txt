@@ -1,0 +1,6 @@
+numpy.lib.histogram2d
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: histogram2d

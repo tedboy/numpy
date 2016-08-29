@@ -1,0 +1,6 @@
+numpy.lib.poly1d.variable
+=========================
+
+.. currentmodule:: numpy.lib
+
+.. autoattribute:: poly1d.variable

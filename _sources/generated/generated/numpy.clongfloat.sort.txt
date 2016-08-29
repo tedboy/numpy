@@ -1,0 +1,6 @@
+numpy.clongfloat.sort
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.sort

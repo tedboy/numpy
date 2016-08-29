@@ -1,0 +1,6 @@
+numpy.intp.bit_length
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: intp.bit_length

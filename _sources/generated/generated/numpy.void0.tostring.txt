@@ -1,0 +1,6 @@
+numpy.void0.tostring
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: void0.tostring

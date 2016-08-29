@@ -1,0 +1,6 @@
+numpy.ulonglong.transpose
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.transpose

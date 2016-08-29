@@ -1,0 +1,6 @@
+numpy.bool_.setfield
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.setfield

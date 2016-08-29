@@ -1,0 +1,6 @@
+numpy.unicode_.real
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.real

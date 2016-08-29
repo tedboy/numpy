@@ -1,0 +1,6 @@
+numpy.polynomial.Chebyshev.identity
+===================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Chebyshev.identity

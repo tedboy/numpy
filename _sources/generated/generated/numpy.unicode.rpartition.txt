@@ -1,0 +1,6 @@
+numpy.unicode.rpartition
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.rpartition

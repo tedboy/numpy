@@ -1,0 +1,6 @@
+numpy.polynomial.Chebyshev.maxpower
+===================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Chebyshev.maxpower

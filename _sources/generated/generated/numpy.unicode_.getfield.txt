@@ -1,0 +1,6 @@
+numpy.unicode_.getfield
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.getfield

@@ -1,0 +1,6 @@
+numpy.single.take
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.take

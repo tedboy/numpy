@@ -1,0 +1,6 @@
+numpy.inexact.ptp
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.ptp

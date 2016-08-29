@@ -1,0 +1,6 @@
+numpy.longcomplex.squeeze
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.squeeze

@@ -1,0 +1,6 @@
+numpy.longfloat.round
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.round

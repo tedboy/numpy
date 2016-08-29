@@ -1,0 +1,6 @@
+numpy.unsignedinteger.base
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.base

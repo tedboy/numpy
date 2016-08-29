@@ -1,0 +1,6 @@
+numpy.character.flat
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.flat

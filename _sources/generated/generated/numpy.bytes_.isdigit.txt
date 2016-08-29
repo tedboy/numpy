@@ -1,0 +1,6 @@
+numpy.bytes_.isdigit
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.isdigit

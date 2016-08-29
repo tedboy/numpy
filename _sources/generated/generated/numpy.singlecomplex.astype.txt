@@ -1,0 +1,6 @@
+numpy.singlecomplex.astype
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.astype

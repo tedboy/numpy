@@ -1,0 +1,6 @@
+numpy.single.view
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.view

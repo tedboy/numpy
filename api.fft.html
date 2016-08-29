@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. Discrete Fourier Transform (numpy.fft) &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="index.html"/>
+        <link rel="next" title="6.1.1. numpy.fft.fft" href="generated/numpy.fft.fft.html"/>
+        <link rel="prev" title="5.4.1. numpy.linalg.LinAlgError" href="generated/numpy.linalg.LinAlgError.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#standard-ffts">6.1. Standard FFTs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.fft.html">6.1.1. numpy.fft.fft</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.ifft.html">6.1.2. numpy.fft.ifft</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.fft2.html">6.1.3. numpy.fft.fft2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.ifft2.html">6.1.4. numpy.fft.ifft2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.fftn.html">6.1.5. numpy.fft.fftn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.ifftn.html">6.1.6. numpy.fft.ifftn</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#real-ffts">6.2. Real FFTs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.rfft.html">6.2.1. numpy.fft.rfft</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.irfft.html">6.2.2. numpy.fft.irfft</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.rfft2.html">6.2.3. numpy.fft.rfft2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.irfft2.html">6.2.4. numpy.fft.irfft2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.rfftn.html">6.2.5. numpy.fft.rfftn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.irfftn.html">6.2.6. numpy.fft.irfftn</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hermitian-ffts">6.3. Hermitian FFTs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.hfft.html">6.3.1. numpy.fft.hfft</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.ihfft.html">6.3.2. numpy.fft.ihfft</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#helper-routines">6.4. Helper routines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.fftfreq.html">6.4.1. numpy.fft.fftfreq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.rfftfreq.html">6.4.2. numpy.fft.rfftfreq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.fftshift.html">6.4.3. numpy.fft.fftshift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/numpy.fft.ifftshift.html">6.4.4. numpy.fft.ifftshift</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#background-information">6.5. Background information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implementation-details">6.6. Implementation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#normalization">6.7. Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-and-hermitian-transforms">6.8. Real and Hermitian transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#higher-dimensions">6.9. Higher dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">6.10. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">6.11. Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/api.fft.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-numpy.fft"></span><div class="section" id="discrete-fourier-transform-numpy-fft">
+<h1>6. Discrete Fourier Transform (<a class="reference internal" href="reference/routines.fft.html#module-numpy.fft" title="numpy.fft"><code class="xref py py-mod docutils literal"><span class="pre">numpy.fft</span></code></a>)<a class="headerlink" href="#discrete-fourier-transform-numpy-fft" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="standard-ffts">
+<h2>6.1. Standard FFTs<a class="headerlink" href="#standard-ffts" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="reference/generated/numpy.fft.fft.html#numpy.fft.fft" title="numpy.fft.fft"><code class="xref py py-obj docutils literal"><span class="pre">fft</span></code></a>(a[,&nbsp;n,&nbsp;axis,&nbsp;norm])</td>
+<td>Compute the one-dimensional discrete Fourier Transform.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference/generated/numpy.fft.ifft.html#numpy.fft.ifft" title="numpy.fft.ifft"><code class="xref py py-obj docutils literal"><span class="pre">ifft</span></code></a>(a[,&nbsp;n,&nbsp;axis,&nbsp;norm])</td>
+<td>Compute the one-dimensional inverse discrete Fourier Transform.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="reference/generated/numpy.fft.fft2.html#numpy.fft.fft2" title="numpy.fft.fft2"><code class="xref py py-obj docutils literal"><span class="pre">fft2</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the 2-dimensional discrete Fourier Transform</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference/generated/numpy.fft.ifft2.html#numpy.fft.ifft2" title="numpy.fft.ifft2"><code class="xref py py-obj docutils literal"><span class="pre">ifft2</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the 2-dimensional inverse discrete Fourier Transform.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="reference/generated/numpy.fft.fftn.html#numpy.fft.fftn" title="numpy.fft.fftn"><code class="xref py py-obj docutils literal"><span class="pre">fftn</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the N-dimensional discrete Fourier Transform.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference/generated/numpy.fft.ifftn.html#numpy.fft.ifftn" title="numpy.fft.ifftn"><code class="xref py py-obj docutils literal"><span class="pre">ifftn</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the N-dimensional inverse discrete Fourier Transform.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="real-ffts">
+<h2>6.2. Real FFTs<a class="headerlink" href="#real-ffts" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="reference/generated/numpy.fft.rfft.html#numpy.fft.rfft" title="numpy.fft.rfft"><code class="xref py py-obj docutils literal"><span class="pre">rfft</span></code></a>(a[,&nbsp;n,&nbsp;axis,&nbsp;norm])</td>
+<td>Compute the one-dimensional discrete Fourier Transform for real input.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference/generated/numpy.fft.irfft.html#numpy.fft.irfft" title="numpy.fft.irfft"><code class="xref py py-obj docutils literal"><span class="pre">irfft</span></code></a>(a[,&nbsp;n,&nbsp;axis,&nbsp;norm])</td>
+<td>Compute the inverse of the n-point DFT for real input.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="reference/generated/numpy.fft.rfft2.html#numpy.fft.rfft2" title="numpy.fft.rfft2"><code class="xref py py-obj docutils literal"><span class="pre">rfft2</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the 2-dimensional FFT of a real array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference/generated/numpy.fft.irfft2.html#numpy.fft.irfft2" title="numpy.fft.irfft2"><code class="xref py py-obj docutils literal"><span class="pre">irfft2</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the 2-dimensional inverse FFT of a real array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="reference/generated/numpy.fft.rfftn.html#numpy.fft.rfftn" title="numpy.fft.rfftn"><code class="xref py py-obj docutils literal"><span class="pre">rfftn</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the N-dimensional discrete Fourier Transform for real input.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference/generated/numpy.fft.irfftn.html#numpy.fft.irfftn" title="numpy.fft.irfftn"><code class="xref py py-obj docutils literal"><span class="pre">irfftn</span></code></a>(a[,&nbsp;s,&nbsp;axes,&nbsp;norm])</td>
+<td>Compute the inverse of the N-dimensional FFT of real input.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hermitian-ffts">
+<h2>6.3. Hermitian FFTs<a class="headerlink" href="#hermitian-ffts" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="reference/generated/numpy.fft.hfft.html#numpy.fft.hfft" title="numpy.fft.hfft"><code class="xref py py-obj docutils literal"><span class="pre">hfft</span></code></a>(a[,&nbsp;n,&nbsp;axis,&nbsp;norm])</td>
+<td>Compute the FFT of a signal which has Hermitian symmetry (real spectrum).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference/generated/numpy.fft.ihfft.html#numpy.fft.ihfft" title="numpy.fft.ihfft"><code class="xref py py-obj docutils literal"><span class="pre">ihfft</span></code></a>(a[,&nbsp;n,&nbsp;axis,&nbsp;norm])</td>
+<td>Compute the inverse FFT of a signal which has Hermitian symmetry.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="helper-routines">
+<h2>6.4. Helper routines<a class="headerlink" href="#helper-routines" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="reference/generated/numpy.fft.fftfreq.html#numpy.fft.fftfreq" title="numpy.fft.fftfreq"><code class="xref py py-obj docutils literal"><span class="pre">fftfreq</span></code></a>(n[,&nbsp;d])</td>
+<td>Return the Discrete Fourier Transform sample frequencies.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference/generated/numpy.fft.rfftfreq.html#numpy.fft.rfftfreq" title="numpy.fft.rfftfreq"><code class="xref py py-obj docutils literal"><span class="pre">rfftfreq</span></code></a>(n[,&nbsp;d])</td>
+<td>Return the Discrete Fourier Transform sample frequencies (for usage with rfft, irfft).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="reference/generated/numpy.fft.fftshift.html#numpy.fft.fftshift" title="numpy.fft.fftshift"><code class="xref py py-obj docutils literal"><span class="pre">fftshift</span></code></a>(x[,&nbsp;axes])</td>
+<td>Shift the zero-frequency component to the center of the spectrum.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="reference/generated/numpy.fft.ifftshift.html#numpy.fft.ifftshift" title="numpy.fft.ifftshift"><code class="xref py py-obj docutils literal"><span class="pre">ifftshift</span></code></a>(x[,&nbsp;axes])</td>
+<td>The inverse of <cite>fftshift</cite>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="background-information">
+<h2>6.5. Background information<a class="headerlink" href="#background-information" title="Permalink to this headline">¶</a></h2>
+<p>Fourier analysis is fundamentally a method for expressing a function as a
+sum of periodic components, and for recovering the function from those
+components.  When both the function and its Fourier transform are
+replaced with discretized counterparts, it is called the discrete Fourier
+transform (DFT).  The DFT has become a mainstay of numerical computing in
+part because of a very fast algorithm for computing it, called the Fast
+Fourier Transform (FFT), which was known to Gauss (1805) and was brought
+to light in its current form by Cooley and Tukey <a class="reference internal" href="reference/routines.fft.html#ct" id="id1">[CT]</a>.  Press et al. <a class="reference internal" href="reference/routines.fft.html#nr" id="id2">[NR]</a>
+provide an accessible introduction to Fourier analysis and its
+applications.</p>
+<p>Because the discrete Fourier transform separates its input into
+components that contribute at discrete frequencies, it has a great number
+of applications in digital signal processing, e.g., for filtering, and in
+this context the discretized input to the transform is customarily
+referred to as a <em>signal</em>, which exists in the <em>time domain</em>.  The output
+is called a <em>spectrum</em> or <em>transform</em> and exists in the <em>frequency
+domain</em>.</p>
+</div>
+<div class="section" id="implementation-details">
+<h2>6.6. Implementation details<a class="headerlink" href="#implementation-details" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways to define the DFT, varying in the sign of the
+exponent, normalization, etc.  In this implementation, the DFT is defined
+as</p>
+<div class="math">
+\[A_k =  \sum_{m=0}^{n-1} a_m \exp\left\{-2\pi i{mk \over n}\right\}
+\qquad k = 0,\ldots,n-1.\]</div>
+<p>The DFT is in general defined for complex inputs and outputs, and a
+single-frequency component at linear frequency <span class="math">\(f\)</span> is
+represented by a complex exponential
+<span class="math">\(a_m = \exp\{2\pi i\,f m\Delta t\}\)</span>, where <span class="math">\(\Delta t\)</span>
+is the sampling interval.</p>
+<p>The values in the result follow so-called &#8220;standard&#8221; order: If <code class="docutils literal"><span class="pre">A</span> <span class="pre">=</span>
+<span class="pre">fft(a,</span> <span class="pre">n)</span></code>, then <code class="docutils literal"><span class="pre">A[0]</span></code> contains the zero-frequency term (the mean of
+the signal), which is always purely real for real inputs. Then <code class="docutils literal"><span class="pre">A[1:n/2]</span></code>
+contains the positive-frequency terms, and <code class="docutils literal"><span class="pre">A[n/2+1:]</span></code> contains the
+negative-frequency terms, in order of decreasingly negative frequency.
+For an even number of input points, <code class="docutils literal"><span class="pre">A[n/2]</span></code> represents both positive and
+negative Nyquist frequency, and is also purely real for real input.  For
+an odd number of input points, <code class="docutils literal"><span class="pre">A[(n-1)/2]</span></code> contains the largest positive
+frequency, while <code class="docutils literal"><span class="pre">A[(n+1)/2]</span></code> contains the largest negative frequency.
+The routine <code class="docutils literal"><span class="pre">np.fft.fftfreq(n)</span></code> returns an array giving the frequencies
+of corresponding elements in the output.  The routine
+<code class="docutils literal"><span class="pre">np.fft.fftshift(A)</span></code> shifts transforms and their frequencies to put the
+zero-frequency components in the middle, and <code class="docutils literal"><span class="pre">np.fft.ifftshift(A)</span></code> undoes
+that shift.</p>
+<p>When the input <cite>a</cite> is a time-domain signal and <code class="docutils literal"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">fft(a)</span></code>, <code class="docutils literal"><span class="pre">np.abs(A)</span></code>
+is its amplitude spectrum and <code class="docutils literal"><span class="pre">np.abs(A)**2</span></code> is its power spectrum.
+The phase spectrum is obtained by <code class="docutils literal"><span class="pre">np.angle(A)</span></code>.</p>
+<p>The inverse DFT is defined as</p>
+<div class="math">
+\[a_m = \frac{1}{n}\sum_{k=0}^{n-1}A_k\exp\left\{2\pi i{mk\over n}\right\}
+\qquad m = 0,\ldots,n-1.\]</div>
+<p>It differs from the forward transform by the sign of the exponential
+argument and the default normalization by <span class="math">\(1/n\)</span>.</p>
+</div>
+<div class="section" id="normalization">
+<h2>6.7. Normalization<a class="headerlink" href="#normalization" title="Permalink to this headline">¶</a></h2>
+<p>The default normalization has the direct transforms unscaled and the inverse
+transforms are scaled by <span class="math">\(1/n\)</span>. It is possible to obtain unitary
+transforms by setting the keyword argument <code class="docutils literal"><span class="pre">norm</span></code> to <code class="docutils literal"><span class="pre">&quot;ortho&quot;</span></code> (default is
+<cite>None</cite>) so that both direct and inverse transforms will be scaled by
+<span class="math">\(1/\sqrt{n}\)</span>.</p>
+</div>
+<div class="section" id="real-and-hermitian-transforms">
+<h2>6.8. Real and Hermitian transforms<a class="headerlink" href="#real-and-hermitian-transforms" title="Permalink to this headline">¶</a></h2>
+<p>When the input is purely real, its transform is Hermitian, i.e., the
+component at frequency <span class="math">\(f_k\)</span> is the complex conjugate of the
+component at frequency <span class="math">\(-f_k\)</span>, which means that for real
+inputs there is no information in the negative frequency components that
+is not already available from the positive frequency components.
+The family of <cite>rfft</cite> functions is
+designed to operate on real inputs, and exploits this symmetry by
+computing only the positive frequency components, up to and including the
+Nyquist frequency.  Thus, <code class="docutils literal"><span class="pre">n</span></code> input points produce <code class="docutils literal"><span class="pre">n/2+1</span></code> complex
+output points.  The inverses of this family assumes the same symmetry of
+its input, and for an output of <code class="docutils literal"><span class="pre">n</span></code> points uses <code class="docutils literal"><span class="pre">n/2+1</span></code> input points.</p>
+<p>Correspondingly, when the spectrum is purely real, the signal is
+Hermitian.  The <cite>hfft</cite> family of functions exploits this symmetry by
+using <code class="docutils literal"><span class="pre">n/2+1</span></code> complex points in the input (time) domain for <code class="docutils literal"><span class="pre">n</span></code> real
+points in the frequency domain.</p>
+<p>In higher dimensions, FFTs are used, e.g., for image analysis and
+filtering.  The computational efficiency of the FFT means that it can
+also be a faster way to compute large convolutions, using the property
+that a convolution in the time domain is equivalent to a point-by-point
+multiplication in the frequency domain.</p>
+</div>
+<div class="section" id="higher-dimensions">
+<h2>6.9. Higher dimensions<a class="headerlink" href="#higher-dimensions" title="Permalink to this headline">¶</a></h2>
+<p>In two dimensions, the DFT is defined as</p>
+<div class="math">
+\[A_{kl} =  \sum_{m=0}^{M-1} \sum_{n=0}^{N-1}
+a_{mn}\exp\left\{-2\pi i \left({mk\over M}+{nl\over N}\right)\right\}
+\qquad k = 0, \ldots, M-1;\quad l = 0, \ldots, N-1,\]</div>
+<p>which extends in the obvious way to higher dimensions, and the inverses
+in higher dimensions also extend in the same way.</p>
+</div>
+<div class="section" id="references">
+<h2>6.10. References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<table class="docutils citation" frame="void" id="ct" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[CT]</a></td><td>Cooley, James W., and John W. Tukey, 1965, &#8220;An algorithm for the
+machine calculation of complex Fourier series,&#8221; <em>Math. Comput.</em>
+19: 297-301.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="nr" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[NR]</a></td><td>Press, W., Teukolsky, S., Vetterline, W.T., and Flannery, B.P.,
+2007, <em>Numerical Recipes: The Art of Scientific Computing</em>, ch.
+12-13.  Cambridge Univ. Press, Cambridge, UK.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="examples">
+<h2>6.11. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>For examples, see the various functions.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/numpy.fft.fft.html" class="btn btn-neutral float-right" title="6.1.1. numpy.fft.fft" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/numpy.linalg.LinAlgError.html" class="btn btn-neutral" title="5.4.1. numpy.linalg.LinAlgError" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

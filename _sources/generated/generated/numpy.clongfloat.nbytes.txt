@@ -1,0 +1,6 @@
+numpy.clongfloat.nbytes
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongfloat.nbytes

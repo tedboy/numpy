@@ -1,0 +1,6 @@
+numpy.complex_.resize
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.resize

@@ -1,0 +1,6 @@
+numpy.testing.TestCase.failIfEqual
+==================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.failIfEqual

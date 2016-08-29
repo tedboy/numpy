@@ -1,0 +1,6 @@
+numpy.csingle.diagonal
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.diagonal

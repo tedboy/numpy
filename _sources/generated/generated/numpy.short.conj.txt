@@ -1,0 +1,6 @@
+numpy.short.conj
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.conj

@@ -1,0 +1,6 @@
+numpy.half.itemsize
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.itemsize

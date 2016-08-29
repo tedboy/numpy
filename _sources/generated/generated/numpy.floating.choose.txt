@@ -1,0 +1,6 @@
+numpy.floating.choose
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.choose

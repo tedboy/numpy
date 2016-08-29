@@ -1,0 +1,6 @@
+numpy.bool_.swapaxes
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.swapaxes

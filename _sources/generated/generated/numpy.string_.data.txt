@@ -1,0 +1,6 @@
+numpy.string_.data
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: string_.data

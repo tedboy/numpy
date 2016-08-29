@@ -1,0 +1,6 @@
+numpy.short.argsort
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.argsort

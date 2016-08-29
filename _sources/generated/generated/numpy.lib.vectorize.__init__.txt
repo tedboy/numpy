@@ -1,0 +1,6 @@
+numpy.lib.vectorize.__init__
+============================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: vectorize.__init__

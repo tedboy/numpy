@@ -1,0 +1,6 @@
+numpy.complex_.shape
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex_.shape

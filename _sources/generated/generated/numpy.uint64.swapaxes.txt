@@ -1,0 +1,6 @@
+numpy.uint64.swapaxes
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint64.swapaxes

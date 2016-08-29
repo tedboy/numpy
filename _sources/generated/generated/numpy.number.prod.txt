@@ -1,0 +1,6 @@
+numpy.number.prod
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: number.prod

@@ -1,0 +1,6 @@
+numpy.single.dump
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.dump

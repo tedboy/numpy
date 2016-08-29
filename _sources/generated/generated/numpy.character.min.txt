@@ -1,0 +1,6 @@
+numpy.character.min
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.min

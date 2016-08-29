@@ -1,0 +1,6 @@
+numpy.byte.compress
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.compress

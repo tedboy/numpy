@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.1.1.4.1.1. numpy.ndarray.flags &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../index.html"/>
+        <link rel="up" title="11.1.1. The N-dimensional array (ndarray)" href="../arrays.ndarray.html"/>
+        <link rel="next" title="11.1.1.4.1.2. numpy.ndarray.shape" href="numpy.ndarray.shape.html"/>
+        <link rel="prev" title="11.1.1.1.1. numpy.ndarray" href="numpy.ndarray.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../arrays.html">11.1. Array objects</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../arrays.ndarray.html">11.1.1. The N-dimensional array (<code class="docutils literal"><span class="pre">ndarray</span></code>)</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../arrays.ndarray.html#constructing-arrays">11.1.1.1. Constructing arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../arrays.ndarray.html#indexing-arrays">11.1.1.2. Indexing arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../arrays.ndarray.html#internal-memory-layout-of-an-ndarray">11.1.1.3. Internal memory layout of an ndarray</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../arrays.ndarray.html#array-attributes">11.1.1.4. Array attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../arrays.ndarray.html#array-methods">11.1.1.5. Array methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../arrays.ndarray.html#arithmetic-matrix-multiplication-and-comparison-operations">11.1.1.6. Arithmetic, matrix multiplication, and comparison operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../arrays.ndarray.html#special-methods">11.1.1.7. Special methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.scalars.html">11.1.2. Scalars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.dtypes.html">11.1.3. Data type objects (<code class="docutils literal"><span class="pre">dtype</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.indexing.html">11.1.4. Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.nditer.html">11.1.5. Iterating Over Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.classes.html">11.1.6. Standard array subclasses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maskedarray.html">11.1.7. Masked arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.interface.html">11.1.8. The Array Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.datetime.html">11.1.9. Datetimes and Timedeltas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../routines.html">11.3. Routines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="../arrays.html">11.1. Array objects</a> &raquo;</li>
+        
+          <li><a href="../arrays.ndarray.html">11.1.1. The N-dimensional array (<code class="docutils literal"><span class="pre">ndarray</span></code>)</a> &raquo;</li>
+        
+      <li>11.1.1.4.1.1. numpy.ndarray.flags</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/reference/generated/numpy.ndarray.flags.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy-ndarray-flags">
+<h1>11.1.1.4.1.1. numpy.ndarray.flags<a class="headerlink" href="#numpy-ndarray-flags" title="Permalink to this headline">¶</a></h1>
+<dl class="attribute">
+<dt id="numpy.ndarray.flags">
+<code class="descclassname">ndarray.</code><code class="descname">flags</code><a class="headerlink" href="#numpy.ndarray.flags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Information about the memory layout of the array.</p>
+<p class="rubric">Notes</p>
+<p>The <cite>flags</cite> object can be accessed dictionary-like (as in <code class="docutils literal"><span class="pre">a.flags['WRITEABLE']</span></code>),
+or by using lowercased attribute names (as in <code class="docutils literal"><span class="pre">a.flags.writeable</span></code>). Short flag
+names are only supported in dictionary access.</p>
+<p>Only the UPDATEIFCOPY, WRITEABLE, and ALIGNED flags can be changed by
+the user, via direct assignment to the attribute or dictionary entry,
+or by calling <cite>ndarray.setflags</cite>.</p>
+<p>The array flags cannot be set arbitrarily:</p>
+<ul class="simple">
+<li>UPDATEIFCOPY can only be set <code class="docutils literal"><span class="pre">False</span></code>.</li>
+<li>ALIGNED can only be set <code class="docutils literal"><span class="pre">True</span></code> if the data is truly aligned.</li>
+<li>WRITEABLE can only be set <code class="docutils literal"><span class="pre">True</span></code> if the array owns its own memory
+or the ultimate owner of the memory exposes a writeable buffer
+interface or is a string.</li>
+</ul>
+<p>Arrays can be both C-style and Fortran-style contiguous simultaneously.
+This is clear for 1-dimensional arrays, but can also be true for higher
+dimensional arrays.</p>
+<p>Even for contiguous arrays a stride for a given dimension
+<code class="docutils literal"><span class="pre">arr.strides[dim]</span></code> may be <em>arbitrary</em> if <code class="docutils literal"><span class="pre">arr.shape[dim]</span> <span class="pre">==</span> <span class="pre">1</span></code>
+or the array has no elements.
+It does <em>not</em> generally hold that <code class="docutils literal"><span class="pre">self.strides[-1]</span> <span class="pre">==</span> <span class="pre">self.itemsize</span></code>
+for C-style contiguous arrays or <code class="docutils literal"><span class="pre">self.strides[0]</span> <span class="pre">==</span> <span class="pre">self.itemsize</span></code> for
+Fortran-style contiguous arrays is true.</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="2%" />
+<col width="98%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>C_CONTIGUOUS (C)</td>
+<td>The data is in a single, C-style contiguous segment.</td>
+</tr>
+<tr class="row-even"><td>F_CONTIGUOUS (F)</td>
+<td>The data is in a single, Fortran-style contiguous segment.</td>
+</tr>
+<tr class="row-odd"><td>OWNDATA (O)</td>
+<td>The array owns the memory it uses or borrows it from another object.</td>
+</tr>
+<tr class="row-even"><td>WRITEABLE (W)</td>
+<td>The data area can be written to.  Setting this to False locks the data, making it read-only.  A view (slice, etc.) inherits WRITEABLE from its base array at creation time, but a view of a writeable array may be subsequently locked while the base array remains writeable. (The opposite is not true, in that a view of a locked array may not be made writeable.  However, currently, locking a base object does not lock any views that already reference it, so under that circumstance it is possible to alter the contents of a locked array via a previously created writeable view onto it.)  Attempting to change a non-writeable array raises a RuntimeError exception.</td>
+</tr>
+<tr class="row-odd"><td>ALIGNED (A)</td>
+<td>The data and all elements are aligned appropriately for the hardware.</td>
+</tr>
+<tr class="row-even"><td>UPDATEIFCOPY (U)</td>
+<td>This array is a copy of some other array. When this array is deallocated, the base array will be updated with the contents of this array.</td>
+</tr>
+<tr class="row-odd"><td>FNC</td>
+<td>F_CONTIGUOUS and not C_CONTIGUOUS.</td>
+</tr>
+<tr class="row-even"><td>FORC</td>
+<td>F_CONTIGUOUS or C_CONTIGUOUS (one-segment test).</td>
+</tr>
+<tr class="row-odd"><td>BEHAVED (B)</td>
+<td>ALIGNED and WRITEABLE.</td>
+</tr>
+<tr class="row-even"><td>CARRAY (CA)</td>
+<td>BEHAVED and C_CONTIGUOUS.</td>
+</tr>
+<tr class="row-odd"><td>FARRAY (FA)</td>
+<td>BEHAVED and F_CONTIGUOUS and not C_CONTIGUOUS.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numpy.ndarray.shape.html" class="btn btn-neutral float-right" title="11.1.1.4.1.2. numpy.ndarray.shape" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numpy.ndarray.html" class="btn btn-neutral" title="11.1.1.1.1. numpy.ndarray" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

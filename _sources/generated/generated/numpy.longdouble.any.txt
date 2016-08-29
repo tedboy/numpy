@@ -1,0 +1,6 @@
+numpy.longdouble.any
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.any

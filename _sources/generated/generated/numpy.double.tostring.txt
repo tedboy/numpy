@@ -1,0 +1,6 @@
+numpy.double.tostring
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.tostring

@@ -1,0 +1,6 @@
+numpy.complex256.round
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.round

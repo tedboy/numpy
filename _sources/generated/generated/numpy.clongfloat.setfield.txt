@@ -1,0 +1,6 @@
+numpy.clongfloat.setfield
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.setfield

@@ -1,0 +1,6 @@
+numpy.character.base
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.base

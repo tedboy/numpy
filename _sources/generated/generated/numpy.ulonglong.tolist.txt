@@ -1,0 +1,6 @@
+numpy.ulonglong.tolist
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.tolist

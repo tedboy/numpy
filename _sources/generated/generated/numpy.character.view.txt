@@ -1,0 +1,6 @@
+numpy.character.view
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.view

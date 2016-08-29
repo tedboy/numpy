@@ -1,0 +1,6 @@
+numpy.number.any
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: number.any

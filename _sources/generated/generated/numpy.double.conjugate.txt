@@ -1,0 +1,6 @@
+numpy.double.conjugate
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.conjugate

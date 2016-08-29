@@ -1,0 +1,6 @@
+numpy.inexact.tolist
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.tolist

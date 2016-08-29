@@ -1,0 +1,6 @@
+numpy.bool_.trace
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.trace

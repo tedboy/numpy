@@ -1,0 +1,6 @@
+numpy.double.compress
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.compress

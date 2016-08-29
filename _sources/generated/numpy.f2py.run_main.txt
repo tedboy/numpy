@@ -1,0 +1,6 @@
+numpy.f2py.run_main
+===================
+
+.. currentmodule:: numpy.f2py
+
+.. autofunction:: run_main

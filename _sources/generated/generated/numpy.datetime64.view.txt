@@ -1,0 +1,6 @@
+numpy.datetime64.view
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.view

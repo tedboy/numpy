@@ -1,0 +1,6 @@
+numpy.float64.cumsum
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: float64.cumsum

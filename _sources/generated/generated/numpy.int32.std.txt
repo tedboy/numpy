@@ -1,0 +1,6 @@
+numpy.int32.std
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: int32.std

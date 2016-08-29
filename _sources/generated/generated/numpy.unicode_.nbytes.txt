@@ -1,0 +1,6 @@
+numpy.unicode_.nbytes
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.nbytes

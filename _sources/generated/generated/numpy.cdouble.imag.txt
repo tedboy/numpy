@@ -1,0 +1,6 @@
+numpy.cdouble.imag
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.imag

@@ -1,0 +1,6 @@
+numpy.double.getfield
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.getfield

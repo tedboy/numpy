@@ -1,0 +1,6 @@
+numpy.complex256.itemsize
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex256.itemsize

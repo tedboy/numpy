@@ -1,0 +1,6 @@
+numpy.ubyte.conjugate
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.conjugate

@@ -1,0 +1,6 @@
+numpy.str_.isalnum
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.isalnum

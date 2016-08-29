@@ -1,0 +1,6 @@
+numpy.void.setflags
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.setflags

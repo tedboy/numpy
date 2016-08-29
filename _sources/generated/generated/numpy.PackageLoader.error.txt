@@ -1,0 +1,6 @@
+numpy.PackageLoader.error
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: PackageLoader.error

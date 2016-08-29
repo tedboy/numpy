@@ -1,0 +1,6 @@
+numpy.cdouble.fill
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.fill

@@ -1,0 +1,6 @@
+numpy.intc.choose
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.choose

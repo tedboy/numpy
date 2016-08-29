@@ -1,0 +1,6 @@
+numpy.byte.flags
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.flags

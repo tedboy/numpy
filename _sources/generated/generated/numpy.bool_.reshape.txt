@@ -1,0 +1,6 @@
+numpy.bool_.reshape
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.reshape

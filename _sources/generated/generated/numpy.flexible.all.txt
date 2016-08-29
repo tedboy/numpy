@@ -1,0 +1,6 @@
+numpy.flexible.all
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.all

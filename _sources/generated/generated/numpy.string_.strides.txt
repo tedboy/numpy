@@ -1,0 +1,6 @@
+numpy.string_.strides
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: string_.strides

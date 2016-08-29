@@ -1,0 +1,92 @@
+numpy.complex64
+===============
+.. currentmodule:: numpy
+.. autoclass:: complex64
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~complex64.all
+   ~complex64.any
+   ~complex64.argmax
+   ~complex64.argmin
+   ~complex64.argsort
+   ~complex64.astype
+   ~complex64.byteswap
+   ~complex64.choose
+   ~complex64.clip
+   ~complex64.compress
+   ~complex64.conj
+   ~complex64.conjugate
+   ~complex64.copy
+   ~complex64.cumprod
+   ~complex64.cumsum
+   ~complex64.diagonal
+   ~complex64.dump
+   ~complex64.dumps
+   ~complex64.fill
+   ~complex64.flatten
+   ~complex64.getfield
+   ~complex64.item
+   ~complex64.itemset
+   ~complex64.max
+   ~complex64.mean
+   ~complex64.min
+   ~complex64.newbyteorder
+   ~complex64.nonzero
+   ~complex64.prod
+   ~complex64.ptp
+   ~complex64.put
+   ~complex64.ravel
+   ~complex64.repeat
+   ~complex64.reshape
+   ~complex64.resize
+   ~complex64.round
+   ~complex64.searchsorted
+   ~complex64.setfield
+   ~complex64.setflags
+   ~complex64.sort
+   ~complex64.squeeze
+   ~complex64.std
+   ~complex64.sum
+   ~complex64.swapaxes
+   ~complex64.take
+   ~complex64.tobytes
+   ~complex64.tofile
+   ~complex64.tolist
+   ~complex64.tostring
+   ~complex64.trace
+   ~complex64.transpose
+   ~complex64.var
+   ~complex64.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~complex64.T
+   ~complex64.base
+   ~complex64.data
+   ~complex64.dtype
+   ~complex64.flags
+   ~complex64.flat
+   ~complex64.imag
+   ~complex64.itemsize
+   ~complex64.nbytes
+   ~complex64.ndim
+   ~complex64.real
+   ~complex64.shape
+   ~complex64.size
+   ~complex64.strides
+

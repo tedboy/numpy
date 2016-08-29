@@ -1,0 +1,94 @@
+numpy.ushort
+============
+.. currentmodule:: numpy
+.. autoclass:: ushort
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~ushort.all
+   ~ushort.any
+   ~ushort.argmax
+   ~ushort.argmin
+   ~ushort.argsort
+   ~ushort.astype
+   ~ushort.byteswap
+   ~ushort.choose
+   ~ushort.clip
+   ~ushort.compress
+   ~ushort.conj
+   ~ushort.conjugate
+   ~ushort.copy
+   ~ushort.cumprod
+   ~ushort.cumsum
+   ~ushort.diagonal
+   ~ushort.dump
+   ~ushort.dumps
+   ~ushort.fill
+   ~ushort.flatten
+   ~ushort.getfield
+   ~ushort.item
+   ~ushort.itemset
+   ~ushort.max
+   ~ushort.mean
+   ~ushort.min
+   ~ushort.newbyteorder
+   ~ushort.nonzero
+   ~ushort.prod
+   ~ushort.ptp
+   ~ushort.put
+   ~ushort.ravel
+   ~ushort.repeat
+   ~ushort.reshape
+   ~ushort.resize
+   ~ushort.round
+   ~ushort.searchsorted
+   ~ushort.setfield
+   ~ushort.setflags
+   ~ushort.sort
+   ~ushort.squeeze
+   ~ushort.std
+   ~ushort.sum
+   ~ushort.swapaxes
+   ~ushort.take
+   ~ushort.tobytes
+   ~ushort.tofile
+   ~ushort.tolist
+   ~ushort.tostring
+   ~ushort.trace
+   ~ushort.transpose
+   ~ushort.var
+   ~ushort.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~ushort.T
+   ~ushort.base
+   ~ushort.data
+   ~ushort.denominator
+   ~ushort.dtype
+   ~ushort.flags
+   ~ushort.flat
+   ~ushort.imag
+   ~ushort.itemsize
+   ~ushort.nbytes
+   ~ushort.ndim
+   ~ushort.numerator
+   ~ushort.real
+   ~ushort.shape
+   ~ushort.size
+   ~ushort.strides
+

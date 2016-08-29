@@ -1,0 +1,6 @@
+numpy.unsignedinteger.min
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.min

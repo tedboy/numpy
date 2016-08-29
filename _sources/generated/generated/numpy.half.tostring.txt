@@ -1,0 +1,6 @@
+numpy.half.tostring
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.tostring

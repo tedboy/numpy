@@ -1,0 +1,6 @@
+numpy.inexact.flat
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: inexact.flat

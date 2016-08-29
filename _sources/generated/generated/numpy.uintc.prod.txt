@@ -1,0 +1,6 @@
+numpy.uintc.prod
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintc.prod

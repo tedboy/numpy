@@ -1,0 +1,6 @@
+numpy.complexfloating.reshape
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.reshape

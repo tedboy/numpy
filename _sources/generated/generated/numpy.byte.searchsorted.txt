@@ -1,0 +1,6 @@
+numpy.byte.searchsorted
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.searchsorted

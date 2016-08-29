@@ -1,0 +1,6 @@
+numpy.testing.TestCase.__init__
+===============================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.__init__

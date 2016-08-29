@@ -1,0 +1,6 @@
+numpy.intp.size
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: intp.size

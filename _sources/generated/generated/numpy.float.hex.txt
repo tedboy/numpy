@@ -1,0 +1,6 @@
+numpy.float.hex
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: float.hex

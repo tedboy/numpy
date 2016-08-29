@@ -1,0 +1,6 @@
+numpy.complex_.put
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.put

@@ -1,0 +1,6 @@
+numpy.character.take
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.take

@@ -1,0 +1,6 @@
+numpy.uintp.conjugate
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.conjugate

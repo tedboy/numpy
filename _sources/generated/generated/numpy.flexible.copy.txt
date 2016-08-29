@@ -1,0 +1,6 @@
+numpy.flexible.copy
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.copy

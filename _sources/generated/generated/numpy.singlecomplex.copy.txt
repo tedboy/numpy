@@ -1,0 +1,6 @@
+numpy.singlecomplex.copy
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.copy

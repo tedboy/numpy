@@ -1,0 +1,6 @@
+numpy.uint64.take
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint64.take

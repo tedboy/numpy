@@ -1,0 +1,6 @@
+numpy.int16.trace
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: int16.trace

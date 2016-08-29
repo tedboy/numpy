@@ -1,0 +1,6 @@
+numpy.longfloat.shape
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longfloat.shape

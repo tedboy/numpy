@@ -1,0 +1,6 @@
+numpy.ulonglong.sum
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.sum

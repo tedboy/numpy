@@ -1,0 +1,6 @@
+numpy.lib.tril
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: tril

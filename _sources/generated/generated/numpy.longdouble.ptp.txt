@@ -1,0 +1,6 @@
+numpy.longdouble.ptp
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.ptp

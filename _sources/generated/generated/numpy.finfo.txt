@@ -1,0 +1,11 @@
+numpy.finfo
+===========
+.. currentmodule:: numpy
+.. autoclass:: finfo
+   :undoc-members:
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+numpy.lib.who
+=============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: who

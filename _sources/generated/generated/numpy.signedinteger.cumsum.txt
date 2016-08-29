@@ -1,0 +1,6 @@
+numpy.signedinteger.cumsum
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.cumsum

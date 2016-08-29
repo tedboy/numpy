@@ -1,0 +1,6 @@
+numpy.inexact.round
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.round

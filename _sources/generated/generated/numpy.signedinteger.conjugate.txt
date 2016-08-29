@@ -1,0 +1,6 @@
+numpy.signedinteger.conjugate
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.conjugate

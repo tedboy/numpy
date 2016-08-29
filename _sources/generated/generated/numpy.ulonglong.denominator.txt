@@ -1,0 +1,6 @@
+numpy.ulonglong.denominator
+===========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.denominator

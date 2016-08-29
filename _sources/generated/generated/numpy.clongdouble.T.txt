@@ -1,0 +1,6 @@
+numpy.clongdouble.T
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongdouble.T

@@ -1,0 +1,6 @@
+numpy.polynomial.Legendre.fit
+=============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Legendre.fit

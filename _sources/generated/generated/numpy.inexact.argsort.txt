@@ -1,0 +1,6 @@
+numpy.inexact.argsort
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.argsort

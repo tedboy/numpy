@@ -1,0 +1,6 @@
+numpy.datetime64.itemsize
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: datetime64.itemsize

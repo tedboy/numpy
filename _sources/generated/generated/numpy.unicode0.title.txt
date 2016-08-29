@@ -1,0 +1,6 @@
+numpy.unicode0.title
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode0.title

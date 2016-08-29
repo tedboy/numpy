@@ -1,0 +1,6 @@
+numpy.bool_.dumps
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.dumps

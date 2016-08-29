@@ -1,0 +1,6 @@
+numpy.half.sort
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.sort

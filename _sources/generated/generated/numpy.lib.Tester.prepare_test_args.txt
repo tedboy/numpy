@@ -1,0 +1,6 @@
+numpy.lib.Tester.prepare_test_args
+==================================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: Tester.prepare_test_args

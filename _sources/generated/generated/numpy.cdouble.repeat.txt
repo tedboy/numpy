@@ -1,0 +1,6 @@
+numpy.cdouble.repeat
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.repeat

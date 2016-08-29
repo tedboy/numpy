@@ -1,0 +1,6 @@
+numpy.ubyte.argsort
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.argsort

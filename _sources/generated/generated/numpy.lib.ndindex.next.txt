@@ -1,0 +1,6 @@
+numpy.lib.ndindex.next
+======================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: ndindex.next

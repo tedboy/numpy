@@ -1,0 +1,6 @@
+numpy.signedinteger.view
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.view

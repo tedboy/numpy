@@ -1,0 +1,6 @@
+numpy.byte.put
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.put

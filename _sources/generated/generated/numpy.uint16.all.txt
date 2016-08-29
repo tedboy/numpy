@@ -1,0 +1,6 @@
+numpy.uint16.all
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint16.all

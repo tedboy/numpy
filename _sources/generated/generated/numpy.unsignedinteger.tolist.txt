@@ -1,0 +1,6 @@
+numpy.unsignedinteger.tolist
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.tolist

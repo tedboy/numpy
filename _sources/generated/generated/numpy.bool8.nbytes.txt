@@ -1,0 +1,6 @@
+numpy.bool8.nbytes
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool8.nbytes

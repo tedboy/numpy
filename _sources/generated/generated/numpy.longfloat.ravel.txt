@@ -1,0 +1,6 @@
+numpy.longfloat.ravel
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.ravel

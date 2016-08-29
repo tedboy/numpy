@@ -1,0 +1,6 @@
+numpy.character.ptp
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.ptp

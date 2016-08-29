@@ -1,0 +1,6 @@
+numpy.polynomial.Chebyshev.window
+=================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Chebyshev.window

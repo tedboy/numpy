@@ -1,0 +1,6 @@
+numpy.character.transpose
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.transpose

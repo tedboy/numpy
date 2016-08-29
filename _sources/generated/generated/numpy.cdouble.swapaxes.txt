@@ -1,0 +1,6 @@
+numpy.cdouble.swapaxes
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.swapaxes

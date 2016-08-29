@@ -1,0 +1,6 @@
+numpy.complex256.argmin
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.argmin

@@ -1,0 +1,6 @@
+numpy.half.squeeze
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.squeeze

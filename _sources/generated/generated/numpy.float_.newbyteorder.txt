@@ -1,0 +1,6 @@
+numpy.float_.newbyteorder
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.newbyteorder

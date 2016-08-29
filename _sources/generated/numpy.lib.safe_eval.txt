@@ -1,0 +1,6 @@
+numpy.lib.safe_eval
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: safe_eval

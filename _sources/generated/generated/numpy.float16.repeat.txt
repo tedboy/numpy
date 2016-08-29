@@ -1,0 +1,6 @@
+numpy.float16.repeat
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: float16.repeat

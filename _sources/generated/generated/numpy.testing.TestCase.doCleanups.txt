@@ -1,0 +1,6 @@
+numpy.testing.TestCase.doCleanups
+=================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.doCleanups

@@ -1,0 +1,6 @@
+numpy.ulonglong.tobytes
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.tobytes

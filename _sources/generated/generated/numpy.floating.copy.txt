@@ -1,0 +1,6 @@
+numpy.floating.copy
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.copy

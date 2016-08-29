@@ -1,0 +1,6 @@
+numpy.intc.setflags
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.setflags

@@ -1,0 +1,6 @@
+numpy.int16.prod
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: int16.prod

@@ -1,0 +1,6 @@
+numpy.random.Tester.excludes
+============================
+
+.. currentmodule:: numpy.random
+
+.. autoattribute:: Tester.excludes

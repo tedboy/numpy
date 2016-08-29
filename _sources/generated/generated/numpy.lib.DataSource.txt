@@ -1,0 +1,22 @@
+numpy.lib.DataSource
+====================
+.. currentmodule:: numpy.lib
+.. autoclass:: DataSource
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~DataSource.__init__
+   ~DataSource.abspath
+   ~DataSource.exists
+   ~DataSource.open
+
+
+
+
+

@@ -1,0 +1,6 @@
+numpy.double.reshape
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.reshape

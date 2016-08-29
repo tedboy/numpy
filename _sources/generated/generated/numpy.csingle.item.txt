@@ -1,0 +1,6 @@
+numpy.csingle.item
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.item

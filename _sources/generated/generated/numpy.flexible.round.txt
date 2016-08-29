@@ -1,0 +1,6 @@
+numpy.flexible.round
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.round

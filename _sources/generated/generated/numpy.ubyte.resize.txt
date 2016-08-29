@@ -1,0 +1,6 @@
+numpy.ubyte.resize
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.resize

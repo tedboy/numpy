@@ -1,0 +1,6 @@
+numpy.signedinteger.flags
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.flags

@@ -1,0 +1,6 @@
+numpy.polynomial.Legendre.has_sametype
+======================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Legendre.has_sametype

@@ -1,0 +1,6 @@
+numpy.double.swapaxes
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.swapaxes

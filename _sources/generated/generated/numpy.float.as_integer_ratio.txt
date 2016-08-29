@@ -1,0 +1,6 @@
+numpy.float.as_integer_ratio
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: float.as_integer_ratio

@@ -1,0 +1,6 @@
+numpy.csingle.compress
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.compress

@@ -1,0 +1,6 @@
+numpy.singlecomplex.cumprod
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.cumprod

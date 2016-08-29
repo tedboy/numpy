@@ -1,0 +1,6 @@
+numpy.timedelta64.copy
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.copy

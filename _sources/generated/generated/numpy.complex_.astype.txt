@@ -1,0 +1,6 @@
+numpy.complex_.astype
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.astype

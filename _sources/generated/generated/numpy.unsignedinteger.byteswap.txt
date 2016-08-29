@@ -1,0 +1,6 @@
+numpy.unsignedinteger.byteswap
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.byteswap

@@ -1,0 +1,6 @@
+numpy.complex_.dtype
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex_.dtype

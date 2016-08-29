@@ -1,0 +1,6 @@
+numpy.unicode_.dtype
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.dtype

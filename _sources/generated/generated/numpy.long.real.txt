@@ -1,0 +1,6 @@
+numpy.long.real
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: long.real

@@ -1,0 +1,6 @@
+numpy.ubyte.imag
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.imag

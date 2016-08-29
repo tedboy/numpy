@@ -1,0 +1,6 @@
+numpy.string0.argsort
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.argsort

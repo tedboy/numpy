@@ -1,0 +1,6 @@
+numpy.flexible.repeat
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.repeat

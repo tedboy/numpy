@@ -1,0 +1,6 @@
+numpy.int64.tofile
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: int64.tofile

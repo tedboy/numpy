@@ -1,0 +1,6 @@
+numpy.polynomial.Laguerre.fit
+=============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Laguerre.fit

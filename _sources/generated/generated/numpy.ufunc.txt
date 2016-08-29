@@ -1,0 +1,37 @@
+numpy.ufunc
+===========
+.. currentmodule:: numpy
+.. autoclass:: ufunc
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~ufunc.accumulate
+   ~ufunc.at
+   ~ufunc.outer
+   ~ufunc.reduce
+   ~ufunc.reduceat
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~ufunc.identity
+   ~ufunc.nargs
+   ~ufunc.nin
+   ~ufunc.nout
+   ~ufunc.ntypes
+   ~ufunc.signature
+   ~ufunc.types
+

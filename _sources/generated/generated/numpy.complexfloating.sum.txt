@@ -1,0 +1,6 @@
+numpy.complexfloating.sum
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.sum

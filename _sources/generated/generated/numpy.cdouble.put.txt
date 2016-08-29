@@ -1,0 +1,6 @@
+numpy.cdouble.put
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.put

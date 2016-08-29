@@ -1,0 +1,6 @@
+numpy.float16.dtype
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: float16.dtype

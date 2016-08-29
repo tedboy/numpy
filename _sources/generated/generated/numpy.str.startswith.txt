@@ -1,0 +1,6 @@
+numpy.str.startswith
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: str.startswith

@@ -1,0 +1,6 @@
+numpy.longdouble.view
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.view

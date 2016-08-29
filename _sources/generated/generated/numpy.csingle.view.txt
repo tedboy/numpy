@@ -1,0 +1,6 @@
+numpy.csingle.view
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.view

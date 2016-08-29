@@ -1,0 +1,6 @@
+numpy.uint64.max
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint64.max

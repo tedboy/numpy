@@ -1,0 +1,6 @@
+numpy.ulonglong.take
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.take

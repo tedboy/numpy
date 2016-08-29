@@ -1,0 +1,6 @@
+numpy.lib.row_stack
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: row_stack

@@ -1,0 +1,6 @@
+numpy.str_.T
+============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: str_.T

@@ -1,0 +1,6 @@
+numpy.complex256.sum
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.sum

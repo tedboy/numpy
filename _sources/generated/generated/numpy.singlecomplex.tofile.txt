@@ -1,0 +1,6 @@
+numpy.singlecomplex.tofile
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.tofile

@@ -1,0 +1,6 @@
+numpy.datetime64.itemset
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.itemset

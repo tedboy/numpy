@@ -1,0 +1,6 @@
+numpy.longcomplex.flags
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.flags

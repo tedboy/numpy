@@ -1,0 +1,6 @@
+numpy.number.T
+==============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: number.T

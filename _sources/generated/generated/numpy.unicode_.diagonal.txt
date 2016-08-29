@@ -1,0 +1,6 @@
+numpy.unicode_.diagonal
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.diagonal

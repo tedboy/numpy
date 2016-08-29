@@ -1,0 +1,6 @@
+numpy.longcomplex.size
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.size

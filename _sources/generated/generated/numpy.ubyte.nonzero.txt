@@ -1,0 +1,6 @@
+numpy.ubyte.nonzero
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.nonzero

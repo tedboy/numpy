@@ -1,0 +1,6 @@
+numpy.flexible.argsort
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.argsort

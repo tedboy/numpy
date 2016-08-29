@@ -1,0 +1,6 @@
+numpy.bool8.prod
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.prod

@@ -1,0 +1,6 @@
+numpy.datetime64.ndim
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: datetime64.ndim

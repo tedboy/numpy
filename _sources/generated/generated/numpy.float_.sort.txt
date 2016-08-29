@@ -1,0 +1,6 @@
+numpy.float_.sort
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.sort

@@ -1,0 +1,6 @@
+numpy.unicode_.shape
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.shape

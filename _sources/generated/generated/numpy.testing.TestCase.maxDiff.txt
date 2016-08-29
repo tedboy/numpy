@@ -1,0 +1,6 @@
+numpy.testing.TestCase.maxDiff
+==============================
+
+.. currentmodule:: numpy.testing
+
+.. autoattribute:: TestCase.maxDiff

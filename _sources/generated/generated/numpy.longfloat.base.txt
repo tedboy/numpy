@@ -1,0 +1,6 @@
+numpy.longfloat.base
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longfloat.base

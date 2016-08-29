@@ -1,0 +1,6 @@
+numpy.longcomplex.strides
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.strides

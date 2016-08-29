@@ -1,0 +1,6 @@
+numpy.long.denominator
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: long.denominator

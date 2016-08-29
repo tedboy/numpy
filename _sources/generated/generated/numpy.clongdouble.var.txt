@@ -1,0 +1,6 @@
+numpy.clongdouble.var
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.var

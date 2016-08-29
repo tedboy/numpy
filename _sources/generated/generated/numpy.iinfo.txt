@@ -1,0 +1,28 @@
+numpy.iinfo
+===========
+.. currentmodule:: numpy
+.. autoclass:: iinfo
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~iinfo.__init__
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~iinfo.max
+   ~iinfo.min
+

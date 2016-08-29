@@ -1,0 +1,6 @@
+numpy.bool_.resize
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.resize

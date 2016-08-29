@@ -1,0 +1,6 @@
+numpy.str_.astype
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.astype

@@ -1,0 +1,6 @@
+numpy.lib.setdiff1d
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: setdiff1d

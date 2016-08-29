@@ -1,0 +1,6 @@
+numpy.int0.max
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: int0.max

@@ -1,0 +1,6 @@
+numpy.character.tolist
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.tolist

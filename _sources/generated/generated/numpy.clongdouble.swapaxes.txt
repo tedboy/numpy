@@ -1,0 +1,6 @@
+numpy.clongdouble.swapaxes
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.swapaxes

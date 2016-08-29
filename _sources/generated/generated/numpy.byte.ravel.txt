@@ -1,0 +1,6 @@
+numpy.byte.ravel
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.ravel

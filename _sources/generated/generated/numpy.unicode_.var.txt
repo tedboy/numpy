@@ -1,0 +1,6 @@
+numpy.unicode_.var
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.var

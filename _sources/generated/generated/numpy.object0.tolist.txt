@@ -1,0 +1,6 @@
+numpy.object0.tolist
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: object0.tolist

@@ -1,0 +1,6 @@
+numpy.flexible.T
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.T

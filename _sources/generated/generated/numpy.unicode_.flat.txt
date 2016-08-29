@@ -1,0 +1,6 @@
+numpy.unicode_.flat
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.flat

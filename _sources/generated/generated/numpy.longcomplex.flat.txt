@@ -1,0 +1,6 @@
+numpy.longcomplex.flat
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.flat

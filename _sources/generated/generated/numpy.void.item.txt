@@ -1,0 +1,6 @@
+numpy.void.item
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: void.item

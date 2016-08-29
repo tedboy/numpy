@@ -1,0 +1,6 @@
+numpy.bytes_.argmin
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.argmin

@@ -1,0 +1,6 @@
+numpy.ubyte.sum
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.sum

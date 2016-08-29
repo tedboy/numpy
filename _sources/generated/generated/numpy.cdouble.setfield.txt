@@ -1,0 +1,6 @@
+numpy.cdouble.setfield
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.setfield

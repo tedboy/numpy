@@ -1,0 +1,6 @@
+numpy.clongfloat.shape
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongfloat.shape

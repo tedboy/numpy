@@ -1,0 +1,6 @@
+numpy.lib.isneginf
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: isneginf

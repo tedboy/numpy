@@ -1,0 +1,6 @@
+numpy.int8.real
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int8.real

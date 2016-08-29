@@ -1,0 +1,6 @@
+numpy.bytes_.endswith
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.endswith

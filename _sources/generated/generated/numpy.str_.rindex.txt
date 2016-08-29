@@ -1,0 +1,6 @@
+numpy.str_.rindex
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.rindex

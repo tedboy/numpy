@@ -1,0 +1,6 @@
+numpy.unsignedinteger.argmax
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.argmax

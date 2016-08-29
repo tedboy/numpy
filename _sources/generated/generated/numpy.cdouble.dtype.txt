@@ -1,0 +1,6 @@
+numpy.cdouble.dtype
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.dtype

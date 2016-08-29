@@ -1,0 +1,6 @@
+numpy.ubyte.trace
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.trace

@@ -1,0 +1,6 @@
+numpy.short.sum
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: short.sum

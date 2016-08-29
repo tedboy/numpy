@@ -1,0 +1,6 @@
+numpy.polynomial.Laguerre.domain
+================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Laguerre.domain

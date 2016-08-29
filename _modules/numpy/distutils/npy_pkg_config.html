@@ -1,0 +1,672 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>numpy.distutils.npy_pkg_config &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../../index.html"/>
+        <link rel="up" title="numpy" href="../../numpy.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../numpy.html">numpy</a> &raquo;</li>
+        
+      <li>numpy.distutils.npy_pkg_config</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for numpy.distutils.npy_pkg_config</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">ConfigParser</span> <span class="kn">import</span> <span class="n">SafeConfigParser</span><span class="p">,</span> <span class="n">NoOptionError</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">configparser</span> <span class="kn">import</span> <span class="n">ConfigParser</span><span class="p">,</span> <span class="n">SafeConfigParser</span><span class="p">,</span> <span class="n">NoOptionError</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FormatError&#39;</span><span class="p">,</span> <span class="s1">&#39;PkgNotFound&#39;</span><span class="p">,</span> <span class="s1">&#39;LibraryInfo&#39;</span><span class="p">,</span> <span class="s1">&#39;VariableSet&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;read_config&#39;</span><span class="p">,</span> <span class="s1">&#39;parse_flags&#39;</span><span class="p">]</span>
+
+<span class="n">_VAR</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;\$\{([a-zA-Z0-9_-]+)\}&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="FormatError"><a class="viewcode-back" href="../../../generated/numpy.distutils.FormatError.html#numpy.distutils.FormatError">[docs]</a><span class="k">class</span> <span class="nc">FormatError</span><span class="p">(</span><span class="ne">IOError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exception thrown when there is a problem parsing a configuration file.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span></div>
+
+<div class="viewcode-block" id="PkgNotFound"><a class="viewcode-back" href="../../../generated/numpy.distutils.PkgNotFound.html#numpy.distutils.PkgNotFound">[docs]</a><span class="k">class</span> <span class="nc">PkgNotFound</span><span class="p">(</span><span class="ne">IOError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when a package can not be located.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span></div>
+
+<div class="viewcode-block" id="parse_flags"><a class="viewcode-back" href="../../../generated/numpy.distutils.parse_flags.html#numpy.distutils.parse_flags">[docs]</a><span class="k">def</span> <span class="nf">parse_flags</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse a line from a config file containing compile flags.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    line : str</span>
+<span class="sd">        A single line containing one or more compile flags.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    d : dict</span>
+<span class="sd">        Dictionary of parsed flags, split into relevant categories.</span>
+<span class="sd">        These categories are the keys of `d`:</span>
+
+<span class="sd">        * &#39;include_dirs&#39;</span>
+<span class="sd">        * &#39;library_dirs&#39;</span>
+<span class="sd">        * &#39;libraries&#39;</span>
+<span class="sd">        * &#39;macros&#39;</span>
+<span class="sd">        * &#39;ignored&#39;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;include_dirs&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;library_dirs&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;libraries&#39;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="s1">&#39;macros&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;ignored&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+
+    <span class="n">flags</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; -&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">flag</span> <span class="ow">in</span> <span class="n">flags</span><span class="p">:</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">flag</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">flag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;-I&#39;</span><span class="p">):</span>
+                <span class="n">d</span><span class="p">[</span><span class="s1">&#39;include_dirs&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="k">elif</span> <span class="n">flag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;-L&#39;</span><span class="p">):</span>
+                <span class="n">d</span><span class="p">[</span><span class="s1">&#39;library_dirs&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="k">elif</span> <span class="n">flag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;-l&#39;</span><span class="p">):</span>
+                <span class="n">d</span><span class="p">[</span><span class="s1">&#39;libraries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="k">elif</span> <span class="n">flag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;-D&#39;</span><span class="p">):</span>
+                <span class="n">d</span><span class="p">[</span><span class="s1">&#39;macros&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="s1">&#39;ignored&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">d</span></div>
+
+<span class="k">def</span> <span class="nf">_escape_backslash</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">val</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LibraryInfo"><a class="viewcode-back" href="../../../generated/generated/numpy.distutils.LibraryInfo.html#numpy.distutils.LibraryInfo">[docs]</a><span class="k">class</span> <span class="nc">LibraryInfo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Object containing build information about a library.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : str</span>
+<span class="sd">        The library name.</span>
+<span class="sd">    description : str</span>
+<span class="sd">        Description of the library.</span>
+<span class="sd">    version : str</span>
+<span class="sd">        Version string.</span>
+<span class="sd">    sections : dict</span>
+<span class="sd">        The sections of the configuration file for the library. The keys are</span>
+<span class="sd">        the section headers, the values the text under each header.</span>
+<span class="sd">    vars : class instance</span>
+<span class="sd">        A `VariableSet` instance, which contains ``(name, value)`` pairs for</span>
+<span class="sd">        variables defined in the configuration file for the library.</span>
+<span class="sd">    requires : sequence, optional</span>
+<span class="sd">        The required libraries for the library to be installed.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    All input parameters (except &quot;sections&quot; which is a method) are available as</span>
+<span class="sd">    attributes of the same name.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="LibraryInfo.__init__"><a class="viewcode-back" href="../../../generated/generated/numpy.distutils.LibraryInfo.__init__.html#numpy.distutils.LibraryInfo.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">sections</span><span class="p">,</span> <span class="nb">vars</span><span class="p">,</span> <span class="n">requires</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="k">if</span> <span class="n">requires</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">requires</span> <span class="o">=</span> <span class="n">requires</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">requires</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sections</span> <span class="o">=</span> <span class="n">sections</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vars</span> <span class="o">=</span> <span class="nb">vars</span></div>
+
+<div class="viewcode-block" id="LibraryInfo.sections"><a class="viewcode-back" href="../../../generated/generated/numpy.distutils.LibraryInfo.sections.html#numpy.distutils.LibraryInfo.sections">[docs]</a>    <span class="k">def</span> <span class="nf">sections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the section headers of the config file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        None</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        keys : list of str</span>
+<span class="sd">            The list of section headers.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sections</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="LibraryInfo.cflags"><a class="viewcode-back" href="../../../generated/generated/numpy.distutils.LibraryInfo.cflags.html#numpy.distutils.LibraryInfo.cflags">[docs]</a>    <span class="k">def</span> <span class="nf">cflags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">):</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sections</span><span class="p">[</span><span class="n">section</span><span class="p">][</span><span class="s1">&#39;cflags&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">_escape_backslash</span><span class="p">(</span><span class="n">val</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LibraryInfo.libs"><a class="viewcode-back" href="../../../generated/generated/numpy.distutils.LibraryInfo.libs.html#numpy.distutils.LibraryInfo.libs">[docs]</a>    <span class="k">def</span> <span class="nf">libs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">):</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vars</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sections</span><span class="p">[</span><span class="n">section</span><span class="p">][</span><span class="s1">&#39;libs&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">_escape_backslash</span><span class="p">(</span><span class="n">val</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Description: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">requires</span><span class="p">:</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Requires:&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Requires: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">requires</span><span class="p">))</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Version: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VariableSet"><a class="viewcode-back" href="../../../generated/generated/numpy.distutils.VariableSet.html#numpy.distutils.VariableSet">[docs]</a><span class="k">class</span> <span class="nc">VariableSet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Container object for the variables defined in a config file.</span>
+
+<span class="sd">    `VariableSet` can be used as a plain dictionary, with the variable names</span>
+<span class="sd">    as keys.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    d : dict</span>
+<span class="sd">        Dict of items in the &quot;variables&quot; section of the configuration file.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="VariableSet.__init__"><a class="viewcode-back" href="../../../generated/generated/numpy.distutils.VariableSet.__init__.html#numpy.distutils.VariableSet.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raw_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_re</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_re_sub</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_parse</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">_init_parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_init_parse_var</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_init_parse_var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_re</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">r&#39;\$\{</span><span class="si">%s</span><span class="s1">\}&#39;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_re_sub</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+<div class="viewcode-block" id="VariableSet.interpolate"><a class="viewcode-back" href="../../../generated/generated/numpy.distutils.VariableSet.interpolate.html#numpy.distutils.VariableSet.interpolate">[docs]</a>    <span class="k">def</span> <span class="nf">interpolate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># Brute force: we keep interpolating until there is no &#39;${var}&#39; anymore</span>
+        <span class="c1"># or until interpolated string is equal to input string</span>
+        <span class="k">def</span> <span class="nf">_interpolate</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_re</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_re</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_re_sub</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">while</span> <span class="n">_VAR</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+            <span class="n">nvalue</span> <span class="o">=</span> <span class="n">_interpolate</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">nvalue</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">nvalue</span>
+
+        <span class="k">return</span> <span class="n">value</span></div>
+
+<div class="viewcode-block" id="VariableSet.variables"><a class="viewcode-back" href="../../../generated/generated/numpy.distutils.VariableSet.variables.html#numpy.distutils.VariableSet.variables">[docs]</a>    <span class="k">def</span> <span class="nf">variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the list of variable names.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        None</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        names : list of str</span>
+<span class="sd">            The names of all variables in the `VariableSet` instance.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_raw_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span></div>
+
+    <span class="c1"># Emulate a dict to set/get variables values</span>
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raw_data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_parse_var</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+<span class="k">def</span> <span class="nf">parse_meta</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">config</span><span class="o">.</span><span class="n">has_section</span><span class="p">(</span><span class="s1">&#39;meta&#39;</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">FormatError</span><span class="p">(</span><span class="s2">&quot;No meta section found !&quot;</span><span class="p">)</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="s1">&#39;meta&#39;</span><span class="p">):</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">FormatError</span><span class="p">(</span><span class="s2">&quot;Option </span><span class="si">%s</span><span class="s2"> (section [meta]) is mandatory, &quot;</span>
+                <span class="s2">&quot;but not found&quot;</span> <span class="o">%</span> <span class="n">k</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;requires&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="s1">&#39;requires&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">return</span> <span class="n">d</span>
+
+<span class="k">def</span> <span class="nf">parse_variables</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">config</span><span class="o">.</span><span class="n">has_section</span><span class="p">(</span><span class="s1">&#39;variables&#39;</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">FormatError</span><span class="p">(</span><span class="s2">&quot;No variables section found !&quot;</span><span class="p">)</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="s2">&quot;variables&quot;</span><span class="p">):</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">return</span> <span class="n">VariableSet</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">parse_sections</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">meta_d</span><span class="p">,</span> <span class="n">r</span>
+
+<span class="k">def</span> <span class="nf">pkg_to_filename</span><span class="p">(</span><span class="n">pkg_name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.ini&quot;</span> <span class="o">%</span> <span class="n">pkg_name</span>
+
+<span class="k">def</span> <span class="nf">parse_config</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dirs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">dirs</span><span class="p">:</span>
+        <span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;3.1&#39;</span><span class="p">:</span>
+        <span class="c1"># SafeConfigParser is deprecated in py-3.2 and renamed to ConfigParser</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">SafeConfigParser</span><span class="p">()</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PkgNotFound</span><span class="p">(</span><span class="s2">&quot;Could not find file(s) </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">filenames</span><span class="p">))</span>
+
+    <span class="c1"># Parse meta and variables sections</span>
+    <span class="n">meta</span> <span class="o">=</span> <span class="n">parse_meta</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="nb">vars</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">has_section</span><span class="p">(</span><span class="s1">&#39;variables&#39;</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="s2">&quot;variables&quot;</span><span class="p">):</span>
+            <span class="nb">vars</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_escape_backslash</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="c1"># Parse &quot;normal&quot; sections</span>
+    <span class="n">secs</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">sections</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">,</span> <span class="s1">&#39;variables&#39;</span><span class="p">]]</span>
+    <span class="n">sections</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">requires</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">secs</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">has_option</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s2">&quot;requires&quot;</span><span class="p">):</span>
+            <span class="n">requires</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">&#39;requires&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">sections</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span>
+
+    <span class="k">return</span> <span class="n">meta</span><span class="p">,</span> <span class="nb">vars</span><span class="p">,</span> <span class="n">sections</span><span class="p">,</span> <span class="n">requires</span>
+
+<span class="k">def</span> <span class="nf">_read_config_imp</span><span class="p">(</span><span class="n">filenames</span><span class="p">,</span> <span class="n">dirs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_read_config</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">meta</span><span class="p">,</span> <span class="nb">vars</span><span class="p">,</span> <span class="n">sections</span><span class="p">,</span> <span class="n">reqs</span> <span class="o">=</span> <span class="n">parse_config</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">dirs</span><span class="p">)</span>
+        <span class="c1"># recursively add sections and variables of required libraries</span>
+        <span class="k">for</span> <span class="n">rname</span><span class="p">,</span> <span class="n">rvalue</span> <span class="ow">in</span> <span class="n">reqs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">nmeta</span><span class="p">,</span> <span class="n">nvars</span><span class="p">,</span> <span class="n">nsections</span><span class="p">,</span> <span class="n">nreqs</span> <span class="o">=</span> <span class="n">_read_config</span><span class="p">(</span><span class="n">pkg_to_filename</span><span class="p">(</span><span class="n">rvalue</span><span class="p">))</span>
+
+            <span class="c1"># Update var dict for variables not in &#39;top&#39; config file</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nvars</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">:</span>
+                    <span class="nb">vars</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+
+            <span class="c1"># Update sec dict</span>
+            <span class="k">for</span> <span class="n">oname</span><span class="p">,</span> <span class="n">ovalue</span> <span class="ow">in</span> <span class="n">nsections</span><span class="p">[</span><span class="n">rname</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">ovalue</span><span class="p">:</span>
+                    <span class="n">sections</span><span class="p">[</span><span class="n">rname</span><span class="p">][</span><span class="n">oname</span><span class="p">]</span> <span class="o">+=</span> <span class="s1">&#39; </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">ovalue</span>
+
+        <span class="k">return</span> <span class="n">meta</span><span class="p">,</span> <span class="nb">vars</span><span class="p">,</span> <span class="n">sections</span><span class="p">,</span> <span class="n">reqs</span>
+
+    <span class="n">meta</span><span class="p">,</span> <span class="nb">vars</span><span class="p">,</span> <span class="n">sections</span><span class="p">,</span> <span class="n">reqs</span> <span class="o">=</span> <span class="n">_read_config</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+
+    <span class="c1"># FIXME: document this. If pkgname is defined in the variables section, and</span>
+    <span class="c1"># there is no pkgdir variable defined, pkgdir is automatically defined to</span>
+    <span class="c1"># the path of pkgname. This requires the package to be imported to work</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;pkgdir&#39;</span> <span class="ow">in</span> <span class="nb">vars</span> <span class="ow">and</span> <span class="s2">&quot;pkgname&quot;</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">:</span>
+        <span class="n">pkgname</span> <span class="o">=</span> <span class="nb">vars</span><span class="p">[</span><span class="s2">&quot;pkgname&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">pkgname</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;You should import </span><span class="si">%s</span><span class="s2"> to get information on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+                             <span class="p">(</span><span class="n">pkgname</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]))</span>
+
+        <span class="n">mod</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">pkgname</span><span class="p">]</span>
+        <span class="nb">vars</span><span class="p">[</span><span class="s2">&quot;pkgdir&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_escape_backslash</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">__file__</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">LibraryInfo</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">description</span><span class="o">=</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">],</span>
+            <span class="n">version</span><span class="o">=</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">],</span> <span class="n">sections</span><span class="o">=</span><span class="n">sections</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="n">VariableSet</span><span class="p">(</span><span class="nb">vars</span><span class="p">))</span>
+
+<span class="c1"># Trivial cache to cache LibraryInfo instances creation. To be really</span>
+<span class="c1"># efficient, the cache should be handled in read_config, since a same file can</span>
+<span class="c1"># be parsed many time outside LibraryInfo creation, but I doubt this will be a</span>
+<span class="c1"># problem in practice</span>
+<span class="n">_CACHE</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="viewcode-block" id="read_config"><a class="viewcode-back" href="../../../generated/numpy.distutils.read_config.html#numpy.distutils.read_config">[docs]</a><span class="k">def</span> <span class="nf">read_config</span><span class="p">(</span><span class="n">pkgname</span><span class="p">,</span> <span class="n">dirs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return library info for a package from its configuration file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pkgname : str</span>
+<span class="sd">        Name of the package (should match the name of the .ini file, without</span>
+<span class="sd">        the extension, e.g. foo for the file foo.ini).</span>
+<span class="sd">    dirs : sequence, optional</span>
+<span class="sd">        If given, should be a sequence of directories - usually including</span>
+<span class="sd">        the NumPy base directory - where to look for npy-pkg-config files.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pkginfo : class instance</span>
+<span class="sd">        The `LibraryInfo` instance containing the build information.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    PkgNotFound</span>
+<span class="sd">        If the package is not found.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    misc_util.get_info, misc_util.get_pkg_info</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; npymath_info = np.distutils.npy_pkg_config.read_config(&#39;npymath&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; type(npymath_info)</span>
+<span class="sd">    &lt;class &#39;numpy.distutils.npy_pkg_config.LibraryInfo&#39;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; print npymath_info</span>
+<span class="sd">    Name: npymath</span>
+<span class="sd">    Description: Portable, core math library implementing C99 standard</span>
+<span class="sd">    Requires:</span>
+<span class="sd">    Version: 0.1  #random</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_CACHE</span><span class="p">[</span><span class="n">pkgname</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">_read_config_imp</span><span class="p">(</span><span class="n">pkg_to_filename</span><span class="p">(</span><span class="n">pkgname</span><span class="p">),</span> <span class="n">dirs</span><span class="p">)</span>
+        <span class="n">_CACHE</span><span class="p">[</span><span class="n">pkgname</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">return</span> <span class="n">v</span></div>
+
+<span class="c1"># TODO:</span>
+<span class="c1">#   - implements version comparison (modversion + atleast)</span>
+
+<span class="c1"># pkg-config simple emulator - useful for debugging, and maybe later to query</span>
+<span class="c1"># the system</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="kn">from</span> <span class="nn">optparse</span> <span class="kn">import</span> <span class="n">OptionParser</span>
+    <span class="kn">import</span> <span class="nn">glob</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">OptionParser</span><span class="p">()</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--cflags&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;cflags&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s2">&quot;output all preprocessor and compiler flags&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--libs&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;libs&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s2">&quot;output all linker flags&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--use-section&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;section&quot;</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s2">&quot;use this section instead of default for options&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--version&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s2">&quot;output version&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--atleast-version&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;min_version&quot;</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Minimal version&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--list-all&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;list_all&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Minimal version&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--define-variable&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;define_variable&quot;</span><span class="p">,</span>
+                      <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Replace variable with the given value&quot;</span><span class="p">)</span>
+
+    <span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Expect package name on the command line:&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">list_all</span><span class="p">:</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.ini&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">read_config</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\t</span><span class="si">%s</span><span class="s2"> - </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
+
+    <span class="n">pkg_name</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;NPY_PKG_CONFIG_PATH&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">read_config</span><span class="p">(</span><span class="n">pkg_name</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;numpy/core/lib/npy-pkg-config&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">read_config</span><span class="p">(</span><span class="n">pkg_name</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;numpy/core/lib/npy-pkg-config&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">section</span><span class="p">:</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">section</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">define_variable</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;([\S]+)=([\S]+)&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">define_variable</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">m</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;--define-variable option should be of &quot;</span> \
+                             <span class="s2">&quot;the form --define-variable=foo=bar&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">info</span><span class="o">.</span><span class="n">vars</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">cflags</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">cflags</span><span class="p">(</span><span class="n">section</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">libs</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">libs</span><span class="p">(</span><span class="n">section</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">version</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">min_version</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;=</span> <span class="n">options</span><span class="o">.</span><span class="n">min_version</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

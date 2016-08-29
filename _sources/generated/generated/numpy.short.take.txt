@@ -1,0 +1,6 @@
+numpy.short.take
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.take

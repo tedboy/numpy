@@ -1,0 +1,6 @@
+numpy.complex256.repeat
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.repeat

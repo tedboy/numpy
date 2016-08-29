@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.3.2. Array manipulation routines &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../index.html"/>
+        <link rel="up" title="11.3. Routines" href="routines.html"/>
+        <link rel="next" title="11.3.2.1.1. numpy.copyto" href="generated/numpy.copyto.html"/>
+        <link rel="prev" title="11.3.1.7.1. numpy.mat" href="generated/numpy.mat.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="routines.html">11.3. Routines</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="routines.array-creation.html">11.3.1. Array creation routines</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">11.3.2. Array manipulation routines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-operations">11.3.2.1. Basic operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-array-shape">11.3.2.2. Changing array shape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transpose-like-operations">11.3.2.3. Transpose-like operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-number-of-dimensions">11.3.2.4. Changing number of dimensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-kind-of-array">11.3.2.5. Changing kind of array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joining-arrays">11.3.2.6. Joining arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#splitting-arrays">11.3.2.7. Splitting arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tiling-arrays">11.3.2.8. Tiling arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-and-removing-elements">11.3.2.9. Adding and removing elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rearranging-elements">11.3.2.10. Rearranging elements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="routines.bitwise.html">11.3.3. Binary operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.char.html">11.3.4. String operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.ctypeslib.html">11.3.5. C-Types Foreign Function Interface (<code class="docutils literal"><span class="pre">numpy.ctypeslib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.datetime.html">11.3.6. Datetime Support Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.dtype.html">11.3.7. Data type routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.dual.html">11.3.8. Optionally Scipy-accelerated routines (<code class="docutils literal"><span class="pre">numpy.dual</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.emath.html">11.3.9. Mathematical functions with automatic domain (<code class="docutils literal"><span class="pre">numpy.emath</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.err.html">11.3.10. Floating point error handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.fft.html">11.3.11. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.financial.html">11.3.12. Financial functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.functional.html">11.3.13. Functional programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.help.html">11.3.14. Numpy-specific help functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.indexing.html">11.3.15. Indexing routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.io.html">11.3.16. Input and output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.linalg.html">11.3.17. Linear algebra (<code class="docutils literal"><span class="pre">numpy.linalg</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.logic.html">11.3.18. Logic functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.ma.html">11.1.7.7. Masked array operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.math.html">11.3.19. Mathematical functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.matlib.html">11.3.20. Matrix library (<code class="docutils literal"><span class="pre">numpy.matlib</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.other.html">11.3.21. Miscellaneous routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.padding.html">11.3.22. Padding Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.polynomials.html">11.3.23. Polynomials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.random.html">11.3.24. Random sampling (<code class="docutils literal"><span class="pre">numpy.random</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.set.html">11.3.25. Set routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.sort.html">11.3.26. Sorting, searching, and counting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.statistics.html">11.3.27. Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.testing.html">11.3.28. Test Support (<code class="docutils literal"><span class="pre">numpy.testing</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="routines.window.html">11.3.29. Window functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="routines.html">11.3. Routines</a> &raquo;</li>
+        
+      <li>11.3.2. Array manipulation routines</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/routines.array-manipulation.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="array-manipulation-routines">
+<h1>11.3.2. Array manipulation routines<a class="headerlink" href="#array-manipulation-routines" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-operations">
+<h2>11.3.2.1. Basic operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.copyto.html#numpy.copyto" title="numpy.copyto"><code class="xref py py-obj docutils literal"><span class="pre">copyto</span></code></a>(dst,&nbsp;src[,&nbsp;casting,&nbsp;where])</td>
+<td>Copies values from one array to another, broadcasting as necessary.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="changing-array-shape">
+<h2>11.3.2.2. Changing array shape<a class="headerlink" href="#changing-array-shape" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.reshape.html#numpy.reshape" title="numpy.reshape"><code class="xref py py-obj docutils literal"><span class="pre">reshape</span></code></a>(a,&nbsp;newshape[,&nbsp;order])</td>
+<td>Gives a new shape to an array without changing its data.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.ravel.html#numpy.ravel" title="numpy.ravel"><code class="xref py py-obj docutils literal"><span class="pre">ravel</span></code></a>(a[,&nbsp;order])</td>
+<td>Return a contiguous flattened array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.ndarray.flat.html#numpy.ndarray.flat" title="numpy.ndarray.flat"><code class="xref py py-obj docutils literal"><span class="pre">ndarray.flat</span></code></a></td>
+<td>A 1-D iterator over the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.ndarray.flatten.html#numpy.ndarray.flatten" title="numpy.ndarray.flatten"><code class="xref py py-obj docutils literal"><span class="pre">ndarray.flatten</span></code></a>([order])</td>
+<td>Return a copy of the array collapsed into one dimension.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="transpose-like-operations">
+<h2>11.3.2.3. Transpose-like operations<a class="headerlink" href="#transpose-like-operations" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">moveaxis</span></code></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.rollaxis.html#numpy.rollaxis" title="numpy.rollaxis"><code class="xref py py-obj docutils literal"><span class="pre">rollaxis</span></code></a>(a,&nbsp;axis[,&nbsp;start])</td>
+<td>Roll the specified axis backwards, until it lies in a given position.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.swapaxes.html#numpy.swapaxes" title="numpy.swapaxes"><code class="xref py py-obj docutils literal"><span class="pre">swapaxes</span></code></a>(a,&nbsp;axis1,&nbsp;axis2)</td>
+<td>Interchange two axes of an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.ndarray.T.html#numpy.ndarray.T" title="numpy.ndarray.T"><code class="xref py py-obj docutils literal"><span class="pre">ndarray.T</span></code></a></td>
+<td>Same as self.transpose(), except that self is returned if self.ndim &lt; 2.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.transpose.html#numpy.transpose" title="numpy.transpose"><code class="xref py py-obj docutils literal"><span class="pre">transpose</span></code></a>(a[,&nbsp;axes])</td>
+<td>Permute the dimensions of an array.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="changing-number-of-dimensions">
+<h2>11.3.2.4. Changing number of dimensions<a class="headerlink" href="#changing-number-of-dimensions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.atleast_1d.html#numpy.atleast_1d" title="numpy.atleast_1d"><code class="xref py py-obj docutils literal"><span class="pre">atleast_1d</span></code></a>(*arys)</td>
+<td>Convert inputs to arrays with at least one dimension.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.atleast_2d.html#numpy.atleast_2d" title="numpy.atleast_2d"><code class="xref py py-obj docutils literal"><span class="pre">atleast_2d</span></code></a>(*arys)</td>
+<td>View inputs as arrays with at least two dimensions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.atleast_3d.html#numpy.atleast_3d" title="numpy.atleast_3d"><code class="xref py py-obj docutils literal"><span class="pre">atleast_3d</span></code></a>(*arys)</td>
+<td>View inputs as arrays with at least three dimensions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.broadcast.html#numpy.broadcast" title="numpy.broadcast"><code class="xref py py-obj docutils literal"><span class="pre">broadcast</span></code></a></td>
+<td>Produce an object that mimics broadcasting.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.broadcast_to.html#numpy.broadcast_to" title="numpy.broadcast_to"><code class="xref py py-obj docutils literal"><span class="pre">broadcast_to</span></code></a>(array,&nbsp;shape[,&nbsp;subok])</td>
+<td>Broadcast an array to a new shape.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.broadcast_arrays.html#numpy.broadcast_arrays" title="numpy.broadcast_arrays"><code class="xref py py-obj docutils literal"><span class="pre">broadcast_arrays</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Broadcast any number of arrays against each other.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.expand_dims.html#numpy.expand_dims" title="numpy.expand_dims"><code class="xref py py-obj docutils literal"><span class="pre">expand_dims</span></code></a>(a,&nbsp;axis)</td>
+<td>Expand the shape of an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.squeeze.html#numpy.squeeze" title="numpy.squeeze"><code class="xref py py-obj docutils literal"><span class="pre">squeeze</span></code></a>(a[,&nbsp;axis])</td>
+<td>Remove single-dimensional entries from the shape of an array.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="changing-kind-of-array">
+<h2>11.3.2.5. Changing kind of array<a class="headerlink" href="#changing-kind-of-array" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.asarray.html#numpy.asarray" title="numpy.asarray"><code class="xref py py-obj docutils literal"><span class="pre">asarray</span></code></a>(a[,&nbsp;dtype,&nbsp;order])</td>
+<td>Convert the input to an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.asanyarray.html#numpy.asanyarray" title="numpy.asanyarray"><code class="xref py py-obj docutils literal"><span class="pre">asanyarray</span></code></a>(a[,&nbsp;dtype,&nbsp;order])</td>
+<td>Convert the input to an ndarray, but pass ndarray subclasses through.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.asmatrix.html#numpy.asmatrix" title="numpy.asmatrix"><code class="xref py py-obj docutils literal"><span class="pre">asmatrix</span></code></a>(data[,&nbsp;dtype])</td>
+<td>Interpret the input as a matrix.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.asfarray.html#numpy.asfarray" title="numpy.asfarray"><code class="xref py py-obj docutils literal"><span class="pre">asfarray</span></code></a>(a[,&nbsp;dtype])</td>
+<td>Return an array converted to a float type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.asfortranarray.html#numpy.asfortranarray" title="numpy.asfortranarray"><code class="xref py py-obj docutils literal"><span class="pre">asfortranarray</span></code></a>(a[,&nbsp;dtype])</td>
+<td>Return an array laid out in Fortran order in memory.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.ascontiguousarray.html#numpy.ascontiguousarray" title="numpy.ascontiguousarray"><code class="xref py py-obj docutils literal"><span class="pre">ascontiguousarray</span></code></a>(a[,&nbsp;dtype])</td>
+<td>Return a contiguous array in memory (C order).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.asarray_chkfinite.html#numpy.asarray_chkfinite" title="numpy.asarray_chkfinite"><code class="xref py py-obj docutils literal"><span class="pre">asarray_chkfinite</span></code></a>(a[,&nbsp;dtype,&nbsp;order])</td>
+<td>Convert the input to an array, checking for NaNs or Infs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.asscalar.html#numpy.asscalar" title="numpy.asscalar"><code class="xref py py-obj docutils literal"><span class="pre">asscalar</span></code></a>(a)</td>
+<td>Convert an array of size 1 to its scalar equivalent.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.require.html#numpy.require" title="numpy.require"><code class="xref py py-obj docutils literal"><span class="pre">require</span></code></a>(a[,&nbsp;dtype,&nbsp;requirements])</td>
+<td>Return an ndarray of the provided type that satisfies requirements.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="joining-arrays">
+<h2>11.3.2.6. Joining arrays<a class="headerlink" href="#joining-arrays" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.concatenate.html#numpy.concatenate" title="numpy.concatenate"><code class="xref py py-obj docutils literal"><span class="pre">concatenate</span></code></a>((a1,&nbsp;a2,&nbsp;...)[,&nbsp;axis])</td>
+<td>Join a sequence of arrays along an existing axis.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.stack.html#numpy.stack" title="numpy.stack"><code class="xref py py-obj docutils literal"><span class="pre">stack</span></code></a>(arrays[,&nbsp;axis])</td>
+<td>Join a sequence of arrays along a new axis.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.column_stack.html#numpy.column_stack" title="numpy.column_stack"><code class="xref py py-obj docutils literal"><span class="pre">column_stack</span></code></a>(tup)</td>
+<td>Stack 1-D arrays as columns into a 2-D array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.dstack.html#numpy.dstack" title="numpy.dstack"><code class="xref py py-obj docutils literal"><span class="pre">dstack</span></code></a>(tup)</td>
+<td>Stack arrays in sequence depth wise (along third axis).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.hstack.html#numpy.hstack" title="numpy.hstack"><code class="xref py py-obj docutils literal"><span class="pre">hstack</span></code></a>(tup)</td>
+<td>Stack arrays in sequence horizontally (column wise).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.vstack.html#numpy.vstack" title="numpy.vstack"><code class="xref py py-obj docutils literal"><span class="pre">vstack</span></code></a>(tup)</td>
+<td>Stack arrays in sequence vertically (row wise).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="splitting-arrays">
+<h2>11.3.2.7. Splitting arrays<a class="headerlink" href="#splitting-arrays" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.split.html#numpy.split" title="numpy.split"><code class="xref py py-obj docutils literal"><span class="pre">split</span></code></a>(ary,&nbsp;indices_or_sections[,&nbsp;axis])</td>
+<td>Split an array into multiple sub-arrays.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.array_split.html#numpy.array_split" title="numpy.array_split"><code class="xref py py-obj docutils literal"><span class="pre">array_split</span></code></a>(ary,&nbsp;indices_or_sections[,&nbsp;axis])</td>
+<td>Split an array into multiple sub-arrays.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.dsplit.html#numpy.dsplit" title="numpy.dsplit"><code class="xref py py-obj docutils literal"><span class="pre">dsplit</span></code></a>(ary,&nbsp;indices_or_sections)</td>
+<td>Split array into multiple sub-arrays along the 3rd axis (depth).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.hsplit.html#numpy.hsplit" title="numpy.hsplit"><code class="xref py py-obj docutils literal"><span class="pre">hsplit</span></code></a>(ary,&nbsp;indices_or_sections)</td>
+<td>Split an array into multiple sub-arrays horizontally (column-wise).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.vsplit.html#numpy.vsplit" title="numpy.vsplit"><code class="xref py py-obj docutils literal"><span class="pre">vsplit</span></code></a>(ary,&nbsp;indices_or_sections)</td>
+<td>Split an array into multiple sub-arrays vertically (row-wise).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tiling-arrays">
+<h2>11.3.2.8. Tiling arrays<a class="headerlink" href="#tiling-arrays" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.tile.html#numpy.tile" title="numpy.tile"><code class="xref py py-obj docutils literal"><span class="pre">tile</span></code></a>(A,&nbsp;reps)</td>
+<td>Construct an array by repeating A the number of times given by reps.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.repeat.html#numpy.repeat" title="numpy.repeat"><code class="xref py py-obj docutils literal"><span class="pre">repeat</span></code></a>(a,&nbsp;repeats[,&nbsp;axis])</td>
+<td>Repeat elements of an array.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="adding-and-removing-elements">
+<h2>11.3.2.9. Adding and removing elements<a class="headerlink" href="#adding-and-removing-elements" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.delete.html#numpy.delete" title="numpy.delete"><code class="xref py py-obj docutils literal"><span class="pre">delete</span></code></a>(arr,&nbsp;obj[,&nbsp;axis])</td>
+<td>Return a new array with sub-arrays along an axis deleted.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.insert.html#numpy.insert" title="numpy.insert"><code class="xref py py-obj docutils literal"><span class="pre">insert</span></code></a>(arr,&nbsp;obj,&nbsp;values[,&nbsp;axis])</td>
+<td>Insert values along the given axis before the given indices.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.append.html#numpy.append" title="numpy.append"><code class="xref py py-obj docutils literal"><span class="pre">append</span></code></a>(arr,&nbsp;values[,&nbsp;axis])</td>
+<td>Append values to the end of an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.resize.html#numpy.resize" title="numpy.resize"><code class="xref py py-obj docutils literal"><span class="pre">resize</span></code></a>(a,&nbsp;new_shape)</td>
+<td>Return a new array with the specified shape.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.trim_zeros.html#numpy.trim_zeros" title="numpy.trim_zeros"><code class="xref py py-obj docutils literal"><span class="pre">trim_zeros</span></code></a>(filt[,&nbsp;trim])</td>
+<td>Trim the leading and/or trailing zeros from a 1-D array or sequence.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.unique.html#numpy.unique" title="numpy.unique"><code class="xref py py-obj docutils literal"><span class="pre">unique</span></code></a>(ar[,&nbsp;return_index,&nbsp;return_inverse,&nbsp;...])</td>
+<td>Find the unique elements of an array.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rearranging-elements">
+<h2>11.3.2.10. Rearranging elements<a class="headerlink" href="#rearranging-elements" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">flip</span></code></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.fliplr.html#numpy.fliplr" title="numpy.fliplr"><code class="xref py py-obj docutils literal"><span class="pre">fliplr</span></code></a>(m)</td>
+<td>Flip array in the left/right direction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.flipud.html#numpy.flipud" title="numpy.flipud"><code class="xref py py-obj docutils literal"><span class="pre">flipud</span></code></a>(m)</td>
+<td>Flip array in the up/down direction.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.reshape.html#numpy.reshape" title="numpy.reshape"><code class="xref py py-obj docutils literal"><span class="pre">reshape</span></code></a>(a,&nbsp;newshape[,&nbsp;order])</td>
+<td>Gives a new shape to an array without changing its data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/numpy.roll.html#numpy.roll" title="numpy.roll"><code class="xref py py-obj docutils literal"><span class="pre">roll</span></code></a>(a,&nbsp;shift[,&nbsp;axis])</td>
+<td>Roll array elements along a given axis.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/numpy.rot90.html#numpy.rot90" title="numpy.rot90"><code class="xref py py-obj docutils literal"><span class="pre">rot90</span></code></a>(m[,&nbsp;k])</td>
+<td>Rotate an array by 90 degrees in the counter-clockwise direction.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/numpy.copyto.html" class="btn btn-neutral float-right" title="11.3.2.1.1. numpy.copyto" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/numpy.mat.html" class="btn btn-neutral" title="11.3.1.7.1. numpy.mat" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

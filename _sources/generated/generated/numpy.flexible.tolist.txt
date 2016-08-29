@@ -1,0 +1,6 @@
+numpy.flexible.tolist
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.tolist

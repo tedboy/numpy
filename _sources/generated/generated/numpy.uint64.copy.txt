@@ -1,0 +1,6 @@
+numpy.uint64.copy
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint64.copy

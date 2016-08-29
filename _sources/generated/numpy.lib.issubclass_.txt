@@ -1,0 +1,6 @@
+numpy.lib.issubclass_
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: issubclass_

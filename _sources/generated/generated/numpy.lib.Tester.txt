@@ -1,0 +1,30 @@
+numpy.lib.Tester
+================
+.. currentmodule:: numpy.lib
+.. autoclass:: Tester
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~Tester.__init__
+   ~Tester.bench
+   ~Tester.prepare_test_args
+   ~Tester.test
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~Tester.excludes
+

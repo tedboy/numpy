@@ -1,0 +1,6 @@
+numpy.random.Tester.test
+========================
+
+.. currentmodule:: numpy.random
+
+.. automethod:: Tester.test

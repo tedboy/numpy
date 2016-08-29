@@ -1,0 +1,6 @@
+numpy.signedinteger.shape
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.shape

@@ -1,0 +1,6 @@
+numpy.void.reshape
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.reshape

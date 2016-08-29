@@ -1,0 +1,6 @@
+numpy.intp.sum
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: intp.sum

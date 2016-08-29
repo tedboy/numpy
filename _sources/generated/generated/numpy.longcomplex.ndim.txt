@@ -1,0 +1,6 @@
+numpy.longcomplex.ndim
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.ndim

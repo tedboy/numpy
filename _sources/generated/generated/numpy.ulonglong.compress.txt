@@ -1,0 +1,6 @@
+numpy.ulonglong.compress
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.compress

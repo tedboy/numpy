@@ -1,0 +1,6 @@
+numpy.lib.expand_dims
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: expand_dims

@@ -1,0 +1,6 @@
+numpy.lib.apply_over_axes
+=========================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: apply_over_axes

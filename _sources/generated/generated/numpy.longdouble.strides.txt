@@ -1,0 +1,6 @@
+numpy.longdouble.strides
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longdouble.strides

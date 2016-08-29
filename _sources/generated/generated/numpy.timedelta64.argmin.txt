@@ -1,0 +1,6 @@
+numpy.timedelta64.argmin
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.argmin

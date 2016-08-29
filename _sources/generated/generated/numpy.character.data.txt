@@ -1,0 +1,6 @@
+numpy.character.data
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.data

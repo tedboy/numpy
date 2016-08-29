@@ -1,0 +1,6 @@
+numpy.ubyte.max
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.max

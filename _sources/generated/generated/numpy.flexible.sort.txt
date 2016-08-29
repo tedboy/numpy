@@ -1,0 +1,6 @@
+numpy.flexible.sort
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.sort

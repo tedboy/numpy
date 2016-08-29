@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>numpy._import_tools &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../index.html"/>
+        <link rel="up" title="numpy" href="../numpy.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../numpy.html">numpy</a> &raquo;</li>
+        
+      <li>numpy._import_tools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for numpy._import_tools</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PackageLoader&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="PackageLoader"><a class="viewcode-back" href="../../generated/generated/numpy.PackageLoader.html#numpy.PackageLoader">[docs]</a><span class="k">class</span> <span class="nc">PackageLoader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="PackageLoader.__init__"><a class="viewcode-back" href="../../generated/generated/numpy.PackageLoader.__init__.html#numpy.PackageLoader.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">infunc</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Manages loading packages.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">infunc</span><span class="p">:</span>
+            <span class="n">_level</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_level</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent_frame</span> <span class="o">=</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">_getframe</span><span class="p">(</span><span class="n">_level</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent_name</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_globals</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">)</span>
+        <span class="n">parent_path</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;__path__&#39;</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_globals</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent_path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">parent_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">parent_path</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent_path</span> <span class="o">=</span> <span class="n">parent_path</span>
+        <span class="k">if</span> <span class="s1">&#39;__all__&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">:</span>
+            <span class="k">exec</span><span class="p">(</span><span class="s1">&#39;__all__ = []&#39;</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_globals</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent_export_names</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;__all__&#39;</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_globals</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">info_modules</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">imported_packages</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="bp">None</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_info_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">package_dir</span><span class="p">,</span> <span class="n">parent_path</span><span class="p">,</span> <span class="n">parent_package</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Return list of (package name,info.py file) from parent_path subdirectories.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parent_path</span><span class="p">,</span> <span class="n">package_dir</span><span class="p">,</span> <span class="s1">&#39;info.py&#39;</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">info_file</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parent_path</span><span class="p">,</span> <span class="n">package_dir</span><span class="p">,</span> <span class="s1">&#39;info.pyc&#39;</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">info_file</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="n">files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info_file</span><span class="p">)</span>
+        <span class="n">info_files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">info_file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">package_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">info_file</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">parent_path</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>\
+                           <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">parent_package</span><span class="p">:</span>
+                <span class="n">package_name</span> <span class="o">=</span> <span class="n">parent_package</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">package_name</span>
+            <span class="n">info_files</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">package_name</span><span class="p">,</span> <span class="n">info_file</span><span class="p">))</span>
+            <span class="n">info_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_info_files</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span>
+                                                   <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">info_file</span><span class="p">),</span>
+                                                   <span class="n">package_name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">info_files</span>
+
+    <span class="k">def</span> <span class="nf">_init_info_modules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packages</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize info_modules = {&lt;package_name&gt;: &lt;package info.py module&gt;}.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">imp</span>
+        <span class="n">info_files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">info_modules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info_modules</span>
+
+        <span class="k">if</span> <span class="n">packages</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_path</span><span class="p">:</span>
+                <span class="n">info_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_info_files</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">package_name</span> <span class="ow">in</span> <span class="n">packages</span><span class="p">:</span>
+                <span class="n">package_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="o">*</span><span class="n">package_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_path</span><span class="p">:</span>
+                    <span class="n">names_files</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_info_files</span><span class="p">(</span><span class="n">package_dir</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">names_files</span><span class="p">:</span>
+                        <span class="n">info_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">names_files</span><span class="p">)</span>
+                        <span class="k">break</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="k">exec</span><span class="p">(</span><span class="s1">&#39;import </span><span class="si">%s</span><span class="s1">.info as info&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">package_name</span><span class="p">))</span>
+                        <span class="n">info_modules</span><span class="p">[</span><span class="n">package_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">info</span>
+                    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">msg</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;No scipy-style subpackage </span><span class="si">%r</span><span class="s1"> found in </span><span class="si">%s</span><span class="s1">. &#39;</span>\
+                                  <span class="s1">&#39;Ignoring: </span><span class="si">%s</span><span class="s1">&#39;</span>\
+                                  <span class="o">%</span> <span class="p">(</span><span class="n">package_name</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent_path</span><span class="p">),</span> <span class="n">msg</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">package_name</span><span class="p">,</span> <span class="n">info_file</span> <span class="ow">in</span> <span class="n">info_files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">package_name</span> <span class="ow">in</span> <span class="n">info_modules</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">fullname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_name</span> <span class="o">+</span><span class="s1">&#39;.&#39;</span><span class="o">+</span> <span class="n">package_name</span>
+            <span class="k">if</span> <span class="n">info_file</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;c&#39;</span><span class="p">:</span>
+                <span class="n">filedescriptor</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;.pyc&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">filedescriptor</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;.py&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">info_module</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">load_module</span><span class="p">(</span><span class="n">fullname</span><span class="o">+</span><span class="s1">&#39;.info&#39;</span><span class="p">,</span>
+                                              <span class="nb">open</span><span class="p">(</span><span class="n">info_file</span><span class="p">,</span> <span class="n">filedescriptor</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                                              <span class="n">info_file</span><span class="p">,</span>
+                                              <span class="n">filedescriptor</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">msg</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="n">info_module</span> <span class="o">=</span> <span class="bp">None</span>
+
+            <span class="k">if</span> <span class="n">info_module</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">info_module</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">):</span>
+                <span class="n">info_modules</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">package_name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_init_info_modules</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">info_module</span><span class="p">,</span> <span class="s1">&#39;depends&#39;</span><span class="p">,</span> <span class="p">[]))</span>
+                <span class="n">info_modules</span><span class="p">[</span><span class="n">package_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">info_module</span>
+
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_get_sorted_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Return package names sorted in the order as they should be</span>
+<span class="sd">        imported due to dependence relations between packages.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">depend_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">info_module</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">info_modules</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">depend_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">info_module</span><span class="p">,</span> <span class="s1">&#39;depends&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">package_names</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">depend_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">depend_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+                <span class="n">package_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="k">del</span> <span class="n">depend_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+        <span class="k">while</span> <span class="n">depend_dict</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">lst</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">depend_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+                <span class="n">new_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">lst</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">depend_dict</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">new_lst</span><span class="p">:</span>
+                    <span class="n">package_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                    <span class="k">del</span> <span class="n">depend_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">depend_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_lst</span>
+
+        <span class="k">return</span> <span class="n">package_names</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">packages</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load one or more packages into parent package top-level namespace.</span>
+
+<span class="sd">       This function is intended to shorten the need to import many</span>
+<span class="sd">       subpackages, say of scipy, constantly with statements such as</span>
+
+<span class="sd">         import scipy.linalg, scipy.fftpack, scipy.etc...</span>
+
+<span class="sd">       Instead, you can say:</span>
+
+<span class="sd">         import scipy</span>
+<span class="sd">         scipy.pkgload(&#39;linalg&#39;,&#39;fftpack&#39;,...)</span>
+
+<span class="sd">       or</span>
+
+<span class="sd">         scipy.pkgload()</span>
+
+<span class="sd">       to load all of them in one call.</span>
+
+<span class="sd">       If a name which doesn&#39;t exist in scipy&#39;s namespace is</span>
+<span class="sd">       given, a warning is shown.</span>
+
+<span class="sd">       Parameters</span>
+<span class="sd">       ----------</span>
+<span class="sd">        *packages : arg-tuple</span>
+<span class="sd">             the names (one or more strings) of all the modules one</span>
+<span class="sd">             wishes to load into the top-level namespace.</span>
+<span class="sd">        verbose= : integer</span>
+<span class="sd">             verbosity level [default: -1].</span>
+<span class="sd">             verbose=-1 will suspend also warnings.</span>
+<span class="sd">        force= : bool</span>
+<span class="sd">             when True, force reloading loaded packages [default: False].</span>
+<span class="sd">        postpone= : bool</span>
+<span class="sd">             when True, don&#39;t load packages [default: False]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 2014-10-29, 1.10</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;pkgload and PackageLoader are obsolete &#39;</span>
+                <span class="s1">&#39;and will be removed in a future version of numpy&#39;</span><span class="p">,</span>
+                <span class="ne">DeprecationWarning</span><span class="p">)</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_frame</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">info_modules</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;force&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">imported_packages</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;verbose&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">postpone</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;postpone&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_info_modules</span><span class="p">(</span><span class="n">packages</span> <span class="ow">or</span> <span class="bp">None</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Imports to </span><span class="si">%r</span><span class="s1"> namespace</span><span class="se">\n</span><span class="s1">----------------------------&#39;</span>\
+                 <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_name</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">package_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sorted_names</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">package_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">imported_packages</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">info_module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info_modules</span><span class="p">[</span><span class="n">package_name</span><span class="p">]</span>
+            <span class="n">global_symbols</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">info_module</span><span class="p">,</span> <span class="s1">&#39;global_symbols&#39;</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">postpone_import</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">info_module</span><span class="p">,</span> <span class="s1">&#39;postpone_import&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">postpone</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">global_symbols</span><span class="p">)</span> \
+                   <span class="ow">or</span> <span class="p">(</span><span class="n">postpone_import</span> <span class="ow">and</span> <span class="n">postpone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+                <span class="k">continue</span>
+
+            <span class="n">old_object</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">package_name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+            <span class="n">cmdstr</span> <span class="o">=</span> <span class="s1">&#39;import &#39;</span><span class="o">+</span><span class="n">package_name</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execcmd</span><span class="p">(</span><span class="n">cmdstr</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">imported_packages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">package_name</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">verbose</span><span class="o">!=-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">new_object</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">package_name</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">old_object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">old_object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">new_object</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Overwriting </span><span class="si">%s</span><span class="s1">=</span><span class="si">%s</span><span class="s1"> (was </span><span class="si">%s</span><span class="s1">)&#39;</span> \
+                              <span class="o">%</span> <span class="p">(</span><span class="n">package_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj2repr</span><span class="p">(</span><span class="n">new_object</span><span class="p">),</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">_obj2repr</span><span class="p">(</span><span class="n">old_object</span><span class="p">)))</span>
+
+            <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">package_name</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">parent_export_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">package_name</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">global_symbols</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">symbol</span><span class="o">==</span><span class="s1">&#39;*&#39;</span><span class="p">:</span>
+                    <span class="n">symbols</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;getattr(</span><span class="si">%s</span><span class="s1">,&quot;__all__&quot;,None)&#39;</span>\
+                                   <span class="o">%</span> <span class="p">(</span><span class="n">package_name</span><span class="p">),</span>
+                                   <span class="n">frame</span><span class="o">.</span><span class="n">f_globals</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">symbols</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">symbols</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;dir(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">package_name</span><span class="p">),</span>
+                                       <span class="n">frame</span><span class="o">.</span><span class="n">f_globals</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">)</span>
+                        <span class="n">symbols</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">symbols</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">symbols</span> <span class="o">=</span> <span class="p">[</span><span class="n">symbol</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">verbose</span><span class="o">!=-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="n">old_objects</span> <span class="o">=</span> <span class="p">{}</span>
+                    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">symbols</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">:</span>
+                            <span class="n">old_objects</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+
+                <span class="n">cmdstr</span> <span class="o">=</span> <span class="s1">&#39;from &#39;</span><span class="o">+</span><span class="n">package_name</span><span class="o">+</span><span class="s1">&#39; import &#39;</span><span class="o">+</span><span class="n">symbol</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execcmd</span><span class="p">(</span><span class="n">cmdstr</span><span class="p">):</span>
+                    <span class="k">continue</span>
+
+                <span class="k">if</span> <span class="n">verbose</span><span class="o">!=-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">old_object</span> <span class="ow">in</span> <span class="n">old_objects</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="n">new_object</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">new_object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">old_object</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Overwriting </span><span class="si">%s</span><span class="s1">=</span><span class="si">%s</span><span class="s1"> (was </span><span class="si">%s</span><span class="s1">)&#39;</span> \
+                                      <span class="o">%</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj2repr</span><span class="p">(</span><span class="n">new_object</span><span class="p">),</span>
+                                         <span class="bp">self</span><span class="o">.</span><span class="n">_obj2repr</span><span class="p">(</span><span class="n">old_object</span><span class="p">)))</span>
+
+                <span class="k">if</span> <span class="n">symbol</span><span class="o">==</span><span class="s1">&#39;*&#39;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">parent_export_names</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">symbols</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">parent_export_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span>
+
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_execcmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmdstr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Execute command in parent_frame.&quot;&quot;&quot;</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_frame</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">exec</span> <span class="p">(</span><span class="n">cmdstr</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_globals</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">msg</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> -&gt; failed: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">cmdstr</span><span class="p">,</span> <span class="n">msg</span><span class="p">))</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> -&gt; success&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">cmdstr</span><span class="p">))</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_obj2repr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Return repr(obj) with&quot;&quot;&quot;</span>
+        <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;__module__&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="nb">file</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;__file__&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">module</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; from &#39;</span> <span class="o">+</span> <span class="n">module</span>
+        <span class="k">if</span> <span class="nb">file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; from &#39;</span> <span class="o">+</span> <span class="nb">file</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PackageLoader.log"><a class="viewcode-back" href="../../generated/generated/numpy.PackageLoader.log.html#numpy.PackageLoader.log">[docs]</a>    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mess</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">mess</span><span class="p">),</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span></div>
+<div class="viewcode-block" id="PackageLoader.warn"><a class="viewcode-back" href="../../generated/generated/numpy.PackageLoader.warn.html#numpy.PackageLoader.warn">[docs]</a>    <span class="k">def</span> <span class="nf">warn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mess</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">mess</span><span class="p">),</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span></div>
+<div class="viewcode-block" id="PackageLoader.error"><a class="viewcode-back" href="../../generated/generated/numpy.PackageLoader.error.html#numpy.PackageLoader.error">[docs]</a>    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mess</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="o">!=-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">mess</span><span class="p">),</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_doc_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info_module</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get the title from a package info.py file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">info_module</span><span class="p">,</span> <span class="s1">&#39;__doc_title__&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">title</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">info_module</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">title</span>
+        <span class="k">return</span> <span class="s1">&#39;* Not Available *&#39;</span>
+
+    <span class="k">def</span> <span class="nf">_format_titles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">titles</span><span class="p">,</span><span class="n">colsep</span><span class="o">=</span><span class="s1">&#39;---&#39;</span><span class="p">):</span>
+        <span class="n">display_window_width</span> <span class="o">=</span> <span class="mi">70</span> <span class="c1"># How to determine the correct value in runtime??</span>
+        <span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">-</span><span class="n">name</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span> <span class="ow">in</span> <span class="n">titles</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">max_length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span> <span class="ow">in</span> <span class="n">titles</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">max_length</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">w</span><span class="o">*</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">colsep</span><span class="p">)</span>
+            <span class="n">tab</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">*</span> <span class="s1">&#39; &#39;</span>
+            <span class="k">while</span> <span class="n">words</span><span class="p">:</span>
+                <span class="n">word</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">&gt;</span><span class="n">display_window_width</span><span class="p">:</span>
+                    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                    <span class="n">line</span> <span class="o">=</span> <span class="n">tab</span>
+                <span class="n">line</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">word</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PackageLoader.get_pkgdocs"><a class="viewcode-back" href="../../generated/generated/numpy.PackageLoader.get_pkgdocs.html#numpy.PackageLoader.get_pkgdocs">[docs]</a>    <span class="k">def</span> <span class="nf">get_pkgdocs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Return documentation summary of subpackages.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">sys</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">info_modules</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_info_modules</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+
+        <span class="n">titles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">symbols</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">package_name</span><span class="p">,</span> <span class="n">info_module</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">info_modules</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">global_symbols</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">info_module</span><span class="p">,</span> <span class="s1">&#39;global_symbols&#39;</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">fullname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_name</span> <span class="o">+</span><span class="s1">&#39;.&#39;</span><span class="o">+</span> <span class="n">package_name</span>
+            <span class="n">note</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">fullname</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+                <span class="n">note</span> <span class="o">=</span> <span class="s1">&#39; [*]&#39;</span>
+            <span class="n">titles</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">fullname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_doc_title</span><span class="p">(</span><span class="n">info_module</span><span class="p">)</span> <span class="o">+</span> <span class="n">note</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">global_symbols</span><span class="p">:</span>
+                <span class="n">symbols</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">package_name</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">global_symbols</span><span class="p">)))</span>
+
+        <span class="n">retstr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_titles</span><span class="p">(</span><span class="n">titles</span><span class="p">)</span> <span class="o">+</span>\
+               <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">  [*] - using a package requires explicit import (see pkgload)&#39;</span>
+
+
+        <span class="k">if</span> <span class="n">symbols</span><span class="p">:</span>
+            <span class="n">retstr</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\n\n</span><span class="s2">Global symbols from subpackages&quot;&quot;&quot;</span>\
+                      <span class="sd">&quot;&quot;&quot;\n-------------------------------\n&quot;&quot;&quot;</span> <span class="o">+</span>\
+                      <span class="bp">self</span><span class="o">.</span><span class="n">_format_titles</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="s1">&#39;--&gt;&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">retstr</span></div></div>
+
+<span class="k">class</span> <span class="nc">PackageLoaderDebug</span><span class="p">(</span><span class="n">PackageLoader</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_execcmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmdstr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Execute command in parent_frame.&quot;&quot;&quot;</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_frame</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Executing&#39;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">cmdstr</span><span class="p">),</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="k">exec</span> <span class="p">(</span><span class="n">cmdstr</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_globals</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="k">return</span>
+
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;NUMPY_IMPORT_DEBUG&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)):</span>
+    <span class="n">PackageLoader</span> <span class="o">=</span> <span class="n">PackageLoaderDebug</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

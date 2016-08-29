@@ -1,0 +1,6 @@
+numpy.longfloat.all
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.all

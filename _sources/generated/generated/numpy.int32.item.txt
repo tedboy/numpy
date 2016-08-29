@@ -1,0 +1,6 @@
+numpy.int32.item
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: int32.item

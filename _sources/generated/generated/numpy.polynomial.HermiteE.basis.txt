@@ -1,0 +1,6 @@
+numpy.polynomial.HermiteE.basis
+===============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: HermiteE.basis

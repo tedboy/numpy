@@ -1,0 +1,6 @@
+numpy.longlong.data
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longlong.data

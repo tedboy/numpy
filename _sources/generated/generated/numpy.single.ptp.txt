@@ -1,0 +1,6 @@
+numpy.single.ptp
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.ptp

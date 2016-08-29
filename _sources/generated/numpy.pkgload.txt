@@ -1,0 +1,6 @@
+numpy.pkgload
+=============
+
+.. currentmodule:: numpy
+
+.. autofunction:: pkgload

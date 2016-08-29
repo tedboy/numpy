@@ -1,0 +1,6 @@
+numpy.inexact.nbytes
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: inexact.nbytes

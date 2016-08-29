@@ -1,0 +1,6 @@
+numpy.singlecomplex.view
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.view

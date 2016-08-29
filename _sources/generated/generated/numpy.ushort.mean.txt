@@ -1,0 +1,6 @@
+numpy.ushort.mean
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.mean

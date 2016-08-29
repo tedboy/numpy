@@ -1,0 +1,6 @@
+numpy.unsignedinteger.cumprod
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.cumprod

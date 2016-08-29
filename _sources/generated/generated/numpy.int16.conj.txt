@@ -1,0 +1,6 @@
+numpy.int16.conj
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: int16.conj

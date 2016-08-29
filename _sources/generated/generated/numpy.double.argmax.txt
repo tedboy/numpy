@@ -1,0 +1,6 @@
+numpy.double.argmax
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.argmax

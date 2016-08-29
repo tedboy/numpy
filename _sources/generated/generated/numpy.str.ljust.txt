@@ -1,0 +1,6 @@
+numpy.str.ljust
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str.ljust

@@ -1,0 +1,6 @@
+numpy.double.dump
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.dump

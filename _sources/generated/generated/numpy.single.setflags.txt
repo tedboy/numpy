@@ -1,0 +1,6 @@
+numpy.single.setflags
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.setflags

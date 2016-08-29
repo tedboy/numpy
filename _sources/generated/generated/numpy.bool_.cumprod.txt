@@ -1,0 +1,6 @@
+numpy.bool_.cumprod
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.cumprod

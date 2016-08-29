@@ -1,0 +1,6 @@
+numpy.byte.shape
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.shape

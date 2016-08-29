@@ -1,0 +1,6 @@
+numpy.lib.polyadd
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: polyadd

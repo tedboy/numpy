@@ -1,0 +1,6 @@
+numpy.csingle.resize
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.resize

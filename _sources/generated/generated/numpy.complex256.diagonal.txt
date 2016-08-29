@@ -1,0 +1,6 @@
+numpy.complex256.diagonal
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.diagonal

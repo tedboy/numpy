@@ -1,0 +1,6 @@
+numpy.half.itemset
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.itemset

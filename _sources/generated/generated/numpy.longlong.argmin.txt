@@ -1,0 +1,6 @@
+numpy.longlong.argmin
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.argmin

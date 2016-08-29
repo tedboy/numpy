@@ -1,0 +1,6 @@
+numpy.double.argsort
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.argsort

@@ -1,0 +1,6 @@
+numpy.bool8.searchsorted
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.searchsorted

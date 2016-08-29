@@ -1,0 +1,6 @@
+numpy.unicode0.prod
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode0.prod

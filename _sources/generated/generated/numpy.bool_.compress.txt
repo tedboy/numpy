@@ -1,0 +1,6 @@
+numpy.bool_.compress
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.compress

@@ -1,0 +1,6 @@
+numpy.csingle.itemsize
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: csingle.itemsize

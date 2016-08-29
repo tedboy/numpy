@@ -1,0 +1,6 @@
+numpy.complexfloating.flat
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.flat

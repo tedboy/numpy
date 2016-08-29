@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertSequenceEqual
+==========================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertSequenceEqual

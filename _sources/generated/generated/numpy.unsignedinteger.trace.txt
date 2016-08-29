@@ -1,0 +1,6 @@
+numpy.unsignedinteger.trace
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.trace

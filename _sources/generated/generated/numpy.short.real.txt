@@ -1,0 +1,6 @@
+numpy.short.real
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: short.real

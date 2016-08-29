@@ -1,0 +1,6 @@
+numpy.longcomplex.tofile
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.tofile

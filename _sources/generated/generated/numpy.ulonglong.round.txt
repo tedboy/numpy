@@ -1,0 +1,6 @@
+numpy.ulonglong.round
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.round

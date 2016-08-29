@@ -1,0 +1,6 @@
+numpy.double.real
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.real

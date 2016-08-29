@@ -1,0 +1,6 @@
+numpy.longfloat.repeat
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.repeat

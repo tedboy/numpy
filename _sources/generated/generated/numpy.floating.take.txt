@@ -1,0 +1,6 @@
+numpy.floating.take
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.take

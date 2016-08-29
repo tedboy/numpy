@@ -1,0 +1,6 @@
+numpy.number.flat
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: number.flat

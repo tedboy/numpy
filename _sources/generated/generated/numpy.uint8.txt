@@ -1,0 +1,94 @@
+numpy.uint8
+===========
+.. currentmodule:: numpy
+.. autoclass:: uint8
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~uint8.all
+   ~uint8.any
+   ~uint8.argmax
+   ~uint8.argmin
+   ~uint8.argsort
+   ~uint8.astype
+   ~uint8.byteswap
+   ~uint8.choose
+   ~uint8.clip
+   ~uint8.compress
+   ~uint8.conj
+   ~uint8.conjugate
+   ~uint8.copy
+   ~uint8.cumprod
+   ~uint8.cumsum
+   ~uint8.diagonal
+   ~uint8.dump
+   ~uint8.dumps
+   ~uint8.fill
+   ~uint8.flatten
+   ~uint8.getfield
+   ~uint8.item
+   ~uint8.itemset
+   ~uint8.max
+   ~uint8.mean
+   ~uint8.min
+   ~uint8.newbyteorder
+   ~uint8.nonzero
+   ~uint8.prod
+   ~uint8.ptp
+   ~uint8.put
+   ~uint8.ravel
+   ~uint8.repeat
+   ~uint8.reshape
+   ~uint8.resize
+   ~uint8.round
+   ~uint8.searchsorted
+   ~uint8.setfield
+   ~uint8.setflags
+   ~uint8.sort
+   ~uint8.squeeze
+   ~uint8.std
+   ~uint8.sum
+   ~uint8.swapaxes
+   ~uint8.take
+   ~uint8.tobytes
+   ~uint8.tofile
+   ~uint8.tolist
+   ~uint8.tostring
+   ~uint8.trace
+   ~uint8.transpose
+   ~uint8.var
+   ~uint8.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~uint8.T
+   ~uint8.base
+   ~uint8.data
+   ~uint8.denominator
+   ~uint8.dtype
+   ~uint8.flags
+   ~uint8.flat
+   ~uint8.imag
+   ~uint8.itemsize
+   ~uint8.nbytes
+   ~uint8.ndim
+   ~uint8.numerator
+   ~uint8.real
+   ~uint8.shape
+   ~uint8.size
+   ~uint8.strides
+

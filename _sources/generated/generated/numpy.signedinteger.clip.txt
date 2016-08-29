@@ -1,0 +1,6 @@
+numpy.signedinteger.clip
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.clip

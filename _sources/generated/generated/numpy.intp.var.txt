@@ -1,0 +1,6 @@
+numpy.intp.var
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: intp.var

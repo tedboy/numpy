@@ -1,0 +1,6 @@
+numpy.signedinteger.resize
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.resize

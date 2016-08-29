@@ -1,0 +1,6 @@
+numpy.lib.roots
+===============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: roots

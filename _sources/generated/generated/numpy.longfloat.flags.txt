@@ -1,0 +1,6 @@
+numpy.longfloat.flags
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longfloat.flags

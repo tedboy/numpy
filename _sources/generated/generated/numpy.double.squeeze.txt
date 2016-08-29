@@ -1,0 +1,6 @@
+numpy.double.squeeze
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.squeeze

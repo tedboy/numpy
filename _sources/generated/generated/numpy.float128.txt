@@ -1,0 +1,92 @@
+numpy.float128
+==============
+.. currentmodule:: numpy
+.. autoclass:: float128
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~float128.all
+   ~float128.any
+   ~float128.argmax
+   ~float128.argmin
+   ~float128.argsort
+   ~float128.astype
+   ~float128.byteswap
+   ~float128.choose
+   ~float128.clip
+   ~float128.compress
+   ~float128.conj
+   ~float128.conjugate
+   ~float128.copy
+   ~float128.cumprod
+   ~float128.cumsum
+   ~float128.diagonal
+   ~float128.dump
+   ~float128.dumps
+   ~float128.fill
+   ~float128.flatten
+   ~float128.getfield
+   ~float128.item
+   ~float128.itemset
+   ~float128.max
+   ~float128.mean
+   ~float128.min
+   ~float128.newbyteorder
+   ~float128.nonzero
+   ~float128.prod
+   ~float128.ptp
+   ~float128.put
+   ~float128.ravel
+   ~float128.repeat
+   ~float128.reshape
+   ~float128.resize
+   ~float128.round
+   ~float128.searchsorted
+   ~float128.setfield
+   ~float128.setflags
+   ~float128.sort
+   ~float128.squeeze
+   ~float128.std
+   ~float128.sum
+   ~float128.swapaxes
+   ~float128.take
+   ~float128.tobytes
+   ~float128.tofile
+   ~float128.tolist
+   ~float128.tostring
+   ~float128.trace
+   ~float128.transpose
+   ~float128.var
+   ~float128.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~float128.T
+   ~float128.base
+   ~float128.data
+   ~float128.dtype
+   ~float128.flags
+   ~float128.flat
+   ~float128.imag
+   ~float128.itemsize
+   ~float128.nbytes
+   ~float128.ndim
+   ~float128.real
+   ~float128.shape
+   ~float128.size
+   ~float128.strides
+

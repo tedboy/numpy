@@ -1,0 +1,6 @@
+numpy.number.transpose
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: number.transpose

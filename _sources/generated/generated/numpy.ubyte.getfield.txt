@@ -1,0 +1,6 @@
+numpy.ubyte.getfield
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.getfield

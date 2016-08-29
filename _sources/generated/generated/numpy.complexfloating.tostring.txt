@@ -1,0 +1,6 @@
+numpy.complexfloating.tostring
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.tostring

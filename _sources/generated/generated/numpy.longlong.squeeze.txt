@@ -1,0 +1,6 @@
+numpy.longlong.squeeze
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.squeeze

@@ -1,0 +1,6 @@
+numpy.unicode_.view
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.view

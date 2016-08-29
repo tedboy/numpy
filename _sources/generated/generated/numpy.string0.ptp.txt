@@ -1,0 +1,6 @@
+numpy.string0.ptp
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.ptp

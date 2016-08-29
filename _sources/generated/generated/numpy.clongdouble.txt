@@ -1,0 +1,92 @@
+numpy.clongdouble
+=================
+.. currentmodule:: numpy
+.. autoclass:: clongdouble
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~clongdouble.all
+   ~clongdouble.any
+   ~clongdouble.argmax
+   ~clongdouble.argmin
+   ~clongdouble.argsort
+   ~clongdouble.astype
+   ~clongdouble.byteswap
+   ~clongdouble.choose
+   ~clongdouble.clip
+   ~clongdouble.compress
+   ~clongdouble.conj
+   ~clongdouble.conjugate
+   ~clongdouble.copy
+   ~clongdouble.cumprod
+   ~clongdouble.cumsum
+   ~clongdouble.diagonal
+   ~clongdouble.dump
+   ~clongdouble.dumps
+   ~clongdouble.fill
+   ~clongdouble.flatten
+   ~clongdouble.getfield
+   ~clongdouble.item
+   ~clongdouble.itemset
+   ~clongdouble.max
+   ~clongdouble.mean
+   ~clongdouble.min
+   ~clongdouble.newbyteorder
+   ~clongdouble.nonzero
+   ~clongdouble.prod
+   ~clongdouble.ptp
+   ~clongdouble.put
+   ~clongdouble.ravel
+   ~clongdouble.repeat
+   ~clongdouble.reshape
+   ~clongdouble.resize
+   ~clongdouble.round
+   ~clongdouble.searchsorted
+   ~clongdouble.setfield
+   ~clongdouble.setflags
+   ~clongdouble.sort
+   ~clongdouble.squeeze
+   ~clongdouble.std
+   ~clongdouble.sum
+   ~clongdouble.swapaxes
+   ~clongdouble.take
+   ~clongdouble.tobytes
+   ~clongdouble.tofile
+   ~clongdouble.tolist
+   ~clongdouble.tostring
+   ~clongdouble.trace
+   ~clongdouble.transpose
+   ~clongdouble.var
+   ~clongdouble.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~clongdouble.T
+   ~clongdouble.base
+   ~clongdouble.data
+   ~clongdouble.dtype
+   ~clongdouble.flags
+   ~clongdouble.flat
+   ~clongdouble.imag
+   ~clongdouble.itemsize
+   ~clongdouble.nbytes
+   ~clongdouble.ndim
+   ~clongdouble.real
+   ~clongdouble.shape
+   ~clongdouble.size
+   ~clongdouble.strides
+

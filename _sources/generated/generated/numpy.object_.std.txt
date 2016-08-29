@@ -1,0 +1,6 @@
+numpy.object_.std
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: object_.std

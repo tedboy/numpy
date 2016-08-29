@@ -1,0 +1,6 @@
+numpy.float16.argsort
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: float16.argsort

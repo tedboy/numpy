@@ -1,0 +1,6 @@
+numpy.void0.sum
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: void0.sum

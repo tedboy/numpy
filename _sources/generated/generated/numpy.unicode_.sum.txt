@@ -1,0 +1,6 @@
+numpy.unicode_.sum
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.sum

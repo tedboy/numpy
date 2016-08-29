@@ -1,0 +1,6 @@
+numpy.distutils.LibraryInfo.__init__
+====================================
+
+.. currentmodule:: numpy.distutils
+
+.. automethod:: LibraryInfo.__init__

@@ -1,0 +1,6 @@
+numpy.lib.iscomplex
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: iscomplex

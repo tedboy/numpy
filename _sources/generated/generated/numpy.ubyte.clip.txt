@@ -1,0 +1,6 @@
+numpy.ubyte.clip
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.clip

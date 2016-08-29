@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertNotIn
+==================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertNotIn

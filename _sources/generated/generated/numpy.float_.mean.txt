@@ -1,0 +1,6 @@
+numpy.float_.mean
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.mean

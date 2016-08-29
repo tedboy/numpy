@@ -1,0 +1,6 @@
+numpy.lib.asarray_chkfinite
+===========================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: asarray_chkfinite

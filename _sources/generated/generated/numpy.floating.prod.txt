@@ -1,0 +1,6 @@
+numpy.floating.prod
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.prod

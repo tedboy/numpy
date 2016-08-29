@@ -1,0 +1,6 @@
+numpy.half.item
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.item

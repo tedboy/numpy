@@ -1,0 +1,6 @@
+numpy.double.var
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.var

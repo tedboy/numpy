@@ -1,0 +1,6 @@
+numpy.bool8.byteswap
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.byteswap

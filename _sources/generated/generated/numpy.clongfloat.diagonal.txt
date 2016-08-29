@@ -1,0 +1,6 @@
+numpy.clongfloat.diagonal
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.diagonal

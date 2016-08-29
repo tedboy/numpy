@@ -1,0 +1,6 @@
+numpy.signedinteger.ravel
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.ravel

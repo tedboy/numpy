@@ -1,0 +1,6 @@
+numpy.singlecomplex.round
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.round

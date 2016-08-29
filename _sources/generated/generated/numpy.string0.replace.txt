@@ -1,0 +1,6 @@
+numpy.string0.replace
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.replace

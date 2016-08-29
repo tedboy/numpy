@@ -1,0 +1,6 @@
+numpy.str_.real
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: str_.real

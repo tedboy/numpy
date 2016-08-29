@@ -1,0 +1,6 @@
+numpy.polynomial.Chebyshev.fit
+==============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Chebyshev.fit

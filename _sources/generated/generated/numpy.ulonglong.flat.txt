@@ -1,0 +1,6 @@
+numpy.ulonglong.flat
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.flat

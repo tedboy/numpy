@@ -1,0 +1,6 @@
+numpy.ubyte.real
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.real

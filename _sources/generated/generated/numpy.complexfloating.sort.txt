@@ -1,0 +1,6 @@
+numpy.complexfloating.sort
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.sort

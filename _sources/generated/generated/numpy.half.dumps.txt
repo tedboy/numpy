@@ -1,0 +1,6 @@
+numpy.half.dumps
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.dumps

@@ -1,0 +1,22 @@
+numpy.errstate
+==============
+
+.. currentmodule:: numpy
+
+.. autoclass:: errstate
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~errstate.__init__
+   
+   
+
+   
+   
+   

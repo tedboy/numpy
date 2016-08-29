@@ -1,0 +1,6 @@
+numpy.int64.setflags
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: int64.setflags

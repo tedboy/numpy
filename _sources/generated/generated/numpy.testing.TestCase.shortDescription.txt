@@ -1,0 +1,6 @@
+numpy.testing.TestCase.shortDescription
+=======================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.shortDescription

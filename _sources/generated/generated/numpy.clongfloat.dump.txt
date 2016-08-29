@@ -1,0 +1,6 @@
+numpy.clongfloat.dump
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.dump

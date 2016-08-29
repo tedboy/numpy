@@ -1,0 +1,6 @@
+numpy.clongfloat.repeat
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.repeat

@@ -1,0 +1,6 @@
+numpy.string_.max
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.max

@@ -1,0 +1,6 @@
+numpy.double.ptp
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.ptp

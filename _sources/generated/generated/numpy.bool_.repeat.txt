@@ -1,0 +1,6 @@
+numpy.bool_.repeat
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.repeat

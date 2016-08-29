@@ -1,0 +1,6 @@
+numpy.longfloat.ndim
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longfloat.ndim

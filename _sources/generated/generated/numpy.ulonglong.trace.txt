@@ -1,0 +1,6 @@
+numpy.ulonglong.trace
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.trace

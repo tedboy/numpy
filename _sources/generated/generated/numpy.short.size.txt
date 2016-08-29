@@ -1,0 +1,6 @@
+numpy.short.size
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: short.size

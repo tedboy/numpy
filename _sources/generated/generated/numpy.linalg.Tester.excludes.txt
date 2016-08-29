@@ -1,0 +1,6 @@
+numpy.linalg.Tester.excludes
+============================
+
+.. currentmodule:: numpy.linalg
+
+.. autoattribute:: Tester.excludes

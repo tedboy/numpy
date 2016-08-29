@@ -1,0 +1,6 @@
+numpy.string_.lstrip
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.lstrip

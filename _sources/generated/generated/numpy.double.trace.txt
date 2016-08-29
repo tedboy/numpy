@@ -1,0 +1,6 @@
+numpy.double.trace
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.trace

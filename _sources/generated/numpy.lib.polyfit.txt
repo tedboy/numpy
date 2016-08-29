@@ -1,0 +1,6 @@
+numpy.lib.polyfit
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: polyfit

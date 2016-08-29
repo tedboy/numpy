@@ -1,0 +1,6 @@
+numpy.uint.tolist
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint.tolist

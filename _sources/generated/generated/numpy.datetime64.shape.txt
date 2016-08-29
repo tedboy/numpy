@@ -1,0 +1,6 @@
+numpy.datetime64.shape
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: datetime64.shape

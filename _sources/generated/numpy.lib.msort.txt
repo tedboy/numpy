@@ -1,0 +1,6 @@
+numpy.lib.msort
+===============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: msort

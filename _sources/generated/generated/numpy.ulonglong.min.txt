@@ -1,0 +1,6 @@
+numpy.ulonglong.min
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.min

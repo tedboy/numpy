@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertIsNotNone
+======================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertIsNotNone

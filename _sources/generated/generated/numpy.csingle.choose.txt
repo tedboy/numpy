@@ -1,0 +1,6 @@
+numpy.csingle.choose
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.choose

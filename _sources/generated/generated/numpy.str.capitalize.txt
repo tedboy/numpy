@@ -1,0 +1,6 @@
+numpy.str.capitalize
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: str.capitalize

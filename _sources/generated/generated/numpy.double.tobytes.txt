@@ -1,0 +1,6 @@
+numpy.double.tobytes
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.tobytes

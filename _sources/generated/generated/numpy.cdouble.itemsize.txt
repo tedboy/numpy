@@ -1,0 +1,6 @@
+numpy.cdouble.itemsize
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.itemsize

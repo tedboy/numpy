@@ -1,0 +1,6 @@
+numpy.unicode.isalnum
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.isalnum

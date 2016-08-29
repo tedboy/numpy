@@ -1,0 +1,6 @@
+numpy.complex256.nonzero
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.nonzero

@@ -1,0 +1,6 @@
+numpy.lib.interp
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: interp

@@ -1,0 +1,6 @@
+numpy.flexible.conj
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.conj

@@ -1,0 +1,6 @@
+numpy.string_.all
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.all

@@ -1,0 +1,6 @@
+numpy.complex256.argmax
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.argmax

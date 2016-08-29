@@ -1,0 +1,6 @@
+numpy.complexfloating.dtype
+===========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.dtype

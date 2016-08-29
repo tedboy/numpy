@@ -1,0 +1,6 @@
+numpy.byte.real
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.real

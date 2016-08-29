@@ -1,0 +1,6 @@
+numpy.signedinteger.fill
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.fill

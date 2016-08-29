@@ -1,0 +1,6 @@
+numpy.inexact.conj
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.conj

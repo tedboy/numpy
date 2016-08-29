@@ -1,0 +1,6 @@
+numpy.bytes_.clip
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.clip

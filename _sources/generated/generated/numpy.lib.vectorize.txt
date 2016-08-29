@@ -1,0 +1,19 @@
+numpy.lib.vectorize
+===================
+.. currentmodule:: numpy.lib
+.. autoclass:: vectorize
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~vectorize.__init__
+
+
+
+
+

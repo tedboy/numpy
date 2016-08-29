@@ -1,0 +1,6 @@
+numpy.int_.ndim
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int_.ndim

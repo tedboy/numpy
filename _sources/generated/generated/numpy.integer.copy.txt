@@ -1,0 +1,6 @@
+numpy.integer.copy
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: integer.copy

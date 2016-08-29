@@ -1,0 +1,6 @@
+numpy.unicode_.base
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.base

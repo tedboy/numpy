@@ -1,0 +1,6 @@
+numpy.lib.savez_compressed
+==========================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: savez_compressed

@@ -1,0 +1,6 @@
+numpy.testing.rand
+==================
+
+.. currentmodule:: numpy.testing
+
+.. autofunction:: rand

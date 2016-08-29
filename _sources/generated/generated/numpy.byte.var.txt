@@ -1,0 +1,6 @@
+numpy.byte.var
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.var

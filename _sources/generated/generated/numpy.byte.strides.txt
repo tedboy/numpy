@@ -1,0 +1,6 @@
+numpy.byte.strides
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: byte.strides

@@ -1,0 +1,6 @@
+numpy.longlong.take
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.take

@@ -1,0 +1,6 @@
+numpy.complex_.take
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.take

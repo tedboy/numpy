@@ -1,0 +1,6 @@
+numpy.void.prod
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: void.prod

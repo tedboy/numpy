@@ -1,0 +1,6 @@
+numpy.ubyte.mean
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.mean

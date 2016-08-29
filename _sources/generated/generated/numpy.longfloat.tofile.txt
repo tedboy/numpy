@@ -1,0 +1,6 @@
+numpy.longfloat.tofile
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.tofile

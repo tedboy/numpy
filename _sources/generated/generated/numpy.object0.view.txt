@@ -1,0 +1,6 @@
+numpy.object0.view
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: object0.view

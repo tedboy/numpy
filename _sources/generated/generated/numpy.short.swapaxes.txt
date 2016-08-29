@@ -1,0 +1,6 @@
+numpy.short.swapaxes
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.swapaxes

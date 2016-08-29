@@ -1,0 +1,6 @@
+numpy.cfloat.searchsorted
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: cfloat.searchsorted

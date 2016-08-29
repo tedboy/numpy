@@ -1,0 +1,6 @@
+numpy.inexact.flatten
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.flatten

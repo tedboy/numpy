@@ -1,0 +1,6 @@
+numpy.testing.IgnoreException
+=============================
+
+.. currentmodule:: numpy.testing
+
+.. autoexception:: IgnoreException

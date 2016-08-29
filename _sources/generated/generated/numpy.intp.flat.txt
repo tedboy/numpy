@@ -1,0 +1,6 @@
+numpy.intp.flat
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: intp.flat

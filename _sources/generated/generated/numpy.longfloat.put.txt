@@ -1,0 +1,6 @@
+numpy.longfloat.put
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.put

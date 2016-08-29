@@ -1,0 +1,6 @@
+numpy.complex64.cumprod
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex64.cumprod

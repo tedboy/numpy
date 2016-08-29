@@ -1,0 +1,6 @@
+numpy.complex_.cumsum
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.cumsum

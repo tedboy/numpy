@@ -1,0 +1,6 @@
+numpy.uint0.fill
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint0.fill

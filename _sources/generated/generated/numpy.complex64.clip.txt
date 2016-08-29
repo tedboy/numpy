@@ -1,0 +1,6 @@
+numpy.complex64.clip
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex64.clip

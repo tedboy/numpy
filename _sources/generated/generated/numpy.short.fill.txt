@@ -1,0 +1,6 @@
+numpy.short.fill
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.fill

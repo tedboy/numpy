@@ -1,0 +1,6 @@
+numpy.character.sum
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.sum

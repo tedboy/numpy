@@ -1,0 +1,6 @@
+numpy.clongdouble.fill
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.fill

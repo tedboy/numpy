@@ -1,0 +1,6 @@
+numpy.csingle.transpose
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.transpose

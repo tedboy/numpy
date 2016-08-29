@@ -1,0 +1,6 @@
+numpy.int8.dumps
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.dumps

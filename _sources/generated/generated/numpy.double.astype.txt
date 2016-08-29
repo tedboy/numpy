@@ -1,0 +1,6 @@
+numpy.double.astype
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.astype

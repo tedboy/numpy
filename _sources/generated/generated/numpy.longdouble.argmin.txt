@@ -1,0 +1,6 @@
+numpy.longdouble.argmin
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.argmin

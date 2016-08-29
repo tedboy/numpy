@@ -1,0 +1,6 @@
+numpy.set_numeric_ops
+=====================
+
+.. currentmodule:: numpy
+
+.. autofunction:: set_numeric_ops

@@ -1,0 +1,6 @@
+numpy.unicode.find
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.find

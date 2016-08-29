@@ -1,0 +1,6 @@
+numpy.cfloat.min
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: cfloat.min

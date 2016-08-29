@@ -1,0 +1,6 @@
+numpy.byte.round
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.round

@@ -1,0 +1,6 @@
+numpy.half.base
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.base

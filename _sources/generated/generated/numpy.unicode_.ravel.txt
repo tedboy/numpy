@@ -1,0 +1,6 @@
+numpy.unicode_.ravel
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.ravel

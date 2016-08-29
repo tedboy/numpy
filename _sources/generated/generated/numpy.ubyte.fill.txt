@@ -1,0 +1,6 @@
+numpy.ubyte.fill
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.fill

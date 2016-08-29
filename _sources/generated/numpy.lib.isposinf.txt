@@ -1,0 +1,6 @@
+numpy.lib.isposinf
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: isposinf

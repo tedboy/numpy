@@ -1,0 +1,6 @@
+numpy.intp.clip
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: intp.clip

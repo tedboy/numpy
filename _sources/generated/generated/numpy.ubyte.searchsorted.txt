@@ -1,0 +1,6 @@
+numpy.ubyte.searchsorted
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.searchsorted

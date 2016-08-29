@@ -1,0 +1,6 @@
+numpy.longfloat.dtype
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longfloat.dtype

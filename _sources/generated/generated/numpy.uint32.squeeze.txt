@@ -1,0 +1,6 @@
+numpy.uint32.squeeze
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint32.squeeze

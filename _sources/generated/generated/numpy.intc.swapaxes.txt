@@ -1,0 +1,6 @@
+numpy.intc.swapaxes
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.swapaxes

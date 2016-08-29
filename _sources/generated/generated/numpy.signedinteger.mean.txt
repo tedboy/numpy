@@ -1,0 +1,6 @@
+numpy.signedinteger.mean
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.mean

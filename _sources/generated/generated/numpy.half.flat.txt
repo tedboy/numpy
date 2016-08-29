@@ -1,0 +1,6 @@
+numpy.half.flat
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: half.flat

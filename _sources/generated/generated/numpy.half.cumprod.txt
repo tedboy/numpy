@@ -1,0 +1,6 @@
+numpy.half.cumprod
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.cumprod

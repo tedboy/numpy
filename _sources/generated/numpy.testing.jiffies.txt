@@ -1,0 +1,6 @@
+numpy.testing.jiffies
+=====================
+
+.. currentmodule:: numpy.testing
+
+.. autofunction:: jiffies

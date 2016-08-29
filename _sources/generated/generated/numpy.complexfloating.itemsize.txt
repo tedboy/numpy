@@ -1,0 +1,6 @@
+numpy.complexfloating.itemsize
+==============================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complexfloating.itemsize

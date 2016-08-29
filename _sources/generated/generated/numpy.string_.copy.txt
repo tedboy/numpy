@@ -1,0 +1,6 @@
+numpy.string_.copy
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.copy

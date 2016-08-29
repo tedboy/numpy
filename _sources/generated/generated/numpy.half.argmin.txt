@@ -1,0 +1,6 @@
+numpy.half.argmin
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.argmin

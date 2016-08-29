@@ -1,0 +1,6 @@
+numpy.half.round
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.round

@@ -1,0 +1,6 @@
+numpy.signedinteger.strides
+===========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.strides

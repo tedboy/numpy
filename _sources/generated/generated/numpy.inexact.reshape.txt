@@ -1,0 +1,6 @@
+numpy.inexact.reshape
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.reshape

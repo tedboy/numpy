@@ -1,0 +1,6 @@
+numpy.float_.astype
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.astype

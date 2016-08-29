@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertDictEqual
+======================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertDictEqual

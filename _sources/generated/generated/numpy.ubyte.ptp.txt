@@ -1,0 +1,6 @@
+numpy.ubyte.ptp
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.ptp

@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.7.2. Testing the numpy.i Typemaps &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../index.html"/>
+        <link rel="up" title="11.7. Numpy and SWIG" href="swig.html"/>
+        <link rel="next" title="12. Glossary" href="../glossary.html"/>
+        <link rel="prev" title="11.7.1. Numpy.i: a SWIG Interface File for NumPy" href="swig.interface-file.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routines.html">11.3. Routines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="swig.html">11.7. Numpy and SWIG</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="swig.interface-file.html">11.7.1. Numpy.i: a SWIG Interface File for NumPy</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">11.7.2. Testing the numpy.i Typemaps</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">11.7.2.1. Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-organization">11.7.2.2. Testing Organization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-header-files">11.7.2.3. Testing Header Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-source-files">11.7.2.4. Testing Source Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-swig-interface-files">11.7.2.5. Testing SWIG Interface Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-python-scripts">11.7.2.6. Testing Python Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="swig.html">11.7. Numpy and SWIG</a> &raquo;</li>
+        
+      <li>11.7.2. Testing the numpy.i Typemaps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/swig.testing.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="testing-the-numpy-i-typemaps">
+<h1>11.7.2. Testing the numpy.i Typemaps<a class="headerlink" href="#testing-the-numpy-i-typemaps" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>11.7.2.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Writing tests for the <code class="docutils literal"><span class="pre">numpy.i</span></code> <a class="reference external" href="http://www.swig.org">SWIG</a>
+interface file is a combinatorial headache.  At present, 12 different
+data types are supported, each with 74 different argument signatures,
+for a total of 888 typemaps supported &#8220;out of the box&#8221;.  Each of these
+typemaps, in turn, might require several unit tests in order to verify
+expected behavior for both proper and improper inputs.  Currently,
+this results in more than 1,000 individual unit tests executed when
+<code class="docutils literal"><span class="pre">make</span> <span class="pre">test</span></code> is run in the <code class="docutils literal"><span class="pre">numpy/tools/swig</span></code> subdirectory.</p>
+<p>To facilitate this many similar unit tests, some high-level
+programming techniques are employed, including C and <a class="reference external" href="http://www.swig.org">SWIG</a> macros,
+as well as Python inheritance.  The purpose of this document is to describe
+the testing infrastructure employed to verify that the <code class="docutils literal"><span class="pre">numpy.i</span></code>
+typemaps are working as expected.</p>
+</div>
+<div class="section" id="testing-organization">
+<h2>11.7.2.2. Testing Organization<a class="headerlink" href="#testing-organization" title="Permalink to this headline">¶</a></h2>
+<p>There are three indepedent testing frameworks supported, for one-,
+two-, and three-dimensional arrays respectively.  For one-dimensional
+arrays, there are two C++ files, a header and a source, named:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Vector</span><span class="o">.</span><span class="n">h</span>
+<span class="n">Vector</span><span class="o">.</span><span class="n">cxx</span>
+</pre></div>
+</div>
+<p>that contain prototypes and code for a variety of functions that have
+one-dimensional arrays as function arguments.  The file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Vector</span><span class="o">.</span><span class="n">i</span>
+</pre></div>
+</div>
+<p>is a <a class="reference external" href="http://www.swig.org">SWIG</a> interface file that defines a python module <code class="docutils literal"><span class="pre">Vector</span></code>
+that wraps the functions in <code class="docutils literal"><span class="pre">Vector.h</span></code> while utilizing the typemaps
+in <code class="docutils literal"><span class="pre">numpy.i</span></code> to correctly handle the C arrays.</p>
+<p>The <code class="docutils literal"><span class="pre">Makefile</span></code> calls <code class="docutils literal"><span class="pre">swig</span></code> to generate <code class="docutils literal"><span class="pre">Vector.py</span></code> and
+<code class="docutils literal"><span class="pre">Vector_wrap.cxx</span></code>, and also executes the <code class="docutils literal"><span class="pre">setup.py</span></code> script that
+compiles <code class="docutils literal"><span class="pre">Vector_wrap.cxx</span></code> and links together the extension module
+<code class="docutils literal"><span class="pre">_Vector.so</span></code> or <code class="docutils literal"><span class="pre">_Vector.dylib</span></code>, depending on the platform.  This
+extension module and the proxy file <code class="docutils literal"><span class="pre">Vector.py</span></code> are both placed in a
+subdirectory under the <code class="docutils literal"><span class="pre">build</span></code> directory.</p>
+<p>The actual testing takes place with a Python script named:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">testVector</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>that uses the standard Python library module <code class="docutils literal"><span class="pre">unittest</span></code>, which
+performs several tests of each function defined in <code class="docutils literal"><span class="pre">Vector.h</span></code> for
+each data type supported.</p>
+<p>Two-dimensional arrays are tested in exactly the same manner.  The
+above description applies, but with <code class="docutils literal"><span class="pre">Matrix</span></code> substituted for
+<code class="docutils literal"><span class="pre">Vector</span></code>.  For three-dimensional tests, substitute <code class="docutils literal"><span class="pre">Tensor</span></code> for
+<code class="docutils literal"><span class="pre">Vector</span></code>.  For four-dimensional tests, substitute <code class="docutils literal"><span class="pre">SuperTensor</span></code>
+for <code class="docutils literal"><span class="pre">Vector</span></code>. For flat in-place array tests, substitute <code class="docutils literal"><span class="pre">Flat</span></code>
+for <code class="docutils literal"><span class="pre">Vector</span></code>.
+For the descriptions that follow, we will reference the
+<code class="docutils literal"><span class="pre">Vector</span></code> tests, but the same information applies to <code class="docutils literal"><span class="pre">Matrix</span></code>,
+<code class="docutils literal"><span class="pre">Tensor</span></code> and <code class="docutils literal"><span class="pre">SuperTensor</span></code> tests.</p>
+<p>The command <code class="docutils literal"><span class="pre">make</span> <span class="pre">test</span></code> will ensure that all of the test software is
+built and then run all three test scripts.</p>
+</div>
+<div class="section" id="testing-header-files">
+<h2>11.7.2.3. Testing Header Files<a class="headerlink" href="#testing-header-files" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">Vector.h</span></code> is a C++ header file that defines a C macro called
+<code class="docutils literal"><span class="pre">TEST_FUNC_PROTOS</span></code> that takes two arguments: <code class="docutils literal"><span class="pre">TYPE</span></code>, which is a
+data type name such as <code class="docutils literal"><span class="pre">unsigned</span> <span class="pre">int</span></code>; and <code class="docutils literal"><span class="pre">SNAME</span></code>, which is a
+short name for the same data type with no spaces, e.g. <code class="docutils literal"><span class="pre">uint</span></code>.  This
+macro defines several function prototypes that have the prefix
+<code class="docutils literal"><span class="pre">SNAME</span></code> and have at least one argument that is an array of type
+<code class="docutils literal"><span class="pre">TYPE</span></code>.  Those functions that have return arguments return a
+<code class="docutils literal"><span class="pre">TYPE</span></code> value.</p>
+<p><code class="docutils literal"><span class="pre">TEST_FUNC_PROTOS</span></code> is then implemented for all of the data types
+supported by <code class="docutils literal"><span class="pre">numpy.i</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">signed</span> <span class="pre">char</span></code></li>
+<li><code class="docutils literal"><span class="pre">unsigned</span> <span class="pre">char</span></code></li>
+<li><code class="docutils literal"><span class="pre">short</span></code></li>
+<li><code class="docutils literal"><span class="pre">unsigned</span> <span class="pre">short</span></code></li>
+<li><code class="docutils literal"><span class="pre">int</span></code></li>
+<li><code class="docutils literal"><span class="pre">unsigned</span> <span class="pre">int</span></code></li>
+<li><code class="docutils literal"><span class="pre">long</span></code></li>
+<li><code class="docutils literal"><span class="pre">unsigned</span> <span class="pre">long</span></code></li>
+<li><code class="docutils literal"><span class="pre">long</span> <span class="pre">long</span></code></li>
+<li><code class="docutils literal"><span class="pre">unsigned</span> <span class="pre">long</span> <span class="pre">long</span></code></li>
+<li><code class="docutils literal"><span class="pre">float</span></code></li>
+<li><code class="docutils literal"><span class="pre">double</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="testing-source-files">
+<h2>11.7.2.4. Testing Source Files<a class="headerlink" href="#testing-source-files" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">Vector.cxx</span></code> is a C++ source file that implements compilable code
+for each of the function prototypes specified in <code class="docutils literal"><span class="pre">Vector.h</span></code>.  It
+defines a C macro <code class="docutils literal"><span class="pre">TEST_FUNCS</span></code> that has the same arguments and works
+in the same way as <code class="docutils literal"><span class="pre">TEST_FUNC_PROTOS</span></code> does in <code class="docutils literal"><span class="pre">Vector.h</span></code>.
+<code class="docutils literal"><span class="pre">TEST_FUNCS</span></code> is implemented for each of the 12 data types as above.</p>
+</div>
+<div class="section" id="testing-swig-interface-files">
+<h2>11.7.2.5. Testing SWIG Interface Files<a class="headerlink" href="#testing-swig-interface-files" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">Vector.i</span></code> is a <a class="reference external" href="http://www.swig.org">SWIG</a> interface file that defines python module
+<code class="docutils literal"><span class="pre">Vector</span></code>.  It follows the conventions for using <code class="docutils literal"><span class="pre">numpy.i</span></code> as
+described in this chapter.  It defines a <a class="reference external" href="http://www.swig.org">SWIG</a> macro
+<code class="docutils literal"><span class="pre">%apply_numpy_typemaps</span></code> that has a single argument <code class="docutils literal"><span class="pre">TYPE</span></code>.
+It uses the <a class="reference external" href="http://www.swig.org">SWIG</a> directive <code class="docutils literal"><span class="pre">%apply</span></code> to apply the provided
+typemaps to the argument signatures found in <code class="docutils literal"><span class="pre">Vector.h</span></code>.  This macro
+is then implemented for all of the data types supported by
+<code class="docutils literal"><span class="pre">numpy.i</span></code>.  It then does a <code class="docutils literal"><span class="pre">%include</span> <span class="pre">&quot;Vector.h&quot;</span></code> to wrap all of
+the function prototypes in <code class="docutils literal"><span class="pre">Vector.h</span></code> using the typemaps in
+<code class="docutils literal"><span class="pre">numpy.i</span></code>.</p>
+</div>
+<div class="section" id="testing-python-scripts">
+<h2>11.7.2.6. Testing Python Scripts<a class="headerlink" href="#testing-python-scripts" title="Permalink to this headline">¶</a></h2>
+<p>After <code class="docutils literal"><span class="pre">make</span></code> is used to build the testing extension modules,
+<code class="docutils literal"><span class="pre">testVector.py</span></code> can be run to execute the tests.  As with other
+scripts that use <code class="docutils literal"><span class="pre">unittest</span></code> to facilitate unit testing,
+<code class="docutils literal"><span class="pre">testVector.py</span></code> defines a class that inherits from
+<code class="docutils literal"><span class="pre">unittest.TestCase</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>class VectorTestCase(unittest.TestCase):
+</pre></div>
+</div>
+<p>However, this class is not run directly.  Rather, it serves as a base
+class to several other python classes, each one specific to a
+particular data type.  The <code class="docutils literal"><span class="pre">VectorTestCase</span></code> class stores two strings
+for typing information:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>self.typeStr</strong></dt>
+<dd>A string that matches one of the <code class="docutils literal"><span class="pre">SNAME</span></code> prefixes used in
+<code class="docutils literal"><span class="pre">Vector.h</span></code> and <code class="docutils literal"><span class="pre">Vector.cxx</span></code>.  For example, <code class="docutils literal"><span class="pre">&quot;double&quot;</span></code>.</dd>
+<dt><strong>self.typeCode</strong></dt>
+<dd>A short (typically single-character) string that represents a
+data type in numpy and corresponds to <code class="docutils literal"><span class="pre">self.typeStr</span></code>.  For
+example, if <code class="docutils literal"><span class="pre">self.typeStr</span></code> is <code class="docutils literal"><span class="pre">&quot;double&quot;</span></code>, then
+<code class="docutils literal"><span class="pre">self.typeCode</span></code> should be <code class="docutils literal"><span class="pre">&quot;d&quot;</span></code>.</dd>
+</dl>
+</div></blockquote>
+<p>Each test defined by the <code class="docutils literal"><span class="pre">VectorTestCase</span></code> class extracts the python
+function it is trying to test by accessing the <code class="docutils literal"><span class="pre">Vector</span></code> module&#8217;s
+dictionary:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">typeStr</span> <span class="o">+</span> <span class="s2">&quot;Length&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In the case of double precision tests, this will return the python
+function <code class="docutils literal"><span class="pre">Vector.doubleLength</span></code>.</p>
+<p>We then define a new test case class for each supported data type with
+a short definition such as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">doubleTestCase</span><span class="p">(</span><span class="n">VectorTestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">methodName</span><span class="o">=</span><span class="s2">&quot;runTest&quot;</span><span class="p">):</span>
+        <span class="n">VectorTestCase</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">methodName</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">typeStr</span>  <span class="o">=</span> <span class="s2">&quot;double&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">typeCode</span> <span class="o">=</span> <span class="s2">&quot;d&quot;</span>
+</pre></div>
+</div>
+<p>Each of these 12 classes is collected into a <code class="docutils literal"><span class="pre">unittest.TestSuite</span></code>,
+which is then executed.  Errors and failures are summed together and
+returned as the exit argument.  Any non-zero result indicates that at
+least one test did not pass.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../glossary.html" class="btn btn-neutral float-right" title="12. Glossary" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="swig.interface-file.html" class="btn btn-neutral" title="11.7.1. Numpy.i: a SWIG Interface File for NumPy" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

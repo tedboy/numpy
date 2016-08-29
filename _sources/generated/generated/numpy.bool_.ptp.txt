@@ -1,0 +1,6 @@
+numpy.bool_.ptp
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.ptp

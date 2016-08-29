@@ -1,0 +1,6 @@
+numpy.number.copy
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: number.copy

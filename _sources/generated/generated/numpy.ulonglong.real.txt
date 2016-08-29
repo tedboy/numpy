@@ -1,0 +1,6 @@
+numpy.ulonglong.real
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.real

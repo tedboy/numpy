@@ -1,0 +1,94 @@
+numpy.uint16
+============
+.. currentmodule:: numpy
+.. autoclass:: uint16
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~uint16.all
+   ~uint16.any
+   ~uint16.argmax
+   ~uint16.argmin
+   ~uint16.argsort
+   ~uint16.astype
+   ~uint16.byteswap
+   ~uint16.choose
+   ~uint16.clip
+   ~uint16.compress
+   ~uint16.conj
+   ~uint16.conjugate
+   ~uint16.copy
+   ~uint16.cumprod
+   ~uint16.cumsum
+   ~uint16.diagonal
+   ~uint16.dump
+   ~uint16.dumps
+   ~uint16.fill
+   ~uint16.flatten
+   ~uint16.getfield
+   ~uint16.item
+   ~uint16.itemset
+   ~uint16.max
+   ~uint16.mean
+   ~uint16.min
+   ~uint16.newbyteorder
+   ~uint16.nonzero
+   ~uint16.prod
+   ~uint16.ptp
+   ~uint16.put
+   ~uint16.ravel
+   ~uint16.repeat
+   ~uint16.reshape
+   ~uint16.resize
+   ~uint16.round
+   ~uint16.searchsorted
+   ~uint16.setfield
+   ~uint16.setflags
+   ~uint16.sort
+   ~uint16.squeeze
+   ~uint16.std
+   ~uint16.sum
+   ~uint16.swapaxes
+   ~uint16.take
+   ~uint16.tobytes
+   ~uint16.tofile
+   ~uint16.tolist
+   ~uint16.tostring
+   ~uint16.trace
+   ~uint16.transpose
+   ~uint16.var
+   ~uint16.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~uint16.T
+   ~uint16.base
+   ~uint16.data
+   ~uint16.denominator
+   ~uint16.dtype
+   ~uint16.flags
+   ~uint16.flat
+   ~uint16.imag
+   ~uint16.itemsize
+   ~uint16.nbytes
+   ~uint16.ndim
+   ~uint16.numerator
+   ~uint16.real
+   ~uint16.shape
+   ~uint16.size
+   ~uint16.strides
+

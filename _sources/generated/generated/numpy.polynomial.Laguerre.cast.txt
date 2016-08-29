@@ -1,0 +1,6 @@
+numpy.polynomial.Laguerre.cast
+==============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Laguerre.cast

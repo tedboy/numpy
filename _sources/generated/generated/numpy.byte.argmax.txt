@@ -1,0 +1,6 @@
+numpy.byte.argmax
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.argmax

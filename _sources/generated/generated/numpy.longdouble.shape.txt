@@ -1,0 +1,6 @@
+numpy.longdouble.shape
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longdouble.shape

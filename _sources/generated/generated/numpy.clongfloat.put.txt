@@ -1,0 +1,6 @@
+numpy.clongfloat.put
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.put

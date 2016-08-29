@@ -1,0 +1,6 @@
+numpy.cdouble.argmax
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.argmax

@@ -1,0 +1,6 @@
+numpy.timedelta64.choose
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: timedelta64.choose

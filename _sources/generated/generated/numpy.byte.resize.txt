@@ -1,0 +1,6 @@
+numpy.byte.resize
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.resize

@@ -1,0 +1,6 @@
+numpy.lib.rot90
+===============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: rot90

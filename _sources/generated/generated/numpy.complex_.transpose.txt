@@ -1,0 +1,6 @@
+numpy.complex_.transpose
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.transpose

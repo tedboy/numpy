@@ -1,0 +1,6 @@
+numpy.datetime64.flags
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: datetime64.flags

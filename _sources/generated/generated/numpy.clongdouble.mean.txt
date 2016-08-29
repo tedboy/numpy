@@ -1,0 +1,6 @@
+numpy.clongdouble.mean
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.mean

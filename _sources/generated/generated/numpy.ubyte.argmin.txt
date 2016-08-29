@@ -1,0 +1,6 @@
+numpy.ubyte.argmin
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.argmin

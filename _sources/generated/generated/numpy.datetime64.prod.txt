@@ -1,0 +1,6 @@
+numpy.datetime64.prod
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.prod

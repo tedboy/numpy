@@ -1,0 +1,6 @@
+numpy.longlong.astype
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.astype

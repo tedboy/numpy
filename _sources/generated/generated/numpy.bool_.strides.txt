@@ -1,0 +1,6 @@
+numpy.bool_.strides
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool_.strides

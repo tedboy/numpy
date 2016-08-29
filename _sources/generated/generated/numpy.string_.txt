@@ -1,0 +1,130 @@
+numpy.string_
+=============
+.. currentmodule:: numpy
+.. autoclass:: string_
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~string_.all
+   ~string_.any
+   ~string_.argmax
+   ~string_.argmin
+   ~string_.argsort
+   ~string_.astype
+   ~string_.byteswap
+   ~string_.capitalize
+   ~string_.center
+   ~string_.choose
+   ~string_.clip
+   ~string_.compress
+   ~string_.conj
+   ~string_.conjugate
+   ~string_.copy
+   ~string_.count
+   ~string_.cumprod
+   ~string_.cumsum
+   ~string_.decode
+   ~string_.diagonal
+   ~string_.dump
+   ~string_.dumps
+   ~string_.encode
+   ~string_.endswith
+   ~string_.expandtabs
+   ~string_.fill
+   ~string_.find
+   ~string_.flatten
+   ~string_.format
+   ~string_.getfield
+   ~string_.index
+   ~string_.isalnum
+   ~string_.isalpha
+   ~string_.isdigit
+   ~string_.islower
+   ~string_.isspace
+   ~string_.istitle
+   ~string_.isupper
+   ~string_.item
+   ~string_.itemset
+   ~string_.join
+   ~string_.ljust
+   ~string_.lower
+   ~string_.lstrip
+   ~string_.max
+   ~string_.mean
+   ~string_.min
+   ~string_.newbyteorder
+   ~string_.nonzero
+   ~string_.partition
+   ~string_.prod
+   ~string_.ptp
+   ~string_.put
+   ~string_.ravel
+   ~string_.repeat
+   ~string_.replace
+   ~string_.reshape
+   ~string_.resize
+   ~string_.rfind
+   ~string_.rindex
+   ~string_.rjust
+   ~string_.round
+   ~string_.rpartition
+   ~string_.rsplit
+   ~string_.rstrip
+   ~string_.searchsorted
+   ~string_.setfield
+   ~string_.setflags
+   ~string_.sort
+   ~string_.split
+   ~string_.splitlines
+   ~string_.squeeze
+   ~string_.startswith
+   ~string_.std
+   ~string_.strip
+   ~string_.sum
+   ~string_.swapaxes
+   ~string_.swapcase
+   ~string_.take
+   ~string_.title
+   ~string_.tobytes
+   ~string_.tofile
+   ~string_.tolist
+   ~string_.tostring
+   ~string_.trace
+   ~string_.translate
+   ~string_.transpose
+   ~string_.upper
+   ~string_.var
+   ~string_.view
+   ~string_.zfill
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~string_.T
+   ~string_.base
+   ~string_.data
+   ~string_.dtype
+   ~string_.flags
+   ~string_.flat
+   ~string_.imag
+   ~string_.itemsize
+   ~string_.nbytes
+   ~string_.ndim
+   ~string_.real
+   ~string_.shape
+   ~string_.size
+   ~string_.strides
+

@@ -1,0 +1,6 @@
+numpy.object_.resize
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: object_.resize

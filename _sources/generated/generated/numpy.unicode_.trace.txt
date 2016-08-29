@@ -1,0 +1,6 @@
+numpy.unicode_.trace
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.trace

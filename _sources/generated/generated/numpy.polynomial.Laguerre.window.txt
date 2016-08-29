@@ -1,0 +1,6 @@
+numpy.polynomial.Laguerre.window
+================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Laguerre.window

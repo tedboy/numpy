@@ -1,0 +1,6 @@
+numpy.unicode0.tobytes
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode0.tobytes

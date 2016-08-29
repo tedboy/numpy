@@ -1,0 +1,6 @@
+numpy.half.fill
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.fill

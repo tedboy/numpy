@@ -1,0 +1,6 @@
+numpy.singlecomplex.prod
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.prod

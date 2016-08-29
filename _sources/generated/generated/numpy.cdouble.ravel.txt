@@ -1,0 +1,6 @@
+numpy.cdouble.ravel
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.ravel

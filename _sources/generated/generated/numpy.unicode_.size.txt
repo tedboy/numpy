@@ -1,0 +1,6 @@
+numpy.unicode_.size
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unicode_.size

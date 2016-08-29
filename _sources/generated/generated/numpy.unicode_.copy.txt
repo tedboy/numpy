@@ -1,0 +1,6 @@
+numpy.unicode_.copy
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.copy

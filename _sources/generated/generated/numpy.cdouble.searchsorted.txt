@@ -1,0 +1,6 @@
+numpy.cdouble.searchsorted
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.searchsorted

@@ -1,0 +1,6 @@
+numpy.double.tolist
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.tolist

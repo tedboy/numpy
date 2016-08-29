@@ -1,0 +1,6 @@
+numpy.lib.ediff1d
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: ediff1d

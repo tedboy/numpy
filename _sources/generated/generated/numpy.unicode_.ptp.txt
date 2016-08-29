@@ -1,0 +1,6 @@
+numpy.unicode_.ptp
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.ptp

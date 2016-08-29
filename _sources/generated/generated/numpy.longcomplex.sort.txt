@@ -1,0 +1,6 @@
+numpy.longcomplex.sort
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.sort

@@ -1,0 +1,6 @@
+numpy.longcomplex.searchsorted
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.searchsorted

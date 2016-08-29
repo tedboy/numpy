@@ -1,0 +1,6 @@
+numpy.clongdouble.resize
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.resize

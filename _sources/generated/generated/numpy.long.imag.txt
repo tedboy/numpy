@@ -1,0 +1,6 @@
+numpy.long.imag
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: long.imag

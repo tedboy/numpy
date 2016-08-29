@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertGreater
+====================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertGreater

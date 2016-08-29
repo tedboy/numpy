@@ -1,0 +1,6 @@
+numpy.ubyte.std
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.std

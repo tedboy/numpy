@@ -1,0 +1,6 @@
+numpy.signedinteger.any
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.any

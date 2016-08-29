@@ -1,0 +1,6 @@
+numpy.lib.angle
+===============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: angle

@@ -1,0 +1,11 @@
+numpy.object
+============
+.. currentmodule:: numpy
+.. autoclass:: object
+   :undoc-members:
+
+
+
+
+
+

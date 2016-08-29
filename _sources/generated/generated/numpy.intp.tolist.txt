@@ -1,0 +1,6 @@
+numpy.intp.tolist
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: intp.tolist

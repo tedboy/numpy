@@ -1,0 +1,6 @@
+numpy.half.argsort
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.argsort

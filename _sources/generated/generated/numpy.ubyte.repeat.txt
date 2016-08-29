@@ -1,0 +1,6 @@
+numpy.ubyte.repeat
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.repeat

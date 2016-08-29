@@ -1,0 +1,6 @@
+numpy.ulonglong.nbytes
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.nbytes

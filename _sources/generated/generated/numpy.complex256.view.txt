@@ -1,0 +1,6 @@
+numpy.complex256.view
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.view

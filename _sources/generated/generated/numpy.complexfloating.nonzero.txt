@@ -1,0 +1,6 @@
+numpy.complexfloating.nonzero
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.nonzero

@@ -1,0 +1,6 @@
+numpy.ubyte.squeeze
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.squeeze

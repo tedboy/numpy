@@ -1,0 +1,6 @@
+numpy.single.tolist
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.tolist

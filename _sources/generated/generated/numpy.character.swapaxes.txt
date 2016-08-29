@@ -1,0 +1,6 @@
+numpy.character.swapaxes
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.swapaxes

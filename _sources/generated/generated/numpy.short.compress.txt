@@ -1,0 +1,6 @@
+numpy.short.compress
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.compress

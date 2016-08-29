@@ -1,0 +1,6 @@
+numpy.half.put
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.put

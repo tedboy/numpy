@@ -1,0 +1,6 @@
+numpy.ushort.tofile
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.tofile

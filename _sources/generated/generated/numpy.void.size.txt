@@ -1,0 +1,6 @@
+numpy.void.size
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void.size

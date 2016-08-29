@@ -1,0 +1,6 @@
+numpy.lib.delete
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: delete

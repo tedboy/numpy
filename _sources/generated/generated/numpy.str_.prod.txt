@@ -1,0 +1,6 @@
+numpy.str_.prod
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.prod

@@ -1,0 +1,6 @@
+numpy.complex64.ndim
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex64.ndim

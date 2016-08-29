@@ -1,0 +1,6 @@
+numpy.float64.real
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: float64.real

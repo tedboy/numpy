@@ -1,0 +1,6 @@
+numpy.half.clip
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.clip

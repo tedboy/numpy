@@ -1,0 +1,96 @@
+numpy.double
+============
+.. currentmodule:: numpy
+.. autoclass:: double
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~double.all
+   ~double.any
+   ~double.argmax
+   ~double.argmin
+   ~double.argsort
+   ~double.as_integer_ratio
+   ~double.astype
+   ~double.byteswap
+   ~double.choose
+   ~double.clip
+   ~double.compress
+   ~double.conj
+   ~double.conjugate
+   ~double.copy
+   ~double.cumprod
+   ~double.cumsum
+   ~double.diagonal
+   ~double.dump
+   ~double.dumps
+   ~double.fill
+   ~double.flatten
+   ~double.fromhex
+   ~double.getfield
+   ~double.hex
+   ~double.is_integer
+   ~double.item
+   ~double.itemset
+   ~double.max
+   ~double.mean
+   ~double.min
+   ~double.newbyteorder
+   ~double.nonzero
+   ~double.prod
+   ~double.ptp
+   ~double.put
+   ~double.ravel
+   ~double.repeat
+   ~double.reshape
+   ~double.resize
+   ~double.round
+   ~double.searchsorted
+   ~double.setfield
+   ~double.setflags
+   ~double.sort
+   ~double.squeeze
+   ~double.std
+   ~double.sum
+   ~double.swapaxes
+   ~double.take
+   ~double.tobytes
+   ~double.tofile
+   ~double.tolist
+   ~double.tostring
+   ~double.trace
+   ~double.transpose
+   ~double.var
+   ~double.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~double.T
+   ~double.base
+   ~double.data
+   ~double.dtype
+   ~double.flags
+   ~double.flat
+   ~double.imag
+   ~double.itemsize
+   ~double.nbytes
+   ~double.ndim
+   ~double.real
+   ~double.shape
+   ~double.size
+   ~double.strides
+

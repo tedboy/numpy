@@ -1,0 +1,6 @@
+numpy.string0.var
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.var

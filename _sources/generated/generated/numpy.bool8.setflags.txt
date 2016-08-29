@@ -1,0 +1,6 @@
+numpy.bool8.setflags
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.setflags

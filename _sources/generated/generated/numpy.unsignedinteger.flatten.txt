@@ -1,0 +1,6 @@
+numpy.unsignedinteger.flatten
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.flatten

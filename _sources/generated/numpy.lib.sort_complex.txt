@@ -1,0 +1,6 @@
+numpy.lib.sort_complex
+======================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: sort_complex

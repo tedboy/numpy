@@ -1,0 +1,6 @@
+numpy.string_.islower
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.islower

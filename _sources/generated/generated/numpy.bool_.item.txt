@@ -1,0 +1,6 @@
+numpy.bool_.item
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.item

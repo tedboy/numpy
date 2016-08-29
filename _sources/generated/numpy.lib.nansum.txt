@@ -1,0 +1,6 @@
+numpy.lib.nansum
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nansum

@@ -1,0 +1,6 @@
+numpy.bytes_.format
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.format

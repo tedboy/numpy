@@ -1,0 +1,6 @@
+numpy.double.sort
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.sort

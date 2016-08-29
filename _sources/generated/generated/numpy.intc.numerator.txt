@@ -1,0 +1,6 @@
+numpy.intc.numerator
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: intc.numerator

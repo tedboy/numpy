@@ -1,0 +1,6 @@
+numpy.character.put
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.put

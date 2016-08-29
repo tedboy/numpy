@@ -1,0 +1,6 @@
+numpy.bool.denominator
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool.denominator

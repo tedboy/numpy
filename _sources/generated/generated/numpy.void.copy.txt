@@ -1,0 +1,6 @@
+numpy.void.copy
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: void.copy

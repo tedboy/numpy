@@ -1,0 +1,6 @@
+numpy.cfloat.itemset
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cfloat.itemset

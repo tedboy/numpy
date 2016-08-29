@@ -1,0 +1,96 @@
+numpy.float64
+=============
+.. currentmodule:: numpy
+.. autoclass:: float64
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~float64.all
+   ~float64.any
+   ~float64.argmax
+   ~float64.argmin
+   ~float64.argsort
+   ~float64.as_integer_ratio
+   ~float64.astype
+   ~float64.byteswap
+   ~float64.choose
+   ~float64.clip
+   ~float64.compress
+   ~float64.conj
+   ~float64.conjugate
+   ~float64.copy
+   ~float64.cumprod
+   ~float64.cumsum
+   ~float64.diagonal
+   ~float64.dump
+   ~float64.dumps
+   ~float64.fill
+   ~float64.flatten
+   ~float64.fromhex
+   ~float64.getfield
+   ~float64.hex
+   ~float64.is_integer
+   ~float64.item
+   ~float64.itemset
+   ~float64.max
+   ~float64.mean
+   ~float64.min
+   ~float64.newbyteorder
+   ~float64.nonzero
+   ~float64.prod
+   ~float64.ptp
+   ~float64.put
+   ~float64.ravel
+   ~float64.repeat
+   ~float64.reshape
+   ~float64.resize
+   ~float64.round
+   ~float64.searchsorted
+   ~float64.setfield
+   ~float64.setflags
+   ~float64.sort
+   ~float64.squeeze
+   ~float64.std
+   ~float64.sum
+   ~float64.swapaxes
+   ~float64.take
+   ~float64.tobytes
+   ~float64.tofile
+   ~float64.tolist
+   ~float64.tostring
+   ~float64.trace
+   ~float64.transpose
+   ~float64.var
+   ~float64.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~float64.T
+   ~float64.base
+   ~float64.data
+   ~float64.dtype
+   ~float64.flags
+   ~float64.flat
+   ~float64.imag
+   ~float64.itemsize
+   ~float64.nbytes
+   ~float64.ndim
+   ~float64.real
+   ~float64.shape
+   ~float64.size
+   ~float64.strides
+

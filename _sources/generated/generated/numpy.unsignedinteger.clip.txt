@@ -1,0 +1,6 @@
+numpy.unsignedinteger.clip
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.clip

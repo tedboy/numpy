@@ -1,0 +1,6 @@
+numpy.bytes_.zfill
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.zfill

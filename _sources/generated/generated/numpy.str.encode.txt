@@ -1,0 +1,6 @@
+numpy.str.encode
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: str.encode

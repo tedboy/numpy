@@ -1,0 +1,6 @@
+numpy.string_.upper
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.upper

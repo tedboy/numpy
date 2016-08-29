@@ -1,0 +1,6 @@
+numpy.clongfloat.argmax
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.argmax

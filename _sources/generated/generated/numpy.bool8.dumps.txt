@@ -1,0 +1,6 @@
+numpy.bool8.dumps
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.dumps

@@ -1,0 +1,6 @@
+numpy.unsignedinteger.shape
+===========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.shape

@@ -1,0 +1,6 @@
+numpy.signedinteger.ptp
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.ptp

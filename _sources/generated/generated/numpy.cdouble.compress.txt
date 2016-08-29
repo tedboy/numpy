@@ -1,0 +1,6 @@
+numpy.cdouble.compress
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.compress

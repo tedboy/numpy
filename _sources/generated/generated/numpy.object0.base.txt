@@ -1,0 +1,6 @@
+numpy.object0.base
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: object0.base

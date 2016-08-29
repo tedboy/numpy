@@ -1,0 +1,6 @@
+numpy.lib.mintypecode
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: mintypecode

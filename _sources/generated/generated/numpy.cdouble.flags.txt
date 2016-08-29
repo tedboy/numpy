@@ -1,0 +1,6 @@
+numpy.cdouble.flags
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.flags

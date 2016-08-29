@@ -1,0 +1,6 @@
+numpy.PackageLoader.get_pkgdocs
+===============================
+
+.. currentmodule:: numpy
+
+.. automethod:: PackageLoader.get_pkgdocs

@@ -1,0 +1,6 @@
+numpy.void0.nbytes
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void0.nbytes

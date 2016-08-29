@@ -1,0 +1,6 @@
+numpy.complexfloating.argmin
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.argmin

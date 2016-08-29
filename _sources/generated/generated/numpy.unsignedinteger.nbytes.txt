@@ -1,0 +1,6 @@
+numpy.unsignedinteger.nbytes
+============================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.nbytes

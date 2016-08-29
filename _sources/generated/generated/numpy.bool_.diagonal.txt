@@ -1,0 +1,6 @@
+numpy.bool_.diagonal
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.diagonal

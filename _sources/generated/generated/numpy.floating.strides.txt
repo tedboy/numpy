@@ -1,0 +1,6 @@
+numpy.floating.strides
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: floating.strides

@@ -1,0 +1,6 @@
+numpy.csingle.take
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.take

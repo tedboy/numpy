@@ -1,0 +1,92 @@
+numpy.longdouble
+================
+.. currentmodule:: numpy
+.. autoclass:: longdouble
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~longdouble.all
+   ~longdouble.any
+   ~longdouble.argmax
+   ~longdouble.argmin
+   ~longdouble.argsort
+   ~longdouble.astype
+   ~longdouble.byteswap
+   ~longdouble.choose
+   ~longdouble.clip
+   ~longdouble.compress
+   ~longdouble.conj
+   ~longdouble.conjugate
+   ~longdouble.copy
+   ~longdouble.cumprod
+   ~longdouble.cumsum
+   ~longdouble.diagonal
+   ~longdouble.dump
+   ~longdouble.dumps
+   ~longdouble.fill
+   ~longdouble.flatten
+   ~longdouble.getfield
+   ~longdouble.item
+   ~longdouble.itemset
+   ~longdouble.max
+   ~longdouble.mean
+   ~longdouble.min
+   ~longdouble.newbyteorder
+   ~longdouble.nonzero
+   ~longdouble.prod
+   ~longdouble.ptp
+   ~longdouble.put
+   ~longdouble.ravel
+   ~longdouble.repeat
+   ~longdouble.reshape
+   ~longdouble.resize
+   ~longdouble.round
+   ~longdouble.searchsorted
+   ~longdouble.setfield
+   ~longdouble.setflags
+   ~longdouble.sort
+   ~longdouble.squeeze
+   ~longdouble.std
+   ~longdouble.sum
+   ~longdouble.swapaxes
+   ~longdouble.take
+   ~longdouble.tobytes
+   ~longdouble.tofile
+   ~longdouble.tolist
+   ~longdouble.tostring
+   ~longdouble.trace
+   ~longdouble.transpose
+   ~longdouble.var
+   ~longdouble.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~longdouble.T
+   ~longdouble.base
+   ~longdouble.data
+   ~longdouble.dtype
+   ~longdouble.flags
+   ~longdouble.flat
+   ~longdouble.imag
+   ~longdouble.itemsize
+   ~longdouble.nbytes
+   ~longdouble.ndim
+   ~longdouble.real
+   ~longdouble.shape
+   ~longdouble.size
+   ~longdouble.strides
+

@@ -1,0 +1,6 @@
+numpy.unicode.endswith
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.endswith

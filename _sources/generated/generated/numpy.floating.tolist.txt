@@ -1,0 +1,6 @@
+numpy.floating.tolist
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.tolist

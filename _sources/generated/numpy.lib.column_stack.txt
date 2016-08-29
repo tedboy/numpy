@@ -1,0 +1,6 @@
+numpy.lib.column_stack
+======================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: column_stack

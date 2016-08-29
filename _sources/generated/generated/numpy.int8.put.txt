@@ -1,0 +1,6 @@
+numpy.int8.put
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.put

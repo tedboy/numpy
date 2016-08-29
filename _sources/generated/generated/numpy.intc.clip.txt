@@ -1,0 +1,6 @@
+numpy.intc.clip
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.clip

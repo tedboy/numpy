@@ -1,0 +1,6 @@
+numpy.lib.triu
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: triu

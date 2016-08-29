@@ -1,0 +1,6 @@
+numpy.intc.compress
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.compress

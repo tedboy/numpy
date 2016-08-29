@@ -1,0 +1,6 @@
+numpy.cdouble.var
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.var

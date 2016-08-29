@@ -1,0 +1,6 @@
+numpy.cdouble.trace
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.trace

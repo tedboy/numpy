@@ -1,0 +1,6 @@
+numpy.testing.TestCase.failUnlessAlmostEqual
+============================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.failUnlessAlmostEqual

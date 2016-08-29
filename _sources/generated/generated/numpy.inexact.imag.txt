@@ -1,0 +1,6 @@
+numpy.inexact.imag
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: inexact.imag

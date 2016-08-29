@@ -1,0 +1,6 @@
+numpy.datetime64.argsort
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.argsort

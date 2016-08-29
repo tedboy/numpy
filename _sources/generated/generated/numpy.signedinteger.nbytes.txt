@@ -1,0 +1,6 @@
+numpy.signedinteger.nbytes
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.nbytes

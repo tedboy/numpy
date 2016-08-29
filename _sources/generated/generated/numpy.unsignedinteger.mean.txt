@@ -1,0 +1,6 @@
+numpy.unsignedinteger.mean
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.mean

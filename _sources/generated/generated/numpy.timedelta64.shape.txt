@@ -1,0 +1,6 @@
+numpy.timedelta64.shape
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: timedelta64.shape

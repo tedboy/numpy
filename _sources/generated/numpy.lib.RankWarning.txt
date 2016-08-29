@@ -1,0 +1,6 @@
+numpy.lib.RankWarning
+=====================
+
+.. currentmodule:: numpy.lib
+
+.. autoexception:: RankWarning

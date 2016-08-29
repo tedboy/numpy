@@ -1,0 +1,6 @@
+numpy.polynomial.Polynomial.has_sametype
+========================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Polynomial.has_sametype

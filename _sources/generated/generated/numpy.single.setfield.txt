@@ -1,0 +1,6 @@
+numpy.single.setfield
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.setfield

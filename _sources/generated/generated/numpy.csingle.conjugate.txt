@@ -1,0 +1,6 @@
+numpy.csingle.conjugate
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.conjugate

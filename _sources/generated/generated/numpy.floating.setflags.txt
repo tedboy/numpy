@@ -1,0 +1,6 @@
+numpy.floating.setflags
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.setflags

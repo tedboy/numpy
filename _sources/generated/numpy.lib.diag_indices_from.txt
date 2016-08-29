@@ -1,0 +1,6 @@
+numpy.lib.diag_indices_from
+===========================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: diag_indices_from

@@ -1,0 +1,6 @@
+numpy.string0.rfind
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.rfind

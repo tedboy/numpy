@@ -1,0 +1,6 @@
+numpy.double.dtype
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.dtype

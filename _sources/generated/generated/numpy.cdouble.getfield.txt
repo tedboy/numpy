@@ -1,0 +1,6 @@
+numpy.cdouble.getfield
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.getfield

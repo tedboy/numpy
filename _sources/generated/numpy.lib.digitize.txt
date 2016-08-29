@@ -1,0 +1,6 @@
+numpy.lib.digitize
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: digitize

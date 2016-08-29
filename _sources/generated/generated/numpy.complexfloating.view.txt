@@ -1,0 +1,6 @@
+numpy.complexfloating.view
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.view

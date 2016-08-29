@@ -1,0 +1,6 @@
+numpy.unicode0.isupper
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode0.isupper

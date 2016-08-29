@@ -1,0 +1,6 @@
+numpy.int8.compress
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.compress

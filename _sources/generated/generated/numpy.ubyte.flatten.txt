@@ -1,0 +1,6 @@
+numpy.ubyte.flatten
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.flatten

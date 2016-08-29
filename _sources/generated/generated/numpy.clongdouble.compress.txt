@@ -1,0 +1,6 @@
+numpy.clongdouble.compress
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.compress

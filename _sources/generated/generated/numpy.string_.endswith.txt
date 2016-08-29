@@ -1,0 +1,6 @@
+numpy.string_.endswith
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.endswith

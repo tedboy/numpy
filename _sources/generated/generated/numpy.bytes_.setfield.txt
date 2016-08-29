@@ -1,0 +1,6 @@
+numpy.bytes_.setfield
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.setfield

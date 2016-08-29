@@ -1,0 +1,6 @@
+numpy.integer.fill
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: integer.fill

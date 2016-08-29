@@ -1,0 +1,6 @@
+numpy.longcomplex.choose
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.choose

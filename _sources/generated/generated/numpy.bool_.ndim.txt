@@ -1,0 +1,6 @@
+numpy.bool_.ndim
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool_.ndim

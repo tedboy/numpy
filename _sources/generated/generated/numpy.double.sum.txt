@@ -1,0 +1,6 @@
+numpy.double.sum
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.sum

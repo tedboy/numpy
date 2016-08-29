@@ -1,0 +1,6 @@
+numpy.longfloat.conj
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.conj

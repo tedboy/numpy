@@ -1,0 +1,6 @@
+numpy.half.any
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.any

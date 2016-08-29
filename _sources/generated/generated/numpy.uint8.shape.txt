@@ -1,0 +1,6 @@
+numpy.uint8.shape
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint8.shape

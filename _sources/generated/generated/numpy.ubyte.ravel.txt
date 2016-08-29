@@ -1,0 +1,6 @@
+numpy.ubyte.ravel
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.ravel

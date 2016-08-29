@@ -1,0 +1,6 @@
+numpy.void0.argsort
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: void0.argsort

@@ -1,0 +1,6 @@
+numpy.complex128.conj
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.conj

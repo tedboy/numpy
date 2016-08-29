@@ -1,0 +1,6 @@
+numpy.longfloat.prod
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.prod

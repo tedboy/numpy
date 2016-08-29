@@ -1,0 +1,6 @@
+numpy.csingle.min
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.min

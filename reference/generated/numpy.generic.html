@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.1.2.4.1. numpy.generic &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../index.html"/>
+        <link rel="up" title="11.1.2. Scalars" href="../arrays.scalars.html"/>
+        <link rel="next" title="11.1.2.4.2. numpy.generic.__array__" href="numpy.generic.__array__.html"/>
+        <link rel="prev" title="11.1.2.2.17. numpy.generic.__array_wrap__" href="numpy.generic.__array_wrap__.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../arrays.html">11.1. Array objects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../arrays.ndarray.html">11.1.1. The N-dimensional array (<code class="docutils literal"><span class="pre">ndarray</span></code>)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../arrays.scalars.html">11.1.2. Scalars</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../arrays.scalars.html#built-in-scalar-types">11.1.2.1. Built-in scalar types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../arrays.scalars.html#attributes">11.1.2.2. Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../arrays.scalars.html#indexing">11.1.2.3. Indexing</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../arrays.scalars.html#methods">11.1.2.4. Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../arrays.scalars.html#defining-new-types">11.1.2.5. Defining new types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.dtypes.html">11.1.3. Data type objects (<code class="docutils literal"><span class="pre">dtype</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.indexing.html">11.1.4. Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.nditer.html">11.1.5. Iterating Over Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.classes.html">11.1.6. Standard array subclasses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maskedarray.html">11.1.7. Masked arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.interface.html">11.1.8. The Array Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../arrays.datetime.html">11.1.9. Datetimes and Timedeltas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../routines.html">11.3. Routines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="../arrays.html">11.1. Array objects</a> &raquo;</li>
+        
+          <li><a href="../arrays.scalars.html">11.1.2. Scalars</a> &raquo;</li>
+        
+      <li>11.1.2.4.1. numpy.generic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/reference/generated/numpy.generic.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy-generic">
+<h1>11.1.2.4.1. numpy.generic<a class="headerlink" href="#numpy-generic" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="numpy.generic">
+<em class="property">class </em><code class="descclassname">numpy.</code><code class="descname">generic</code><a class="headerlink" href="#numpy.generic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for numpy scalar types.</p>
+<p>Class from which most (all?) numpy scalar types are derived.  For
+consistency, exposes the same API as <cite>ndarray</cite>, despite many
+consequent attributes being either &#8220;get-only,&#8221; or completely irrelevant.
+This is the class from which it is strongly suggested users should derive
+custom scalar types.</p>
+<dl class="method">
+<dt id="numpy.generic.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#numpy.generic.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.all.html#numpy.generic.all" title="numpy.generic.all"><code class="xref py py-obj docutils literal"><span class="pre">all</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.any.html#numpy.generic.any" title="numpy.generic.any"><code class="xref py py-obj docutils literal"><span class="pre">any</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.argmax.html#numpy.generic.argmax" title="numpy.generic.argmax"><code class="xref py py-obj docutils literal"><span class="pre">argmax</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.argmin.html#numpy.generic.argmin" title="numpy.generic.argmin"><code class="xref py py-obj docutils literal"><span class="pre">argmin</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.argsort.html#numpy.generic.argsort" title="numpy.generic.argsort"><code class="xref py py-obj docutils literal"><span class="pre">argsort</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.astype.html#numpy.generic.astype" title="numpy.generic.astype"><code class="xref py py-obj docutils literal"><span class="pre">astype</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.generic.byteswap.html#numpy.generic.byteswap" title="numpy.generic.byteswap"><code class="xref py py-obj docutils literal"><span class="pre">byteswap</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.choose.html#numpy.generic.choose" title="numpy.generic.choose"><code class="xref py py-obj docutils literal"><span class="pre">choose</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.clip.html#numpy.generic.clip" title="numpy.generic.clip"><code class="xref py py-obj docutils literal"><span class="pre">clip</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.compress.html#numpy.generic.compress" title="numpy.generic.compress"><code class="xref py py-obj docutils literal"><span class="pre">compress</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.conj.html#numpy.generic.conj" title="numpy.generic.conj"><code class="xref py py-obj docutils literal"><span class="pre">conj</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.conjugate.html#numpy.generic.conjugate" title="numpy.generic.conjugate"><code class="xref py py-obj docutils literal"><span class="pre">conjugate</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.copy.html#numpy.generic.copy" title="numpy.generic.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.cumprod.html#numpy.generic.cumprod" title="numpy.generic.cumprod"><code class="xref py py-obj docutils literal"><span class="pre">cumprod</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.cumsum.html#numpy.generic.cumsum" title="numpy.generic.cumsum"><code class="xref py py-obj docutils literal"><span class="pre">cumsum</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.diagonal.html#numpy.generic.diagonal" title="numpy.generic.diagonal"><code class="xref py py-obj docutils literal"><span class="pre">diagonal</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.dump.html#numpy.generic.dump" title="numpy.generic.dump"><code class="xref py py-obj docutils literal"><span class="pre">dump</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.dumps.html#numpy.generic.dumps" title="numpy.generic.dumps"><code class="xref py py-obj docutils literal"><span class="pre">dumps</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.fill.html#numpy.generic.fill" title="numpy.generic.fill"><code class="xref py py-obj docutils literal"><span class="pre">fill</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.flatten.html#numpy.generic.flatten" title="numpy.generic.flatten"><code class="xref py py-obj docutils literal"><span class="pre">flatten</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.getfield.html#numpy.generic.getfield" title="numpy.generic.getfield"><code class="xref py py-obj docutils literal"><span class="pre">getfield</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.item.html#numpy.generic.item" title="numpy.generic.item"><code class="xref py py-obj docutils literal"><span class="pre">item</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.itemset.html#numpy.generic.itemset" title="numpy.generic.itemset"><code class="xref py py-obj docutils literal"><span class="pre">itemset</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.max.html#numpy.generic.max" title="numpy.generic.max"><code class="xref py py-obj docutils literal"><span class="pre">max</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.mean.html#numpy.generic.mean" title="numpy.generic.mean"><code class="xref py py-obj docutils literal"><span class="pre">mean</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.min.html#numpy.generic.min" title="numpy.generic.min"><code class="xref py py-obj docutils literal"><span class="pre">min</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.newbyteorder.html#numpy.generic.newbyteorder" title="numpy.generic.newbyteorder"><code class="xref py py-obj docutils literal"><span class="pre">newbyteorder</span></code></a>([new_order])</td>
+<td>Return a new <cite>dtype</cite> with a different byte order.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.nonzero.html#numpy.generic.nonzero" title="numpy.generic.nonzero"><code class="xref py py-obj docutils literal"><span class="pre">nonzero</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.prod.html#numpy.generic.prod" title="numpy.generic.prod"><code class="xref py py-obj docutils literal"><span class="pre">prod</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.ptp.html#numpy.generic.ptp" title="numpy.generic.ptp"><code class="xref py py-obj docutils literal"><span class="pre">ptp</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.put.html#numpy.generic.put" title="numpy.generic.put"><code class="xref py py-obj docutils literal"><span class="pre">put</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.ravel.html#numpy.generic.ravel" title="numpy.generic.ravel"><code class="xref py py-obj docutils literal"><span class="pre">ravel</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.repeat.html#numpy.generic.repeat" title="numpy.generic.repeat"><code class="xref py py-obj docutils literal"><span class="pre">repeat</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.reshape.html#numpy.generic.reshape" title="numpy.generic.reshape"><code class="xref py py-obj docutils literal"><span class="pre">reshape</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.resize.html#numpy.generic.resize" title="numpy.generic.resize"><code class="xref py py-obj docutils literal"><span class="pre">resize</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.round.html#numpy.generic.round" title="numpy.generic.round"><code class="xref py py-obj docutils literal"><span class="pre">round</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.searchsorted.html#numpy.generic.searchsorted" title="numpy.generic.searchsorted"><code class="xref py py-obj docutils literal"><span class="pre">searchsorted</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.setfield.html#numpy.generic.setfield" title="numpy.generic.setfield"><code class="xref py py-obj docutils literal"><span class="pre">setfield</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.generic.setflags.html#numpy.generic.setflags" title="numpy.generic.setflags"><code class="xref py py-obj docutils literal"><span class="pre">setflags</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.sort.html#numpy.generic.sort" title="numpy.generic.sort"><code class="xref py py-obj docutils literal"><span class="pre">sort</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.generic.squeeze.html#numpy.generic.squeeze" title="numpy.generic.squeeze"><code class="xref py py-obj docutils literal"><span class="pre">squeeze</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.std.html#numpy.generic.std" title="numpy.generic.std"><code class="xref py py-obj docutils literal"><span class="pre">std</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.sum.html#numpy.generic.sum" title="numpy.generic.sum"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.swapaxes.html#numpy.generic.swapaxes" title="numpy.generic.swapaxes"><code class="xref py py-obj docutils literal"><span class="pre">swapaxes</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.take.html#numpy.generic.take" title="numpy.generic.take"><code class="xref py py-obj docutils literal"><span class="pre">take</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.tobytes.html#numpy.generic.tobytes" title="numpy.generic.tobytes"><code class="xref py py-obj docutils literal"><span class="pre">tobytes</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.tofile.html#numpy.generic.tofile" title="numpy.generic.tofile"><code class="xref py py-obj docutils literal"><span class="pre">tofile</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.tolist.html#numpy.generic.tolist" title="numpy.generic.tolist"><code class="xref py py-obj docutils literal"><span class="pre">tolist</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.tostring.html#numpy.generic.tostring" title="numpy.generic.tostring"><code class="xref py py-obj docutils literal"><span class="pre">tostring</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.trace.html#numpy.generic.trace" title="numpy.generic.trace"><code class="xref py py-obj docutils literal"><span class="pre">trace</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.transpose.html#numpy.generic.transpose" title="numpy.generic.transpose"><code class="xref py py-obj docutils literal"><span class="pre">transpose</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../generated/generated/numpy.generic.var.html#numpy.generic.var" title="numpy.generic.var"><code class="xref py py-obj docutils literal"><span class="pre">var</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.view.html#numpy.generic.view" title="numpy.generic.view"><code class="xref py py-obj docutils literal"><span class="pre">view</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="numpy.generic.T.html#numpy.generic.T" title="numpy.generic.T"><code class="xref py py-obj docutils literal"><span class="pre">T</span></code></a></td>
+<td>transpose</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.generic.base.html#numpy.generic.base" title="numpy.generic.base"><code class="xref py py-obj docutils literal"><span class="pre">base</span></code></a></td>
+<td>base object</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.generic.data.html#numpy.generic.data" title="numpy.generic.data"><code class="xref py py-obj docutils literal"><span class="pre">data</span></code></a></td>
+<td>pointer to start of data</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.generic.dtype.html#numpy.generic.dtype" title="numpy.generic.dtype"><code class="xref py py-obj docutils literal"><span class="pre">dtype</span></code></a></td>
+<td>get array data-descriptor</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.generic.flags.html#numpy.generic.flags" title="numpy.generic.flags"><code class="xref py py-obj docutils literal"><span class="pre">flags</span></code></a></td>
+<td>integer value of flags</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.generic.flat.html#numpy.generic.flat" title="numpy.generic.flat"><code class="xref py py-obj docutils literal"><span class="pre">flat</span></code></a></td>
+<td>a 1-d view of scalar</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.generic.imag.html#numpy.generic.imag" title="numpy.generic.imag"><code class="xref py py-obj docutils literal"><span class="pre">imag</span></code></a></td>
+<td>imaginary part of scalar</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.generic.itemsize.html#numpy.generic.itemsize" title="numpy.generic.itemsize"><code class="xref py py-obj docutils literal"><span class="pre">itemsize</span></code></a></td>
+<td>length of one element in bytes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../generated/generated/numpy.generic.nbytes.html#numpy.generic.nbytes" title="numpy.generic.nbytes"><code class="xref py py-obj docutils literal"><span class="pre">nbytes</span></code></a></td>
+<td>length of item in bytes</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.generic.ndim.html#numpy.generic.ndim" title="numpy.generic.ndim"><code class="xref py py-obj docutils literal"><span class="pre">ndim</span></code></a></td>
+<td>number of array dimensions</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.generic.real.html#numpy.generic.real" title="numpy.generic.real"><code class="xref py py-obj docutils literal"><span class="pre">real</span></code></a></td>
+<td>real part of scalar</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.generic.shape.html#numpy.generic.shape" title="numpy.generic.shape"><code class="xref py py-obj docutils literal"><span class="pre">shape</span></code></a></td>
+<td>tuple of array dimensions</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.generic.size.html#numpy.generic.size" title="numpy.generic.size"><code class="xref py py-obj docutils literal"><span class="pre">size</span></code></a></td>
+<td>number of elements in the gentype</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.generic.strides.html#numpy.generic.strides" title="numpy.generic.strides"><code class="xref py py-obj docutils literal"><span class="pre">strides</span></code></a></td>
+<td>tuple of bytes steps in each dimension</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numpy.generic.__array__.html" class="btn btn-neutral float-right" title="11.1.2.4.2. numpy.generic.__array__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numpy.generic.__array_wrap__.html" class="btn btn-neutral" title="11.1.2.2.17. numpy.generic.__array_wrap__" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

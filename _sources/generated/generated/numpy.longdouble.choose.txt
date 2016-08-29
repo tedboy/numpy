@@ -1,0 +1,6 @@
+numpy.longdouble.choose
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.choose

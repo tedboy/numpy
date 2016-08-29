@@ -1,0 +1,6 @@
+numpy.integer.view
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: integer.view

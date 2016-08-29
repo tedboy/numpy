@@ -1,0 +1,6 @@
+numpy.signedinteger.choose
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.choose

@@ -1,0 +1,20 @@
+numpy.lib.ndenumerate
+=====================
+.. currentmodule:: numpy.lib
+.. autoclass:: ndenumerate
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~ndenumerate.__init__
+   ~ndenumerate.next
+
+
+
+
+

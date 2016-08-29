@@ -1,0 +1,6 @@
+numpy.distutils.Tester.excludes
+===============================
+
+.. currentmodule:: numpy.distutils
+
+.. autoattribute:: Tester.excludes

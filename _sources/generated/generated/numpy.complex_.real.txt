@@ -1,0 +1,6 @@
+numpy.complex_.real
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex_.real

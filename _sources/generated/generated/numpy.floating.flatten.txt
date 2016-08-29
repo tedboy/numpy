@@ -1,0 +1,6 @@
+numpy.floating.flatten
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: floating.flatten

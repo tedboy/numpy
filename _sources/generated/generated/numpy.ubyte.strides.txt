@@ -1,0 +1,6 @@
+numpy.ubyte.strides
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.strides

@@ -1,0 +1,6 @@
+numpy.polynomial.Laguerre.maxpower
+==================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: Laguerre.maxpower

@@ -1,0 +1,6 @@
+numpy.signedinteger.argmin
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.argmin

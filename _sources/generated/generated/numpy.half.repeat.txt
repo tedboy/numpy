@@ -1,0 +1,6 @@
+numpy.half.repeat
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.repeat

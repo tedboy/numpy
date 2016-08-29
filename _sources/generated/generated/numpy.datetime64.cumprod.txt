@@ -1,0 +1,6 @@
+numpy.datetime64.cumprod
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.cumprod

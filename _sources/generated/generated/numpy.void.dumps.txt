@@ -1,0 +1,6 @@
+numpy.void.dumps
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.dumps

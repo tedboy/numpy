@@ -1,0 +1,6 @@
+numpy.int64.byteswap
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: int64.byteswap

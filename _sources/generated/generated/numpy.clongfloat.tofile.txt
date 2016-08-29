@@ -1,0 +1,6 @@
+numpy.clongfloat.tofile
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.tofile

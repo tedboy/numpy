@@ -1,0 +1,6 @@
+numpy.inexact.cumsum
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.cumsum

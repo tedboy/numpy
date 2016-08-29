@@ -1,0 +1,6 @@
+numpy.inexact.sum
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.sum

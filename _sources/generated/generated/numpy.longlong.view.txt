@@ -1,0 +1,6 @@
+numpy.longlong.view
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.view

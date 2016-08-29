@@ -1,0 +1,6 @@
+numpy.inexact.compress
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.compress

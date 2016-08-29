@@ -1,0 +1,22 @@
+numpy.distutils.LibraryInfo
+===========================
+.. currentmodule:: numpy.distutils
+.. autoclass:: LibraryInfo
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~LibraryInfo.__init__
+   ~LibraryInfo.cflags
+   ~LibraryInfo.libs
+   ~LibraryInfo.sections
+
+
+
+
+

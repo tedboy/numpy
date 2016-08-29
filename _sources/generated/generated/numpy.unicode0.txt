@@ -1,0 +1,132 @@
+numpy.unicode0
+==============
+.. currentmodule:: numpy
+.. autoclass:: unicode0
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~unicode0.all
+   ~unicode0.any
+   ~unicode0.argmax
+   ~unicode0.argmin
+   ~unicode0.argsort
+   ~unicode0.astype
+   ~unicode0.byteswap
+   ~unicode0.capitalize
+   ~unicode0.center
+   ~unicode0.choose
+   ~unicode0.clip
+   ~unicode0.compress
+   ~unicode0.conj
+   ~unicode0.conjugate
+   ~unicode0.copy
+   ~unicode0.count
+   ~unicode0.cumprod
+   ~unicode0.cumsum
+   ~unicode0.decode
+   ~unicode0.diagonal
+   ~unicode0.dump
+   ~unicode0.dumps
+   ~unicode0.encode
+   ~unicode0.endswith
+   ~unicode0.expandtabs
+   ~unicode0.fill
+   ~unicode0.find
+   ~unicode0.flatten
+   ~unicode0.format
+   ~unicode0.getfield
+   ~unicode0.index
+   ~unicode0.isalnum
+   ~unicode0.isalpha
+   ~unicode0.isdecimal
+   ~unicode0.isdigit
+   ~unicode0.islower
+   ~unicode0.isnumeric
+   ~unicode0.isspace
+   ~unicode0.istitle
+   ~unicode0.isupper
+   ~unicode0.item
+   ~unicode0.itemset
+   ~unicode0.join
+   ~unicode0.ljust
+   ~unicode0.lower
+   ~unicode0.lstrip
+   ~unicode0.max
+   ~unicode0.mean
+   ~unicode0.min
+   ~unicode0.newbyteorder
+   ~unicode0.nonzero
+   ~unicode0.partition
+   ~unicode0.prod
+   ~unicode0.ptp
+   ~unicode0.put
+   ~unicode0.ravel
+   ~unicode0.repeat
+   ~unicode0.replace
+   ~unicode0.reshape
+   ~unicode0.resize
+   ~unicode0.rfind
+   ~unicode0.rindex
+   ~unicode0.rjust
+   ~unicode0.round
+   ~unicode0.rpartition
+   ~unicode0.rsplit
+   ~unicode0.rstrip
+   ~unicode0.searchsorted
+   ~unicode0.setfield
+   ~unicode0.setflags
+   ~unicode0.sort
+   ~unicode0.split
+   ~unicode0.splitlines
+   ~unicode0.squeeze
+   ~unicode0.startswith
+   ~unicode0.std
+   ~unicode0.strip
+   ~unicode0.sum
+   ~unicode0.swapaxes
+   ~unicode0.swapcase
+   ~unicode0.take
+   ~unicode0.title
+   ~unicode0.tobytes
+   ~unicode0.tofile
+   ~unicode0.tolist
+   ~unicode0.tostring
+   ~unicode0.trace
+   ~unicode0.translate
+   ~unicode0.transpose
+   ~unicode0.upper
+   ~unicode0.var
+   ~unicode0.view
+   ~unicode0.zfill
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~unicode0.T
+   ~unicode0.base
+   ~unicode0.data
+   ~unicode0.dtype
+   ~unicode0.flags
+   ~unicode0.flat
+   ~unicode0.imag
+   ~unicode0.itemsize
+   ~unicode0.nbytes
+   ~unicode0.ndim
+   ~unicode0.real
+   ~unicode0.shape
+   ~unicode0.size
+   ~unicode0.strides
+

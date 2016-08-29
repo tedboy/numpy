@@ -1,0 +1,6 @@
+numpy.object_.ravel
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: object_.ravel

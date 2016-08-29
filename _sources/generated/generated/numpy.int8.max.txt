@@ -1,0 +1,6 @@
+numpy.int8.max
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.max

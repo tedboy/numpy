@@ -1,0 +1,6 @@
+numpy.datetime64.clip
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.clip

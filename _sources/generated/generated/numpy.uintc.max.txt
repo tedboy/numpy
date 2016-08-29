@@ -1,0 +1,6 @@
+numpy.uintc.max
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: uintc.max

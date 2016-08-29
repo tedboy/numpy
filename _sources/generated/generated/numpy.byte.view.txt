@@ -1,0 +1,6 @@
+numpy.byte.view
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.view

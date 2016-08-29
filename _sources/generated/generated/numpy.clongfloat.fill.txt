@@ -1,0 +1,6 @@
+numpy.clongfloat.fill
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.fill

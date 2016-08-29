@@ -1,0 +1,6 @@
+numpy.longlong.copy
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.copy

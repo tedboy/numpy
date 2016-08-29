@@ -1,0 +1,6 @@
+numpy.testing.TestCase.skipTest
+===============================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.skipTest

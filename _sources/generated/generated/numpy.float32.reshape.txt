@@ -1,0 +1,6 @@
+numpy.float32.reshape
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: float32.reshape

@@ -1,0 +1,6 @@
+numpy.uint64.nonzero
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint64.nonzero

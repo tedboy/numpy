@@ -1,0 +1,6 @@
+numpy.flexible.squeeze
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.squeeze

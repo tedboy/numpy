@@ -1,0 +1,6 @@
+numpy.flexible.conjugate
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.conjugate

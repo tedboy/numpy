@@ -1,0 +1,6 @@
+numpy.double.fromhex
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.fromhex

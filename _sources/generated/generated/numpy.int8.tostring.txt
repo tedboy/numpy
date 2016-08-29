@@ -1,0 +1,6 @@
+numpy.int8.tostring
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.tostring

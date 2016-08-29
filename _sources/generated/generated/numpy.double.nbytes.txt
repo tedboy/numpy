@@ -1,0 +1,6 @@
+numpy.double.nbytes
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.nbytes

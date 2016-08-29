@@ -1,0 +1,6 @@
+numpy.double.newbyteorder
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.newbyteorder

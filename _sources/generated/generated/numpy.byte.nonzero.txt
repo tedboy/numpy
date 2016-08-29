@@ -1,0 +1,6 @@
+numpy.byte.nonzero
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.nonzero

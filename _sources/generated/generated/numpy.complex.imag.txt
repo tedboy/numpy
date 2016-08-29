@@ -1,0 +1,6 @@
+numpy.complex.imag
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex.imag

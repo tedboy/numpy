@@ -1,0 +1,6 @@
+numpy.longlong.byteswap
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.byteswap

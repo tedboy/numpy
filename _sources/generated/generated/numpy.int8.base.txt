@@ -1,0 +1,6 @@
+numpy.int8.base
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int8.base

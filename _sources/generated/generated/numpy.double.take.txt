@@ -1,0 +1,6 @@
+numpy.double.take
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.take

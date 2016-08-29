@@ -1,0 +1,6 @@
+numpy.longfloat.getfield
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.getfield

@@ -1,0 +1,6 @@
+numpy.lib.triu_indices
+======================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: triu_indices

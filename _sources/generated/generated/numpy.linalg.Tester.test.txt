@@ -1,0 +1,6 @@
+numpy.linalg.Tester.test
+========================
+
+.. currentmodule:: numpy.linalg
+
+.. automethod:: Tester.test

@@ -1,0 +1,6 @@
+numpy.uintp.squeeze
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintp.squeeze

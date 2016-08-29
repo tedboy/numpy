@@ -1,0 +1,6 @@
+numpy.string_.ndim
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: string_.ndim

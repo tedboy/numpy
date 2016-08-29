@@ -1,0 +1,6 @@
+numpy.unsignedinteger.data
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.data

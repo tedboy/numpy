@@ -1,0 +1,6 @@
+numpy.unsignedinteger.tofile
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.tofile

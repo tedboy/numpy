@@ -1,0 +1,6 @@
+numpy.bool8.view
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.view

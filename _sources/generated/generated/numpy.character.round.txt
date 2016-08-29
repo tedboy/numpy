@@ -1,0 +1,6 @@
+numpy.character.round
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.round

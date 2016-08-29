@@ -1,0 +1,6 @@
+numpy.longlong.min
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.min

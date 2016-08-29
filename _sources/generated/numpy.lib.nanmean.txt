@@ -1,0 +1,6 @@
+numpy.lib.nanmean
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nanmean

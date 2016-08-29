@@ -1,0 +1,6 @@
+numpy.short.round
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.round

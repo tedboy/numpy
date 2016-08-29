@@ -1,0 +1,6 @@
+numpy.clongfloat.flat
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongfloat.flat

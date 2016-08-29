@@ -1,0 +1,6 @@
+numpy.unicode_.mean
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.mean

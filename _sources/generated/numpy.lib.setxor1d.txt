@@ -1,0 +1,6 @@
+numpy.lib.setxor1d
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: setxor1d

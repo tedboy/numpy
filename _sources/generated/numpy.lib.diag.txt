@@ -1,0 +1,6 @@
+numpy.lib.diag
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: diag

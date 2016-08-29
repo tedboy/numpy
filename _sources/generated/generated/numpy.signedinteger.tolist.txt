@@ -1,0 +1,6 @@
+numpy.signedinteger.tolist
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.tolist

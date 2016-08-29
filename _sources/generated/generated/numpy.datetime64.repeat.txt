@@ -1,0 +1,6 @@
+numpy.datetime64.repeat
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.repeat

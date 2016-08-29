@@ -1,0 +1,6 @@
+numpy.inexact.setflags
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.setflags

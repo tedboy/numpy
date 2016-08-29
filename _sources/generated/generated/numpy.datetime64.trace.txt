@@ -1,0 +1,6 @@
+numpy.datetime64.trace
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.trace

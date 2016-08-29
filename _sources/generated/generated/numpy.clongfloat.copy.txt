@@ -1,0 +1,6 @@
+numpy.clongfloat.copy
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.copy

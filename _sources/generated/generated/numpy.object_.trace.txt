@@ -1,0 +1,6 @@
+numpy.object_.trace
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: object_.trace

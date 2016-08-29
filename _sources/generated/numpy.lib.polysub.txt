@@ -1,0 +1,6 @@
+numpy.lib.polysub
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: polysub

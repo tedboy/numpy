@@ -1,0 +1,6 @@
+numpy.ulonglong.T
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ulonglong.T

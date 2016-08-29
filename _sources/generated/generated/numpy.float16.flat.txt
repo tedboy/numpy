@@ -1,0 +1,6 @@
+numpy.float16.flat
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: float16.flat

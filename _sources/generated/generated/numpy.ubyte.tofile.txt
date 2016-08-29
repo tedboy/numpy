@@ -1,0 +1,6 @@
+numpy.ubyte.tofile
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.tofile

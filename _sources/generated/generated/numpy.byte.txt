@@ -1,0 +1,94 @@
+numpy.byte
+==========
+.. currentmodule:: numpy
+.. autoclass:: byte
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~byte.all
+   ~byte.any
+   ~byte.argmax
+   ~byte.argmin
+   ~byte.argsort
+   ~byte.astype
+   ~byte.byteswap
+   ~byte.choose
+   ~byte.clip
+   ~byte.compress
+   ~byte.conj
+   ~byte.conjugate
+   ~byte.copy
+   ~byte.cumprod
+   ~byte.cumsum
+   ~byte.diagonal
+   ~byte.dump
+   ~byte.dumps
+   ~byte.fill
+   ~byte.flatten
+   ~byte.getfield
+   ~byte.item
+   ~byte.itemset
+   ~byte.max
+   ~byte.mean
+   ~byte.min
+   ~byte.newbyteorder
+   ~byte.nonzero
+   ~byte.prod
+   ~byte.ptp
+   ~byte.put
+   ~byte.ravel
+   ~byte.repeat
+   ~byte.reshape
+   ~byte.resize
+   ~byte.round
+   ~byte.searchsorted
+   ~byte.setfield
+   ~byte.setflags
+   ~byte.sort
+   ~byte.squeeze
+   ~byte.std
+   ~byte.sum
+   ~byte.swapaxes
+   ~byte.take
+   ~byte.tobytes
+   ~byte.tofile
+   ~byte.tolist
+   ~byte.tostring
+   ~byte.trace
+   ~byte.transpose
+   ~byte.var
+   ~byte.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~byte.T
+   ~byte.base
+   ~byte.data
+   ~byte.denominator
+   ~byte.dtype
+   ~byte.flags
+   ~byte.flat
+   ~byte.imag
+   ~byte.itemsize
+   ~byte.nbytes
+   ~byte.ndim
+   ~byte.numerator
+   ~byte.real
+   ~byte.shape
+   ~byte.size
+   ~byte.strides
+

@@ -1,0 +1,6 @@
+numpy.testing.build_err_msg
+===========================
+
+.. currentmodule:: numpy.testing
+
+.. autofunction:: build_err_msg

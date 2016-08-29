@@ -1,0 +1,6 @@
+numpy.polynomial.Tester.prepare_test_args
+=========================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Tester.prepare_test_args

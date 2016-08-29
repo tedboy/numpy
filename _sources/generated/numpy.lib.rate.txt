@@ -1,0 +1,6 @@
+numpy.lib.rate
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: rate

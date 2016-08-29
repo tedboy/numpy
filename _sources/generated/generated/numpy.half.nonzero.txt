@@ -1,0 +1,6 @@
+numpy.half.nonzero
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.nonzero

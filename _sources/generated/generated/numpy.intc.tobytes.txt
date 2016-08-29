@@ -1,0 +1,6 @@
+numpy.intc.tobytes
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.tobytes

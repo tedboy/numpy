@@ -1,0 +1,6 @@
+numpy.lib.poly1d.order
+======================
+
+.. currentmodule:: numpy.lib
+
+.. autoattribute:: poly1d.order

@@ -1,0 +1,6 @@
+numpy.cdouble.tofile
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.tofile

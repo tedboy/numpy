@@ -1,0 +1,6 @@
+numpy.bool8.conjugate
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.conjugate

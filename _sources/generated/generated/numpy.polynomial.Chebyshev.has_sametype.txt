@@ -1,0 +1,6 @@
+numpy.polynomial.Chebyshev.has_sametype
+=======================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Chebyshev.has_sametype

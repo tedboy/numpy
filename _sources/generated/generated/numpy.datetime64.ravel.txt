@@ -1,0 +1,6 @@
+numpy.datetime64.ravel
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.ravel

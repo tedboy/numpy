@@ -1,0 +1,6 @@
+numpy.ulonglong.searchsorted
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.searchsorted

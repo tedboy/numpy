@@ -1,0 +1,6 @@
+numpy.ubyte.dtype
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ubyte.dtype

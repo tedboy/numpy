@@ -1,0 +1,6 @@
+numpy.longcomplex.dtype
+=======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.dtype

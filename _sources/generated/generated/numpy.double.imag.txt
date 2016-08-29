@@ -1,0 +1,6 @@
+numpy.double.imag
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: double.imag

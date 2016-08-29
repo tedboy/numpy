@@ -1,0 +1,6 @@
+numpy.csingle.shape
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: csingle.shape

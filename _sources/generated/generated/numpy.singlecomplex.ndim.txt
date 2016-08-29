@@ -1,0 +1,6 @@
+numpy.singlecomplex.ndim
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.ndim

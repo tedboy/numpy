@@ -1,0 +1,6 @@
+numpy.longdouble.transpose
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.transpose

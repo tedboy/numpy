@@ -1,0 +1,6 @@
+numpy.ulonglong.newbyteorder
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.newbyteorder

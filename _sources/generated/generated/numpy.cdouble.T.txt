@@ -1,0 +1,6 @@
+numpy.cdouble.T
+===============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: cdouble.T

@@ -1,0 +1,6 @@
+numpy.inexact.byteswap
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.byteswap

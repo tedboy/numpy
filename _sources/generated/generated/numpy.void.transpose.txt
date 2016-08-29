@@ -1,0 +1,6 @@
+numpy.void.transpose
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.transpose

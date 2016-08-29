@@ -1,0 +1,6 @@
+numpy.flexible.nonzero
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.nonzero

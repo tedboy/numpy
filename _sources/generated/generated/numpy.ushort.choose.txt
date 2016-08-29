@@ -1,0 +1,6 @@
+numpy.ushort.choose
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.choose

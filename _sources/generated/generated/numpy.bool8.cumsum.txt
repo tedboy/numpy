@@ -1,0 +1,6 @@
+numpy.bool8.cumsum
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.cumsum

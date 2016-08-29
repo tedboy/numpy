@@ -1,0 +1,6 @@
+numpy.singlecomplex.put
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.put

@@ -1,0 +1,6 @@
+numpy.string0.clip
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.clip

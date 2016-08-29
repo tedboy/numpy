@@ -1,0 +1,6 @@
+numpy.csingle.byteswap
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.byteswap

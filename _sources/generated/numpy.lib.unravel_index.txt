@@ -1,0 +1,6 @@
+numpy.lib.unravel_index
+=======================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: unravel_index

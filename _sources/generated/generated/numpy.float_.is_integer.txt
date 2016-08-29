@@ -1,0 +1,6 @@
+numpy.float_.is_integer
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.is_integer

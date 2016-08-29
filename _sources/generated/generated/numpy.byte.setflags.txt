@@ -1,0 +1,6 @@
+numpy.byte.setflags
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.setflags

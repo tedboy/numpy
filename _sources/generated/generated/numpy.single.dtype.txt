@@ -1,0 +1,6 @@
+numpy.single.dtype
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: single.dtype

@@ -1,0 +1,6 @@
+numpy.longdouble.squeeze
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.squeeze

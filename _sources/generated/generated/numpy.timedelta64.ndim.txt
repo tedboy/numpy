@@ -1,0 +1,6 @@
+numpy.timedelta64.ndim
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: timedelta64.ndim

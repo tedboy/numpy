@@ -1,0 +1,6 @@
+numpy.single.fill
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.fill

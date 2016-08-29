@@ -1,0 +1,6 @@
+numpy.intc.argsort
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.argsort

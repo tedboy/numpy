@@ -1,0 +1,6 @@
+numpy.str_.ravel
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.ravel

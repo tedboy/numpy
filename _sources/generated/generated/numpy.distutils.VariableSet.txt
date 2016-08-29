@@ -1,0 +1,21 @@
+numpy.distutils.VariableSet
+===========================
+.. currentmodule:: numpy.distutils
+.. autoclass:: VariableSet
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~VariableSet.__init__
+   ~VariableSet.interpolate
+   ~VariableSet.variables
+
+
+
+
+

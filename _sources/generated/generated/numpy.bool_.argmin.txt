@@ -1,0 +1,6 @@
+numpy.bool_.argmin
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.argmin

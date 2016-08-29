@@ -1,0 +1,6 @@
+numpy.testing.TestCase.id
+=========================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.id

@@ -1,0 +1,6 @@
+numpy.complex_.dumps
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.dumps

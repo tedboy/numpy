@@ -1,0 +1,6 @@
+numpy.string0.index
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.index

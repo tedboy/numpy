@@ -1,0 +1,6 @@
+numpy.int16.real
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: int16.real

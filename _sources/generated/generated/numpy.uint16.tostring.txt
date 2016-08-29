@@ -1,0 +1,6 @@
+numpy.uint16.tostring
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint16.tostring

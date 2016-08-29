@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertAlmostEqual
+========================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertAlmostEqual

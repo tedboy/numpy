@@ -1,0 +1,6 @@
+numpy.lib.nanargmax
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nanargmax

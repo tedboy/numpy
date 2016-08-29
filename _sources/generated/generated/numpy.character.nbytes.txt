@@ -1,0 +1,6 @@
+numpy.character.nbytes
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.nbytes

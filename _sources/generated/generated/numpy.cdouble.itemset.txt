@@ -1,0 +1,6 @@
+numpy.cdouble.itemset
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.itemset

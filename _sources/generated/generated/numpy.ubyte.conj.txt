@@ -1,0 +1,6 @@
+numpy.ubyte.conj
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.conj

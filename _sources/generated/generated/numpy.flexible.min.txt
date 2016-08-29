@@ -1,0 +1,6 @@
+numpy.flexible.min
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.min

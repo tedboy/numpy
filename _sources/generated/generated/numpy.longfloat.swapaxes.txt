@@ -1,0 +1,6 @@
+numpy.longfloat.swapaxes
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.swapaxes

@@ -1,0 +1,6 @@
+numpy.ubyte.reshape
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.reshape

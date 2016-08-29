@@ -1,0 +1,6 @@
+numpy.uint.var
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: uint.var

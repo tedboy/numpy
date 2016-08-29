@@ -1,0 +1,6 @@
+numpy.bool8.take
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.take

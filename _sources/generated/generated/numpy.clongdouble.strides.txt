@@ -1,0 +1,6 @@
+numpy.clongdouble.strides
+=========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongdouble.strides

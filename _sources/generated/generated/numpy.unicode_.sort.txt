@@ -1,0 +1,6 @@
+numpy.unicode_.sort
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.sort

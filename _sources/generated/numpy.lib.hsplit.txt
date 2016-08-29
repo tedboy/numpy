@@ -1,0 +1,6 @@
+numpy.lib.hsplit
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: hsplit

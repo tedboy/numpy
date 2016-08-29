@@ -1,0 +1,6 @@
+numpy.character.resize
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.resize

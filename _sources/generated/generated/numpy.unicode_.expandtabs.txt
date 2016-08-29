@@ -1,0 +1,6 @@
+numpy.unicode_.expandtabs
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.expandtabs

@@ -1,0 +1,6 @@
+numpy.ulonglong.flatten
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.flatten

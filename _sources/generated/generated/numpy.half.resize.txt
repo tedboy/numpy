@@ -1,0 +1,6 @@
+numpy.half.resize
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.resize

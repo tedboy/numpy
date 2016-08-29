@@ -1,0 +1,6 @@
+numpy.maximum_sctype
+====================
+
+.. currentmodule:: numpy
+
+.. autofunction:: maximum_sctype

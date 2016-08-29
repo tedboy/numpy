@@ -1,0 +1,6 @@
+numpy.bytes_.startswith
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.startswith

@@ -1,0 +1,6 @@
+numpy.PackageLoader.__init__
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: PackageLoader.__init__

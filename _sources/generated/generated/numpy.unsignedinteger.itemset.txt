@@ -1,0 +1,6 @@
+numpy.unsignedinteger.itemset
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.itemset

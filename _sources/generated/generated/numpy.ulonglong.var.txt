@@ -1,0 +1,6 @@
+numpy.ulonglong.var
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.var

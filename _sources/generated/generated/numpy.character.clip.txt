@@ -1,0 +1,6 @@
+numpy.character.clip
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.clip

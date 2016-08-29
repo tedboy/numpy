@@ -1,0 +1,6 @@
+numpy.ma.MaskedArray.repeat
+===========================
+
+.. currentmodule:: numpy.ma
+
+.. autoattribute:: MaskedArray.repeat

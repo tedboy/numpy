@@ -1,0 +1,6 @@
+numpy.uint.ptp
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: uint.ptp

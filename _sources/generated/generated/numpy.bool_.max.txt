@@ -1,0 +1,6 @@
+numpy.bool_.max
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: bool_.max

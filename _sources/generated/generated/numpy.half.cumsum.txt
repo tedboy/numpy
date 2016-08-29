@@ -1,0 +1,6 @@
+numpy.half.cumsum
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.cumsum

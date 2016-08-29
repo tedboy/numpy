@@ -1,0 +1,6 @@
+numpy.character.flatten
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.flatten

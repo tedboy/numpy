@@ -1,0 +1,6 @@
+numpy.datetime64.byteswap
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.byteswap

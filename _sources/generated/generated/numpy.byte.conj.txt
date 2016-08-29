@@ -1,0 +1,6 @@
+numpy.byte.conj
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.conj

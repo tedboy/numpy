@@ -1,0 +1,6 @@
+numpy.polynomial.HermiteE.window
+================================
+
+.. currentmodule:: numpy.polynomial
+
+.. autoattribute:: HermiteE.window

@@ -1,0 +1,6 @@
+numpy.bytes_.prod
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.prod

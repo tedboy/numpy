@@ -1,0 +1,6 @@
+numpy.unsignedinteger.conjugate
+===============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.conjugate

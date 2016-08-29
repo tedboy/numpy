@@ -1,0 +1,6 @@
+numpy.singlecomplex.fill
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.fill

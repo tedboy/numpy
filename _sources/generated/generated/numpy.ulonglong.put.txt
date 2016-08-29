@@ -1,0 +1,6 @@
+numpy.ulonglong.put
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.put

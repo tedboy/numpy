@@ -1,0 +1,6 @@
+numpy.clongfloat.trace
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.trace

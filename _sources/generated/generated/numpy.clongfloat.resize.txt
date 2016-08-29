@@ -1,0 +1,6 @@
+numpy.clongfloat.resize
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.resize

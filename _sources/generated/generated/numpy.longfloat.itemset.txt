@@ -1,0 +1,6 @@
+numpy.longfloat.itemset
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.itemset

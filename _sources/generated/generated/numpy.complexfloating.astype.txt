@@ -1,0 +1,6 @@
+numpy.complexfloating.astype
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.astype

@@ -1,0 +1,6 @@
+numpy.complex128.searchsorted
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.searchsorted

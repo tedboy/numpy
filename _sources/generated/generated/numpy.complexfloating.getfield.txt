@@ -1,0 +1,6 @@
+numpy.complexfloating.getfield
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.getfield

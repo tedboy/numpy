@@ -1,0 +1,6 @@
+numpy.csingle.flags
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: csingle.flags

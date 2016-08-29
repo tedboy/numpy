@@ -1,0 +1,6 @@
+numpy.int32.round
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: int32.round

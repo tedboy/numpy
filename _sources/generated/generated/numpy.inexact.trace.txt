@@ -1,0 +1,6 @@
+numpy.inexact.trace
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.trace

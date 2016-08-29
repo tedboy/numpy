@@ -1,0 +1,6 @@
+numpy.singlecomplex.take
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.take

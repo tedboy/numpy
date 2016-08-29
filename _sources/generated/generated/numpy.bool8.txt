@@ -1,0 +1,92 @@
+numpy.bool8
+===========
+.. currentmodule:: numpy
+.. autoclass:: bool8
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~bool8.all
+   ~bool8.any
+   ~bool8.argmax
+   ~bool8.argmin
+   ~bool8.argsort
+   ~bool8.astype
+   ~bool8.byteswap
+   ~bool8.choose
+   ~bool8.clip
+   ~bool8.compress
+   ~bool8.conj
+   ~bool8.conjugate
+   ~bool8.copy
+   ~bool8.cumprod
+   ~bool8.cumsum
+   ~bool8.diagonal
+   ~bool8.dump
+   ~bool8.dumps
+   ~bool8.fill
+   ~bool8.flatten
+   ~bool8.getfield
+   ~bool8.item
+   ~bool8.itemset
+   ~bool8.max
+   ~bool8.mean
+   ~bool8.min
+   ~bool8.newbyteorder
+   ~bool8.nonzero
+   ~bool8.prod
+   ~bool8.ptp
+   ~bool8.put
+   ~bool8.ravel
+   ~bool8.repeat
+   ~bool8.reshape
+   ~bool8.resize
+   ~bool8.round
+   ~bool8.searchsorted
+   ~bool8.setfield
+   ~bool8.setflags
+   ~bool8.sort
+   ~bool8.squeeze
+   ~bool8.std
+   ~bool8.sum
+   ~bool8.swapaxes
+   ~bool8.take
+   ~bool8.tobytes
+   ~bool8.tofile
+   ~bool8.tolist
+   ~bool8.tostring
+   ~bool8.trace
+   ~bool8.transpose
+   ~bool8.var
+   ~bool8.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~bool8.T
+   ~bool8.base
+   ~bool8.data
+   ~bool8.dtype
+   ~bool8.flags
+   ~bool8.flat
+   ~bool8.imag
+   ~bool8.itemsize
+   ~bool8.nbytes
+   ~bool8.ndim
+   ~bool8.real
+   ~bool8.shape
+   ~bool8.size
+   ~bool8.strides
+

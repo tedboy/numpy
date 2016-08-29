@@ -1,0 +1,6 @@
+numpy.csingle.dump
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.dump

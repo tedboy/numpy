@@ -1,0 +1,6 @@
+numpy.object0.strides
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: object0.strides

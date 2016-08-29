@@ -1,0 +1,6 @@
+numpy.short.std
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: short.std

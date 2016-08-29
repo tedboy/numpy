@@ -1,0 +1,6 @@
+numpy.double.clip
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.clip

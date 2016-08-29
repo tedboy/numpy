@@ -1,0 +1,6 @@
+numpy.short.var
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: short.var

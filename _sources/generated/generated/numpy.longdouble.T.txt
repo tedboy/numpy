@@ -1,0 +1,6 @@
+numpy.longdouble.T
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longdouble.T

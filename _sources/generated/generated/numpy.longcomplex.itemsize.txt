@@ -1,0 +1,6 @@
+numpy.longcomplex.itemsize
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longcomplex.itemsize

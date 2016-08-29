@@ -1,0 +1,6 @@
+numpy.testing.memusage
+======================
+
+.. currentmodule:: numpy.testing
+
+.. autofunction:: memusage

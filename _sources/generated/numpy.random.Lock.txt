@@ -1,0 +1,6 @@
+numpy.random.Lock
+=================
+
+.. currentmodule:: numpy.random
+
+.. autofunction:: Lock

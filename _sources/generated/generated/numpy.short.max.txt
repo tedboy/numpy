@@ -1,0 +1,6 @@
+numpy.short.max
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: short.max

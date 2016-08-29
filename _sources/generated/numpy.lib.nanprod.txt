@@ -1,0 +1,6 @@
+numpy.lib.nanprod
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nanprod

@@ -1,0 +1,6 @@
+numpy.signedinteger.T
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.T

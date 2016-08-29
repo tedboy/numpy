@@ -1,0 +1,6 @@
+numpy.float_.tobytes
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: float_.tobytes

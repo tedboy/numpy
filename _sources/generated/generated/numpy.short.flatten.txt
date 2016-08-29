@@ -1,0 +1,6 @@
+numpy.short.flatten
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.flatten

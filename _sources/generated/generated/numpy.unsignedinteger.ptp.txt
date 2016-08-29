@@ -1,0 +1,6 @@
+numpy.unsignedinteger.ptp
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.ptp

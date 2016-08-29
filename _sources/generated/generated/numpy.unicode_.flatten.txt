@@ -1,0 +1,6 @@
+numpy.unicode_.flatten
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.flatten

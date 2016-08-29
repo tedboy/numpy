@@ -1,0 +1,6 @@
+numpy.character.size
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.size

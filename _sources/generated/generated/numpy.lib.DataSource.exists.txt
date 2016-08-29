@@ -1,0 +1,6 @@
+numpy.lib.DataSource.exists
+===========================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: DataSource.exists

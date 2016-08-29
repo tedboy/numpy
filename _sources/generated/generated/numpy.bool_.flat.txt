@@ -1,0 +1,6 @@
+numpy.bool_.flat
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool_.flat

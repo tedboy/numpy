@@ -1,0 +1,19 @@
+numpy.errstate
+==============
+.. currentmodule:: numpy
+.. autoclass:: errstate
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~errstate.__init__
+
+
+
+
+

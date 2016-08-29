@@ -1,0 +1,6 @@
+numpy.bytes_.tolist
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.tolist

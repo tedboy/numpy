@@ -1,0 +1,6 @@
+numpy.flexible.data
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.data

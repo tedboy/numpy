@@ -1,0 +1,6 @@
+numpy.ulonglong.conjugate
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.conjugate

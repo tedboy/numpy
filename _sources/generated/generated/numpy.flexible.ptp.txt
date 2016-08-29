@@ -1,0 +1,6 @@
+numpy.flexible.ptp
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.ptp

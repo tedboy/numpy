@@ -1,0 +1,6 @@
+numpy.str.rstrip
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: str.rstrip

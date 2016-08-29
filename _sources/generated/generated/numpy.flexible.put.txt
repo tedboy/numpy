@@ -1,0 +1,6 @@
+numpy.flexible.put
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.put

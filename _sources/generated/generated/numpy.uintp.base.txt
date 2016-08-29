@@ -1,0 +1,6 @@
+numpy.uintp.base
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uintp.base

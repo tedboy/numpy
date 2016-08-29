@@ -1,0 +1,6 @@
+numpy.lib.apply_along_axis
+==========================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: apply_along_axis

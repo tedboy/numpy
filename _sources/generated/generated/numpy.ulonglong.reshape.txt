@@ -1,0 +1,6 @@
+numpy.ulonglong.reshape
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.reshape

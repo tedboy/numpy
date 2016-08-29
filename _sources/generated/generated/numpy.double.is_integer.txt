@@ -1,0 +1,6 @@
+numpy.double.is_integer
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.is_integer

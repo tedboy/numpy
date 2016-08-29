@@ -1,0 +1,6 @@
+numpy.lib.unique
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: unique

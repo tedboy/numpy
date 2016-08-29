@@ -1,0 +1,6 @@
+numpy.uint32.sum
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint32.sum

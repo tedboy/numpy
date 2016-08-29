@@ -1,0 +1,6 @@
+numpy.ulonglong.sort
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.sort

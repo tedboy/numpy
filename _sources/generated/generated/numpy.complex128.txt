@@ -1,0 +1,92 @@
+numpy.complex128
+================
+.. currentmodule:: numpy
+.. autoclass:: complex128
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~complex128.all
+   ~complex128.any
+   ~complex128.argmax
+   ~complex128.argmin
+   ~complex128.argsort
+   ~complex128.astype
+   ~complex128.byteswap
+   ~complex128.choose
+   ~complex128.clip
+   ~complex128.compress
+   ~complex128.conj
+   ~complex128.conjugate
+   ~complex128.copy
+   ~complex128.cumprod
+   ~complex128.cumsum
+   ~complex128.diagonal
+   ~complex128.dump
+   ~complex128.dumps
+   ~complex128.fill
+   ~complex128.flatten
+   ~complex128.getfield
+   ~complex128.item
+   ~complex128.itemset
+   ~complex128.max
+   ~complex128.mean
+   ~complex128.min
+   ~complex128.newbyteorder
+   ~complex128.nonzero
+   ~complex128.prod
+   ~complex128.ptp
+   ~complex128.put
+   ~complex128.ravel
+   ~complex128.repeat
+   ~complex128.reshape
+   ~complex128.resize
+   ~complex128.round
+   ~complex128.searchsorted
+   ~complex128.setfield
+   ~complex128.setflags
+   ~complex128.sort
+   ~complex128.squeeze
+   ~complex128.std
+   ~complex128.sum
+   ~complex128.swapaxes
+   ~complex128.take
+   ~complex128.tobytes
+   ~complex128.tofile
+   ~complex128.tolist
+   ~complex128.tostring
+   ~complex128.trace
+   ~complex128.transpose
+   ~complex128.var
+   ~complex128.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~complex128.T
+   ~complex128.base
+   ~complex128.data
+   ~complex128.dtype
+   ~complex128.flags
+   ~complex128.flat
+   ~complex128.imag
+   ~complex128.itemsize
+   ~complex128.nbytes
+   ~complex128.ndim
+   ~complex128.real
+   ~complex128.shape
+   ~complex128.size
+   ~complex128.strides
+

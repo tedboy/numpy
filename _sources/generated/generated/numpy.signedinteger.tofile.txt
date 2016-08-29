@@ -1,0 +1,6 @@
+numpy.signedinteger.tofile
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.tofile

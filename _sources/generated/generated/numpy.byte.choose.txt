@@ -1,0 +1,6 @@
+numpy.byte.choose
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.choose

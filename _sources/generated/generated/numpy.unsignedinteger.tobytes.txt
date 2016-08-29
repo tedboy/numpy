@@ -1,0 +1,6 @@
+numpy.unsignedinteger.tobytes
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.tobytes

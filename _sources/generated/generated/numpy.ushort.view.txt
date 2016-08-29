@@ -1,0 +1,6 @@
+numpy.ushort.view
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: ushort.view

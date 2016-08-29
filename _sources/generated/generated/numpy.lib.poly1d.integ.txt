@@ -1,0 +1,6 @@
+numpy.lib.poly1d.integ
+======================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: poly1d.integ

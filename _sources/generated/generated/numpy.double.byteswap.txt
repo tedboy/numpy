@@ -1,0 +1,6 @@
+numpy.double.byteswap
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.byteswap

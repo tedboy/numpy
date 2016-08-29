@@ -1,0 +1,6 @@
+numpy.bool8.sum
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.sum

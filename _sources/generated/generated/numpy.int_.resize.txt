@@ -1,0 +1,6 @@
+numpy.int_.resize
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: int_.resize

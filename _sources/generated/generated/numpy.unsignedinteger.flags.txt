@@ -1,0 +1,6 @@
+numpy.unsignedinteger.flags
+===========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.flags

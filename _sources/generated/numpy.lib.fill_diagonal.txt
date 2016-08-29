@@ -1,0 +1,6 @@
+numpy.lib.fill_diagonal
+=======================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: fill_diagonal

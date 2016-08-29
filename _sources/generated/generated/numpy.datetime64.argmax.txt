@@ -1,0 +1,6 @@
+numpy.datetime64.argmax
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.argmax

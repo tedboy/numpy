@@ -1,0 +1,32 @@
+numpy.poly1d
+============
+
+.. currentmodule:: numpy
+
+.. autoclass:: poly1d
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~poly1d.__init__
+      ~poly1d.deriv
+      ~poly1d.integ
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~poly1d.coeffs
+      ~poly1d.order
+      ~poly1d.variable
+   
+   

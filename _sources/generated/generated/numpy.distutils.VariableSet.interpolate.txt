@@ -1,0 +1,6 @@
+numpy.distutils.VariableSet.interpolate
+=======================================
+
+.. currentmodule:: numpy.distutils
+
+.. automethod:: VariableSet.interpolate

@@ -1,0 +1,6 @@
+numpy.int8.reshape
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: int8.reshape

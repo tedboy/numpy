@@ -1,0 +1,6 @@
+numpy.lib.extract
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: extract

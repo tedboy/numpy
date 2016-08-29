@@ -1,0 +1,6 @@
+numpy.integer.base
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: integer.base

@@ -1,0 +1,6 @@
+numpy.half.reshape
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.reshape

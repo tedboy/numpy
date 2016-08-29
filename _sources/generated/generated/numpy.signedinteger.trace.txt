@@ -1,0 +1,6 @@
+numpy.signedinteger.trace
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.trace

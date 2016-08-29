@@ -1,0 +1,6 @@
+numpy.csingle.repeat
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.repeat

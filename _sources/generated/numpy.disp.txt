@@ -1,0 +1,6 @@
+numpy.disp
+==========
+
+.. currentmodule:: numpy
+
+.. autofunction:: disp

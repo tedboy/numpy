@@ -1,0 +1,6 @@
+numpy.clongdouble.argmin
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.argmin

@@ -1,0 +1,6 @@
+numpy.longdouble.tofile
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.tofile

@@ -1,0 +1,6 @@
+numpy.longfloat.view
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.view

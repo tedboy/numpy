@@ -1,0 +1,6 @@
+numpy.unsignedinteger.sum
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.sum

@@ -1,0 +1,6 @@
+numpy.lib.dsplit
+================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: dsplit

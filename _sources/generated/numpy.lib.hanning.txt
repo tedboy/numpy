@@ -1,0 +1,6 @@
+numpy.lib.hanning
+=================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: hanning

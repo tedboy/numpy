@@ -1,0 +1,6 @@
+numpy.lib.tril_indices_from
+===========================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: tril_indices_from

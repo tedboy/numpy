@@ -1,0 +1,6 @@
+numpy.complex256.searchsorted
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.searchsorted

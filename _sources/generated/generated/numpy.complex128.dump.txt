@@ -1,0 +1,6 @@
+numpy.complex128.dump
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex128.dump

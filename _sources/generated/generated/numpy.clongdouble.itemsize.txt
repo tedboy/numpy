@@ -1,0 +1,6 @@
+numpy.clongdouble.itemsize
+==========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongdouble.itemsize

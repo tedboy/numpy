@@ -1,0 +1,6 @@
+numpy.unicode.rfind
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode.rfind

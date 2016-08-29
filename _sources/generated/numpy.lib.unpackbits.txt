@@ -1,0 +1,6 @@
+numpy.lib.unpackbits
+====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: unpackbits

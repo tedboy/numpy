@@ -1,0 +1,6 @@
+numpy.polynomial.Hermite.cast
+=============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Hermite.cast

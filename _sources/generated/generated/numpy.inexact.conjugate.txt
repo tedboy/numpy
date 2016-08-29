@@ -1,0 +1,6 @@
+numpy.inexact.conjugate
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.conjugate

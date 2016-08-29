@@ -1,0 +1,28 @@
+numpy.complex
+=============
+.. currentmodule:: numpy
+.. autoclass:: complex
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~complex.conjugate
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~complex.imag
+   ~complex.real
+

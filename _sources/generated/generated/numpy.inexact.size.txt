@@ -1,0 +1,6 @@
+numpy.inexact.size
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: inexact.size

@@ -1,0 +1,6 @@
+numpy.integer.conjugate
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: integer.conjugate

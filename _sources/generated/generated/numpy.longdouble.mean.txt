@@ -1,0 +1,6 @@
+numpy.longdouble.mean
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.mean

@@ -1,0 +1,6 @@
+numpy.string_.tofile
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.tofile

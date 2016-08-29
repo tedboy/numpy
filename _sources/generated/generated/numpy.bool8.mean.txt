@@ -1,0 +1,6 @@
+numpy.bool8.mean
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: bool8.mean

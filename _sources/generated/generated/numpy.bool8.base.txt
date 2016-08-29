@@ -1,0 +1,6 @@
+numpy.bool8.base
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool8.base

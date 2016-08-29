@@ -1,0 +1,6 @@
+numpy.double.min
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.min

@@ -1,0 +1,6 @@
+numpy.intc.dumps
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: intc.dumps

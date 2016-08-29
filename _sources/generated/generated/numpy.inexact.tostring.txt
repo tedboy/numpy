@@ -1,0 +1,6 @@
+numpy.inexact.tostring
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.tostring

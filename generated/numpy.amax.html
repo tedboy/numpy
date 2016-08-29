@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.6.9. numpy.amax &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../index.html"/>
+        <link rel="up" title="1. NumPy" href="numpy.html"/>
+        <link rel="next" title="1.6.10. numpy.amin" href="numpy.amin.html"/>
+        <link rel="prev" title="1.6.8. numpy.alterdot" href="numpy.alterdot.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="numpy.html">1. NumPy</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#how-to-use-the-documentation">1.1. How to use the documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#available-subpackages">1.2. Available subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#utilities">1.3. Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#viewing-documentation-using-ipython">1.4. Viewing documentation using IPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#copies-vs-in-place-operation">1.5. Copies vs. in-place operation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="numpy.html#functions">1.6. Functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="numpy.add_docstring.html">1.6.1. numpy.add_docstring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.add_newdoc.html">1.6.2. numpy.add_newdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.add_newdoc_ufunc.html">1.6.3. numpy.add_newdoc_ufunc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.alen.html">1.6.4. numpy.alen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.all.html">1.6.5. numpy.all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.allclose.html">1.6.6. numpy.allclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.alltrue.html">1.6.7. numpy.alltrue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.alterdot.html">1.6.8. numpy.alterdot</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">1.6.9. numpy.amax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.amin.html">1.6.10. numpy.amin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.angle.html">1.6.11. numpy.angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.any.html">1.6.12. numpy.any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.append.html">1.6.13. numpy.append</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.apply_along_axis.html">1.6.14. numpy.apply_along_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.apply_over_axes.html">1.6.15. numpy.apply_over_axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.arange.html">1.6.16. numpy.arange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.argmax.html">1.6.17. numpy.argmax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.argmin.html">1.6.18. numpy.argmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.argpartition.html">1.6.19. numpy.argpartition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.argsort.html">1.6.20. numpy.argsort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.argwhere.html">1.6.21. numpy.argwhere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.around.html">1.6.22. numpy.around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.array.html">1.6.23. numpy.array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.array2string.html">1.6.24. numpy.array2string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.array_equal.html">1.6.25. numpy.array_equal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.array_equiv.html">1.6.26. numpy.array_equiv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.array_repr.html">1.6.27. numpy.array_repr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.array_split.html">1.6.28. numpy.array_split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.array_str.html">1.6.29. numpy.array_str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.asanyarray.html">1.6.30. numpy.asanyarray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.asarray.html">1.6.31. numpy.asarray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.asarray_chkfinite.html">1.6.32. numpy.asarray_chkfinite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ascontiguousarray.html">1.6.33. numpy.ascontiguousarray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.asfarray.html">1.6.34. numpy.asfarray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.asfortranarray.html">1.6.35. numpy.asfortranarray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.asmatrix.html">1.6.36. numpy.asmatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.asscalar.html">1.6.37. numpy.asscalar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.atleast_1d.html">1.6.38. numpy.atleast_1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.atleast_2d.html">1.6.39. numpy.atleast_2d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.atleast_3d.html">1.6.40. numpy.atleast_3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.average.html">1.6.41. numpy.average</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.bartlett.html">1.6.42. numpy.bartlett</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.base_repr.html">1.6.43. numpy.base_repr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.binary_repr.html">1.6.44. numpy.binary_repr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.bincount.html">1.6.45. numpy.bincount</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.blackman.html">1.6.46. numpy.blackman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.bmat.html">1.6.47. numpy.bmat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.broadcast_arrays.html">1.6.48. numpy.broadcast_arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.broadcast_to.html">1.6.49. numpy.broadcast_to</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.busday_count.html">1.6.50. numpy.busday_count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.busday_offset.html">1.6.51. numpy.busday_offset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.byte_bounds.html">1.6.52. numpy.byte_bounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.can_cast.html">1.6.53. numpy.can_cast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.choose.html">1.6.54. numpy.choose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.clip.html">1.6.55. numpy.clip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.column_stack.html">1.6.56. numpy.column_stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.common_type.html">1.6.57. numpy.common_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.compare_chararrays.html">1.6.58. numpy.compare_chararrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.compress.html">1.6.59. numpy.compress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.concatenate.html">1.6.60. numpy.concatenate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.convolve.html">1.6.61. numpy.convolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.copy.html">1.6.62. numpy.copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.copyto.html">1.6.63. numpy.copyto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.corrcoef.html">1.6.64. numpy.corrcoef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.correlate.html">1.6.65. numpy.correlate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.count_nonzero.html">1.6.66. numpy.count_nonzero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.cov.html">1.6.67. numpy.cov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.cross.html">1.6.68. numpy.cross</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.cumprod.html">1.6.69. numpy.cumprod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.cumproduct.html">1.6.70. numpy.cumproduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.cumsum.html">1.6.71. numpy.cumsum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.datetime_as_string.html">1.6.72. numpy.datetime_as_string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.datetime_data.html">1.6.73. numpy.datetime_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.delete.html">1.6.74. numpy.delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.deprecate.html">1.6.75. numpy.deprecate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.deprecate_with_doc.html">1.6.76. numpy.deprecate_with_doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.diag.html">1.6.77. numpy.diag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.diag_indices.html">1.6.78. numpy.diag_indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.diag_indices_from.html">1.6.79. numpy.diag_indices_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.diagflat.html">1.6.80. numpy.diagflat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.diagonal.html">1.6.81. numpy.diagonal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.diff.html">1.6.82. numpy.diff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.digitize.html">1.6.83. numpy.digitize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.disp.html">1.6.84. numpy.disp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.dot.html">1.6.85. numpy.dot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.dsplit.html">1.6.86. numpy.dsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.dstack.html">1.6.87. numpy.dstack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ediff1d.html">1.6.88. numpy.ediff1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.einsum.html">1.6.89. numpy.einsum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.empty.html">1.6.90. numpy.empty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.empty_like.html">1.6.91. numpy.empty_like</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.expand_dims.html">1.6.92. numpy.expand_dims</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.extract.html">1.6.93. numpy.extract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.eye.html">1.6.94. numpy.eye</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fastCopyAndTranspose.html">1.6.95. numpy.fastCopyAndTranspose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fill_diagonal.html">1.6.96. numpy.fill_diagonal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.find_common_type.html">1.6.97. numpy.find_common_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fix.html">1.6.98. numpy.fix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.flatnonzero.html">1.6.99. numpy.flatnonzero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fliplr.html">1.6.100. numpy.fliplr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.flipud.html">1.6.101. numpy.flipud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.frombuffer.html">1.6.102. numpy.frombuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fromfile.html">1.6.103. numpy.fromfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fromfunction.html">1.6.104. numpy.fromfunction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fromiter.html">1.6.105. numpy.fromiter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.frompyfunc.html">1.6.106. numpy.frompyfunc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fromregex.html">1.6.107. numpy.fromregex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fromstring.html">1.6.108. numpy.fromstring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.full.html">1.6.109. numpy.full</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.full_like.html">1.6.110. numpy.full_like</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.fv.html">1.6.111. numpy.fv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.genfromtxt.html">1.6.112. numpy.genfromtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.get_array_wrap.html">1.6.113. numpy.get_array_wrap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.get_include.html">1.6.114. numpy.get_include</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.get_printoptions.html">1.6.115. numpy.get_printoptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.getbuffer.html">1.6.116. numpy.getbuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.getbufsize.html">1.6.117. numpy.getbufsize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.geterr.html">1.6.118. numpy.geterr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.geterrcall.html">1.6.119. numpy.geterrcall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.geterrobj.html">1.6.120. numpy.geterrobj</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.gradient.html">1.6.121. numpy.gradient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.hamming.html">1.6.122. numpy.hamming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.hanning.html">1.6.123. numpy.hanning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.histogram.html">1.6.124. numpy.histogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.histogram2d.html">1.6.125. numpy.histogram2d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.histogramdd.html">1.6.126. numpy.histogramdd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.hsplit.html">1.6.127. numpy.hsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.hstack.html">1.6.128. numpy.hstack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.i0.html">1.6.129. numpy.i0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.identity.html">1.6.130. numpy.identity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.imag.html">1.6.131. numpy.imag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.in1d.html">1.6.132. numpy.in1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.indices.html">1.6.133. numpy.indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.info.html">1.6.134. numpy.info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.inner.html">1.6.135. numpy.inner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.insert.html">1.6.136. numpy.insert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.int_asbuffer.html">1.6.137. numpy.int_asbuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.interp.html">1.6.138. numpy.interp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.intersect1d.html">1.6.139. numpy.intersect1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ipmt.html">1.6.140. numpy.ipmt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.irr.html">1.6.141. numpy.irr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.is_busday.html">1.6.142. numpy.is_busday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.isclose.html">1.6.143. numpy.isclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.iscomplex.html">1.6.144. numpy.iscomplex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.iscomplexobj.html">1.6.145. numpy.iscomplexobj</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.isfortran.html">1.6.146. numpy.isfortran</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.isneginf.html">1.6.147. numpy.isneginf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.isposinf.html">1.6.148. numpy.isposinf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.isreal.html">1.6.149. numpy.isreal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.isrealobj.html">1.6.150. numpy.isrealobj</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.isscalar.html">1.6.151. numpy.isscalar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.issctype.html">1.6.152. numpy.issctype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.issubclass_.html">1.6.153. numpy.issubclass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.issubdtype.html">1.6.154. numpy.issubdtype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.issubsctype.html">1.6.155. numpy.issubsctype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.iterable.html">1.6.156. numpy.iterable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ix_.html">1.6.157. numpy.ix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.kaiser.html">1.6.158. numpy.kaiser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.kron.html">1.6.159. numpy.kron</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lexsort.html">1.6.160. numpy.lexsort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.linspace.html">1.6.161. numpy.linspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.load.html">1.6.162. numpy.load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.loads.html">1.6.163. numpy.loads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.loadtxt.html">1.6.164. numpy.loadtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.logspace.html">1.6.165. numpy.logspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.lookfor.html">1.6.166. numpy.lookfor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.mafromtxt.html">1.6.167. numpy.mafromtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.mask_indices.html">1.6.168. numpy.mask_indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.mat.html">1.6.169. numpy.mat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.matmul.html">1.6.170. numpy.matmul</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.max.html">1.6.171. numpy.max</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.maximum_sctype.html">1.6.172. numpy.maximum_sctype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.may_share_memory.html">1.6.173. numpy.may_share_memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.mean.html">1.6.174. numpy.mean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.median.html">1.6.175. numpy.median</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.meshgrid.html">1.6.176. numpy.meshgrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.min.html">1.6.177. numpy.min</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.min_scalar_type.html">1.6.178. numpy.min_scalar_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.mintypecode.html">1.6.179. numpy.mintypecode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.mirr.html">1.6.180. numpy.mirr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.msort.html">1.6.181. numpy.msort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nan_to_num.html">1.6.182. numpy.nan_to_num</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanargmax.html">1.6.183. numpy.nanargmax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanargmin.html">1.6.184. numpy.nanargmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanmax.html">1.6.185. numpy.nanmax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanmean.html">1.6.186. numpy.nanmean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanmedian.html">1.6.187. numpy.nanmedian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanmin.html">1.6.188. numpy.nanmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanpercentile.html">1.6.189. numpy.nanpercentile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanprod.html">1.6.190. numpy.nanprod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanstd.html">1.6.191. numpy.nanstd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nansum.html">1.6.192. numpy.nansum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nanvar.html">1.6.193. numpy.nanvar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ndfromtxt.html">1.6.194. numpy.ndfromtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ndim.html">1.6.195. numpy.ndim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nested_iters.html">1.6.196. numpy.nested_iters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.newbuffer.html">1.6.197. numpy.newbuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nonzero.html">1.6.198. numpy.nonzero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nper.html">1.6.199. numpy.nper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.npv.html">1.6.200. numpy.npv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.obj2sctype.html">1.6.201. numpy.obj2sctype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ones.html">1.6.202. numpy.ones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ones_like.html">1.6.203. numpy.ones_like</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.outer.html">1.6.204. numpy.outer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.packbits.html">1.6.205. numpy.packbits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.pad.html">1.6.206. numpy.pad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.partition.html">1.6.207. numpy.partition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.percentile.html">1.6.208. numpy.percentile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.piecewise.html">1.6.209. numpy.piecewise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.pkgload.html">1.6.210. numpy.pkgload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.place.html">1.6.211. numpy.place</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.pmt.html">1.6.212. numpy.pmt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.poly.html">1.6.213. numpy.poly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.polyadd.html">1.6.214. numpy.polyadd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.polyder.html">1.6.215. numpy.polyder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.polydiv.html">1.6.216. numpy.polydiv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.polyfit.html">1.6.217. numpy.polyfit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.polyint.html">1.6.218. numpy.polyint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.polymul.html">1.6.219. numpy.polymul</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.polysub.html">1.6.220. numpy.polysub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.polyval.html">1.6.221. numpy.polyval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ppmt.html">1.6.222. numpy.ppmt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.prod.html">1.6.223. numpy.prod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.product.html">1.6.224. numpy.product</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.promote_types.html">1.6.225. numpy.promote_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ptp.html">1.6.226. numpy.ptp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.put.html">1.6.227. numpy.put</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.putmask.html">1.6.228. numpy.putmask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.pv.html">1.6.229. numpy.pv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.rank.html">1.6.230. numpy.rank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.rate.html">1.6.231. numpy.rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ravel.html">1.6.232. numpy.ravel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ravel_multi_index.html">1.6.233. numpy.ravel_multi_index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.real.html">1.6.234. numpy.real</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.real_if_close.html">1.6.235. numpy.real_if_close</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.recfromcsv.html">1.6.236. numpy.recfromcsv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.recfromtxt.html">1.6.237. numpy.recfromtxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.repeat.html">1.6.238. numpy.repeat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.require.html">1.6.239. numpy.require</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.reshape.html">1.6.240. numpy.reshape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.resize.html">1.6.241. numpy.resize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.restoredot.html">1.6.242. numpy.restoredot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.result_type.html">1.6.243. numpy.result_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.roll.html">1.6.244. numpy.roll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.rollaxis.html">1.6.245. numpy.rollaxis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.roots.html">1.6.246. numpy.roots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.rot90.html">1.6.247. numpy.rot90</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.round.html">1.6.248. numpy.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.round_.html">1.6.249. numpy.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.row_stack.html">1.6.250. numpy.row_stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.safe_eval.html">1.6.251. numpy.safe_eval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.save.html">1.6.252. numpy.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.savetxt.html">1.6.253. numpy.savetxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.savez.html">1.6.254. numpy.savez</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.savez_compressed.html">1.6.255. numpy.savez_compressed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.sctype2char.html">1.6.256. numpy.sctype2char</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.searchsorted.html">1.6.257. numpy.searchsorted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.select.html">1.6.258. numpy.select</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.set_numeric_ops.html">1.6.259. numpy.set_numeric_ops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.set_printoptions.html">1.6.260. numpy.set_printoptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.set_string_function.html">1.6.261. numpy.set_string_function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.setbufsize.html">1.6.262. numpy.setbufsize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.setdiff1d.html">1.6.263. numpy.setdiff1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.seterr.html">1.6.264. numpy.seterr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.seterrcall.html">1.6.265. numpy.seterrcall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.seterrobj.html">1.6.266. numpy.seterrobj</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.setxor1d.html">1.6.267. numpy.setxor1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.shape.html">1.6.268. numpy.shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.show_config.html">1.6.269. numpy.show_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.sinc.html">1.6.270. numpy.sinc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.size.html">1.6.271. numpy.size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.sometrue.html">1.6.272. numpy.sometrue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.sort.html">1.6.273. numpy.sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.sort_complex.html">1.6.274. numpy.sort_complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.source.html">1.6.275. numpy.source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.split.html">1.6.276. numpy.split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.squeeze.html">1.6.277. numpy.squeeze</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.stack.html">1.6.278. numpy.stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.std.html">1.6.279. numpy.std</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.sum.html">1.6.280. numpy.sum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.swapaxes.html">1.6.281. numpy.swapaxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.take.html">1.6.282. numpy.take</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.tensordot.html">1.6.283. numpy.tensordot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.tile.html">1.6.284. numpy.tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.trace.html">1.6.285. numpy.trace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.transpose.html">1.6.286. numpy.transpose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.trapz.html">1.6.287. numpy.trapz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.tri.html">1.6.288. numpy.tri</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.tril.html">1.6.289. numpy.tril</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.tril_indices.html">1.6.290. numpy.tril_indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.tril_indices_from.html">1.6.291. numpy.tril_indices_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.trim_zeros.html">1.6.292. numpy.trim_zeros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.triu.html">1.6.293. numpy.triu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.triu_indices.html">1.6.294. numpy.triu_indices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.triu_indices_from.html">1.6.295. numpy.triu_indices_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.typename.html">1.6.296. numpy.typename</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.union1d.html">1.6.297. numpy.union1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.unique.html">1.6.298. numpy.unique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.unpackbits.html">1.6.299. numpy.unpackbits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.unravel_index.html">1.6.300. numpy.unravel_index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.unwrap.html">1.6.301. numpy.unwrap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.vander.html">1.6.302. numpy.vander</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.var.html">1.6.303. numpy.var</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.vdot.html">1.6.304. numpy.vdot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.vsplit.html">1.6.305. numpy.vsplit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.vstack.html">1.6.306. numpy.vstack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.where.html">1.6.307. numpy.where</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.who.html">1.6.308. numpy.who</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.zeros.html">1.6.309. numpy.zeros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.zeros_like.html">1.6.310. numpy.zeros_like</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#classes">1.7. Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exceptions">1.8. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.main.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="numpy.html">1. NumPy</a> &raquo;</li>
+        
+      <li>1.6.9. numpy.amax</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/numpy.amax.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy-amax">
+<h1>1.6.9. numpy.amax<a class="headerlink" href="#numpy-amax" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="numpy.amax">
+<code class="descclassname">numpy.</code><code class="descname">amax</code><span class="sig-paren">(</span><em>a</em>, <em>axis=None</em>, <em>out=None</em>, <em>keepdims=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/numpy/core/fromnumeric.html#amax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.amax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum of an array or maximum along an axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>a</strong> : array_like</p>
+<blockquote>
+<div><p>Input data.</p>
+</div></blockquote>
+<p><strong>axis</strong> : None or int or tuple of ints, optional</p>
+<blockquote>
+<div><p>Axis or axes along which to operate.  By default, flattened input is
+used.</p>
+<p>If this is a tuple of ints, the maximum is selected over multiple axes,
+instead of a single axis or all the axes as before.</p>
+</div></blockquote>
+<p><strong>out</strong> : ndarray, optional</p>
+<blockquote>
+<div><p>Alternative output array in which to place the result.  Must
+be of the same shape and buffer length as the expected output.
+See <cite>doc.ufuncs</cite> (Section &#8220;Output arguments&#8221;) for more details.</p>
+</div></blockquote>
+<p><strong>keepdims</strong> : bool, optional</p>
+<blockquote>
+<div><p>If this is set to True, the axes which are reduced are left
+in the result as dimensions with size one. With this option,
+the result will broadcast correctly against the original <cite>arr</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>amax</strong> : ndarray or scalar</p>
+<blockquote class="last">
+<div><p>Maximum of <cite>a</cite>. If <cite>axis</cite> is None, the result is a scalar value.
+If <cite>axis</cite> is given, the result is an array of dimension
+<code class="docutils literal"><span class="pre">a.ndim</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="../reference/generated/numpy.amin.html#numpy.amin" title="numpy.amin"><code class="xref py py-obj docutils literal"><span class="pre">amin</span></code></a></dt>
+<dd>The minimum value of an array along a given axis, propagating any NaNs.</dd>
+<dt><a class="reference internal" href="../reference/generated/numpy.nanmax.html#numpy.nanmax" title="numpy.nanmax"><code class="xref py py-obj docutils literal"><span class="pre">nanmax</span></code></a></dt>
+<dd>The maximum value of an array along a given axis, ignoring any NaNs.</dd>
+<dt><a class="reference internal" href="../reference/generated/numpy.maximum.html#numpy.maximum" title="numpy.maximum"><code class="xref py py-obj docutils literal"><span class="pre">maximum</span></code></a></dt>
+<dd>Element-wise maximum of two arrays, propagating any NaNs.</dd>
+<dt><a class="reference internal" href="../reference/generated/numpy.fmax.html#numpy.fmax" title="numpy.fmax"><code class="xref py py-obj docutils literal"><span class="pre">fmax</span></code></a></dt>
+<dd>Element-wise maximum of two arrays, ignoring any NaNs.</dd>
+<dt><a class="reference internal" href="../reference/generated/numpy.argmax.html#numpy.argmax" title="numpy.argmax"><code class="xref py py-obj docutils literal"><span class="pre">argmax</span></code></a></dt>
+<dd>Return the indices of the maximum values.</dd>
+</dl>
+<p class="last"><a class="reference internal" href="../reference/generated/numpy.nanmin.html#numpy.nanmin" title="numpy.nanmin"><code class="xref py py-obj docutils literal"><span class="pre">nanmin</span></code></a>, <a class="reference internal" href="../reference/generated/numpy.minimum.html#numpy.minimum" title="numpy.minimum"><code class="xref py py-obj docutils literal"><span class="pre">minimum</span></code></a>, <a class="reference internal" href="../reference/generated/numpy.fmin.html#numpy.fmin" title="numpy.fmin"><code class="xref py py-obj docutils literal"><span class="pre">fmin</span></code></a></p>
+</div>
+<p class="rubric">Notes</p>
+<p>NaN values are propagated, that is if at least one item is NaN, the
+corresponding max value will be NaN as well. To ignore NaN values
+(MATLAB behavior), please use nanmax.</p>
+<p>Don&#8217;t use <cite>amax</cite> for element-wise comparison of 2 arrays; when
+<code class="docutils literal"><span class="pre">a.shape[0]</span></code> is 2, <code class="docutils literal"><span class="pre">maximum(a[0],</span> <span class="pre">a[1])</span></code> is faster than
+<code class="docutils literal"><span class="pre">amax(a,</span> <span class="pre">axis=0)</span></code>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([[0, 1],</span>
+<span class="go">       [2, 3]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>           <span class="c1"># Maximum of the flattened array</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>   <span class="c1"># Maxima along the first axis</span>
+<span class="go">array([2, 3])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># Maxima along the second axis</span>
+<span class="go">array([1, 3])</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">nan</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">4.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numpy.amin.html" class="btn btn-neutral float-right" title="1.6.10. numpy.amin" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numpy.alterdot.html" class="btn btn-neutral" title="1.6.8. numpy.alterdot" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

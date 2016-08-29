@@ -1,0 +1,6 @@
+numpy.polynomial.Hermite.fit
+============================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Hermite.fit

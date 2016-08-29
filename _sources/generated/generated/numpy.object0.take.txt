@@ -1,0 +1,6 @@
+numpy.object0.take
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: object0.take

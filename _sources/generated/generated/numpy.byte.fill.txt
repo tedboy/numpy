@@ -1,0 +1,6 @@
+numpy.byte.fill
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.fill

@@ -1,0 +1,6 @@
+numpy.singlecomplex.tolist
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.tolist

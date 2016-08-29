@@ -1,0 +1,6 @@
+numpy.byte.flatten
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.flatten

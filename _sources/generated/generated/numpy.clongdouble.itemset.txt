@@ -1,0 +1,6 @@
+numpy.clongdouble.itemset
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.itemset

@@ -1,0 +1,6 @@
+numpy.string_.flatten
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.flatten

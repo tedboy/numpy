@@ -1,0 +1,6 @@
+numpy.str_.join
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.join

@@ -1,0 +1,6 @@
+numpy.clongdouble.trace
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.trace

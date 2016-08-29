@@ -1,0 +1,6 @@
+numpy.longdouble.argmax
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.argmax

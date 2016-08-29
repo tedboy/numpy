@@ -1,0 +1,6 @@
+numpy.flexible.fill
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.fill

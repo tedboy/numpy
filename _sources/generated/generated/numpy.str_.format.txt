@@ -1,0 +1,6 @@
+numpy.str_.format
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.format

@@ -1,0 +1,31 @@
+numpy.int
+=========
+.. currentmodule:: numpy
+.. autoclass:: int
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~int.bit_length
+   ~int.conjugate
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~int.denominator
+   ~int.imag
+   ~int.numerator
+   ~int.real
+

@@ -1,0 +1,6 @@
+numpy.short.flags
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: short.flags

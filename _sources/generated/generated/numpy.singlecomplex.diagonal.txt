@@ -1,0 +1,6 @@
+numpy.singlecomplex.diagonal
+============================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.diagonal

@@ -1,0 +1,6 @@
+numpy.bytes_.center
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: bytes_.center

@@ -1,0 +1,6 @@
+numpy.lib.nan_to_num
+====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nan_to_num

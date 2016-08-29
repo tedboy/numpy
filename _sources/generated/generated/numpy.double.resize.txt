@@ -1,0 +1,6 @@
+numpy.double.resize
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.resize

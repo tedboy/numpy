@@ -1,0 +1,6 @@
+numpy.half.copy
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.copy

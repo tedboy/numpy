@@ -1,0 +1,92 @@
+numpy.complex_
+==============
+.. currentmodule:: numpy
+.. autoclass:: complex_
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~complex_.all
+   ~complex_.any
+   ~complex_.argmax
+   ~complex_.argmin
+   ~complex_.argsort
+   ~complex_.astype
+   ~complex_.byteswap
+   ~complex_.choose
+   ~complex_.clip
+   ~complex_.compress
+   ~complex_.conj
+   ~complex_.conjugate
+   ~complex_.copy
+   ~complex_.cumprod
+   ~complex_.cumsum
+   ~complex_.diagonal
+   ~complex_.dump
+   ~complex_.dumps
+   ~complex_.fill
+   ~complex_.flatten
+   ~complex_.getfield
+   ~complex_.item
+   ~complex_.itemset
+   ~complex_.max
+   ~complex_.mean
+   ~complex_.min
+   ~complex_.newbyteorder
+   ~complex_.nonzero
+   ~complex_.prod
+   ~complex_.ptp
+   ~complex_.put
+   ~complex_.ravel
+   ~complex_.repeat
+   ~complex_.reshape
+   ~complex_.resize
+   ~complex_.round
+   ~complex_.searchsorted
+   ~complex_.setfield
+   ~complex_.setflags
+   ~complex_.sort
+   ~complex_.squeeze
+   ~complex_.std
+   ~complex_.sum
+   ~complex_.swapaxes
+   ~complex_.take
+   ~complex_.tobytes
+   ~complex_.tofile
+   ~complex_.tolist
+   ~complex_.tostring
+   ~complex_.trace
+   ~complex_.transpose
+   ~complex_.var
+   ~complex_.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~complex_.T
+   ~complex_.base
+   ~complex_.data
+   ~complex_.dtype
+   ~complex_.flags
+   ~complex_.flat
+   ~complex_.imag
+   ~complex_.itemsize
+   ~complex_.nbytes
+   ~complex_.ndim
+   ~complex_.real
+   ~complex_.shape
+   ~complex_.size
+   ~complex_.strides
+

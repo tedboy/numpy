@@ -1,0 +1,6 @@
+numpy.character.repeat
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.repeat

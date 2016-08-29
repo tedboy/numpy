@@ -1,0 +1,94 @@
+numpy.ubyte
+===========
+.. currentmodule:: numpy
+.. autoclass:: ubyte
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~ubyte.all
+   ~ubyte.any
+   ~ubyte.argmax
+   ~ubyte.argmin
+   ~ubyte.argsort
+   ~ubyte.astype
+   ~ubyte.byteswap
+   ~ubyte.choose
+   ~ubyte.clip
+   ~ubyte.compress
+   ~ubyte.conj
+   ~ubyte.conjugate
+   ~ubyte.copy
+   ~ubyte.cumprod
+   ~ubyte.cumsum
+   ~ubyte.diagonal
+   ~ubyte.dump
+   ~ubyte.dumps
+   ~ubyte.fill
+   ~ubyte.flatten
+   ~ubyte.getfield
+   ~ubyte.item
+   ~ubyte.itemset
+   ~ubyte.max
+   ~ubyte.mean
+   ~ubyte.min
+   ~ubyte.newbyteorder
+   ~ubyte.nonzero
+   ~ubyte.prod
+   ~ubyte.ptp
+   ~ubyte.put
+   ~ubyte.ravel
+   ~ubyte.repeat
+   ~ubyte.reshape
+   ~ubyte.resize
+   ~ubyte.round
+   ~ubyte.searchsorted
+   ~ubyte.setfield
+   ~ubyte.setflags
+   ~ubyte.sort
+   ~ubyte.squeeze
+   ~ubyte.std
+   ~ubyte.sum
+   ~ubyte.swapaxes
+   ~ubyte.take
+   ~ubyte.tobytes
+   ~ubyte.tofile
+   ~ubyte.tolist
+   ~ubyte.tostring
+   ~ubyte.trace
+   ~ubyte.transpose
+   ~ubyte.var
+   ~ubyte.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~ubyte.T
+   ~ubyte.base
+   ~ubyte.data
+   ~ubyte.denominator
+   ~ubyte.dtype
+   ~ubyte.flags
+   ~ubyte.flat
+   ~ubyte.imag
+   ~ubyte.itemsize
+   ~ubyte.nbytes
+   ~ubyte.ndim
+   ~ubyte.numerator
+   ~ubyte.real
+   ~ubyte.shape
+   ~ubyte.size
+   ~ubyte.strides
+

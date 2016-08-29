@@ -1,0 +1,6 @@
+numpy.int32.argmax
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: int32.argmax

@@ -1,0 +1,6 @@
+numpy.flexible.nbytes
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.nbytes

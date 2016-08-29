@@ -1,0 +1,6 @@
+numpy.longfloat.ptp
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: longfloat.ptp

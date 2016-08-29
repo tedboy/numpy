@@ -1,0 +1,6 @@
+numpy.ulonglong.choose
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.choose

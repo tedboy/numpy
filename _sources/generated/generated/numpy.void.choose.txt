@@ -1,0 +1,6 @@
+numpy.void.choose
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: void.choose

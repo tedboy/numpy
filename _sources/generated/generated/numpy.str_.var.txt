@@ -1,0 +1,6 @@
+numpy.str_.var
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.var

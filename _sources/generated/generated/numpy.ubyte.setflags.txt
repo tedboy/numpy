@@ -1,0 +1,6 @@
+numpy.ubyte.setflags
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.setflags

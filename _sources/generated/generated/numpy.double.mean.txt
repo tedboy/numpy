@@ -1,0 +1,6 @@
+numpy.double.mean
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.mean

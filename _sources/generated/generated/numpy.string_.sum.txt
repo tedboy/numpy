@@ -1,0 +1,6 @@
+numpy.string_.sum
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: string_.sum

@@ -1,0 +1,6 @@
+numpy.clongdouble.reshape
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.reshape

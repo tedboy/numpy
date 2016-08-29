@@ -1,0 +1,6 @@
+numpy.cdouble.mean
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: cdouble.mean

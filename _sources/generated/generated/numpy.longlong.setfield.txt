@@ -1,0 +1,6 @@
+numpy.longlong.setfield
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.setfield

@@ -1,0 +1,6 @@
+numpy.lib.mirr
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: mirr

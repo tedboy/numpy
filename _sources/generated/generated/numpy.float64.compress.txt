@@ -1,0 +1,6 @@
+numpy.float64.compress
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: float64.compress

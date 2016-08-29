@@ -1,0 +1,6 @@
+numpy.uint64.size
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint64.size

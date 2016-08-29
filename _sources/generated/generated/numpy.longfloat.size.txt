@@ -1,0 +1,6 @@
+numpy.longfloat.size
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longfloat.size

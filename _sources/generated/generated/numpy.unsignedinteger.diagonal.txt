@@ -1,0 +1,6 @@
+numpy.unsignedinteger.diagonal
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.diagonal

@@ -1,0 +1,6 @@
+numpy.csingle.conj
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.conj

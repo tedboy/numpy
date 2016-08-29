@@ -1,0 +1,6 @@
+numpy.lib.percentile
+====================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: percentile

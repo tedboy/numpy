@@ -1,0 +1,6 @@
+numpy.longdouble.flat
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longdouble.flat

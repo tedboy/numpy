@@ -1,0 +1,6 @@
+numpy.longdouble.fill
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.fill

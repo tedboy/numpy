@@ -1,0 +1,6 @@
+numpy.void0.itemsize
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: void0.itemsize

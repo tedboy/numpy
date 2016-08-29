@@ -1,0 +1,6 @@
+numpy.short.imag
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: short.imag

@@ -1,0 +1,6 @@
+numpy.object0.size
+==================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: object0.size

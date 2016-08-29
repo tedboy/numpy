@@ -1,0 +1,6 @@
+numpy.half.tolist
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.tolist

@@ -1,0 +1,6 @@
+numpy.unsignedinteger.numerator
+===============================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: unsignedinteger.numerator

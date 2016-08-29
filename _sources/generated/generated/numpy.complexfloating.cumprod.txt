@@ -1,0 +1,6 @@
+numpy.complexfloating.cumprod
+=============================
+
+.. currentmodule:: numpy
+
+.. automethod:: complexfloating.cumprod

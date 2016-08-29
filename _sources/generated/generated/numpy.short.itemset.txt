@@ -1,0 +1,6 @@
+numpy.short.itemset
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: short.itemset

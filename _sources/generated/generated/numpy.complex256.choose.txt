@@ -1,0 +1,6 @@
+numpy.complex256.choose
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.choose

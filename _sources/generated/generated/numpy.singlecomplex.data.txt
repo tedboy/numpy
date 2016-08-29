@@ -1,0 +1,6 @@
+numpy.singlecomplex.data
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: singlecomplex.data

@@ -1,0 +1,580 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.7.7. numpy.bool &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../index.html"/>
+        <link rel="up" title="1. NumPy" href="../numpy.html"/>
+        <link rel="next" title="1.7.7.1.1. numpy.bool_.all" href="numpy.bool_.all.html"/>
+        <link rel="prev" title="1.7.6.2.14. numpy.bool8.strides" href="numpy.bool8.strides.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../numpy.html">1. NumPy</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../numpy.html#how-to-use-the-documentation">1.1. How to use the documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy.html#available-subpackages">1.2. Available subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy.html#utilities">1.3. Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy.html#viewing-documentation-using-ipython">1.4. Viewing documentation using IPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy.html#copies-vs-in-place-operation">1.5. Copies vs. in-place operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy.html#functions">1.6. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../numpy.html#classes">1.7. Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="numpy.DataSource.html">1.7.1. numpy.DataSource</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.MachAr.html">1.7.2. numpy.MachAr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.PackageLoader.html">1.7.3. numpy.PackageLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.Tester.html">1.7.4. numpy.Tester</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.bool.html">1.7.5. numpy.bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.bool8.html">1.7.6. numpy.bool8</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">1.7.7. numpy.bool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#methods">1.7.7.1. Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">1.7.7.2. Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.broadcast.html">1.7.8. numpy.broadcast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.busdaycalendar.html">1.7.9. numpy.busdaycalendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.byte.html">1.7.10. numpy.byte</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.bytes_.html">1.7.11. numpy.bytes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.cdouble.html">1.7.12. numpy.cdouble</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.cfloat.html">1.7.13. numpy.cfloat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.character.html">1.7.14. numpy.character</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.chararray.html">1.7.15. numpy.chararray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.clongdouble.html">1.7.16. numpy.clongdouble</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.clongfloat.html">1.7.17. numpy.clongfloat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.complex.html">1.7.18. numpy.complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.complex128.html">1.7.19. numpy.complex128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.complex256.html">1.7.20. numpy.complex256</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.complex64.html">1.7.21. numpy.complex64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.complex_.html">1.7.22. numpy.complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.complexfloating.html">1.7.23. numpy.complexfloating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.csingle.html">1.7.24. numpy.csingle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.datetime64.html">1.7.25. numpy.datetime64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.double.html">1.7.26. numpy.double</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.dtype.html">1.7.27. numpy.dtype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.errstate.html">1.7.28. numpy.errstate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.finfo.html">1.7.29. numpy.finfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.flatiter.html">1.7.30. numpy.flatiter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.flexible.html">1.7.31. numpy.flexible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.float.html">1.7.32. numpy.float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.float128.html">1.7.33. numpy.float128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.float16.html">1.7.34. numpy.float16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.float32.html">1.7.35. numpy.float32</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.float64.html">1.7.36. numpy.float64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.float_.html">1.7.37. numpy.float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.floating.html">1.7.38. numpy.floating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.format_parser.html">1.7.39. numpy.format_parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.generic.html">1.7.40. numpy.generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.half.html">1.7.41. numpy.half</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.iinfo.html">1.7.42. numpy.iinfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.inexact.html">1.7.43. numpy.inexact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.int.html">1.7.44. numpy.int</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.int0.html">1.7.45. numpy.int0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.int16.html">1.7.46. numpy.int16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.int32.html">1.7.47. numpy.int32</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.int64.html">1.7.48. numpy.int64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.int8.html">1.7.49. numpy.int8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.int_.html">1.7.50. numpy.int</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.intc.html">1.7.51. numpy.intc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.integer.html">1.7.52. numpy.integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.intp.html">1.7.53. numpy.intp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.long.html">1.7.54. numpy.long</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.longcomplex.html">1.7.55. numpy.longcomplex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.longdouble.html">1.7.56. numpy.longdouble</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.longfloat.html">1.7.57. numpy.longfloat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.longlong.html">1.7.58. numpy.longlong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.matrix.html">1.7.59. numpy.matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.memmap.html">1.7.60. numpy.memmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ndarray.html">1.7.61. numpy.ndarray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ndenumerate.html">1.7.62. numpy.ndenumerate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ndindex.html">1.7.63. numpy.ndindex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.nditer.html">1.7.64. numpy.nditer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.number.html">1.7.65. numpy.number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.object.html">1.7.66. numpy.object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.object0.html">1.7.67. numpy.object0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.object_.html">1.7.68. numpy.object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.poly1d.html">1.7.69. numpy.poly1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.recarray.html">1.7.70. numpy.recarray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.record.html">1.7.71. numpy.record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.short.html">1.7.72. numpy.short</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.signedinteger.html">1.7.73. numpy.signedinteger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.single.html">1.7.74. numpy.single</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.singlecomplex.html">1.7.75. numpy.singlecomplex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.str.html">1.7.76. numpy.str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.str_.html">1.7.77. numpy.str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.string0.html">1.7.78. numpy.string0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.string_.html">1.7.79. numpy.string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.timedelta64.html">1.7.80. numpy.timedelta64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ubyte.html">1.7.81. numpy.ubyte</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ufunc.html">1.7.82. numpy.ufunc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.uint.html">1.7.83. numpy.uint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.uint0.html">1.7.84. numpy.uint0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.uint16.html">1.7.85. numpy.uint16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.uint32.html">1.7.86. numpy.uint32</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.uint64.html">1.7.87. numpy.uint64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.uint8.html">1.7.88. numpy.uint8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.uintc.html">1.7.89. numpy.uintc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.uintp.html">1.7.90. numpy.uintp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ulonglong.html">1.7.91. numpy.ulonglong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.unicode.html">1.7.92. numpy.unicode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.unicode0.html">1.7.93. numpy.unicode0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.unicode_.html">1.7.94. numpy.unicode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.unsignedinteger.html">1.7.95. numpy.unsignedinteger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.ushort.html">1.7.96. numpy.ushort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.vectorize.html">1.7.97. numpy.vectorize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.void.html">1.7.98. numpy.void</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numpy.void0.html">1.7.99. numpy.void0</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy.html#exceptions">1.8. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">11. NumPy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../api.main.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="../numpy.html">1. NumPy</a> &raquo;</li>
+        
+      <li>1.7.7. numpy.bool</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/numpy.bool_.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy-bool">
+<h1>1.7.7. <a class="reference internal" href="#numpy-bool">numpy.bool</a><a class="headerlink" href="#numpy-bool" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="numpy.bool_">
+<em class="property">class </em><code class="descclassname">numpy.</code><code class="descname">bool_</code><a class="headerlink" href="#numpy.bool_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Numpy&#8217;s Boolean type.  Character code: <code class="docutils literal"><span class="pre">?</span></code>.  Alias: bool8</p>
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>1.7.7.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.all.html#numpy.bool_.all" title="numpy.bool_.all"><code class="xref py py-obj docutils literal"><span class="pre">all</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.any.html#numpy.bool_.any" title="numpy.bool_.any"><code class="xref py py-obj docutils literal"><span class="pre">any</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.argmax.html#numpy.bool_.argmax" title="numpy.bool_.argmax"><code class="xref py py-obj docutils literal"><span class="pre">argmax</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.argmin.html#numpy.bool_.argmin" title="numpy.bool_.argmin"><code class="xref py py-obj docutils literal"><span class="pre">argmin</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.argsort.html#numpy.bool_.argsort" title="numpy.bool_.argsort"><code class="xref py py-obj docutils literal"><span class="pre">argsort</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.astype.html#numpy.bool_.astype" title="numpy.bool_.astype"><code class="xref py py-obj docutils literal"><span class="pre">astype</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.byteswap.html#numpy.bool_.byteswap" title="numpy.bool_.byteswap"><code class="xref py py-obj docutils literal"><span class="pre">byteswap</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.choose.html#numpy.bool_.choose" title="numpy.bool_.choose"><code class="xref py py-obj docutils literal"><span class="pre">choose</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.clip.html#numpy.bool_.clip" title="numpy.bool_.clip"><code class="xref py py-obj docutils literal"><span class="pre">clip</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.compress.html#numpy.bool_.compress" title="numpy.bool_.compress"><code class="xref py py-obj docutils literal"><span class="pre">compress</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.conj.html#numpy.bool_.conj" title="numpy.bool_.conj"><code class="xref py py-obj docutils literal"><span class="pre">conj</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.conjugate.html#numpy.bool_.conjugate" title="numpy.bool_.conjugate"><code class="xref py py-obj docutils literal"><span class="pre">conjugate</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.copy.html#numpy.bool_.copy" title="numpy.bool_.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.cumprod.html#numpy.bool_.cumprod" title="numpy.bool_.cumprod"><code class="xref py py-obj docutils literal"><span class="pre">cumprod</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.cumsum.html#numpy.bool_.cumsum" title="numpy.bool_.cumsum"><code class="xref py py-obj docutils literal"><span class="pre">cumsum</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.diagonal.html#numpy.bool_.diagonal" title="numpy.bool_.diagonal"><code class="xref py py-obj docutils literal"><span class="pre">diagonal</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.dump.html#numpy.bool_.dump" title="numpy.bool_.dump"><code class="xref py py-obj docutils literal"><span class="pre">dump</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.dumps.html#numpy.bool_.dumps" title="numpy.bool_.dumps"><code class="xref py py-obj docutils literal"><span class="pre">dumps</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.fill.html#numpy.bool_.fill" title="numpy.bool_.fill"><code class="xref py py-obj docutils literal"><span class="pre">fill</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.flatten.html#numpy.bool_.flatten" title="numpy.bool_.flatten"><code class="xref py py-obj docutils literal"><span class="pre">flatten</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.getfield.html#numpy.bool_.getfield" title="numpy.bool_.getfield"><code class="xref py py-obj docutils literal"><span class="pre">getfield</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.item.html#numpy.bool_.item" title="numpy.bool_.item"><code class="xref py py-obj docutils literal"><span class="pre">item</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.itemset.html#numpy.bool_.itemset" title="numpy.bool_.itemset"><code class="xref py py-obj docutils literal"><span class="pre">itemset</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.max.html#numpy.bool_.max" title="numpy.bool_.max"><code class="xref py py-obj docutils literal"><span class="pre">max</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.mean.html#numpy.bool_.mean" title="numpy.bool_.mean"><code class="xref py py-obj docutils literal"><span class="pre">mean</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.min.html#numpy.bool_.min" title="numpy.bool_.min"><code class="xref py py-obj docutils literal"><span class="pre">min</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.newbyteorder.html#numpy.bool_.newbyteorder" title="numpy.bool_.newbyteorder"><code class="xref py py-obj docutils literal"><span class="pre">newbyteorder</span></code></a>([new_order])</td>
+<td>Return a new <cite>dtype</cite> with a different byte order.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.nonzero.html#numpy.bool_.nonzero" title="numpy.bool_.nonzero"><code class="xref py py-obj docutils literal"><span class="pre">nonzero</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.prod.html#numpy.bool_.prod" title="numpy.bool_.prod"><code class="xref py py-obj docutils literal"><span class="pre">prod</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.ptp.html#numpy.bool_.ptp" title="numpy.bool_.ptp"><code class="xref py py-obj docutils literal"><span class="pre">ptp</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.put.html#numpy.bool_.put" title="numpy.bool_.put"><code class="xref py py-obj docutils literal"><span class="pre">put</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.ravel.html#numpy.bool_.ravel" title="numpy.bool_.ravel"><code class="xref py py-obj docutils literal"><span class="pre">ravel</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.repeat.html#numpy.bool_.repeat" title="numpy.bool_.repeat"><code class="xref py py-obj docutils literal"><span class="pre">repeat</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.reshape.html#numpy.bool_.reshape" title="numpy.bool_.reshape"><code class="xref py py-obj docutils literal"><span class="pre">reshape</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.resize.html#numpy.bool_.resize" title="numpy.bool_.resize"><code class="xref py py-obj docutils literal"><span class="pre">resize</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.round.html#numpy.bool_.round" title="numpy.bool_.round"><code class="xref py py-obj docutils literal"><span class="pre">round</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.searchsorted.html#numpy.bool_.searchsorted" title="numpy.bool_.searchsorted"><code class="xref py py-obj docutils literal"><span class="pre">searchsorted</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.setfield.html#numpy.bool_.setfield" title="numpy.bool_.setfield"><code class="xref py py-obj docutils literal"><span class="pre">setfield</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.setflags.html#numpy.bool_.setflags" title="numpy.bool_.setflags"><code class="xref py py-obj docutils literal"><span class="pre">setflags</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.sort.html#numpy.bool_.sort" title="numpy.bool_.sort"><code class="xref py py-obj docutils literal"><span class="pre">sort</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.squeeze.html#numpy.bool_.squeeze" title="numpy.bool_.squeeze"><code class="xref py py-obj docutils literal"><span class="pre">squeeze</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.std.html#numpy.bool_.std" title="numpy.bool_.std"><code class="xref py py-obj docutils literal"><span class="pre">std</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.sum.html#numpy.bool_.sum" title="numpy.bool_.sum"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.swapaxes.html#numpy.bool_.swapaxes" title="numpy.bool_.swapaxes"><code class="xref py py-obj docutils literal"><span class="pre">swapaxes</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.take.html#numpy.bool_.take" title="numpy.bool_.take"><code class="xref py py-obj docutils literal"><span class="pre">take</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.tobytes.html#numpy.bool_.tobytes" title="numpy.bool_.tobytes"><code class="xref py py-obj docutils literal"><span class="pre">tobytes</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.tofile.html#numpy.bool_.tofile" title="numpy.bool_.tofile"><code class="xref py py-obj docutils literal"><span class="pre">tofile</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.tolist.html#numpy.bool_.tolist" title="numpy.bool_.tolist"><code class="xref py py-obj docutils literal"><span class="pre">tolist</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.tostring.html#numpy.bool_.tostring" title="numpy.bool_.tostring"><code class="xref py py-obj docutils literal"><span class="pre">tostring</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.trace.html#numpy.bool_.trace" title="numpy.bool_.trace"><code class="xref py py-obj docutils literal"><span class="pre">trace</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.transpose.html#numpy.bool_.transpose" title="numpy.bool_.transpose"><code class="xref py py-obj docutils literal"><span class="pre">transpose</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.var.html#numpy.bool_.var" title="numpy.bool_.var"><code class="xref py py-obj docutils literal"><span class="pre">var</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.view.html#numpy.bool_.view" title="numpy.bool_.view"><code class="xref py py-obj docutils literal"><span class="pre">view</span></code></a></td>
+<td>Not implemented (virtual attribute)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>1.7.7.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.T.html#numpy.bool_.T" title="numpy.bool_.T"><code class="xref py py-obj docutils literal"><span class="pre">T</span></code></a></td>
+<td>transpose</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.base.html#numpy.bool_.base" title="numpy.bool_.base"><code class="xref py py-obj docutils literal"><span class="pre">base</span></code></a></td>
+<td>base object</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.data.html#numpy.bool_.data" title="numpy.bool_.data"><code class="xref py py-obj docutils literal"><span class="pre">data</span></code></a></td>
+<td>pointer to start of data</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.dtype.html#numpy.bool_.dtype" title="numpy.bool_.dtype"><code class="xref py py-obj docutils literal"><span class="pre">dtype</span></code></a></td>
+<td>get array data-descriptor</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.flags.html#numpy.bool_.flags" title="numpy.bool_.flags"><code class="xref py py-obj docutils literal"><span class="pre">flags</span></code></a></td>
+<td>integer value of flags</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.flat.html#numpy.bool_.flat" title="numpy.bool_.flat"><code class="xref py py-obj docutils literal"><span class="pre">flat</span></code></a></td>
+<td>a 1-d view of scalar</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.imag.html#numpy.bool_.imag" title="numpy.bool_.imag"><code class="xref py py-obj docutils literal"><span class="pre">imag</span></code></a></td>
+<td>imaginary part of scalar</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.itemsize.html#numpy.bool_.itemsize" title="numpy.bool_.itemsize"><code class="xref py py-obj docutils literal"><span class="pre">itemsize</span></code></a></td>
+<td>length of one element in bytes</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.nbytes.html#numpy.bool_.nbytes" title="numpy.bool_.nbytes"><code class="xref py py-obj docutils literal"><span class="pre">nbytes</span></code></a></td>
+<td>length of item in bytes</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.ndim.html#numpy.bool_.ndim" title="numpy.bool_.ndim"><code class="xref py py-obj docutils literal"><span class="pre">ndim</span></code></a></td>
+<td>number of array dimensions</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.real.html#numpy.bool_.real" title="numpy.bool_.real"><code class="xref py py-obj docutils literal"><span class="pre">real</span></code></a></td>
+<td>real part of scalar</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.shape.html#numpy.bool_.shape" title="numpy.bool_.shape"><code class="xref py py-obj docutils literal"><span class="pre">shape</span></code></a></td>
+<td>tuple of array dimensions</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="numpy.bool_.size.html#numpy.bool_.size" title="numpy.bool_.size"><code class="xref py py-obj docutils literal"><span class="pre">size</span></code></a></td>
+<td>number of elements in the gentype</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="numpy.bool_.strides.html#numpy.bool_.strides" title="numpy.bool_.strides"><code class="xref py py-obj docutils literal"><span class="pre">strides</span></code></a></td>
+<td>tuple of bytes steps in each dimension</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numpy.bool_.all.html" class="btn btn-neutral float-right" title="1.7.7.1.1. numpy.bool_.all" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numpy.bool8.strides.html" class="btn btn-neutral" title="1.7.6.2.14. numpy.bool8.strides" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

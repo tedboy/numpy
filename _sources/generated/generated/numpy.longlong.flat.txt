@@ -1,0 +1,6 @@
+numpy.longlong.flat
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longlong.flat

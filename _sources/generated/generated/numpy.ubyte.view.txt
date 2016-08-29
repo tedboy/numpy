@@ -1,0 +1,6 @@
+numpy.ubyte.view
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.view

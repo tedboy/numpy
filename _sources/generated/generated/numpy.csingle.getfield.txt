@@ -1,0 +1,6 @@
+numpy.csingle.getfield
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.getfield

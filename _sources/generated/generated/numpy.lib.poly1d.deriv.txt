@@ -1,0 +1,6 @@
+numpy.lib.poly1d.deriv
+======================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: poly1d.deriv

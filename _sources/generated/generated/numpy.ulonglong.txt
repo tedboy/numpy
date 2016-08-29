@@ -1,0 +1,94 @@
+numpy.ulonglong
+===============
+.. currentmodule:: numpy
+.. autoclass:: ulonglong
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~ulonglong.all
+   ~ulonglong.any
+   ~ulonglong.argmax
+   ~ulonglong.argmin
+   ~ulonglong.argsort
+   ~ulonglong.astype
+   ~ulonglong.byteswap
+   ~ulonglong.choose
+   ~ulonglong.clip
+   ~ulonglong.compress
+   ~ulonglong.conj
+   ~ulonglong.conjugate
+   ~ulonglong.copy
+   ~ulonglong.cumprod
+   ~ulonglong.cumsum
+   ~ulonglong.diagonal
+   ~ulonglong.dump
+   ~ulonglong.dumps
+   ~ulonglong.fill
+   ~ulonglong.flatten
+   ~ulonglong.getfield
+   ~ulonglong.item
+   ~ulonglong.itemset
+   ~ulonglong.max
+   ~ulonglong.mean
+   ~ulonglong.min
+   ~ulonglong.newbyteorder
+   ~ulonglong.nonzero
+   ~ulonglong.prod
+   ~ulonglong.ptp
+   ~ulonglong.put
+   ~ulonglong.ravel
+   ~ulonglong.repeat
+   ~ulonglong.reshape
+   ~ulonglong.resize
+   ~ulonglong.round
+   ~ulonglong.searchsorted
+   ~ulonglong.setfield
+   ~ulonglong.setflags
+   ~ulonglong.sort
+   ~ulonglong.squeeze
+   ~ulonglong.std
+   ~ulonglong.sum
+   ~ulonglong.swapaxes
+   ~ulonglong.take
+   ~ulonglong.tobytes
+   ~ulonglong.tofile
+   ~ulonglong.tolist
+   ~ulonglong.tostring
+   ~ulonglong.trace
+   ~ulonglong.transpose
+   ~ulonglong.var
+   ~ulonglong.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~ulonglong.T
+   ~ulonglong.base
+   ~ulonglong.data
+   ~ulonglong.denominator
+   ~ulonglong.dtype
+   ~ulonglong.flags
+   ~ulonglong.flat
+   ~ulonglong.imag
+   ~ulonglong.itemsize
+   ~ulonglong.nbytes
+   ~ulonglong.ndim
+   ~ulonglong.numerator
+   ~ulonglong.real
+   ~ulonglong.shape
+   ~ulonglong.size
+   ~ulonglong.strides
+

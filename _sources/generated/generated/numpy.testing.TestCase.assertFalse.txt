@@ -1,0 +1,6 @@
+numpy.testing.TestCase.assertFalse
+==================================
+
+.. currentmodule:: numpy.testing
+
+.. automethod:: TestCase.assertFalse

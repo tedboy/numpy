@@ -1,0 +1,6 @@
+numpy.bool_.shape
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool_.shape

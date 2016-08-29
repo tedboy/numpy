@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.4.1.2.5. numpy.distutils.exec_command &mdash; Numpy API</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Numpy API" href="../../index.html"/>
+        <link rel="up" title="11.4. Packaging (numpy.distutils)" href="../distutils.html"/>
+        <link rel="next" title="11.5. Numpy C-API" href="../c-api.html"/>
+        <link rel="prev" title="11.4.1.2.4. numpy.distutils.log.set_verbosity" href="numpy.distutils.log.set_verbosity.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Numpy API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.html">1. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.doc.html">2. <code class="docutils literal"><span class="pre">numpy.doc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.lib.html">3. <code class="docutils literal"><span class="pre">numpy.lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.random.html">4. <code class="docutils literal"><span class="pre">numpy.random</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.linalg.html">5. <code class="docutils literal"><span class="pre">numpy.linalg</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.fft.html">6. Discrete Fourier Transform (<code class="docutils literal"><span class="pre">numpy.fft</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.polynomial.html">7. <code class="docutils literal"><span class="pre">numpy.polynomial</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.testing.html">8. <code class="docutils literal"><span class="pre">numpy.testing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.f2py.html">9. <code class="docutils literal"><span class="pre">numpy.f2py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/numpy.distutils.html">10. <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">11. NumPy Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../arrays.html">11.1. Array objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ufuncs.html">11.2. Universal functions (<code class="docutils literal"><span class="pre">ufunc</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../routines.html">11.3. Routines</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../distutils.html#modules-in-numpy-distutils">11.4.1. Modules in <code class="docutils literal"><span class="pre">numpy.distutils</span></code></a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../distutils.html#module-numpy.distutils.misc_util">11.4.1.1. misc_util</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../distutils.html#other-modules">11.4.1.2. Other modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../distutils.html#building-installable-c-libraries">11.4.2. Building Installable C libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../distutils.html#conversion-of-src-files">11.4.3. Conversion of <code class="docutils literal"><span class="pre">.src</span></code> files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../c-api.html">11.5. Numpy C-API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internals.html">11.6. Numpy internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swig.html">11.7. Numpy and SWIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#acknowledgements">11.8. Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">12. Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Numpy API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">11. NumPy Reference</a> &raquo;</li>
+        
+          <li><a href="../distutils.html">11.4. Packaging (<code class="docutils literal"><span class="pre">numpy.distutils</span></code>)</a> &raquo;</li>
+        
+      <li>11.4.1.2.5. numpy.distutils.exec_command</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/reference/generated/numpy.distutils.exec_command.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-numpy.distutils.exec_command">
+<span id="numpy-distutils-exec-command"></span><h1>11.4.1.2.5. numpy.distutils.exec_command<a class="headerlink" href="#module-numpy.distutils.exec_command" title="Permalink to this headline">¶</a></h1>
+<p>exec_command</p>
+<p>Implements exec_command function that is (almost) equivalent to
+commands.getstatusoutput function but on NT, DOS systems the
+returned status is actually correct (though, the returned status
+values may be different by a factor). In addition, exec_command
+takes keyword arguments for (re-)defining environment variables.</p>
+<p>Provides functions:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>exec_command  &#8212; execute command in a specified directory and</dt>
+<dd>in the modified environment.</dd>
+<dt>find_executable &#8212; locate a command using info from environment</dt>
+<dd>variable PATH. Equivalent to posix <cite>which</cite>
+command.</dd>
+</dl>
+</div></blockquote>
+<p>Author: Pearu Peterson &lt;<a class="reference external" href="mailto:pearu&#37;&#52;&#48;cens&#46;ioc&#46;ee">pearu<span>&#64;</span>cens<span>&#46;</span>ioc<span>&#46;</span>ee</a>&gt;
+Created: 11 January 2003</p>
+<p>Requires: Python 2.x</p>
+<p>Succesfully tested on:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="17%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">os.name</th>
+<th class="head">sys.platform</th>
+<th class="head">comments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>posix</td>
+<td>linux2</td>
+<td>Debian (sid) Linux, Python 2.1.3+, 2.2.3+, 2.3.3
+PyCrust 0.9.3, Idle 1.0.2</td>
+</tr>
+<tr class="row-odd"><td>posix</td>
+<td>linux2</td>
+<td>Red Hat 9 Linux, Python 2.1.3, 2.2.2, 2.3.2</td>
+</tr>
+<tr class="row-even"><td>posix</td>
+<td>sunos5</td>
+<td>SunOS 5.9, Python 2.2, 2.3.2</td>
+</tr>
+<tr class="row-odd"><td>posix</td>
+<td>darwin</td>
+<td>Darwin 7.2.0, Python 2.3</td>
+</tr>
+<tr class="row-even"><td>nt</td>
+<td>win32</td>
+<td>Windows Me
+Python 2.3(EE), Idle 1.0, PyCrust 0.7.2
+Python 2.1.1 Idle 0.8</td>
+</tr>
+<tr class="row-odd"><td>nt</td>
+<td>win32</td>
+<td>Windows 98, Python 2.1.1. Idle 0.8</td>
+</tr>
+<tr class="row-even"><td>nt</td>
+<td>win32</td>
+<td>Cygwin 98-4.10, Python 2.1.1(MSC) - echo tests
+fail i.e. redefining environment variables may
+not work. FIXED: don&#8217;t use cygwin echo!
+Comment: also <cite>cmd /c echo</cite> will not work
+but redefining environment variables do work.</td>
+</tr>
+<tr class="row-odd"><td>posix</td>
+<td>cygwin</td>
+<td>Cygwin 98-4.10, Python 2.3.3(cygming special)</td>
+</tr>
+<tr class="row-even"><td>nt</td>
+<td>win32</td>
+<td>Windows XP, Python 2.3.3</td>
+</tr>
+</tbody>
+</table>
+<p>Known bugs:</p>
+<ul class="simple">
+<li>Tests, that send messages to stderr, fail when executed from MSYS prompt
+because the messages are lost at some point.</li>
+</ul>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">exec_command</span></code>(command[,&nbsp;execute_in,&nbsp;...])</td>
+<td>Return (status,output) of executed command.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">find_executable</span></code>(exe[,&nbsp;path,&nbsp;_cache])</td>
+<td>Return full path of a executable or None.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">get_exception</span></code>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">get_pythonexe</span></code>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">is_sequence</span></code>(seq)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">make_temp_file</span></code>([suffix,&nbsp;prefix,&nbsp;text])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">open_latin1</span></code>(filename[,&nbsp;mode])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">quote_arg</span></code>(arg)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">temp_file_name</span></code>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">test</span></code>(**kws)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">test_cl</span></code>(**kws)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">test_execute_in</span></code>(**kws)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">test_nt</span></code>(**kws)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">test_posix</span></code>(**kws)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">test_svn</span></code>(**kws)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../c-api.html" class="btn btn-neutral float-right" title="11.5. Numpy C-API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numpy.distutils.log.set_verbosity.html" class="btn btn-neutral" title="11.4.1.2.4. numpy.distutils.log.set_verbosity" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

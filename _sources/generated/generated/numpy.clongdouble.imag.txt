@@ -1,0 +1,6 @@
+numpy.clongdouble.imag
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: clongdouble.imag

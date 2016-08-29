@@ -1,0 +1,6 @@
+numpy.float32.conj
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: float32.conj

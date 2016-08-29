@@ -1,0 +1,6 @@
+numpy.polynomial.Chebyshev.fromroots
+====================================
+
+.. currentmodule:: numpy.polynomial
+
+.. automethod:: Chebyshev.fromroots

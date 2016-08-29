@@ -1,0 +1,6 @@
+numpy.character.real
+====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.real

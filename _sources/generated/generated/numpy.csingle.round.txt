@@ -1,0 +1,6 @@
+numpy.csingle.round
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.round

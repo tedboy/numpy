@@ -1,0 +1,6 @@
+numpy.int64.argmin
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: int64.argmin

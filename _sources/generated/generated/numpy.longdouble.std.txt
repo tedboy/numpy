@@ -1,0 +1,6 @@
+numpy.longdouble.std
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: longdouble.std

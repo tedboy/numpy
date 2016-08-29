@@ -1,0 +1,6 @@
+numpy.longcomplex.mean
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.mean

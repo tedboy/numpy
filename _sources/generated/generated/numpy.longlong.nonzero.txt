@@ -1,0 +1,6 @@
+numpy.longlong.nonzero
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.nonzero

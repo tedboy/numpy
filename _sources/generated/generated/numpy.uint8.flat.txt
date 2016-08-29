@@ -1,0 +1,6 @@
+numpy.uint8.flat
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint8.flat

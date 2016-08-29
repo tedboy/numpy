@@ -1,0 +1,6 @@
+numpy.short.min
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: short.min

@@ -1,0 +1,6 @@
+numpy.lib.nper
+==============
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nper

@@ -1,0 +1,6 @@
+numpy.clongfloat.take
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.take

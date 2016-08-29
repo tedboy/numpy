@@ -1,0 +1,6 @@
+numpy.lib.diagflat
+==================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: diagflat

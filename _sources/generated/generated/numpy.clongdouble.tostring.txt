@@ -1,0 +1,6 @@
+numpy.clongdouble.tostring
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.tostring

@@ -1,0 +1,6 @@
+numpy.f2py.Tester.__init__
+==========================
+
+.. currentmodule:: numpy.f2py
+
+.. automethod:: Tester.__init__

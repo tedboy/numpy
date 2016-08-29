@@ -1,0 +1,6 @@
+numpy.clongfloat.prod
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongfloat.prod

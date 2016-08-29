@@ -1,0 +1,6 @@
+numpy.single.cumprod
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.cumprod

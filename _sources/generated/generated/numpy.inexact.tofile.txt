@@ -1,0 +1,6 @@
+numpy.inexact.tofile
+====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.tofile

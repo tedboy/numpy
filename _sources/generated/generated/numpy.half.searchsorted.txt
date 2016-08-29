@@ -1,0 +1,6 @@
+numpy.half.searchsorted
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.searchsorted

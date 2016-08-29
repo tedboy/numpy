@@ -1,0 +1,6 @@
+numpy.signedinteger.min
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.min

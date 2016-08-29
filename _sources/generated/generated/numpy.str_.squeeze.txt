@@ -1,0 +1,6 @@
+numpy.str_.squeeze
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: str_.squeeze

@@ -1,0 +1,6 @@
+numpy.intc.T
+============
+
+.. currentmodule:: numpy
+
+.. autoattribute:: intc.T

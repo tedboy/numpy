@@ -1,0 +1,6 @@
+numpy.void.take
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: void.take

@@ -1,0 +1,6 @@
+numpy.clongdouble.conjugate
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.conjugate

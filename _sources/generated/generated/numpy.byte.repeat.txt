@@ -1,0 +1,6 @@
+numpy.byte.repeat
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: byte.repeat

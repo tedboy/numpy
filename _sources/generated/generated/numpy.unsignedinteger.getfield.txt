@@ -1,0 +1,6 @@
+numpy.unsignedinteger.getfield
+==============================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.getfield

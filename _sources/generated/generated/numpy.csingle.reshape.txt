@@ -1,0 +1,6 @@
+numpy.csingle.reshape
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.reshape

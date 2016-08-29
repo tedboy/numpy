@@ -1,0 +1,6 @@
+numpy.complex256.strides
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: complex256.strides

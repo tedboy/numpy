@@ -1,0 +1,6 @@
+numpy.longdouble.ndim
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: longdouble.ndim

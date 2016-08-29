@@ -1,0 +1,6 @@
+numpy.ubyte.dump
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.dump

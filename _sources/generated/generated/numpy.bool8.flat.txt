@@ -1,0 +1,6 @@
+numpy.bool8.flat
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: bool8.flat

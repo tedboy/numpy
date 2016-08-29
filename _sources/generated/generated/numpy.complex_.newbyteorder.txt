@@ -1,0 +1,6 @@
+numpy.complex_.newbyteorder
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex_.newbyteorder

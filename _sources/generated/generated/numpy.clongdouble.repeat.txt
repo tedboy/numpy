@@ -1,0 +1,6 @@
+numpy.clongdouble.repeat
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.repeat

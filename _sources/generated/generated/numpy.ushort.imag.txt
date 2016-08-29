@@ -1,0 +1,6 @@
+numpy.ushort.imag
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: ushort.imag

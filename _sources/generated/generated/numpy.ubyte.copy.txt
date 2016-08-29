@@ -1,0 +1,6 @@
+numpy.ubyte.copy
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: ubyte.copy

@@ -1,0 +1,6 @@
+numpy.singlecomplex.mean
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.mean

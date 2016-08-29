@@ -1,0 +1,6 @@
+numpy.unsignedinteger.ravel
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unsignedinteger.ravel

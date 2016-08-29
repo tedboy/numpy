@@ -1,0 +1,6 @@
+numpy.half.trace
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: half.trace

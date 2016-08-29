@@ -1,0 +1,6 @@
+numpy.ulonglong.resize
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.resize

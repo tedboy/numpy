@@ -1,0 +1,6 @@
+numpy.lib.Tester.__init__
+=========================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: Tester.__init__

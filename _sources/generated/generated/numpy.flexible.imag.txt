@@ -1,0 +1,6 @@
+numpy.flexible.imag
+===================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: flexible.imag

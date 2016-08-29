@@ -1,0 +1,6 @@
+numpy.lib.ndindex.ndincr
+========================
+
+.. currentmodule:: numpy.lib
+
+.. automethod:: ndindex.ndincr

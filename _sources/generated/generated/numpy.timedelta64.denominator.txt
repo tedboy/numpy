@@ -1,0 +1,6 @@
+numpy.timedelta64.denominator
+=============================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: timedelta64.denominator

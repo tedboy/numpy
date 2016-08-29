@@ -1,0 +1,6 @@
+numpy.longlong.itemset
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.itemset

@@ -1,0 +1,6 @@
+numpy.signedinteger.max
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: signedinteger.max

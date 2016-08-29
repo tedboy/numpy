@@ -1,0 +1,6 @@
+numpy.unicode_.searchsorted
+===========================
+
+.. currentmodule:: numpy
+
+.. automethod:: unicode_.searchsorted

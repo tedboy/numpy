@@ -1,0 +1,6 @@
+numpy.character.flags
+=====================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: character.flags

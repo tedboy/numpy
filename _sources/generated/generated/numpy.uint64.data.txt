@@ -1,0 +1,6 @@
+numpy.uint64.data
+=================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint64.data

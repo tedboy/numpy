@@ -1,0 +1,22 @@
+numpy.lib.NumpyVersion
+======================
+
+.. currentmodule:: numpy.lib
+
+.. autoclass:: NumpyVersion
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NumpyVersion.__init__
+   
+   
+
+   
+   
+   

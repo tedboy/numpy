@@ -1,0 +1,6 @@
+numpy.flexible.flatten
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: flexible.flatten

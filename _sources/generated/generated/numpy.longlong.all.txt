@@ -1,0 +1,6 @@
+numpy.longlong.all
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: longlong.all

@@ -1,0 +1,33 @@
+numpy.broadcast
+===============
+.. currentmodule:: numpy
+.. autoclass:: broadcast
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~broadcast.reset
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~broadcast.index
+   ~broadcast.iters
+   ~broadcast.nd
+   ~broadcast.next
+   ~broadcast.numiter
+   ~broadcast.shape
+   ~broadcast.size
+

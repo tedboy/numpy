@@ -1,0 +1,6 @@
+numpy.half.sum
+==============
+
+.. currentmodule:: numpy
+
+.. automethod:: half.sum

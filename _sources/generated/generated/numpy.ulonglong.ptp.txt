@@ -1,0 +1,6 @@
+numpy.ulonglong.ptp
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: ulonglong.ptp

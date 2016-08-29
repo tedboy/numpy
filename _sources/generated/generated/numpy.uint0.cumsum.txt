@@ -1,0 +1,6 @@
+numpy.uint0.cumsum
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint0.cumsum

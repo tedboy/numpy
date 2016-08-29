@@ -1,0 +1,6 @@
+numpy.number.var
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: number.var

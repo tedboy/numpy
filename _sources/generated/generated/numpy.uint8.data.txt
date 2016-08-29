@@ -1,0 +1,6 @@
+numpy.uint8.data
+================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: uint8.data

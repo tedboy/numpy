@@ -1,0 +1,6 @@
+numpy.uint8.ravel
+=================
+
+.. currentmodule:: numpy
+
+.. automethod:: uint8.ravel

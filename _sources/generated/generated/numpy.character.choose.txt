@@ -1,0 +1,6 @@
+numpy.character.choose
+======================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.choose

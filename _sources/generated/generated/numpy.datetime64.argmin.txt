@@ -1,0 +1,6 @@
+numpy.datetime64.argmin
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: datetime64.argmin

@@ -1,0 +1,6 @@
+numpy.inexact.squeeze
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: inexact.squeeze

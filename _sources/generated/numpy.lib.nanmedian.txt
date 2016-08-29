@@ -1,0 +1,6 @@
+numpy.lib.nanmedian
+===================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: nanmedian

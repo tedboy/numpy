@@ -1,0 +1,6 @@
+numpy.csingle.searchsorted
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: csingle.searchsorted

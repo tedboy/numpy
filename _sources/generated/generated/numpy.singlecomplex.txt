@@ -1,0 +1,92 @@
+numpy.singlecomplex
+===================
+.. currentmodule:: numpy
+.. autoclass:: singlecomplex
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~singlecomplex.all
+   ~singlecomplex.any
+   ~singlecomplex.argmax
+   ~singlecomplex.argmin
+   ~singlecomplex.argsort
+   ~singlecomplex.astype
+   ~singlecomplex.byteswap
+   ~singlecomplex.choose
+   ~singlecomplex.clip
+   ~singlecomplex.compress
+   ~singlecomplex.conj
+   ~singlecomplex.conjugate
+   ~singlecomplex.copy
+   ~singlecomplex.cumprod
+   ~singlecomplex.cumsum
+   ~singlecomplex.diagonal
+   ~singlecomplex.dump
+   ~singlecomplex.dumps
+   ~singlecomplex.fill
+   ~singlecomplex.flatten
+   ~singlecomplex.getfield
+   ~singlecomplex.item
+   ~singlecomplex.itemset
+   ~singlecomplex.max
+   ~singlecomplex.mean
+   ~singlecomplex.min
+   ~singlecomplex.newbyteorder
+   ~singlecomplex.nonzero
+   ~singlecomplex.prod
+   ~singlecomplex.ptp
+   ~singlecomplex.put
+   ~singlecomplex.ravel
+   ~singlecomplex.repeat
+   ~singlecomplex.reshape
+   ~singlecomplex.resize
+   ~singlecomplex.round
+   ~singlecomplex.searchsorted
+   ~singlecomplex.setfield
+   ~singlecomplex.setflags
+   ~singlecomplex.sort
+   ~singlecomplex.squeeze
+   ~singlecomplex.std
+   ~singlecomplex.sum
+   ~singlecomplex.swapaxes
+   ~singlecomplex.take
+   ~singlecomplex.tobytes
+   ~singlecomplex.tofile
+   ~singlecomplex.tolist
+   ~singlecomplex.tostring
+   ~singlecomplex.trace
+   ~singlecomplex.transpose
+   ~singlecomplex.var
+   ~singlecomplex.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~singlecomplex.T
+   ~singlecomplex.base
+   ~singlecomplex.data
+   ~singlecomplex.dtype
+   ~singlecomplex.flags
+   ~singlecomplex.flat
+   ~singlecomplex.imag
+   ~singlecomplex.itemsize
+   ~singlecomplex.nbytes
+   ~singlecomplex.ndim
+   ~singlecomplex.real
+   ~singlecomplex.shape
+   ~singlecomplex.size
+   ~singlecomplex.strides
+

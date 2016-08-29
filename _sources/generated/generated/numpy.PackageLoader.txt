@@ -1,0 +1,23 @@
+numpy.PackageLoader
+===================
+.. currentmodule:: numpy
+.. autoclass:: PackageLoader
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~PackageLoader.__init__
+   ~PackageLoader.error
+   ~PackageLoader.get_pkgdocs
+   ~PackageLoader.log
+   ~PackageLoader.warn
+
+
+
+
+

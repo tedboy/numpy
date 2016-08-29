@@ -1,0 +1,6 @@
+numpy.str.title
+===============
+
+.. currentmodule:: numpy
+
+.. automethod:: str.title

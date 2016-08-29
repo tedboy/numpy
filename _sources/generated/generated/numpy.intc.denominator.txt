@@ -1,0 +1,6 @@
+numpy.intc.denominator
+======================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: intc.denominator

@@ -1,0 +1,6 @@
+numpy.double.put
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: double.put

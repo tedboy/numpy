@@ -1,0 +1,6 @@
+numpy.single.tofile
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.tofile

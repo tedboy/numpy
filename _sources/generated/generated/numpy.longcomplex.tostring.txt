@@ -1,0 +1,6 @@
+numpy.longcomplex.tostring
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.tostring

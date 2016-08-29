@@ -1,0 +1,6 @@
+numpy.str.decode
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: str.decode

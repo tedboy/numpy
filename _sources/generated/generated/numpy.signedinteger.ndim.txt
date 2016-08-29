@@ -1,0 +1,6 @@
+numpy.signedinteger.ndim
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.ndim

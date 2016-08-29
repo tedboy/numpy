@@ -1,0 +1,6 @@
+numpy.singlecomplex.ravel
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.ravel

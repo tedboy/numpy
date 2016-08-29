@@ -1,0 +1,6 @@
+numpy.single.std
+================
+
+.. currentmodule:: numpy
+
+.. automethod:: single.std

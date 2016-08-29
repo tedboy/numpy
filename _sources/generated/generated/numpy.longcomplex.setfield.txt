@@ -1,0 +1,6 @@
+numpy.longcomplex.setfield
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.setfield

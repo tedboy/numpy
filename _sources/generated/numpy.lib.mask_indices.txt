@@ -1,0 +1,6 @@
+numpy.lib.mask_indices
+======================
+
+.. currentmodule:: numpy.lib
+
+.. autofunction:: mask_indices

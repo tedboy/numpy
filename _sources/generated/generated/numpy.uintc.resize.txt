@@ -1,0 +1,6 @@
+numpy.uintc.resize
+==================
+
+.. currentmodule:: numpy
+
+.. automethod:: uintc.resize

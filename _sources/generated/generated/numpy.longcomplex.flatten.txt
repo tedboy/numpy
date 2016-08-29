@@ -1,0 +1,6 @@
+numpy.longcomplex.flatten
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: longcomplex.flatten

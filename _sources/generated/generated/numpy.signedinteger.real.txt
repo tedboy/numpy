@@ -1,0 +1,6 @@
+numpy.signedinteger.real
+========================
+
+.. currentmodule:: numpy
+
+.. autoattribute:: signedinteger.real

@@ -1,0 +1,6 @@
+numpy.singlecomplex.argmax
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: singlecomplex.argmax

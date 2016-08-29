@@ -1,0 +1,6 @@
+numpy.clongdouble.cumprod
+=========================
+
+.. currentmodule:: numpy
+
+.. automethod:: clongdouble.cumprod

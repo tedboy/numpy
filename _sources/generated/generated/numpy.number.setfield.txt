@@ -1,0 +1,6 @@
+numpy.number.setfield
+=====================
+
+.. currentmodule:: numpy
+
+.. automethod:: number.setfield

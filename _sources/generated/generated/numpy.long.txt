@@ -1,0 +1,31 @@
+numpy.long
+==========
+.. currentmodule:: numpy
+.. autoclass:: long
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~long.bit_length
+   ~long.conjugate
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~long.denominator
+   ~long.imag
+   ~long.numerator
+   ~long.real
+

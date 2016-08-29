@@ -1,0 +1,6 @@
+numpy.string0.splitlines
+========================
+
+.. currentmodule:: numpy
+
+.. automethod:: string0.splitlines

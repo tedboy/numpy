@@ -1,0 +1,94 @@
+numpy.timedelta64
+=================
+.. currentmodule:: numpy
+.. autoclass:: timedelta64
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~timedelta64.all
+   ~timedelta64.any
+   ~timedelta64.argmax
+   ~timedelta64.argmin
+   ~timedelta64.argsort
+   ~timedelta64.astype
+   ~timedelta64.byteswap
+   ~timedelta64.choose
+   ~timedelta64.clip
+   ~timedelta64.compress
+   ~timedelta64.conj
+   ~timedelta64.conjugate
+   ~timedelta64.copy
+   ~timedelta64.cumprod
+   ~timedelta64.cumsum
+   ~timedelta64.diagonal
+   ~timedelta64.dump
+   ~timedelta64.dumps
+   ~timedelta64.fill
+   ~timedelta64.flatten
+   ~timedelta64.getfield
+   ~timedelta64.item
+   ~timedelta64.itemset
+   ~timedelta64.max
+   ~timedelta64.mean
+   ~timedelta64.min
+   ~timedelta64.newbyteorder
+   ~timedelta64.nonzero
+   ~timedelta64.prod
+   ~timedelta64.ptp
+   ~timedelta64.put
+   ~timedelta64.ravel
+   ~timedelta64.repeat
+   ~timedelta64.reshape
+   ~timedelta64.resize
+   ~timedelta64.round
+   ~timedelta64.searchsorted
+   ~timedelta64.setfield
+   ~timedelta64.setflags
+   ~timedelta64.sort
+   ~timedelta64.squeeze
+   ~timedelta64.std
+   ~timedelta64.sum
+   ~timedelta64.swapaxes
+   ~timedelta64.take
+   ~timedelta64.tobytes
+   ~timedelta64.tofile
+   ~timedelta64.tolist
+   ~timedelta64.tostring
+   ~timedelta64.trace
+   ~timedelta64.transpose
+   ~timedelta64.var
+   ~timedelta64.view
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~timedelta64.T
+   ~timedelta64.base
+   ~timedelta64.data
+   ~timedelta64.denominator
+   ~timedelta64.dtype
+   ~timedelta64.flags
+   ~timedelta64.flat
+   ~timedelta64.imag
+   ~timedelta64.itemsize
+   ~timedelta64.nbytes
+   ~timedelta64.ndim
+   ~timedelta64.numerator
+   ~timedelta64.real
+   ~timedelta64.shape
+   ~timedelta64.size
+   ~timedelta64.strides
+

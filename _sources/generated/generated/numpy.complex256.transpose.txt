@@ -1,0 +1,6 @@
+numpy.complex256.transpose
+==========================
+
+.. currentmodule:: numpy
+
+.. automethod:: complex256.transpose

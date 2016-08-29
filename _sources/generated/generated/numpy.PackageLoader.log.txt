@@ -1,0 +1,6 @@
+numpy.PackageLoader.log
+=======================
+
+.. currentmodule:: numpy
+
+.. automethod:: PackageLoader.log

@@ -1,0 +1,6 @@
+numpy.character.any
+===================
+
+.. currentmodule:: numpy
+
+.. automethod:: character.any
