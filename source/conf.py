@@ -50,11 +50,41 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
+    'matplotlib.sphinxext.plot_directive',
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive',
     'numpydoc', # used to parse numpy-style docstrings for autodoc    
 ]
 
+
+# -----------------------------------------------------------------------------
+# Plots
+# -----------------------------------------------------------------------------
+plot_pre_code = """
+import numpy as np
+np.random.seed(0)
+"""
+plot_include_source = True
+plot_formats = [('png', 100), 'pdf']
+
+import math
+phi = (math.sqrt(5) + 1)/2
+
+plot_rcparams = {
+    'font.size': 8,
+    'axes.titlesize': 8,
+    'axes.labelsize': 8,
+    'xtick.labelsize': 8,
+    'ytick.labelsize': 8,
+    'legend.fontsize': 8,
+    'figure.figsize': (3*phi, 3),
+    'figure.subplot.bottom': 0.2,
+    'figure.subplot.left': 0.2,
+    'figure.subplot.right': 0.9,
+    'figure.subplot.top': 0.85,
+    'figure.subplot.wspace': 0.4,
+    'text.usetex': False,
+}
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -105,6 +135,18 @@ language = None
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = [
+'api.main.rst',
+'api.doc.rst',
+'api.random.rst',
+'api.linalg.rst',
+'api.fft.rst',
+'api.polynomial.rst',
+'api.testing.rst',
+'api.f2py.rst',
+'api.distutils.rst',
+'api.lib.rst',
+'glossary.rst',
+# 'api.f2py.rst',
 # 'demo_autoclass.rst',
 # 'demo_automodule.rst',
 # 'demo_automodule.rst',
@@ -185,7 +227,7 @@ html_title = project
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #
-html_favicon = '_static/favicon.ico'
+# html_favicon = '_static/favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

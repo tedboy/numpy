@@ -8,10 +8,22 @@ Numpy API
 - All modules for which code is available (`link <./_modules/index.html>`_)
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :numbered:
    :caption: Table of Contents
 
-   file1.rst
+   api.main.rst
+   api.doc.rst
+   api.random.rst
+   api.linalg.rst
+   api.fft.rst
+   api.polynomial.rst
+   api.testing.rst
+   api.f2py.rst
+   api.distutils.rst
+   api.lib.rst
+   glossary.rst
+
+
 
 
